@@ -403,24 +403,23 @@ Compiled on \today\ at \currenttime
 
 Let $\KK$ be a unital, commutative, Noetherian domain, {\eg} 
 the integers or a field, or polynomial rings over these. 
-We write $\K$ if we assume that $\KK$ is a field.
+We write $\K$ if we assume that $\KK$ is a field. Everything 
+in this section will be linear over $\KK$ or $\K$.
 
 \subsection{Inflation by algebras}\label{subsection:groups-inflation}
 
 The following generalization of the notion 
 of cellularity from \cite{GrLe-cellular} is well-known 
 to experts, see {\eg} \cite{KoXi-cellular-inflation-morita}
-or \cite{GuWi-almost-cellular} or
-basis-free and finite formulations.
-Nevertheless, we will state it and some consequences 
-since the general theory 
-works rather smoothly by using 
-Green's philosophy of cells \cite{Gr-semigroups}.
+or \cite{GuWi-almost-cellular} for
+basis-free formulations.
+Nevertheless, we will state this generalization and some consequences 
+of it.
 
 \begin{remark}\label{remark:green}
 Our discussion below is motivated by Green's 
-classical theory of cells \cite{Gr-semigroups} 
-(often called Green's relations) 
+classical theory of cells \cite{Gr-semigroups}, 
+often called Green's relations, 
 in semigroup theory, and the 
 corresponding reduction theorems, 
 {\eg} the Clifford--Munn--Ponizovski\u{\i} theorem 
@@ -433,13 +432,20 @@ part of the terminology from the literature on semigroups.
 \begin{definition}\label{definition:cellular}
 A \emph{sandwich cellular algebra} over 
 $\KK$ is an associative, unital algebra 
-$\setstuff{A}$ together with a \emph{(sandwich) cell datum}, that is, 
-a partial ordered set $\Lambda=(\Lambda,\leq_{\Lambda})$, 
-for each $\lambda\in\Lambda$ a set $M_{\lambda}$, 
-a collection of algebras 
-$\setstuff{B}_{\lambda}$ for all $\lambda\in\Lambda$ and
-a $\KK$-basis $\{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
-b\in\setstuff{B}_{\lambda}\}$ of $\setstuff{A}$ such that we have
+$\setstuff{A}$ together with a \emph{(sandwich) cellular datum}, that is:
+\begin{enumerate}
+
+\item A partial ordered set $\Lambda=(\Lambda,\leq_{\Lambda})$;
+
+\item a set $M_{\lambda}$ for all $\lambda\in\Lambda$;
+
+\item a algebra $\setstuff{B}_{\lambda}$ for all $\lambda\in\Lambda$;
+	
+\item a $\KK$-basis $\{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
+b\in\setstuff{B}_{\lambda}\}$ of $\setstuff{A}$;
+	
+\end{enumerate}
+such that we have
 \begin{gather}\label{eq:cell-mult}
 c_{D,b,U}^{\lambda}c_{D^{\prime},b^{\prime},U^{\prime}}^{\lambda^{\prime}}
 \equiv_{\leq_{\Lambda}} r(U,D^{\prime})\cdot
@@ -460,7 +466,7 @@ is called a \emph{(sandwich) cellular basis}.
 We also define:
 
 \begin{definition}\label{definition:cellular-involution}
-A sandwich cellular algebra	$\setstuff{A}$ is called \emph{involutive} 
+A sandwich cellular algebra $\setstuff{A}$ is called \emph{involutive} 
 if it admits an antiinvolution $(\placeholder)^{\star}\colon\setstuff{A}\to\setstuff{A}$ 
 compatible with the cell structure. That is, 
 $(\placeholder)^{\star}$ is also 
@@ -472,7 +478,6 @@ for all $\lambda\in\Lambda$, and we have
 \end{gather}
 \end{definition}
 
-
 \begin{remark}
 One of the advantages of the basis-focused formulation 
 above is that
@@ -482,9 +487,8 @@ or (strictly object-adapted) cellular
 categories as in \cite{We-tensors-cellular-categories} or \cite{ElLa-trace-hecke}.
 \end{remark}
 
-
-
 \begin{convention}\label{convention:diagram-conventions}
+We will use diagrammatics from now on. 
 Our reading conventions for diagrams are
 summarized by 
 \begin{gather*}
@@ -523,7 +527,6 @@ are non-essential and for illustration purpose only.
 We however still recommend to read the paper in color.
 \end{convention}
 
-
 The pictures for \eqref{eq:cell-mult}
 and \eqref{eq:antiinvolution} are
 \begin{gather}\label{eq:cell-action}
@@ -561,7 +564,7 @@ r(U,D^{\prime})\cdot
 ,\quad
 \begin{gathered}
 r(U,D^{\prime})\in\KK,
-\\
+\\[-2pt]
 F\in\setstuff{B}_{\lambda},
 \end{gathered}
 \quad
@@ -605,10 +608,11 @@ whether one can find a useful cell datum. Here is an explicit example:
 For any group $\setstuff{G}$ the group element basis 
 is a cellular basis in the sense of \fullref{definition:cellular}. 
 To see this we let $\Lambda=\{\bullet\}=M_{\bullet}$ be trivial,
-and set $c_{\bullet,b,\bullet}=b$ for $b\in\KK\setstuff{G}=\setstuff{B}_{\bullet}$.
-Of course, such a cell datum does not seem very interesting, and 
-\fullref{theorem:classification} does not reduce the classification 
-problem of finding the simple $\KK\setstuff{G}$-modules at all.
+and set $c_{\bullet,b,\bullet}=b$ for $b\in\setstuff{G}$
+seen as an element of $\setstuff{B}_{\bullet}=\KK\setstuff{G}$.
+For this choice \fullref{theorem:classification} 
+does not reduce the classification 
+problem of finding the simple $\KK\setstuff{G}$-modules.
 \end{example}
 
 We will give more examples later on, but
@@ -627,7 +631,7 @@ by letting $\setstuff{B}_{\lambda}=\KK$ for all $\lambda\in\Lambda$.
 
 \item If $\setstuff{B}_{\lambda}=\KK[X,X^{-1}]$ 
 for all $\lambda\in\Lambda$, 
-then a group-inflated cellular algebras is affine cellular 
+then a sandwich cellular algebras is affine cellular 
 as in \cite{KoXi-affine-cellular}. Allowing 
 any quotient of a finite polynomial ring as $\setstuff{B}_{\lambda}$, 
 the converse is also true as one easily sees.
@@ -637,11 +641,11 @@ the converse is also true as one easily sees.
 
 \begin{remark}
 Having \fullref{section:braids} in mind,
-we note that $\KK\cong\KK\big[\pi_{1}(D_{1})\big]$, the latter being 
+we note that $\KK\cong\KK\big[\pi_{1}(D_{0})\big]$, the latter being 
 the fundamental group of a disc 
 $D_{0}$ without punctures.
-For $\KK[X,X^{-1}]\cong\KK\big[\pi_{1}(D_{1})\big]$, the latter 
-being the fundamental group of a punctured disc.
+Moreover, $\KK[X,X^{-1}]\cong\KK\big[\pi_{1}(D_{1})\big]$, the latter 
+being the fundamental group of a punctured disc $D_{1}$.
 \end{remark}
 
 \begin{example}
@@ -649,21 +653,22 @@ The notion of being (involutive) sandwich cellular
 is a strict generalization of 
 being cellular. An easy, albeit silly, example is to take 
 $\Lambda=\{\bullet\}=M_{\bullet}$ and $\setstuff{B}_{\bullet}$
-to be a non-cellular algebra, potentially with an antiinvolution. 
-(See \cite{EhTu-relcell} for several more example of non-cellular algebras
-which one could take as $\setstuff{B}_{\bullet}$. 
-Note in particular that sandwich cellular 
-algebras, in contrast to cellular algebras, 
-can have Cartan determinants which 
-are not positive.)
-\fullref{proposition:cell-compare} 
-below is the generalization of this example. 
+to be a non-cellular algebra
+that has a basis $\{b_{i}\}$ such that $b_{i}b_{j}$ is 
+also a basis element. As an explicit example 
+consider the set of upper triangular 
+$2$x$2$ matrices over $\KK$, and view it as a semigroup 
+so that $\{c_{\bullet,b_{i},\bullet}^{\bullet}=b_{i}\}$ 
+is the semigroup basis of the semigroup ring 
+$\setstuff{B}_{\bullet}$.
+See \cite{EhTu-relcell} for several more example of non-cellular algebras
+which one could take as $\setstuff{B}_{\bullet}$.
 \end{example}
 
 We will also use $<_{\Lambda}$ {\etc} which have the evident meaning. 
 Moreover, if no confusion can arise, then $F$ will always 
-be the (evident) composition as {\eg} in \eqref{eq:cell-action}.
-The comparison to cellular algebras is as follows:
+be the composition as {\eg} in \eqref{eq:cell-action}.
+The comparison of sandwich cellular to cellular algebras is:
 
 \begin{proposition}\label{proposition:cell-compare}
 An involutive sandwich cellular algebra $\setstuff{A}$ 
@@ -769,7 +774,7 @@ is specified in each statement where it is relevant). In particular, the
 existence of cell modules, cells 
 and some of their properties, as we will discuss now.
 
-For each $\lambda\in\Lambda$ we have a \emph{left
+For each $\lambda\in\Lambda$ and $U\in M_{\lambda}$ we have a \emph{left
 cell} $\mathcal{L}(\lambda,U)$ given by
 \begin{gather*}
 \mathcal{L}(\lambda,U)=\KK\{
@@ -816,8 +821,8 @@ Using \fullref{lemma:delta-welldefined},
 we will write $\Delta(\lambda)$ and $(\lambda)\Delta$ for 
 any choice of $D,U\in M_{\lambda}$ (for the basis elements 
 of these modules we omit the fixed index). 
-In the usual theory of cellular algebras, 
-these are then also called left and right 
+In the theory of cellular algebras, 
+these are then also called left respectively right 
 \emph{cell modules}.
 
 The space $\mathcal{H}_{\lambda,D,U}=\mathcal{R}(\lambda,D)\hcirc_{\setstuff{A}}
@@ -832,11 +837,11 @@ Note that
 $\mathcal{J}$-cells are $\setstuff{A}$-$\setstuff{A}$-bimodules, 
 by definition, and thus, in general non-unital, algebras. 
 (For simple modules of non-unital algebras one additionally 
-to the usual assumption of having non non-trivial submodules 
+to the usual assumption of having no non-trivial submodules 
 requires that at least one element acts not as zero.)
 In contrast, the $\mathcal{H}$-cells are only $\KK$-modules, but 
-are multiplicatively closed (this is clear by 
-\eqref{eq:cell-action} and \eqref{eq:hj-cells} below), 
+are multiplicatively closed, as follows from 
+\eqref{eq:cell-action} and \eqref{eq:hj-cells} below, 
 so they form, in general non-unital, subalgebras of the $\mathcal{J}$-cells.
 
 The terminology above is justified by the following illustration:
@@ -845,14 +850,14 @@ The terminology above is justified by the following illustration:
 {anchor=base,minimum width=1.4cm,minimum height=1cm}]
 \matrix (A) [matrix of math nodes,ampersand replacement=\&] 
 {
-c_{D_{1}* U_{1}} \& c_{D_{1}* U_{2}} 
-\& c_{D_{1}* U_{3}} \& c_{D_{1}* U_{4}} \& \dots \\
-c_{D_{2}* U_{1}} \& c_{D_{2}* U_{2}} 
-\& c_{D_{2}* U_{3}} \& c_{D_{2}* U_{4}} \& \ddots \\
-c_{D_{3}* U_{1}} \& c_{D_{3}* U_{2}} 
-\& c_{D_{3}* U_{3}} \& c_{D_{3}* U_{4}} \& \ddots \\
-c_{D_{4}* U_{1}} \& c_{D_{4}* U_{2}} 
-\& c_{D_{4}* U_{3}} \& c_{D_{4}* U_{4}} \& \ddots \\
+c_{D_{1}*U_{1}} \& c_{D_{1}*U_{2}} 
+\& c_{D_{1}*U_{3}} \& c_{D_{1}*U_{4}} \& \dots \\
+c_{D_{2}*U_{1}} \& c_{D_{2}*U_{2}} 
+\& c_{D_{2}*U_{3}} \& c_{D_{2}*U_{4}} \& \ddots \\
+c_{D_{3}*U_{1}} \& c_{D_{3}*U_{2}} 
+\& c_{D_{3}*U_{3}} \& c_{D_{3}*U_{4}} \& \ddots \\
+c_{D_{4}*U_{1}} \& c_{D_{4}*U_{2}} 
+\& c_{D_{4}*U_{3}} \& c_{D_{4}*U_{4}} \& \ddots \\
 \vdots \& \ddots \& \ddots \& \ddots \& \ddots \\
 };
 \draw[fill=blue,opacity=0.25] (A-3-1.north west) node[blue,left,yshift=-0.5cm,opacity=1] 
@@ -1071,7 +1076,7 @@ Any $z\in\Delta(\lambda,K)\setminus\mathrm{rad}(\lambda,K)$ is a generator
 of $\Delta(\lambda,K)$, while $\mathrm{rad}(\lambda,K)$ is a submodule 
 of $\Delta(\lambda,K)$ by \fullref{lemma:bilinearform}. 
 Thus, $L(\lambda,K)$ is a well-defined and 
-simple submodule, which is the head as $\mathrm{rad}(\lambda,K)$ equal 
+simple submodule, which is the head as $\mathrm{rad}(\lambda,K)$ equals 
 the representation-theoretical radical since all 
 $z\in\Delta(\lambda,K)\setminus\mathrm{rad}(\lambda,K)$ generate.
 \end{proof}
@@ -1274,16 +1279,13 @@ denote the symmetric group in $\lambda$ strands.
 
 \begin{remark}
 The construction we present below 
-is not new, see {\eg} \cite{KoXi-brauer}. However, in our 
-basis version of iterated inflations (which is the 
-terminology used in \cite{KoXi-brauer}), the 
-theory is visually clear, so we decided to 
-state it nevertheless.
+is not new, see {\eg} \cite{KoXi-brauer}. However, 
+our exposition is new and might be of some use.
 \end{remark}
 
 The Brauer algebra has a well-known diagrammatic description 
 given by \emph{perfect matchings of $2n$ points}, and a typical 
-Brauer diagram for $n=4$ is
+\emph{Brauer diagram} for $n=4$ is
 \begin{gather*}%\label{eq:brauer}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
@@ -1311,28 +1313,30 @@ Brauer diagram for $n=4$ is
 \end{gather*}
 We have also illustrated the antiinvolution $(\placeholder)^{\star}$ on 
 $\setstuff{Br}_{n}(\cvar)$ given by vertical mirroring.
+Note that Brauer diagrams also make sense in a categorical setting, meaning 
+with a different number of bottom and top points.
 
-It is well-known that the Brauer algebra is cellular, see 
+It is known that the Brauer algebra is cellular, see 
 \cite[Section 4]{GrLe-cellular} or \cite[Section 5]{AnStTu-cellular-tilting}. 
 To make $\setstuff{Br}_{n}(\cvar)$ cellular one needs 
 $\mathcal{H}$-cells of size one, which is achieved in 
 \cite[Section 4]{GrLe-cellular} by using the Kazhdan--Lusztig 
-basis of $\KK\setstuff{S}_{n}$ (which is 
-a subalgebra of $\setstuff{Br}_{n}(\cvar)$).
-As we will describe now this is not necessary.
+basis of $\KK\setstuff{S}_{n}$, which is 
+a subalgebra of $\setstuff{Br}_{n}(\cvar)$.
+As we will describe now this is not necessary if one wants 
+to parameterize simples.
 
 We let $\Lambda=(\{n,n-2,n-4,\dots\},\leq_{\N})\subset\N$ 
 with the usual partial order.
-The $\lambda\in\Lambda$ are the through strands of our diagrams.
+The $\lambda\in\Lambda$ are the through strands of the Brauer diagrams:
 The set $M_{\lambda}$ consists of all Brauer diagrams 
-from $n$ bottom points to $\lambda$ top points (strictly speaking, 
-these are morphisms in the Brauer category).
+from $n$ bottom points to $\lambda$ top points.
 Moreover, we let $\setstuff{B}_{\lambda}=\KK\setstuff{S}_{\lambda}$.
 As our $\KK$-basis we choose 
-\begin{gather}\label{eq:brauer-basis}
+\begin{gather*}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
 b\in\setstuff{B}_{\lambda}\}
-\end{gather}
+\end{gather*}
 following the usual strategy illustrated in \eqref{eq:brauer} below. 
 \begin{gather}\label{eq:brauer}
 \begin{aligned}
@@ -1794,6 +1798,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \endxy
 ,\quad
 \begin{gathered}
+\text{multiplication}
+\\[-2pt]
+\text{table of the}
+\\[-2pt]
+\text{colored box}
+\end{gathered}
+\colon
+\begin{gathered}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
@@ -1877,7 +1889,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{gather*}
 The colored box is an $\mathcal{H}$-cell
 isomorphic to $\KK\setstuff{S}_{2}$ regardless
-of $\cpar$, which is illustrated on the right.
+of $\cvar$, which is illustrated on the right.
 \end{example}
 
 We obtain the well-known classification of simple 
@@ -1890,11 +1902,11 @@ Let $\KK=\K$ be a field.
 \item If $\cvar\neq 0$, or $\cvar=0$ and $\lambda\neq 0$ is odd, 
 then all $\lambda\in\Lambda$ are apexes. In the remaining case, 
 $\cvar=0$ and $\lambda=0$ (this only happens if $n$ is even), 
-all $\lambda\in\Lambda-\{0\}$ are apexes.
+all $\lambda\in\Lambda-\{0\}$ are apexes, but $\lambda=0$ is not an apex.
 
 \item The simple $\setstuff{Br}_{n}(\cvar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\K\setstuff{S}_{\lambda}$.
+are parameterized by simple $\K\setstuff{S}_{\lambda}$-modules.
 
 \item The simple $\setstuff{Br}_{n}(\cvar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
@@ -1969,8 +1981,7 @@ the quantum versions of these diagram algebras such as
 the Birman--Murakami--Wenzl 
 algebra (we will treat this case for higher genus in 
 \fullref{section:brauer} below).
-We leave it to the reader to play the same game 
-for such algebras. 
+We leave the details to the interested reader. 
 \end{remark}
 
 \section{Handlebody braid an Coxeter groups}\label{section:braids}
