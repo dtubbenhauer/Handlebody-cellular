@@ -6746,274 +6746,21 @@ c_{U,D}^{\lambda}=
 where we illustrated $H_{\lambda}$ as a box.
 \end{example}
 
-\DT{Needs to be changed from here on}
-
-In order to define a cell datum we 
-need a few combinatorial notions depending on 
-$d\in\N\cup\{\infty\}$.
-In this section we are mainly interested in the case 
-$d=\infty$, but we we will use them for finite $d$ in
-\fullref{subsection:ak-hecke}.
-
-Recall that a partition $\lambda$ of $n$ of length 
-$\ell(\lambda)=k$ is a non-increasing sequence $\lambda_{1}\geq\lambda_{2}\geq\dots\geq\lambda_{k}>0$ of 
-integers adding up to $|\lambda|=n$.
-For any finite $d\in\N$
-a \emph{$d$-partition of $n$} is a $d$-tuple of partitions $\blam=(\lambda^{(0)},\dots,\lambda^{(d-1)})$ such 
-that $\sum_{i=0}^{d-1}|\lambda^{(i)}|=n$. 
-The $\lambda^{(i)}$ are the \emph{(finite) components} of $\blam$.
-For $d=\infty$ we use the same notions but we
-we take $\N$-tuples $\blam=(\lambda^{(0)},\dots,\lambda^{(i)},\dots,\lambda^{(\infty)})$ 
-together with a \emph{component at infinity} $\lambda^{(\infty)}$.
-The set of such partitions in denoted by $\Lambda_{d,n}$, 
-where $d$ can be finite or infinite.
-
-For the next definition we
-think of components 
-as being aligned on a number line. Thus, 
-we have the notion of a component being 
-to the left or right of another component, and the
-rightmost component is $\lambda^{(d-1)}$ respectively 
-$\lambda^{(\infty)}$.
-In order to avoid infinite counting in the case 
-$d=\infty$ we define: 
-
-\begin{definition}
-For $\blam\in\Lambda_{\infty,n}$ 
-a finite component 
-$\lambda^{(i)}$ is called 
-\emph{relevant} if it is (weakly) to the left 
-of the rightmost non-empty finite component.
-For finite $d$ all components are relevant.
-\end{definition}
-
-Given $\blam\in\Lambda_{d,n}$ its \emph{Young diagram} is the set
-\begin{gather*}
-[\blam]=\left\{(a,b,c)\in\N\times\N\times\{0,\dots,d-1\}
-\middle\vert
-1\leq a\leq\ell(\lambda),1\leq b\leq\lambda^{(c)}_{a}\right\},
-\end{gather*}
-whose elements are called \emph{nodes}. For $d=\infty$ 
-we again have a component at infinity. We usually 
-represent a Young diagram as a $d$-tuple of 
-sequences of left-aligned boxes, with $\lambda_{a}^{(c)}$ 
-nodes in the $a$th row of the $c$th component. 
-This is the English convention.
-Note that while the number of components may be infinite, 
-the number of nodes is always $n$, so finite, and the 
-number of relevant components is also always finite.
-
-A \emph{standard $d$-tableaux $S$ of shape $\blam$} is a filling
-of the nodes of $[\blam]$ with the numbers $\{1,\dots,n\}$
-such that the numbers increase along rows and columns.
-We write $M_{\blam}$ for the set of such 
-standard $d$-tableaux.
-The canonical tableaux $S_{c}$ is the filling where 
-the numbers increase 
-from left to right and top to bottom.
-
-\begin{definition}
-A \emph{$g$-colored $d$-partition of $n$} is a 
-$d$-partition $\blam\in\Lambda_{d,n}$ together with a choice 
-of an element from $\{1,\dots,g\}$ and a sign
-$\pm$ for each node of $[\blam]$. The set of these 
-is denoted by $\Lambda_{d,n}^{col}$.
-
-To each colored $g$-colored $d$-partition of $n$ 
-we have an associated Young diagram with colored nodes.
-To each colored node we assign $\lambda_{u,i}^{\pm}$ 
-where $u$ and $\pm$ are the color and sign 
-of the node, and $i$ is its position, counting left to right, and top to bottom.
-\end{definition}
-
-\begin{remark}
-For $\blam\in\Lambda_{d,n}^{col}$ we will denote 
-the underlying $d$-partition $\blam\in\Lambda_{d,n}$ also by $\blam$.
-In order to avoid confusion let us stress that
-for the $d$-partitions the coloring will be crucial, 
-but for $d$-tableaux only the underlying shape plays a role.
-\end{remark}
-
-Following ideas from \cite{Mu-typea-hecke}, see also \cite[Chapter 3]{Ma-hecke-schur}, 
-and \cite{DiJaMa-cyclotomic-q-schur} 
-for $g=0$ and $g=1$, the main ingredient 
-to define a cell datum is to associate a composition of 
-Jucys--Murphy elements $b^{\prime}(\blam)$ to each 
-$\blam\in\Lambda_{d,n}^{col}$, a further element $b^{\prime\prime}(\blam)$
-associated to the row stabilizer Young subgroup of $\blam$
-and a permutation (or rather a positive 
-lift of a permutation) $D(S)$ to 
-each $S\in M_{\blam}$.
-The construction, except the coloring, is the same as in 
-\cite[Section 3]{DiJaMa-cyclotomic-q-schur} so we will be brief 
-and refer the reader rather to \fullref{example:murphy}.
-
-The definition of $b^{\prime}(\blam)$ is to count the number 
-of colored nodes strictly before a given 
-relevant component of $\blam$, which 
-gives us a tuple of non-negative 
-integers $\bsym{a}=(a_{0}=0,a_{1},\dots,a_{d-1})$ 
-or $\bsym{a}=(a_{0}=0,a_{1},\dots,a_{d-1},a_{\infty})$ 
-in case $d=\infty$, as 
-well as $\lambda_{u,i}^{\pm}$, one for each counted node. 
-Then one takes a product over all 
-relevant components and multiplies the 
-$\lambda_{u,i}^{\pm}$.
-To define $b^{\prime\prime}(\blam)$ one associates a Young subgroup $S_{\blam}$
-to $\blam$ by taking the product of the row stabilizers. We then define 
-$b^{\prime\prime}(\blam)$ to be the product over all 
-components of $S_{\blam}$ where we multiply the sums of all elements 
-in these components. 
-Finally, we let $b=b(\blam)=b^{\prime}(\blam)b^{\prime\prime}(\blam)$
-be the middle of the element which we want to construct.
-
-The down $D(S)$ (and up) 
-diagrams are defined by the usual tracing-entries 
-procedure: Recall that 
-this involves 
-a choice of a reduced expression for all $w\in\setstuff{W}_{0,n}$ 
-and then we get a permutation $D^{\prime}=D(S)^{\prime}$ by permuting the entries 
-of $S$ to match those of $S_{c}$ in a minimal way using 
-the preferred reduced expression. Then $D=D(S)$ is
-defined to be the positive 
-braid lift of $D^{\prime}$, using the convention in \eqref{eq:positive-braid}.
-Note that the definition of $D$ does not involve the coloring.
-
-\begin{example}\label{example:murphy}
-Fix $\blam=\big((1),(3,1),\emptyset,
-\lambda^{(3)}=(1,1),\dots,\lambda^{(\infty)}=(1)\big)$, 
-where $\lambda^{(3)}$ is the rightmost relevant component.
-We get $\bsym{a}=(0,1,5,5,7=a_{\infty})$.
-Let us also choose a coloring and signs
-as indicated in the following picture by labeling the nodes 
-(omitted signs are positive).
-Then $b^{\prime}(\blam)$ is given by
-\begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75]
-\node at (-2.5,0) {$\blam$};
-%%
-\draw[very thick,fill=spinach!50] (-1.5,0) rectangle node[pos=0.5]{$u-$} (-0.75,0.75);
-%%
-\draw[very thick,fill=orchid!50] (0,0) rectangle node[pos=0.5]{$w$} (0.75,0.75);
-\draw[very thick,fill=spinach!50] (0.75,0) rectangle node[pos=0.5]{$u$} (1.5,0.75);
-\draw[very thick,fill=orchid!50] (1.5,0) rectangle node[pos=0.5]{$w$} (2.25,0.75);
-\draw[very thick,fill=spinach!50] (0,-0.75) rectangle node[pos=0.5]{$u$} (0.75,0);
-%%
-\node at (3,0) {$\emptyset$};
-%%
-\draw[very thick,fill=tomato!50] (3.75,0) rectangle node[pos=0.5]{$v$} (4.5,0.75);
-\draw[very thick,fill=orchid!50] (3.75,-0.75) rectangle node[pos=0.5]{$w$} (4.5,0);
-%%
-\draw[densely dotted] (4.875,-1.25)node[left]{relevant part}node[right]{$\lambda^{(\infty)}$} to (4.875,1.25);
-\draw[very thick,fill=tomato!50] (5.25,0) rectangle node[pos=0.5]{$v$} (6,0.75);
-\end{tikzpicture}
-\rightsquigarrow
-\begin{aligned}
-b^{\prime}(\blam)=
-1&\cdot\lambda_{u,1}^{-1}\cdot 
-\lambda_{u,1}^{-1}\lambda_{w,2}\lambda_{u,3}\lambda_{w,4}\lambda_{u,5}
-\\
-&\cdot 
-\lambda_{u,1}^{-1}\lambda_{w,2}\lambda_{u,3}
-\lambda_{w,4}\lambda_{u,5}
-\\
-&\cdot 
-\lambda_{u,1}^{-1}\lambda_{w,2}\lambda_{u,3}
-\lambda_{w,4}\lambda_{u,5}\lambda_{v,6}\lambda_{w,7}.
-\end{aligned}
-\end{gather*}
-Since the Young subgroup of $\blam$ is 
-$S_{\blam}=S_{1}\times S_{3}\times S_{1}\times S_{1}\times S_{1}$, we get
-$b=b^{\prime}(H_{2}+\dots+H_{232432})$, where the sum runs 
-over all $24$ elements of $S_{3}$ considered with generators $H_{2}$, 
-$H_{3}$ and $H_{4}$.
-Moreover, by choosing a $3$-multitableaux $S$ as below we get
-\begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75]
-\node at (-2.5,0) {$S_{c}$};
-%%
-\draw[very thick] (-1.5,0) rectangle node[pos=0.5]{$1$} (-0.75,0.75);
-%%
-\draw[very thick] (0,0) rectangle node[pos=0.5]{$2$} (0.75,0.75);
-\draw[very thick] (0.75,0) rectangle node[pos=0.5]{$3$} (1.5,0.75);
-\draw[very thick] (1.5,0) rectangle node[pos=0.5]{$4$} (2.25,0.75);
-\draw[very thick] (0,-0.75) rectangle node[pos=0.5]{$5$} (0.75,0);
-%%
-\draw[very thick] (3,0) rectangle node[pos=0.5]{$6$} (3.75,0.75);
-\draw[very thick] (3,-0.75) rectangle node[pos=0.5]{$7$} (3.75,0);
-%%
-\draw[very thick] (4.5,0) rectangle node[pos=0.5]{$8$} (5.25,0.75);
-%%
-\node at (-2.5,-4) {$S$};
-%%
-\draw[very thick] (-1.5,-4) rectangle node[pos=0.5]{$2$} (-0.75,-3.25);
-%%
-\draw[very thick] (0,-4) rectangle node[pos=0.5]{$3$} (0.75,-3.25);
-\draw[very thick] (0.75,-4) rectangle node[pos=0.5]{$5$} (1.5,-3.25);
-\draw[very thick] (1.5,-4) rectangle node[pos=0.5]{$7$} (2.25,-3.25);
-\draw[very thick] (0,-4.75) rectangle node[pos=0.5]{$6$} (0.75,-4);
-%%
-\draw[very thick] (3,-4) rectangle node[pos=0.5]{$1$} (3.75,-3.25);
-\draw[very thick] (3,-4.75) rectangle node[pos=0.5]{$4$} (3.75,-4);
-%%
-\draw[very thick] (4.5,-4) rectangle node[pos=0.5]{$8$} (5.25,-3.25);
-%%
-\draw[very thick,tomato] (-1.5,0) to (-1.5,-1);
-\draw[very thick,tomato] (0,0) to (-0.3,0) to (-0.3,-1);
-\draw[very thick,tomato] (0,-0.75) to (0,-1);
-\draw[very thick,tomato] (0.75,0) to (1.05,0) to (1.05,-1);
-\draw[very thick,tomato] (1.5,0) to (1.5,-1);
-\draw[very thick,tomato] (3,0) to (2.7,0) to (2.7,-1);
-\draw[very thick,tomato] (3,-0.75) to (3,-1);
-\draw[very thick,tomato] (4.5,-1) to (4.5,0);
-%%
-\draw[very thick,tomato] (-1.5,-3.25) to (-1.5,-3);
-\draw[very thick,tomato] (0,-3.25) to (-0.3,-3.25) to (-0.3,-3);
-\draw[very thick,tomato] (0,-4) to[out=45,in=315] (0,-3);
-\draw[very thick,tomato] (0.75,-3.25) to (0.75,-3) to (1.05,-3);
-\draw[very thick,tomato] (1.5,-3.25) to (1.5,-3);
-\draw[very thick,tomato] (3,-3.25) to (2.7,-3.25) to (2.7,-3);
-\draw[very thick,tomato] (3,-4) to[out=45,in=315] (3,-3);
-\draw[very thick,tomato] (4.5,-3.25) to (4.5,-3);
-%%
-\draw[usual] (-1.5,-3) to[out=90,in=270] (-0.3,-1);
-\draw[usual] (-0.3,-3) to[out=90,in=270] (1.05,-1);
-\draw[usual] (0,-3) to[out=90,in=270] (2.7,-1);
-\draw[usual] (1.05,-3) to[out=90,in=270] (0,-1);
-\draw[usual] (1.5,-3) to[out=90,in=270] (3,-1);
-\draw[usual] (2.7,-3) to[out=90,in=270] (-1.5,-1.75) to (-1.5,-1);
-\draw[usual] (3,-3) to[out=90,in=270] (1.5,-1);
-\draw[usual] (4.5,-3) to[out=90,in=270] (4.5,-1);
-\end{tikzpicture}
-\rightsquigarrow
-D(S)=
-\begin{tikzpicture}[anchorbase,scale=0.75]
-\draw[usual,crossline] (3,-3) to[out=90,in=270] (1,-1);
-\draw[usual,crossline] (2,-3) to[out=90,in=0] (1,-2.5) to (-2,-2.5) to[out=180,in=270] (-3,-1);
-\draw[usual,crossline] (1,-3) to[out=90,in=270] (3,-1);
-\draw[usual,crossline] (0,-3) to[out=90,in=270] (-1,-1);
-\draw[usual,crossline] (-1,-3) to[out=90,in=270] (2,-1);
-\draw[usual,crossline] (-2,-3) to[out=90,in=270] (0,-1);
-\draw[usual,crossline] (-3,-3) to[out=90,in=270] (-2,-1);
-\draw[usual,crossline] (4,-3) to[out=90,in=270] (4,-1);
-\end{tikzpicture}
-.
-\end{gather*}
-Note that empty partitions $\emptyset$ in $\blam$ 
-contributes to the number of factors of $b^{\prime}(\blam)$, but 
-make no difference for $b^{\prime\prime}(\blam)$ or $D$.
-\end{example}
-
-Moreover, by mirroring diagrams 
-along a vertical axis we also get $U=U(S)=D(S)^{\star}$, using the 
-antiinvolution $(\placeholder)^{\star}$ 
-on $\setstuff{H}_{g,n}$ given by mirroring along a horizontal 
-axis, but not changing crossings ({\eg} positive crossings remain positive).
-Let $\Lambda=\Lambda_{d,n}^{col}$ be the set of all 
-colored $\N$-multipartitions of $n$, and let 
-$M_{\blam}$ be the set of all standard tableaux of shape $\blam$.
-We get elements $c_{D,b,U}^{\blam}\in\setstuff{H}_{g,n}$.
-\DT{Explain partial order}
+We let $\Lambda=(\Lambda,<)$ be the set of all partitions of $n$, 
+which are ordered by the dominance order (we use the convention 
+from \cite[Section 3.1]{Ma-hecke-schur}).
+The set $M_{\lambda}$ is the set of all standard tableaux 
+of shape $\lambda$.
+The middle part is $\setstuff{B}_{\lambda}=
+\setstuff{JM}_{g,n}H_{\lambda}$, where $\setstuff{JM}_{g,n}$ 
+is the subalgebra of $\setstuff{H}_{g,n}$ spanned 
+by the Jucys--Murphy elements.
+We then let $c_{D,b,U}^{\lambda}=D(T)bU(T^{\prime})$ 
+where $b=$\DT{To do}. We then get
+\begin{gather}\label{eq:hecke-basis}
+\{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
+b\in\setstuff{B}_{\lambda}\}.
+\end{gather} 
 
 \begin{proposition}
 The above defines an involutive 
@@ -7021,57 +6768,62 @@ cell datum for $\setstuff{H}_{g,n}$.
 \end{proposition}
 
 \begin{proof}
-Let us first prove that the $c_{D,b,U}^{\blam}$ span 
-$\setstuff{H}_{g,n}$, following the same ideas as in 
-\cite[Section 3]{DiJaMa-cyclotomic-q-schur}. In fact, most of the 
-arguments given therein go through in our situation: 
-First, \cite[Corollay 3.19]{DiJaMa-cyclotomic-q-schur} 
-works without change, showing that $c_{D,b,U}^{\blam}h$, 
-for $h\in\setstuff{H}_{0,n}$ 
-(note that $\setstuff{H}_{0,n}\subset\setstuff{H}_{g,n}$ is 
-a subalgebra), decompose into a linear combination 
-of terms of the form $c_{D,b,U}^{\bsym{\mu}}$ 
-for $\bsym{\mu}\leq\blam$.
-Next, we turn our attention to 
-\cite[Proposition 3.20]{DiJaMa-cyclotomic-q-schur} 
-which in our setup takes the form that 
-$c_{D,b,U}^{\blam}\tau_{u}=x_{1}+x_{2}$ 
-for $x_{1}$ being a $c_{\placeholder}^{\blam}$
-and $x_{2}$ being a $c_{\placeholder}^{\bsym{\mu}}$ 
-for $\bsym{\mu}\leq\blam$.
-\DT{Argument for multiplying with $\tau_{u}$}
-Taking these together shows that
-\begin{gather*}
-c_{D,b,U}^{\blam}h
-\equiv
-{\textstyle\sum_{U^{\prime}\in M(\blam)}}\,
-r(U^{\prime})c_{D,b^{\prime},U^{\prime}}^{\blam}
-\bmod\KK\{c_{\placeholder}^{\bsym{\mu}}\mid\bsym{\mu}<\blam\},
-\end{gather*}
-for some scalars $r(U^{\prime})\in\KK$.
-This property in turn shows that the $c_{D,b,U}^{\blam}$ span
-as the unit $1$ is of the form $c_{D,b,U}^{\blam}$ for 
-$\blam$ being the $d$-partition with $(1)^{n}$ concentrated in 
-its rightmost component.
-
-To argue that the $c_{D,b,U}^{\blam}$ form a basis 
-we use a counting argument...
-
-Aimed with the above, the remaining claims are then easy to verify.
-\end{proof}
-
+We first show that \eqref{eq:hecke-basis} is a basis of 
+$\setstuff{H}_{g,n}$.
 \DT{To do}
+\end{proof} 
+
+Recall that $H_{\lambda}^{2}=r(\lambda)H_{\lambda}$.
+Let $e\in\N$ be the smallest number such that 
+$[e]_{\qvar}=0$, or $e=\infty$ if no such 
+$e$ exists. A $\lambda\in$
+
+Recall that $H_{\lambda}^{2}=r(\lambda)H_{\lambda}$.
+Checking that $r(\lambda)\neq 0$ gives us a slick 
+way of 
 
 \begin{theorem}\label{theorem:cellhecke}
-Let $\KK=\K$ be a field, \DT{To do}
+Let $\KK=\K$ be a field.
+\begin{enumerate}
+
+\item A $\lambda\in\Lambda$ is an apex 
+if $r(\lambda)\in\K$ is non-zero. (This is in particular 
+always the case if $e>n$.) 
+A $\lambda\in\Lambda$ is an apex 
+if and only if $\lambda$ is $e$-restricted.
+
+\item The simple $\setstuff{H}_{n,g}$-modules of 
+apex $\lambda\in\Lambda$ 
+are parameterized by simple modules of $\setstuff{JM}_{g,n}H_{\lambda}$.
+
+\item The simple $\setstuff{H}_{n,g}$-modules of 
+apex $\lambda\in\Lambda$ can be constructed as 
+the simple heads of
+$\mathrm{Ind}_{\setstuff{JM}_{g,n}H_{\lambda}}^{\setstuff{H}_{n,g}}(K)$, 
+where $K$ runs over (equivalence classes of) 
+simple $\setstuff{JM}_{g,n}H_{\lambda}$-modules.
+
+\end{enumerate}
 \end{theorem}
 
 \begin{proof}
-\DT{To do}
+Claims (b) and (c) follow immediately from the abstract theory, as 
+in the cases discussed before. So let us focus on (a).
 \end{proof}
 
 \begin{example}
-\DT{To do}
+The cases $g=0$ and $g=1$ of \fullref{theorem:cellhecke}
+are well-known:
+\begin{enumerate}
+
+\item We have $\setstuff{JM}_{0,n}=\K$, so the above 
+is the classical parametrization 
+of simple $\setstuff{H}_{g,n}$-modules, see {\eg} 
+\cite[Section 3.4]{Ma-hecke-schur}.
+
+\item For $g=1$...
+
+\end{enumerate}
 \end{example}
 
 \subsection{Cyclotomic handlebody Hecke algebras}\label{subsection:ak-hecke}
