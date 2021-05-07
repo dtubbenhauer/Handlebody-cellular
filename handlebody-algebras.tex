@@ -3003,17 +3003,22 @@ This follows from the proof of \fullref{proposition:jm-elements-basis}.
 
 Recall that $\KK$ denotes a unital, commutative, Noetherian domain. 
 The example the reader should keep in mind throughout this section is
-$\KK=\Z[\cvar]$ where $\cvar$ is a 
-(finite) collection of variables $\cvar_{i}$ 
+$\KK=\Z[\cpar]$ where $\cpar$ is a 
+collection of variables $\cvar_{i}$ 
 which are circle evaluations.
 Recall further that we fixed $g\in\N$ and $n\in\N_{>0}$.
 
 \subsection{Handlebody Temperley--Lieb algebras}\label{subsection:handlebody-tl}
 
-We consider 
-\emph{crossingless matchings of $2n$ points of genus $g$}.
-These are crossingless matchings of $2n$ points where usual strands 
-can wind (and cross) around the cores, but not among themselves.
+In this section we
+consider non-topological
+\emph{crossingless matchings of $2n$ points of genus $g$}, which 
+are crossingless matching in the usual sense together 
+with a choice of a reduced word in the free group $\setstuff{F}_{g}$
+for each appearing strand.
+In slightly misleading pictures, {\cf} \fullref{remark:non-topological},
+these are crossingless matchings of $2n$ points where usual strands 
+can wind around the cores, but not among themselves.
 Here we use the same conventions as in \fullref{section:braids} in the sense 
 that all cores are to the left.
 For example, if $g=3$ and $n=2$, then
@@ -3054,11 +3059,10 @@ as illustrate on the right in \eqref{eq:twist}.
 \end{remark}
 
 These crossingless matchings are not allowed to have 
-circles $\gamma$ ({\aka} loops), 
+$\setstuff{F}_{g}$-colored circles $\gamma$, 
 but of course they could appear after concatenation. For the 
 following definition we choose a set of parameters 
-$\cpar=(\cvar_{\gamma})\in\KK$, one for each isotopy class 
-of circles.
+$\cpar=(\cvar_{\gamma})\in\KK$, one for each $\setstuff{F}_{g}$-colored circle $\gamma$, up to conjugacy of words.
 
 \begin{definition}
 The evaluation of 
@@ -3070,9 +3074,8 @@ $\cvar_{\gamma}$. We call this \emph{circle evaluation}.
 We could choose all $\cvar_{\gamma}$ to be different 
 or equal, there is no restriction on the choice of these parameters 
 (see however \fullref{remark:non-topological} below).
-Note that non-essential circles are associated to 
-the trivial element $1=(0,\dots,0)\in\N^{g}$ 
-and are evaluated to $\cvar_{1}$.
+Note that all non-essential circles are associated to 
+the trivial coloring $\gamma=1$ and are evaluated to $\cvar_{1}$.
 
 \begin{example}\label{example:essential-loops}
 Here are a few examples:
@@ -3100,17 +3103,6 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=90] (1.25,0.75);
 \end{tikzpicture}
-=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
-\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
-\draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
-\draw[usual,crossline] (-0.25,0.75) to[out=90,in=90] (1.25,0.75);
-\draw[pole,crosspole] (0,0)node[below,black]{$u$} 
-to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
-\draw[pole,crosspole] (1,0)node[below,black]{$v$} 
-to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
-\draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.75);
-\end{tikzpicture}
 \leftrightsquigarrow
 \cvar_{\gamma}
 ,\quad
@@ -3129,7 +3121,8 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \leftrightsquigarrow
 \cvar_{\gamma^{\prime}}.
 \end{gather*}
-In some sense $\cpar$ counts how often essential circles wind around the cores.
+Here the first word in $\setstuff{F}_{g}$ is the trivial word, 
+the second is $uv$, and the third is $u^{2}v$.
 \end{example}
 
 \begin{definition}\label{definition:handlebody-tl}
@@ -3168,16 +3161,15 @@ the Kauffman Skein relation
 \draw[usual,crossline] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \end{tikzpicture}
 \end{gather}
-does not make sense in $\setstuff{TL}_{g,n}(\cpar)$, 
+does not behave topologically in $\setstuff{TL}_{g,n}(\cpar)$, 
 even for appropriate choices of parameters. 
 We will come back to a topological model of the 
 handlebody Temperley--Lieb algebra in 
 \fullref{subsection:handlebody-tl-topology} and for now we just note that:
-
 \begin{enumerate}
 
 \item One reason why we do not want \eqref{eq:kauffman} for the time 
-being is that \eqref{eq:kauffman} implies that twist satisfy
+being is that this relation implies that twists satisfy
 an order two relation. This follow from the calculation
 \begin{gather}\label{eq:order-two}
 \begin{aligned}
@@ -3331,9 +3323,9 @@ are of infinite order.
 
 \begin{remark}\label{remark:tl}
 For low genus $\setstuff{TL}_{g,n}(\cpar)$ is well-studied 
-(although keep in mind that the precise definitions and the 
+(although for $g>0$ the precise definitions and the 
 nomenclature vary 
-throughout the literature for $g>0$):
+throughout the literature):
 \begin{enumerate}
 
 \setlength\itemsep{0.15cm}
@@ -3344,18 +3336,17 @@ Temperley--Lieb algebra in its crossingless matching definition.
 
 \item In case $g=1$ there are the so-called 
 affine Temperley--Lieb algebra or the
-type $B/C$ Temperley--Lieb algebra 
+type B$=$C Temperley--Lieb algebra 
 (the name comes from the relation of this algebra 
-to the braid group of type $B/C$ 
+to the braid group of type B$=$C 
 as recalled in \fullref{remark:braidcox}), 
-which were independently introduced 
-and studied in many works such as {\eg} \cite{GrLe-affine-tl}.
+which were studied in many works such as {\eg} \cite{GrLe-affine-tl}.
 The algebra $\setstuff{TL}_{1,n}(\cpar)$ is a version of these.
 
 \item Similarly, for 
 $g=2$ there is a so-called two-boundary 
 Temperley--Lieb algebra 
-and an affine type $C$ Temperley--Lieb 
+and an affine type C Temperley--Lieb 
 algebra, again independently 
 introduced in many works.
 The algebra $\setstuff{TL}_{2,n}(\cpar)$ 
@@ -3482,7 +3473,9 @@ to[out=0,in=90] (4,0);
 We also have the antiinvolution 
 $(\placeholder)^{\star}\colon\setstuff{TL}_{g,n}(\cpar)
 \to\setstuff{TL}_{g,n}(\cpar)$ given by 
-flipping pictures upside down, {\eg} 
+flipping pictures upside down but keeping the windings (that is, 
+one only reverses the words in $\setstuff{F}_{g}$ but does not 
+invert them), {\eg} 
 \begin{gather}\label{eq:tl-antiinvolution}
 \left(
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
@@ -3700,7 +3693,7 @@ Let $\KK=\K$ be a field.
 \item If $\cpar\neq 0$, or $\cpar=0$ and $\lambda\neq 0$ is odd, 
 then all $\lambda\in\Lambda$ are apexes. In the remaining case, 
 $\cpar=0$ and $\lambda=0$ (this only happens if $n$ is even), 
-all $\lambda\in\Lambda-\{0\}$ are apexes.
+all $\lambda\in\Lambda-\{0\}$ are apexes, but $\lambda=0$ is not an apex.
 
 \item The simple $\setstuff{TL}_{n,g}(\cpar)$-modules of 
 apex $\lambda\in\Lambda$ 
@@ -3891,6 +3884,36 @@ of a closed component, contributing a factor
 $\cvar_{\gamma}$. We call this \emph{blob circle evaluation}.
 \end{definition}
 
+\begin{example}
+The circle evaluation of the handlebody Temperley--Lieb 
+algebra becomes 
+blob circle evaluation, {\eg}
+\begin{gather*}
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
+\draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
+\draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.55);
+\draw[usual,crossline] (0.25,0.75) to[out=90,in=270] (-0.25,0.95);
+\draw[pole,crosspole] (0,0)node[below,black]{$u$} 
+to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
+\draw[pole,crosspole] (1,0)node[below,black]{$v$} 
+to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
+\draw[usual,crossline] (-0.25,0.9) to[out=90,in=90] (1.25,0.75);
+\draw[usual,crossline] (-0.25,0.55) to[out=90,in=270] (0.25,0.75);
+\end{tikzpicture}
+=\cpar_{\gamma^{\prime}}
+\leftrightsquigarrow
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
+to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
+\draw[usual,blobed={0}{u}{spinach},blobed={0.5}{u}{spinach},blobed={1}{v}{tomato}] (1,0.3) 
+to[out=90,in=270] (1,1.2);
+\end{tikzpicture}
+=\cpar_{\gamma^{\prime}}
+.
+\end{gather*}
+\end{example}
+
 Note that circles with more than $\dvar_{u}-1$ of the corresponding kind 
 can be evaluated by using \eqref{eq:cyclotomic-blob} and the 
 above circle evaluation, so we do not need to define their evaluation. 
@@ -4033,34 +4056,7 @@ for the following reasons. First, blobs are invertible
 if we define them as the image of $\tau_{u}$ in the quotient
 and we want to include the possibility of blobs being nilpotent, 
 {\cf} \fullref{example:blob}.
-Moreover, since the circle evaluation becomes 
-blob circle evaluation, {\eg}
-\begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
-\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
-\draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
-\draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.55);
-\draw[usual,crossline] (0.25,0.75) to[out=90,in=270] (-0.25,0.95);
-\draw[pole,crosspole] (0,0)node[below,black]{$u$} 
-to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
-\draw[pole,crosspole] (1,0)node[below,black]{$v$} 
-to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
-\draw[usual,crossline] (-0.25,0.9) to[out=90,in=90] (1.25,0.75);
-\draw[usual,crossline] (-0.25,0.55) to[out=90,in=270] (0.25,0.75);
-\end{tikzpicture}
-=\cpar_{\gamma^{\prime}}
-\leftrightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
-\draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
-to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
-\draw[usual,blobed={0}{u}{spinach},blobed={0.5}{u}{spinach},blobed={1}{v}{tomato}] (1,0.3) 
-to[out=90,in=270] (1,1.2);
-\end{tikzpicture}
-=\cpar_{\gamma^{\prime}}
-,
-\end{gather*}
-there would be a compatibility condition on parameters (in 
-$\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$ the number of windings is restricted).
+
 Note that however that for certain choices of parameters
 the blobs are invertible, and for other choices of 
 parameters $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$
@@ -4085,10 +4081,10 @@ blob algebra, see {\eg}
 in that paper is called a two-boundary 
 Temperley--Lieb algebra).
 
-\item For higher genus \fullref{definition:blob} appear to be new.
+\item For higher genus \fullref{definition:blob} appears to be new.
 
 \end{enumerate}
-Note that, as soon as one leaves $g=0$ (or Coxeter type $A$), 
+For $g>0$
 the terminology in the literature is not consistent, and 
 Temperley--Lieb algebras and blob algebras might 
 be the same or not. For us \fullref{definition:blob} 
@@ -4108,7 +4104,8 @@ blobs of the corresponding type.
 \end{lemma}
 
 \begin{proof}
-The only thing to observe is that the cyclotomic condition \eqref{eq:cyclotomic-blob} 
+The only fact to observe is that 
+the cyclotomic condition \eqref{eq:cyclotomic-blob} 
 ensures that it suffices to 
 fix an evaluation for any circle whose number of blobs are bounded 
 by the degree vector.
@@ -4264,7 +4261,7 @@ to[out=270,in=180] (6.75,0.75) to[out=0,in=270] (7.5,1.5);
 .
 \end{gather*}
 We then argue by induction on $n$. 
-The induction start is clear, so let $n>1$
+The induction start is clear, so let $n>1$.
 First, the 
 strand with the leftmost point can end at position $2k$ for $k\in\N$, 
 and one can divide the diagram into two parts: a part underneath it 
@@ -4277,7 +4274,7 @@ to[out=270,in=180] (2.25,0.25) to[out=0,in=270] (4,1.5)node[above]{$2k$};
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual] (2,1.5) to[out=270,in=180] (2.75,0.75) to[out=0,in=270] (3.5,1.5);
 \draw[usual] (2.5,1.5) to[out=270,in=180] (2.75,1.25) to[out=0,in=270] (3,1.5);
-\draw[usual,blobed={0.1}{u}{spinach},blobed={0.3}{v}{tomato}] (4.5,1.5) 
+\draw[usual,rblobed={0.1}{u}{spinach},blobed={0.3}{v}{tomato}] (4.5,1.5) 
 to[out=270,in=180] (5.25,0.75) to[out=0,in=270] (6,1.5);
 \draw[usual] (5,1.5) to[out=270,in=180] (5.25,1.25) to[out=0,in=270] (5.5,1.5);
 \draw[usual,blobed={0.25}{w}{orchid}] (6.5,1.5) 
@@ -4306,10 +4303,10 @@ strand with the leftmost point, see \fullref{lemma:blob-onestrand}.
 
 \begin{example}
 For $g=0$ one obtains that 
-$\dim_{\KK}\setstuff{Bl}_{g,1}^{\dpar,\bpar}(\cpar)=C_{n}$, which is 
+$\dim_{\KK}\setstuff{Bl}_{1,n}^{\dpar,\bpar}(\cpar)=C_{n}$, which is 
 of course expected. For $g=1$ one can solve 
 the recursion in \eqref{eq:blob-dim} and obtains 
-$\dim_{\KK}\setstuff{Bl}_{g,1}^{\dpar,\bpar}(\cpar)=\binom{2n}{n}$, 
+$\dim_{\KK}\setstuff{Bl}_{1,n}^{\dpar,\bpar}(\cpar)=\binom{2n}{n}$, 
 the dimension of the blob algebra, {\cf} \cite[Lemma 5.7]{Gr-gen-tl-algebra}.
 \end{example}
 
@@ -4381,7 +4378,7 @@ to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 \end{gather*}
 Note that the middle part is
 \begin{gather*}
-\setstuff{B}_{\lambda}=\KK\setstuff{B}_{g}^{\dpar,\bpar}=
+\setstuff{B}_{\lambda}=\KK\setstuff{B}_{g,1}^{\dpar,\bpar}=
 \KK\langle b_{u}\mid u\in\{1,\dots,g\}\rangle
 /\eqref{eq:cyclotomic-blob}.
 \end{gather*}
@@ -4408,18 +4405,18 @@ Let $\KK=\K$ be a field.
 
 \item If $\cpar\neq 0$, or $\cpar=0$ and $\lambda\neq 0$ is odd, 
 then all $\lambda\in\Lambda$ are apexes. In the remaining case, 
-$\cpar=0$ and $\lambda=0$ (this only happens if $n$ is even), all $\lambda\in\Lambda-\{0\}$ are apexes.
+$\cpar=0$ and $\lambda=0$ (this only happens if $n$ is even), all $\lambda\in\Lambda-\{0\}$ are apexes, but $\lambda=0$ is not an apex.
 
 \item The simple $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\K\setstuff{B}_{g}^{\dpar,\bpar}$.
+are parameterized by simple modules of $\K\setstuff{B}_{g,1}^{\dpar,\bpar}$.
 
 \item The simple $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
 $\mathrm{Ind}_{\K\setstuff{B}_{g}^{\dpar,\bpar}}^{\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\K\setstuff{B}_{g}^{\dpar,\bpar}$-modules.
+simple $\K\setstuff{B}_{g,1}^{\dpar,\bpar}$-modules.
 
 \end{enumerate}
 \end{theorem}
@@ -4444,11 +4441,13 @@ the Temperley--Lieb algebra by through strands.
 a finite-dimensional quotient of a polynomial ring in one variable $b$
 by an ideal of the form
 \begin{gather*}
-(b-\bvar_{1})\cdot (b-\bvar_{\dpar_{1}})=0.
+(b-\bvar_{1})
+\dots
+(b-\bvar_{\dvar_{1}})=0.
 \end{gather*} 
 In particular, the number of simple modules associated to 
 $\K\setstuff{B}_{1}^{\dpar,\bpar}$ equals the number of distinct 
-parameters in $\bpar$. For example, if $\dpar_{1}=2$, then
+parameters in $\bpar$. For example, if $\dvar_{1}=2$, then
 \begin{gather*}
 \bvar_{1}=\bvar_{2}=0\Rightarrow
 \K\setstuff{B}_{1}^{\dpar,\bpar}\cong\K[b]/(b^{2})
@@ -5295,14 +5294,18 @@ to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 which in turn prove the claimed formulas.
 \end{proof}
 
+\makeautorefname{lemma}{Lemmas}
+
 \begin{remark}
 We will treat the relation \eqref{eq:framingblobs} 
 with care in the Brauer respectively BMW setup 
 and it will force us to do 
 some work to get admissible parameters. However, in this section 
-we can use \fullref{lemma:same} and \fullref{lemma:handlebody-tl-second} 
+we can use \fullref{lemma:same} and \ref{lemma:handlebody-tl-second} 
 and get a family of admissible parameters.
 \end{remark}
+
+\makeautorefname{lemma}{Lemma}
 
 \section{Handlebody Brauer and BMW algebras}\label{section:brauer}
 
