@@ -185,6 +185,8 @@ mark=at position #1 with {\node[blob,#3,label=right:$\!#2$]at (0,0){};}
 \newcommand{\tvar}{\varsym{t}}
 \newcommand{\zvar}{\varsym{z}}
 \newcommand{\Zf}{\Z_{\zvar,Y}}
+\newcommand{\jm}{L}
+\newcommand{\jmc}{l}
 
 % TL
 
@@ -2590,13 +2592,13 @@ To this end, we define certain elements, called
 \emph{Jucys--Murphy elements}:
 
 \begin{definition}\label{definition:jm-elements}
-Define elements $\lambda_{u,i}^{\pm 1}\in\setstuff{B}_{g,n}$ as follows. 
-For $i=1$ we let $\lambda_{u,i}^{\pm 1}=\tau_{u}^{\pm 1}$.
-For $i>1$ we define $\lambda_{u,i}^{\pm 1}
+Define elements $\jm_{u,i}^{\pm 1}\in\setstuff{B}_{g,n}$ as follows. 
+For $i=1$ we let $\jm_{u,i}^{\pm 1}=\tau_{u}^{\pm 1}$.
+For $i>1$ we define $\jm_{u,i}^{\pm 1}
 =\beta_{1}^{\pm 1}\dots\beta_{i-1}^{\pm 1}
 \tau_{u}^{\pm 1}\beta_{i-1}^{\pm 1}\dots\beta_{1}^{\pm 1}$, or diagrammatically
 \begin{gather}\label{eq:jm-elements}
-\lambda_{u,i}
+\jm_{u,i}
 =
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -2612,7 +2614,7 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 (2.5,1.5)node[above,black,yshift=-3pt]{$i$};
 \end{tikzpicture}
 ,\quad
-\lambda_{u,i}^{-1}
+\jm_{u,i}^{-1}
 =
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -2629,42 +2631,42 @@ to[out=90,in=270] (-0.25,0.75);
 \end{tikzpicture}
 .
 \end{gather}
-Their images in $\setstuff{W}_{g,n}$ are denoted by $l_{u,i}^{\pm 1}$.
+Their images in $\setstuff{W}_{g,n}$ are denoted by $\jmc_{u,i}^{\pm 1}$.
 \end{definition}
 
 \begin{lemma}\label{lemma:jm-elements}
 We have
 \begin{gather}\label{eq:jm-relations}
 \begin{gathered}
-\lambda_{u,i}^{\pm 1}\lambda_{u,i}^{\mp 1}=1
+\jm_{u,i}^{\pm 1}\jm_{u,i}^{\mp 1}=1
 ,\quad
-\beta_{j}\lambda_{u,i}^{\pm 1}
+\beta_{j}\jm_{u,i}^{\pm 1}
 =
-\lambda_{u,i}^{\pm 1}\beta_{j}
+\jm_{u,i}^{\pm 1}\beta_{j}
 \;\text{if }i-1,i\neq j,
 \\
-\beta_{i-1}^{-1}\lambda_{u,i}
+\beta_{i-1}^{-1}\jm_{u,i}
 =
-\lambda_{u,i-1}\beta_{i-1}
+\jm_{u,i-1}\beta_{i-1}
 ,\quad
-\beta_{i}\lambda_{u,i}
+\beta_{i}\jm_{u,i}
 =
-\lambda_{u,i+1}\beta_{i}^{-1}
+\jm_{u,i+1}\beta_{i}^{-1}
 ,\\
-\beta_{i-1}\lambda_{u,i}^{-1}
+\beta_{i-1}\jm_{u,i}^{-1}
 =
-\lambda_{u,i-1}^{-1}\beta_{i-1}^{-1}
+\jm_{u,i-1}^{-1}\beta_{i-1}^{-1}
 ,\quad
-\beta_{i}^{-1}\lambda_{u,i}^{-1}
+\beta_{i}^{-1}\jm_{u,i}^{-1}
 =
-\lambda_{u,i+1}^{-1}\beta_{i}
+\jm_{u,i+1}^{-1}\beta_{i}
 ,
 \\
-\lambda_{u,i}\lambda_{v,j}^{\pm 1}
-=\lambda_{v,j}^{\pm 1}\lambda_{u,i}
+\jm_{u,i}\jm_{v,j}^{\pm 1}
+=\jm_{v,j}^{\pm 1}\jm_{u,i}
 \text{ and }
-\lambda_{u,i}^{-1}\lambda_{v,j}^{\pm 1}
-=\lambda_{v,j}^{\pm 1}\lambda_{u,i}^{-1}
+\jm_{u,i}^{-1}\jm_{v,j}^{\pm 1}
+=\jm_{v,j}^{\pm 1}\jm_{u,i}^{-1}
 \;\text{if }[v,j]\subset[u,i[,
 \end{gathered}
 \end{gather}
@@ -2840,7 +2842,7 @@ The other relations can be verified {\ver}.
 
 Note that if $[v,j]\not\subset[u,i[$ 
 in the final relation in \eqref{eq:jm-relations}, 
-then the displayed elements do not commute (unless $\lambda_{u,i}^{\pm 1}\lambda_{u,i}^{\mp 1}=1$ applies). For example,
+then the displayed elements do not commute (unless $\jm_{u,i}^{\pm 1}\jm_{u,i}^{\mp 1}=1$ applies). For example,
 \begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
@@ -2890,14 +2892,14 @@ then the displayed elements do not commute (unless $\lambda_{u,i}^{\pm 1}\lambda
 
 \begin{lemma}\label{lemma:jm-order-lemma}
 Any word in the Jucys--Murphy elements can be ordered 
-such that $\lambda_{u,i}^{\pm}$ appears right/above
-$\lambda_{v,j}^{\pm}$ only if $j<i$.
+such that $\jm_{u,i}^{\pm}$ appears right/above
+$\jm_{v,j}^{\pm}$ only if $j<i$.
 \end{lemma}
 
 \begin{proof}
 We use the final relation in \eqref{eq:jm-relations}
 inductively: First, start with $i=n$ and pull 
-all $\lambda_{u,n}^{\pm}$, for all $u$, to the right/top, 
+all $\jm_{u,n}^{\pm}$, for all $u$, to the right/top, 
 without changing their order (they form a free group).
 We freeze these elements in their positions and
 we can thus use induction 
@@ -2909,8 +2911,8 @@ as their maximal second index is $n-1$.
 The set
 \begin{gather}\label{eq:jm-basis}
 \left\{ 
-l_{u_{1},i_{1}}^{a_{1}}\dots 
-l_{u_{m},i_{m}}^{a_{m}}w 
+\jmc_{u_{1},i_{1}}^{a_{1}}\dots 
+\jmc_{u_{m},i_{m}}^{a_{m}}w 
 \,\middle\vert\,
 \begin{gathered}
 w\in\setstuff{W}_{0,n},
@@ -2926,15 +2928,15 @@ spans $\Z\setstuff{W}_{g,n}$.
 \end{lemma}
 
 \begin{proof}
-Since $\tau_{u}=\lambda_{u,1}$, words in 
-$\lambda_{u,i}$ and $\beta_{i}$ can clearly 
+Since $\tau_{u}=\jm_{u,1}$, words in 
+$\jm_{u,i}$ and $\beta_{i}$ can clearly 
 generate arbitrary words in $\setstuff{B}_{g,n}$, and thus in 
 $\setstuff{W}_{g,n}$.
 Further, using the relations \eqref{eq:jm-relations}, 
 we see that we can always pull all
 $s_{i}\in\setstuff{W}_{g,n}$ to the right/top, since 
 $s_{i}=s_{i}^{-1}$. Finally, with the last 
-relation in \eqref{eq:jm-relations} we can order the $\lambda_{u,i}$ 
+relation in \eqref{eq:jm-relations} we can order the $\jm_{u,i}$ 
 as claimed, {\cf} \fullref{lemma:jm-order-lemma}, which of course 
 also works for the handlebody Coxeter group.
 \end{proof}
@@ -2952,9 +2954,9 @@ first observe that we can let $\underline{w}$ be trivial
 since the action of $\setstuff{S}_{n}$ 
 used in \fullref{lemma:jm-elements-span} is 
 the faithful permutation action. Now, the 
-only non-trivial action of $l_{u,i}$ is on $X_{i}$:
+only non-trivial action of $\jmc_{u,i}$ is on $X_{i}$:
 \begin{gather*}
-X_{j}\actsright l_{u,i}
+X_{j}\actsright\jmc_{u,i}
 =
 \begin{cases}
 \zvar^{u}X_{i}+Y_{u}&\text{if }i=j,
@@ -2981,12 +2983,12 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 .
 \end{gather*}
 Note that the involved strand $i$ is only relevant for 
-$l_{u,i}$, for all $u$, and its powers. Moreover, we 
-can distinguish $l_{u,i}$ and $l_{v,i}$ by the appearing 
+$\jmc_{u,i}$, for all $u$, and its powers. Moreover, we 
+can distinguish $\jmc_{u,i}$ and $\jmc_{v,i}$ by the appearing 
 variables $Y_{u}$ respectively $Y_{v}$, while their 
 order does not matter due to \eqref{eq:jm-relations}.
 The same argument works {\muta} 
-for the inverses $l_{u,i}^{-1}$, of course.
+for the inverses $\jmc_{u,i}^{-1}$, of course.
 Taking all this together shows that the elements of 
 \eqref{eq:jm-basis} are linearly independent.
 \end{proof}
@@ -4493,7 +4495,7 @@ to[out=270,in=90] (0,-1.5)node[below,black,yshift=-1pt]{$u$};
 to[out=0,in=90] (1.5,-1.5);
 \end{tikzpicture}
 ,\quad
-\lambda_{u,i}
+\jm_{u,i}
 =
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -4918,7 +4920,7 @@ to[out=0,in=90] (1.5,-1.5);
 \draw[usual,crossline] (1,-1.5) to[out=90,in=180] (1.25,-1.25) to[out=0,in=90] (1.5,-1.5);
 \end{tikzpicture}
 ,\quad
-\lambda_{u,i}
+\jm_{u,i}
 =
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -4970,7 +4972,7 @@ blob versions of the twists as in
 
 Note that we can introduce blobs on any possible strand via
 \begin{gather}\label{eq:blob-right}
-\lambda_{u,i}
+\jm_{u,i}
 =
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -5195,8 +5197,8 @@ which is however gets resolved for $\qvar=1$.
 \begin{proof}
 Relations \eqref{eq:blobslides} are 
 a blob version of the equalities
-$\beta_{i-1}^{-1}\lambda_{u,i}=\lambda_{u,i-1}\beta_{i-1}$ and
-$\beta_{i}\lambda_{u,i}=\lambda_{u,i+1}\beta_{i}^{-1}$ 
+$\beta_{i-1}^{-1}\jm_{u,i}=\jm_{u,i-1}\beta_{i-1}$ and
+$\beta_{i}\jm_{u,i}=\jm_{u,i+1}\beta_{i}^{-1}$ 
 between Jucys--Murphy elements, {\cf} \fullref{lemma:jm-elements}.
 
 To prove the first relation 
@@ -6573,15 +6575,15 @@ For all $w\in\setstuff{W}_{0,n}$ we choose a
 reduced expression $\underline{w}=s_{i_{k}}\dots 
 s_{i_{1}}\in\setstuff{W}_{0,n}$ 
 once and for all. We define $H_{w}=H_{\underline{w}}=H_{i_{k}}\dots H_{i_{1}}$. 
-We still have the Jucys--Murphy elements $\lambda_{u,i}$ 
+We still have the Jucys--Murphy elements $\jm_{u,i}$ 
 from \eqref{eq:jm-elements}, and the analog of \fullref{proposition:jm-elements-basis} is:
 
 \begin{proposition}\label{proposition:heckejm-elements-basis}
 The set
 \begin{gather}\label{eq:jm-basis-hecke1}
 \left\{ 
-\lambda_{u_{1},i_{1}}^{a_{1}}\dots 
-\lambda_{u_{m},i_{m}}^{a_{m}}H_{w} 
+\jm_{u_{1},i_{1}}^{a_{1}}\dots 
+\jm_{u_{m},i_{m}}^{a_{m}}H_{w} 
 \,\middle\vert\,
 \begin{gathered}
 w\in\setstuff{W}_{0,n},
@@ -6608,25 +6610,25 @@ together with the following immediate consequences
 of \eqref{eq:jm-relations} and the Skein relation \eqref{eq:hecke-skein}:
 \begin{gather}\label{eq:hecke-pull}
 \begin{gathered}
-H_{i-1}\lambda_{u,i}
+H_{i-1}\jm_{u,i}
 =
-\lambda_{u,i-1}H_{i-1}
--(\qvar-\qvar^{-1})\lambda_{u,i}
+\jm_{u,i-1}H_{i-1}
+-(\qvar-\qvar^{-1})\jm_{u,i}
 ,\quad
-H_{i}^{-1}\lambda_{u,i}
+H_{i}^{-1}\jm_{u,i}
 =
-\lambda_{u,i+1}H_{i}^{-1}
-+(\qvar-\qvar^{-1})\lambda_{u,i}
+\jm_{u,i+1}H_{i}^{-1}
++(\qvar-\qvar^{-1})\jm_{u,i}
 ,\\
-H_{i-1}^{-1}\lambda_{u,i}^{-1}
+H_{i-1}^{-1}\jm_{u,i}^{-1}
 =
-\lambda_{u,i-1}^{-1}H_{i-1}^{-1}
-+(\qvar-\qvar^{-1})\lambda_{u,i}^{-1}
+\jm_{u,i-1}^{-1}H_{i-1}^{-1}
++(\qvar-\qvar^{-1})\jm_{u,i}^{-1}
 ,\quad
-H_{i}\lambda_{u,i}^{-1}
+H_{i}\jm_{u,i}^{-1}
 =
-\lambda_{u,i+1}^{-1}H_{i}
--(\qvar-\qvar^{-1})\lambda_{u,i}^{-1}.
+\jm_{u,i+1}^{-1}H_{i}
+-(\qvar-\qvar^{-1})\jm_{u,i}^{-1}.
 \end{gathered}
 \end{gather}
 Moreover, 
@@ -6775,13 +6777,13 @@ from \cite[Section 3.1]{Ma-hecke-schur}).
 The set $M_{\lambda}$ is the set of all standard tableaux 
 of shape $\lambda$.
 The middle part is $\setstuff{B}_{\lambda}=
-\setstuff{JM}_{g,n}H_{\lambda}$, where $\setstuff{JM}_{g,n}$ 
+\setstuff{L}_{g,n}H_{\lambda}$, where $\setstuff{L}_{g,n}$ 
 is the subalgebra of $\setstuff{H}_{g,n}$ spanned 
 by the Jucys--Murphy elements.
 We then let $c_{D,b,U}^{\lambda}=D(T)bU(T^{\prime})$ 
 where $b$ runs over elements 
-of the form $\lambda_{u_{1},i_{1}}^{a_{1}}\dots 
-\lambda_{u_{m},i_{m}}^{a_{m}}H_{\lambda}$ with the 
+of the form $\jm_{u_{1},i_{1}}^{a_{1}}\dots 
+\jm_{u_{m},i_{m}}^{a_{m}}H_{\lambda}$ with the 
 same indexes as in \eqref{eq:jm-basis-hecke1}. We then get
 \begin{gather}\label{eq:hecke-basis}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
@@ -6802,10 +6804,10 @@ also use the Murphy basis $DH_{\lambda}U$ (as explained above) of $\setstuff{H}_
 \eqref{eq:jm-relations} and \eqref{eq:hecke-pull}, we can push 
 the $D$ to the left, that is, 
 \begin{gather*}
-\lambda_{u_{1}^{},i_{1}}^{a_{1}}\dots 
-\lambda_{u_{m},i_{m}}^{a_{m}}DH_{\lambda}U
-=D\lambda_{u_{1},i_{1}^{\prime}}^{a_{1}}\dots 
-\lambda_{u_{m},i_{m}^{\prime}}^{a_{m}}H_{\lambda}U+\text{error terms}
+\jm_{u_{1}^{},i_{1}}^{a_{1}}\dots 
+\jm_{u_{m},i_{m}}^{a_{m}}DH_{\lambda}U
+=D\jm_{u_{1},i_{1}^{\prime}}^{a_{1}}\dots 
+\jm_{u_{m},i_{m}^{\prime}}^{a_{m}}H_{\lambda}U+\text{error terms}
 \end{gather*} 
 which shows that the $c_{D,b,U}^{\lambda}$ span.
 To show that \eqref{eq:hecke-basis} is a basis we observe that,
@@ -6820,38 +6822,38 @@ so \eqref{eq:hecke-basis} is indeed a basis.
 
 It remains to prove \eqref{eq:cell-mult} as all other claimed 
 properties hold by construction. Let us write 
-$\bsym{\lambda}=\lambda_{u_{1},i_{1}}^{a_{1}}\dots 
-\lambda_{u_{m},i_{m}}^{a_{m}}$ for short, omitting the precise indexes.
+$\bsym{L}=\jm_{u_{1},i_{1}}^{a_{1}}\dots 
+\jm_{u_{m},i_{m}}^{a_{m}}$ for short, omitting the precise indexes.
 We calculated: 
 \begin{align*}
-D\bsym{\lambda}H_{\lambda}U
-D^{\prime}\bsym{\mu}H_{\mu}U^{\prime}
+D\bsym{L}H_{\lambda}U
+D^{\prime}\bsym{L}^{\prime}H_{\mu}U^{\prime}
 &=
-\bsym{\lambda}^{\dagger}DH_{\lambda}U
-D^{\prime}H_{\mu}U^{\prime}\bsym{\mu}^{\dagger}
+\bsym{L}^{\dagger}DH_{\lambda}U
+D^{\prime}H_{\mu}U^{\prime}(\bsym{L}^{\prime})^{\dagger}
 +\text{error terms}
 \\
 &\equiv_{\leq_{\Lambda}}
 r(U,D^{\prime})
-\bsym{\lambda}^{\dagger}DH_{\max_{\Lambda}(\lambda,\mu)}
-U^{\prime}\bsym{\mu}^{\dagger}
+\bsym{L}^{\dagger}DH_{\max_{\Lambda}(\lambda,\mu)}
+U^{\prime}(\bsym{L}^{\prime})^{\dagger}
 +\text{error terms}
 \\
 &=
-D\bsym{\lambda}H_{\max_{\Lambda}(\lambda,\mu)}
-\bsym{\mu}U^{\prime}
+D\bsym{L}H_{\max_{\Lambda}(\lambda,\mu)}
+\bsym{L}^{\prime}U^{\prime}
 +\text{error terms}
 =
-D\bsym{\lambda}
-\bsym{\mu}^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+D\bsym{L}
+(\bsym{L}^{\prime})^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
 +\text{error terms}
 \\
 &\equiv_{\leq_{\Lambda}}
-D\bsym{\lambda}
-\bsym{\mu}^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+D\bsym{L}
+(\bsym{L}^{\prime})^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
 =
-D\bsym{\lambda}
-F\bsym{\mu}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+D\bsym{L}
+F\bsym{L}^{\prime}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
 ,
 \end{align*}
 where the $\dagger$ means that there is 
@@ -6869,42 +6871,39 @@ the observation that the error terms in \eqref{eq:hecke-pull}
 have a lower number of $H_{i}$, so correspond to Young diagrams with shorter rows.
 \end{proof} 
 
-Recall that $H_{\lambda}^{2}=r(\lambda)H_{\lambda}$.
 Let $e\in\N$ be the smallest number such that 
-$[e]_{\qvar}=0$, or $e=\infty$ if no such 
-$e$ exists. A $\lambda\in$
-
-Recall that $H_{\lambda}^{2}=r(\lambda)H_{\lambda}$.
-Checking that $r(\lambda)\neq 0$ gives us a slick 
-way of 
+$[e]_{\qvar}=0$, or let $e=\infty$ if no such 
+$e$ exists. A $\lambda\in\Lambda$ is called 
+\emph{$e$-restricted} if $\lambda_{i}-\lambda_{i+1}<e$.
 
 \begin{theorem}\label{theorem:cellhecke}
 Let $\KK=\K$ be a field.
 \begin{enumerate}
 
 \item A $\lambda\in\Lambda$ is an apex 
-if $r(\lambda)\in\K$ is non-zero. (This is
-always the case if $e>n$.) 
-A $\lambda\in\Lambda$ is an apex 
 if and only if $\lambda$ is $e$-restricted.
 
 \item The simple $\setstuff{H}_{n,g}$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\setstuff{JM}_{g,n}H_{\lambda}$.
+are parameterized by simple modules of $\setstuff{L}_{g,n}H_{\lambda}$.
 
 \item The simple $\setstuff{H}_{n,g}$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\setstuff{JM}_{g,n}H_{\lambda}}^{\setstuff{H}_{n,g}}(K)$, 
+$\mathrm{Ind}_{\setstuff{L}_{g,n}H_{\lambda}}^{\setstuff{H}_{n,g}}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\setstuff{JM}_{g,n}H_{\lambda}$-modules.
+simple $\setstuff{L}_{g,n}H_{\lambda}$-modules.
 
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
 Claims (b) and (c) follow immediately from the abstract theory, as 
-in the cases discussed before. So let us focus on (a).
+in the cases discussed before. The statement (a) follows 
+because whether the form $\Phi^{\lambda}$ is constant 
+zero or not can be detected on the component where the Jucys--Murphy 
+elements are trivial, so the classical theory applies, see {\eg} 
+\cite[Section 3.4]{Ma-hecke-schur}.
 \end{proof}
 
 \begin{example}
@@ -6912,12 +6911,13 @@ The cases $g=0$ and $g=1$ of \fullref{theorem:cellhecke}
 are well-known:
 \begin{enumerate}
 
-\item We have $\setstuff{JM}_{0,n}=\K$, so the above 
+\item We have $\setstuff{L}_{0,n}=\K$, so the above 
 is the classical parametrization 
 of simple $\setstuff{H}_{g,n}$-modules, see {\eg} 
 \cite[Section 3.4]{Ma-hecke-schur}.
 
-\item For $g=1$...
+\item For $g=1$ \fullref{theorem:cellhecke}
+can be matched with {\eg} \cite[Theorem 5.8]{KoXi-affine-cellular}.
 
 \end{enumerate}
 \end{example}
