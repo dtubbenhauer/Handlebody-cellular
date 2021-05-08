@@ -439,7 +439,7 @@ $\setstuff{A}$ together with a \emph{(sandwich) cellular datum}, that is:
 
 \item a set $M_{\lambda}$ for all $\lambda\in\Lambda$;
 
-\item a algebra $\setstuff{B}_{\lambda}$ for all $\lambda\in\Lambda$;
+\item an algebra $\setstuff{B}_{\lambda}$ for all $\lambda\in\Lambda$;
 	
 \item a $\KK$-basis $\{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
 b\in\setstuff{B}_{\lambda}\}$ of $\setstuff{A}$;
@@ -6781,7 +6781,7 @@ by the Jucys--Murphy elements.
 We then let $c_{D,b,U}^{\lambda}=D(T)bU(T^{\prime})$ 
 where $b$ runs over elements 
 of the form $\lambda_{u_{1},i_{1}}^{a_{1}}\dots 
-\lambda_{u_{m},i_{m}}^{a_{m}}$ with the 
+\lambda_{u_{m},i_{m}}^{a_{m}}H_{\lambda}$ with the 
 same indexes as in \eqref{eq:jm-basis-hecke1}. We then get
 \begin{gather}\label{eq:hecke-basis}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
@@ -6789,32 +6789,84 @@ b\in\setstuff{B}_{\lambda}\}.
 \end{gather} 
 
 \begin{proposition}
-The above defines an involutive 
+The above defines a 
 cell datum for $\setstuff{H}_{g,n}$.
 \end{proposition}
 
 \begin{proof}
-To show that \eqref{eq:hecke-basis} spans
+To argue that \eqref{eq:hecke-basis} spans
 $\setstuff{H}_{g,n}$ we use \cite[Proposition 3.16]{Ma-hecke-schur} as follows.
 Instead of the elements $H_{w}\in\setstuff{H}_{0,n}\subset
 \setstuff{H}_{g,n}$ in \eqref{eq:jm-basis-hecke1} we could 
 also use the Murphy basis $DH_{\lambda}U$ (as explained above) of $\setstuff{H}_{0,n}$. Then, by 
 \eqref{eq:jm-relations} and \eqref{eq:hecke-pull}, we can push 
-the $D$ to the left, that is, $\lambda_{u_{1}^{},i_{1}}^{a_{1}}\dots 
+the $D$ to the left, that is, 
+\begin{gather*}
+\lambda_{u_{1}^{},i_{1}}^{a_{1}}\dots 
 \lambda_{u_{m},i_{m}}^{a_{m}}DH_{\lambda}U
 =D\lambda_{u_{1},i_{1}^{\prime}}^{a_{1}}\dots 
-\lambda_{u_{m},i_{m}^{\prime}}^{a_{m}}H_{\lambda}U+\text{error terms}$ 
-which shows that $c_{D,b,U}^{\lambda}$ span. 
+\lambda_{u_{m},i_{m}^{\prime}}^{a_{m}}H_{\lambda}U+\text{error terms}
+\end{gather*} 
+which shows that the $c_{D,b,U}^{\lambda}$ span.
 To show that \eqref{eq:hecke-basis} is a basis we observe that,
 left aside error terms, the process of moving $D$ to the left 
 does not change the number $m$, 
 the powers $\bsym{a}$, and associated cores $\bsym{u}$, while 
-$\bsym{i}$, but the property $i_{1}\leq\dots\leq i_{m}$. In particular, 
+$\bsym{i}$, but the property $i_{1}\leq\dots\leq i_{m}$. Hence, 
 a counting argument ensures that \eqref{eq:jm-basis-hecke1} and 
 \eqref{eq:hecke-basis} have the same (finite) size per fixed 
 $(m,\bsym{a},\bsym{u})$, 
 so \eqref{eq:hecke-basis} is indeed a basis.
-\DT{Almost there!}
+
+It remains to prove \eqref{eq:cell-mult} as all other claimed 
+properties hold by construction. Let us write 
+$\bsym{\lambda}=\lambda_{u_{1},i_{1}}^{a_{1}}\dots 
+\lambda_{u_{m},i_{m}}^{a_{m}}$ for short, omitting the precise indexes.
+We calculated: 
+\begin{align*}
+D\bsym{\lambda}H_{\lambda}U
+D^{\prime}\bsym{\mu}H_{\mu}U^{\prime}
+&=
+\bsym{\lambda}^{\dagger}DH_{\lambda}U
+D^{\prime}H_{\mu}U^{\prime}\bsym{\mu}^{\dagger}
++\text{error terms}
+\\
+&\equiv_{\leq_{\Lambda}}
+r(U,D^{\prime})
+\bsym{\lambda}^{\dagger}DH_{\max_{\Lambda}(\lambda,\mu)}
+U^{\prime}\bsym{\mu}^{\dagger}
++\text{error terms}
+\\
+&=
+D\bsym{\lambda}H_{\max_{\Lambda}(\lambda,\mu)}
+\bsym{\mu}U^{\prime}
++\text{error terms}
+=
+D\bsym{\lambda}
+\bsym{\mu}^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
++\text{error terms}
+\\
+&\equiv_{\leq_{\Lambda}}
+D\bsym{\lambda}
+\bsym{\mu}^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+=
+D\bsym{\lambda}
+F\bsym{\mu}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+,
+\end{align*}
+where the $\dagger$ means that there is 
+a shift of the indexes, as before, and $F$ 
+is some product of Jucys--Murphy elements. 
+In this calculation we used 
+\eqref{eq:jm-relations} 
+and \eqref{eq:hecke-pull} several times and also:
+The crucial first congruence 
+follows from the classical case, see {\eg} \cite[Theorem 3.20]{Ma-hecke-schur}.
+The final equality reorders the 
+Jucys--Murphy elements to match the expression in 
+\eqref{eq:cell-mult}, while the second congruence uses 
+the observation that the error terms in \eqref{eq:hecke-pull} 
+have a lower number of $H_{i}$, so correspond to Young diagrams with shorter rows.
 \end{proof} 
 
 Recall that $H_{\lambda}^{2}=r(\lambda)H_{\lambda}$.
@@ -6831,7 +6883,7 @@ Let $\KK=\K$ be a field.
 \begin{enumerate}
 
 \item A $\lambda\in\Lambda$ is an apex 
-if $r(\lambda)\in\K$ is non-zero. (This is in particular 
+if $r(\lambda)\in\K$ is non-zero. (This is
 always the case if $e>n$.) 
 A $\lambda\in\Lambda$ is an apex 
 if and only if $\lambda$ is $e$-restricted.
