@@ -357,9 +357,10 @@ linktocpage=true
 {Handlebodies, diagram algebras and cellularity}
 \author[Daniel Tubbenhauer and Pedro Vaz]{Daniel Tubbenhauer and Pedro Vaz}
 
-\address{D.T.: Institut f{\"u}r Mathematik, Universit{\"a}t Z{\"u}rich, 
-Winterthurerstrasse 190, Campus Irchel, Office Y27J32, CH-8057 Z{\"u}rich, 
-Switzerland, \href{www.dtubbenhauer.com}{www.dtubbenhauer.com}}
+\address{D.T.: Hausdorff Center for Mathematics,
+Villa Maria, Endenicher Allee 62, 53115 Bonn,
+Germany,\newline
+\href{www.dtubbenhauer.com}{www.dtubbenhauer.com}}
 \email{daniel.tubbenhauer@math.uzh.ch}
 
 \address{P.V.: Institut de recherche en math\'{e}matique et physique (IRMP), Universit\'{e} 
@@ -373,16 +374,9 @@ In this paper we study handlebody versions
 of classical diagram algebras, most prominently, 
 handlebody versions of Temperley--Lieb, blob, 
 Brauer (or BMW), Hecke and Ariki--Koike algebras.
-
-We prove several properties 
-about these algebras, for example, that they are cellular 
-in a generalized sense.
-Explicitly, motivated by Green--Kazhdan--Lusztig's 
+Moreover, motivated by Green--Kazhdan--Lusztig's 
 theory of cells, we reformulate the notion of 
-(sandwich, inflated or affine) cellular algebras 
-and several results concerning these in terms of 
-explicit bases and reduction theorems 
-from semigroup theory.
+(sandwich, inflated or affine) cellular algebras.
 We will explain this reformulation
 and how all of the above algebras 
 are part of this theory.
@@ -398,8 +392,203 @@ Compiled on \today\ at \currenttime
 
 \tableofcontents
 
+\section{Introduction}\label{section:intro}
 
-\input{sections/introduction.tex}
+A large collection of diagram algebras, such as the Temperley--Lieb algebra 
+or the (type A) Hecke algebra, are interesting from at least two perspectives:
+they are of fundamental importance in low-dimensional topology 
+and they also have a rich representation theory.
+
+Having an eye on the study of links in 
+more general 3-manifolds brings the topology of the ambient space into the play.
+In all the classical examples, like the Temperley--Lieb algebra or 
+the Hecke algebra, the ambient space is the 3-ball, and these algebras 
+are related to spherical Coxeter and Artin--Tits braid groups.
+In the simplest case beyond 3-ball, when we pass to links in a solid torus, 
+these diagrams algebras get replaced by their (extended) affine version, 
+and the related objects are now affine Coxeter and Artin--Tits braid groups.
+A natural question is what kind of diagrammatics and Coxeter combinatorics 
+one could expect for more general 3-manifolds. Most prominently 
+for this paper, (3-)handlebodies of genus $g$; the two cases mentioned 
+before are $g=0$ and $g=1$, respectively.
+
+The case $g=0$ is classical, and these diagram algebras and their associated 
+braid groups are around for Donkey's years. The $g=1$ case goes 
+back to at least Brieskorn \cite{Brieskorn}, and has a long history of work on this topic.
+For example (with more references to come in the main text), see
+\cite{allcock} for braid pictures, \cite{Geck-Lambropoulou} or \cite{OrRa-affine-braids} for connections 
+to knot theory, \cite{Gr-gen-tl-algebra} 
+or \cite{HaOl-cyclotomic-bmw} for affine diagram algebras.
+To the best of our knowledge, the first attempts to give a
+description of braids in handlebodies are due to Vershinin \cite{Ve-handlebodies}
+respectively H{\"a}ring-Oldenburg--Lambropoulou \cite{La-handlebodies}, \cite{HaOlLa-handlebodies}, 
+while Lambropoulou studied links in handlebodies even before that \cite{La-PhDThesis}.
+
+From the representation theoretical point of view all these 
+algebras share the common feature of being cellular in a certain sense 
+that we will make precise. In a nutshell, in the $g=0$ case 
+these algebras are cellular in the sense of Graham--Lehrer \cite{GrLe-cellular}, 
+in the $g=1$ case they are affine cellular in the sense of K{\"o}nig--Xi \cite{KoXi-affine-cellular}.
+For $g>1$ we explain how they are sandwich cellular, a notion that 
+generalizes (affine) cellularity. 
+Note hereby that this generalization is strictly speaking not new, 
+it heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita} or \cite{GuWi-almost-cellular}, 
+but our exposition appears to be new.
+
+We see this paper as a continuation of these works, focusing on the diagrammatic 
+and representation theoretical aspects.
+
+\subsection{What this paper does}
+
+\DT{Rework!}
+
+In this paper we concentrate on various algebraic structures controling the extension to handlebodies of several classical link invariants.
+
+Our notion of cellularity recollects \PV{...} and it is the one that best fits all our examples (and many more) is \PV{sandwich. Not completely new...}
+In~\cite{ElLa-trace-hecke} (not in Libedinsky(light leaves)?) the authors have introduced the notion of object-adapted cellularity in order to study a cellular structure in the hom algebras ot the Soergel category. \PV{cite~\cite{EhTu-relcell} and/or \cite{We-tensors-cellular-categories} here? }
+
+
+
+\medskip
+
+\fullref{section:cells}:
+A generalization of cellularity
+
+
+
+\PV{Maybe add some relations between these diagrams}
+
+
+\fullref{section:braids}: Handlebody braid and Coxeter groups
+
+\[
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
+\draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
+\draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
+\draw[usual,crossline] (1.5,0) to[out=90,in=270] (2,1.5);
+\draw[usual,crossline] (2.5,0) to[out=90,in=270] (2.5,1.5);
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
+\draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1.5,1.5);
+%%
+\draw[pole,crosspole] (-0.5,1.5) to[out=90,in=270] (-0.5,2.25);
+\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,2.25);
+\draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,2.25);
+\draw[pole,crosspole] (1,1.5) to[out=90,in=270] (1,2.25);
+\draw[usual,crossline] (1.5,1.5) to[out=90,in=270] (1.5,2.25);
+\draw[usual,crossline] (2,1.5) to[out=90,in=270] (2,2.25);
+\draw[usual,crossline] (2.5,1.5) to[out=90,in=270] (2.5,2.25);
+\end{tikzpicture}
+\]
+
+
+\fullref{section:tlblob}: Handlebody Temperley--Lieb and blob algebras
+\[
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
+\draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.5);
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
+\draw[usual,crossline] (-0.25,0.5) to[out=90,in=180] (0.25,0.8)
+to[out=0,in=180] (0.75,0.8) to[out=0,in=90] (1.5,0);
+\draw[usual,crossline] (1,1.5) to[out=270,in=180] (1.25,1.25) 
+to[out=0,in=270] (1.5,1.5);
+\end{tikzpicture}
+\]
+
+\[
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
+\draw[usual,blobed={0.25}{u}{spinach}] (2,1.5) 
+to[out=270,in=180] (2.25,1.25) to[out=0,in=270] (2.5,1.5);
+\draw[usual,blobed={0.25}{u}{spinach}] (3,1.5) 
+to[out=270,in=180] (3.25,1.25) to[out=0,in=270] (3.5,1.5);
+\draw[usual,rblobed={0.33}{w}{orchid},rblobed={0.66}{v}{tomato}] 
+(3,0) to[out=90,in=270] (4,1.5);
+%%
+\draw[usual,blobed={0.1}{v}{tomato},blobed={0.3}{u}{spinach}] (1,0) 
+to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
+\draw[usual] (1.5,0) to[out=90,in=180] (1.75,0.25) to[out=0,in=90] (2,0);
+\draw[usual] (3.5,0) to[out=90,in=180] (3.75,0.25) to[out=0,in=90] (4,0);
+\end{tikzpicture}
+\]
+
+
+\fullref{section:brauer}: Handlebody Brauer and BMW algebras
+
+``Tangle algebra''
+\[
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
+%%
+\draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
+\draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} to[out=90,in=270] (0,1.5);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
+\draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1.5,1.5);
+%%
+\draw[usual,crossline] (1,1.5) to[out=90,in=270] (-0.25,2.25);
+\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,3)node[above,black,yshift=-3pt]{$u$};
+\draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,3);
+\draw[usual,crossline] (-0.25,2.25) to[out=90,in=90] (1.5,1.5);
+\end{tikzpicture}
+\]
+
+
+\fullref{section:hecke}: Handlebody Hecke and Ariki--Koike algebras
+
+\[
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual] (2,1) to[out=90,in=270] (2,1.5);
+\draw[usual,blobed={0.58}{u}{spinach},crossline] (2.5,0) 
+to (2.5,0.5) to[out=90,in=270] (1.5,1) to[out=90,in=270] (2.5,1.5);
+\draw[usual,blobed={0.4}{v}{tomato},crossline] (2,0) to[out=90,in=270] (2,1);
+\end{tikzpicture}
+\]
+
+
+
+
+\paragraph{Temperley--Lieb is important} The reader should read~\fullref{section:tlblob} before BMW~\fullref{section:brauer} or Hecke~\fullref{section:hecke}.
+
+
+
+
+\subsection{Speculations}
+
+
+\begin{remark}
+Let us comment on a few potential generalizations.\DT{To do -- cite people}
+\end{remark}
+
+\PV{3 items: 1 - other cellular algebras, 2 - categorification, 3 - connections to Lie theory (Schur-Weyl)}
+
+Diagrammatic algebras are also important in categorification. 
+After its introduction by Khovanov and Lauda \cite{KL1} they have become quite popular. \PV{cite Webster papers\cite{webster}, 2-heisenberg papers, 2-Verma \cite{naissevaz2,naissevaz3,maksimau-vaz} and 2-blob \cite{lacabanne-naisse-vaz}, and Elias--Williamson}.  
+Speculate that the algebras in the papers cited above should fall in our notion of cellularity.
+\PV{Cite Kleshchev et al's papers on affine cellularity of KLR here?}
+
+Mention ``hypothetical'' handlebody Soergel bimodules and~\cite{RoTu-homflypt-typea}, APS + annular Khovanov, 2-blob, etc... 
+
+What about connections to RTW or Lie algebras via Schur-Weyl like in LV\cite{LV}?
+
+\subsection{How to read this paper}
+
+The second section \fullref{section:cells} explains our generalization 
+of cellularity and is independent of the rest. It can be easily skipped 
+during a first reading.
+The third section \fullref{section:braids} is fundamental for 
+all sections following it. Moreover, to avoid 
+too much repetition, we decided to construct the remaining section 
+assuming that \fullref{section:tlblob} has been read, so 
+this section is mandatory if one wants to read either \fullref{section:brauer}, the BMW part, 
+or \fullref{section:hecke}, the Hecke part.
+
+\medskip
+
+\noindent\textbf{Acknowledgments.}
+We thank David Rose, Catharina Stroppel and Arik Wilbert for discussions related 
+to the diagrammatics of handlebodies. We also thank zoom -- you deserve it!
 
 \section{A generalization of cellularity}\label{section:cells}
 
@@ -442,10 +631,10 @@ $\setstuff{A}$ together with a \emph{(sandwich) cellular datum}, that is:
 \item a set $M_{\lambda}$ for all $\lambda\in\Lambda$;
 
 \item an algebra $\setstuff{B}_{\lambda}$ for all $\lambda\in\Lambda$;
-	
+
 \item a $\KK$-basis $\{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
 b\in\setstuff{B}_{\lambda}\}$ of $\setstuff{A}$;
-	
+
 \end{enumerate}
 such that we have
 \begin{gather}\label{eq:cell-mult}
@@ -3730,7 +3919,7 @@ different diagrammatic presentation for these algebras,
 namely using \emph{blob diagrams of $2n$ points of genus $g$}. First, 
 for everything not involving any core strands 
 the diagrams stays the same. Moreover, we will use
-\begin{gather*}
+\begin{gather}\label{eq:blobs}
 \tau_{u}=
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -3770,7 +3959,7 @@ b_{v}=
 (1,1.5)node[above,black,yshift=-3pt]{$1$};
 \end{tikzpicture}
 .
-\end{gather*}
+\end{gather}
 That is, we use colored \emph{blobs} 
 instead of twists, hence 
 the name. We denote corresponding elements corresponding to 
@@ -4127,7 +4316,7 @@ $0\leq bl_{u}\leq\min(k,\dvar_{u}-1)$,
 for $u\in\{1,\dots,g\}$, that sum up to $k$.
 Note that this sum is finite.
 
-\begin{example}
+\begin{example}\label{example:blob-numbers}
 We have $B_{0,\dpar}=1$ (by definition), 
 $B_{1,\dpar}=\dvar_{1}-1$ and, for $\dvar_{1}=2$ and $\dvar_{2}=3$, 
 we get $B_{2,\dpar}=
@@ -6924,10 +7113,17 @@ can be matched with {\eg} \cite[Theorem 5.8]{KoXi-affine-cellular}.
 
 \subsection{Cyclotomic handlebody Hecke algebras}\label{subsection:ak-hecke}
 
-As in the previous sections, in order to define and work with cyclotomic quotients, we use \emph{blob diagrams of braids} instead of twists.
+Similarly as in the previous sections 
+({\eg} keeping most of the terminology), in order 
+to define and work with cyclotomic 
+quotients, we use \emph{blob diagrams of braids} instead of twists.
 
-Denote by $\setstuff{H}_{g,n}^+$ the subalgebra of $\setstuff{H}_{g,n}$ generated by the type A Hecke algebra $\setstuff{H}_{0,n}$ and positive twists.
-Immitating~\fullref{subsection:handlebody-blob} we introduce elements $b_1,\dotsc ,b_g$ in $\setstuff{H}_{g,n}^+$ as
+Denote by $\setstuff{H}_{g,n}^{+}$ the 
+subalgebra of $\setstuff{H}_{g,n}$ 
+generated by $\setstuff{H}_{0,n}$ and positive twists.
+Imitating \fullref{subsection:handlebody-blob} we 
+introduce elements $b_{1},\dots,b_{g}$ in $\setstuff{H}_{g,n}^{+}$ 
+using the same pictures as in \eqref{eq:blobs}:
 \begin{gather*}
 \tau_{u}=
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
@@ -6960,36 +7156,26 @@ b_{v}=
 \end{tikzpicture}
 .
 \end{gather*}
-Although blobs are defined on the first strand from the left, one can define blobs on other strands via
-\[
-\dotsm
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
-\draw[usual,crossline] (1,0)node[below,black]{~$~i+1$} to[out=90,in=270] (0.1,0.75);
-\draw[usual,crossline] (0.5,0)node[below,black]{$i$} to[out=90,in=270] (0.5,1.5)node[above,black,yshift=-3pt]{$i$};
-\draw[usual,crossline] (0.1,0.75) to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{~$~i+1$};
-\node[blobed={0.5}{v}{tomato}] at (-0.05,0.55) {};
-\end{tikzpicture}
-\dotsm\ 
-=\ 
-\dotsm
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
-\draw[usual] (0.5,0)node[below,black]{$i$} to[out=90,in=270]
-(0.5,1.5)node[above,black,yshift=-3pt]{$i$};
-\draw[usual,blobed={0.5}{}{tomato}] (1,0)node[below,black]{~$~i+1$} to[out=90,in=270]
-(1,1.5)node[above,black,yshift=-3pt]{~$~i+1$};\node at (0.8,0.9) {$v$};
-\end{tikzpicture}
-\dotsm
-\]
-These are the Jucys--Murphy elements from~\fullref{definition:jm-elements}. Analogously to fullref{remark:careful-bmw}\DT{the reference need to be updated} we have the following properties.
+Although blobs are defined on the first 
+strand from the left, one can define 
+blobs on other strands exactly as in \eqref{eq:blob-right}
+These are the Jucys--Murphy elements 
+from \fullref{definition:jm-elements}, but 
+we will denote that by $b_{u,i}$ to distinguish them. 
+
+Using the Skein relation \eqref{eq:hecke-skein}
+the same calculations as in \fullref{lemma:blob-rels} give:
+
 \begin{lemma}\label{lemma:blob-hecke-rels}
-Blobs satisfy relations~\eqref{eq:blobslides} and~\eqref{eq:height-blob-switch} and
+Blobs satisfy relations \eqref{eq:blobslides} 
+and \eqref{eq:height-blob-switch} and
 \begin{gather}\label{eq:hecke:more-slides}
-\begin{gathered}
+\begin{aligned}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
-\hspace{-0.2cm}=\hspace{-0.2cm}
+\hspace{-0.2cm}&=\hspace{-0.2cm}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
@@ -6999,12 +7185,12 @@ Blobs satisfy relations~\eqref{eq:blobslides} and~\eqref{eq:height-blob-switch} 
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
-,\qquad
+,\\
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline,rblobed={0.12}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
-\hspace{-0.2cm}=\hspace{-0.2cm}
+\hspace{-0.2cm}&=\hspace{-0.2cm}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline,blobed={0.87}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
@@ -7020,7 +7206,7 @@ Blobs satisfy relations~\eqref{eq:blobslides} and~\eqref{eq:height-blob-switch} 
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
-=
+&=
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
@@ -7031,12 +7217,12 @@ Blobs satisfy relations~\eqref{eq:blobslides} and~\eqref{eq:height-blob-switch} 
 \draw[usual,crossline,blobed={0.5}{u}{spinach}] (0,0) to (0,0.75);
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
-,\qquad
+,\\
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,blobed={0.85}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
-=
+&=
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,rblobed={0.15}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
@@ -7048,41 +7234,46 @@ Blobs satisfy relations~\eqref{eq:blobslides} and~\eqref{eq:height-blob-switch} 
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 .                     
-\end{gathered}
+\end{aligned}
 \end{gather}
+(In comparison to 
+\fullref{lemma:blob-rels}, note the missing cup-cap term.)\qed
 \end{lemma}
 
-Denote by $b_{u,i}$ a blob colored $u$ on the $i$th strand.~\fullref{proposition:heckejm-elements-basis} implies the following.
-\begin{proposition}\label{proposition:heckeblob-elements-basis}
+Of course, \fullref{proposition:heckejm-elements-basis} 
+and \eqref{eq:hecke:more-slides} give:
+
+\begin{lemma}\label{lemma:heckeblob-elements-basis}
 The set
-\begin{gather}\label{eq:blob-basis-hecke1}
+\begin{gather*}
 \left\{ 
 b_{k_{1},i_{1}}^{a_{1}}\dots 
-b_{k_{m},i_{m}}^{a_{m}}h_{\underline{w}} 
+b_{k_{m},i_{m}}^{a_{m}}H_{w} 
 \,\middle\vert\,
 \begin{gathered}
-m\in\N,
 w\in\setstuff{W}_{0,n},
-\bsym{a}\in\N^{m}, 
-\bsym{k},\bsym{i}\in\N^{m}_{>0},
+m\in\N,
+\bsym{a}\in\Z^{m},
 \\
-i_{1}\leq\dots\leq i_{m},k_{j}\neq k_{j+1},k_{j}\leq g,i_{j}\leq n
+(\bsym{u},\bsym{i})\in(\{1,\dots,g\}\times\{1,\dots,n\})^{m},
+i_{1}\leq\dots\leq i_{m}
 \end{gathered}
 \right\}
-\end{gather}
-is a $\KK$-basis of $\setstuff{H}_{g,n}^+$.
-\end{proposition}
+\end{gather*}
+is a $\KK$-basis of $\setstuff{H}_{g,n}^{+}$.\qed
+\end{lemma}
 
 As in the previous sections, we fix \emph{cyclotomic parameters} 
 $\bpar=(\bvar_{u,i})\in\KK^{d_{1}+\dots+d_{g}}$, and a \emph{degree vector}
 $\dpar=(\dvar_{u})\in\N^{g}$.
 
 \begin{definition}\label{definition:cyclotomic-hecke}
-We define  the \emph{cyclotomic handlebody Hecke algebra} 
+We define  the \emph{cyclotomic handlebody Hecke algebra}
+(in $n$ strands and of genus $g$)  
 $\setstuff{H}_{g,n}^{\dpar,\bpar}$ as the
-quotient of $\setstuff{H}_{g,n}^+$  the two-sided ideal 
-generated by the relations
-\begin{gather}\label{eq:cyclotomic-hecke}
+quotient of $\setstuff{H}_{g,n}^{+}$ by the two-sided ideal 
+generated by the \emph{cyclotomic relations}
+\begin{gather}\label{eq:hecke-cyclotomic}
 (b_{u}-\beta_{u,1})
 \varpi_{1}
 (b_{u}-\beta_{u,2})
@@ -7096,7 +7287,9 @@ generated by the relations
 where $\varpi_{i}$ is any finite (potentially empty) 
 word in $b_{v}$ for $v\neq u$. 
 \end{definition}
-The relations imply that no strand can carry more than $d_{u}$ blobs of label $u$.
+
+The relations imply that no strand can 
+carry more than $d_{u}$ blobs of type $u$.
 
 \begin{remark}
 Imposing a single relation implying only $\tau_{g}$ (this is the first twist counting from the right, {\cf} \eqref{eq:lefttoright-labels}) gives a handlebody version of Ariki--Koike algebras.
@@ -7107,39 +7300,57 @@ For $g=2$ this case can be interpreted as an extended affine version Ariki--Koik
 With respect to \fullref{definition:cyclotomic-hecke} we note:	
 \begin{enumerate}
 
-\item In case $g=0$ the algebra $\setstuff{H}_{0,n}^{\dpar,\bpar}$ is the type A Hecke algebra.  
-\item For $g=1$ the algebra $\setstuff{H}_{1,n}^{\dpar,\bpar}$ is the Ariki--Koike algebra~\cite{ArKo-hecke-algebra,BrMa-hecke,Ch-gelfandtzetlin}. 
+\item In case $g=0$ the algebra 
+$\setstuff{H}_{0,n}^{\dpar,\bpar}$ 
+is the type A Hecke algebra.
 
-\item For $g=2$ and $d_1=d_2=2$ the algebra $\setstuff{H}_{2,n}^{\dpar,\bpar}$ is the two boundary Hecke algebra of Daugherty and Ram~\cite[§2.2]{DaRa-two-boundary-hecke}.
+\item For $g=1$ the algebra $\setstuff{H}_{1,n}^{\dpar,\bpar}$ 
+is the Ariki--Koike algebra as defined and studied in {\eg} \cite{ArKo-hecke-algebra}, \cite{BrMa-hecke} or \cite{Ch-gelfandtzetlin}. 
+
+\item For $g=2$ and $d_{1}=d_{2}=2$ the algebra 
+$\setstuff{H}_{2,n}^{\dpar,\bpar}$ is the two 
+boundary Hecke algebra as in \cite{DaRa-two-boundary-hecke}.
 
 \item All other cases of $g$ and $\dpar$ appear to be new.
 
 \end{enumerate}
+Note also that imposing a single relation involving only $\tau_{g}$ 
+(this is the first twist counting from the right, {\cf} \eqref{eq:lefttoright-labels}) gives a handlebody 
+version of Ariki--Koike algebras.
+For $g=2$ this case can be interpreted as an extended 
+affine version Ariki--Koike algebras.
 \end{remark}
 
-\subsubsection{A basis for $\setstuff{H}_{g,n}^{\dpar,\bpar}$ and a dimension formula}
+Our next aim to find a basis 
+and a dimension formula 
+for $\setstuff{H}_{g,n}^{\dpar,\bpar}$ and a dimension formula.
 
-\begin{lemma}\label{lem:hecke-blobsorder}
-If the generator $b_{u,1}$ of $\setstuff{H}_{g,n}^{\dpar,\bpar}$ is of order $d_u$  then $b_{u,i}$ is also of order $d_u$ for all $i\leq n$.
+\begin{lemma}\label{lemma:hecke-blobsorder}
+If $b_{u,1}$ is of 
+order $d_{u}$, then $b_{u,i}$ is also of 
+order $d_{u}$ for all $1\leq i\leq n$.
 \end{lemma}
+
 \begin{proof}
-Since the relations in~\fullref{lemma:blob-hecke-rels} preserve the number and the type of the blobs involved the result follows at once.
+Since the relations in \fullref{lemma:blob-hecke-rels} 
+preserve the number and the type of the blobs involved,
+the result follows at once.
 \end{proof}
 
 \begin{proposition}\label{proposition:heckeblobcyclo-elements-basis}
 The set 
-\begin{gather}\label{eq:blob-basis-heckecyclo}
+\begin{gather}\label{eq:hecke-blob-basis}
 \left\{ 
 b_{k_{1},i_{1}}^{a_{1}}\dots 
-b_{k_{m},i_{m}}^{a_{m}}h_{\underline{w}} 
+b_{k_{m},i_{m}}^{a_{m}}H_{w} 
 \,\middle\vert\,
 \begin{gathered}
-m\in\N,
 w\in\setstuff{W}_{0,n},
-\bsym{a}\in\N^{m}, 
-\bsym{k},\bsym{i}\in\N^{m}_{>0},
+m\in\N,
+\bsym{a}\in\Z^{m},
 \\
-i_{1}\leq\dots\leq i_{m},k_{j}\neq k_{j+1},k_{j}\leq g,i_{j}\leq n,a_j < d_j
+(\bsym{u},\bsym{i})\in(\{1,\dots,g\}\times\{1,\dots,n\})^{m},
+i_{1}\leq\dots\leq i_{m},a_{j}<d_{j}
 \end{gathered}
 \right\} 
 \end{gather}
@@ -7147,50 +7358,534 @@ is a $\KK$-basis of $\setstuff{H}_{g,n}^{\dpar,\bpar}$.
 \end{proposition}
 
 \begin{proof}
-\PV{Check the proof}
-That the set spans is a consequence of~\fullref{lemma:blob-hecke-rels} and~\fullref{lem:hecke-blobsorder}.
-Now let $A$ be the $\KK$-vector space spanned by $\{ b_{k_{1},i_{1}}^{a_{1}}\dots  b_{k_{m},i_{m}}^{a_{m}}\vert\bsym{a}\in\N^{m},  a_j < d_j\}$ and $J_u\subset \setstuff{H}_{g,n}^+$ the two sided ideal generated by  all elements having $d_u$ blobs on the first strand. 
-Linear independence now follows from~\fullref{proposition:heckeblob-elements-basis} together with the observation that $A\cap J_u=\varnothing$. 
+That the set spans is a consequence 
+of \fullref{lemma:blob-hecke-rels}, which we use to pull 
+blobs to the bottom,
+and \fullref{lemma:hecke-blobsorder}, which gives 
+the restriction $a_{j}<d_{j}$.
+Now let $A$ be the $\KK$-span of $\{b_{k_{1},i_{1}}^{a_{1}}\dots  b_{k_{m},i_{m}}^{a_{m}}j\}$ with the same indexing sets as in 
+\eqref{eq:hecke-blob-basis}. Let further 
+$J_{u}\subset\setstuff{H}_{g,n}^{+}$ 
+the two-sided ideal 
+generated by  all elements having $d_{u}$ blobs 
+on the first strand. 
+Linear independence follows from 
+\fullref{lemma:heckeblob-elements-basis} 
+together with the observation that $A\cap J_{u}=\emptyset$. 
 \end{proof}
 
-Recall the blob number $B_{g,\dpar}$  from~\eqref{eq:blob-numbers}.  
+Recall the blob numbers $B_{g,\dpar}$ from \eqref{eq:blob-numbers}.
+
 \begin{proposition}
 The dimension of the $\Bbbk$-module $\setstuff{H}_{g,n}^{\dpar,\bpar}$ is
-\[
-\dim\bigl( \setstuff{H}_{g,n}^{\dpar,\bpar} \bigr) = \bigl(B_{g,\dpar}\bigr)^n n! . 
-\]
+\begin{gather*}
+\dim_{\KK}\setstuff{H}_{g,n}^{\dpar,\bpar}
+=(B_{g,\dpar})^{n}n!. 
+\end{gather*}
 \end{proposition}
+
 \begin{proof}
-Since every strand can carry up to $B_{g,\dpar}$ blobs the claim follows. 
+There are $n!$ elements $H_{w}$, each one having $n$ strands.
+Since every strand can carry up 
+to $B_{g,\dpar}$ blobs the 
+claim follows from \fullref{proposition:heckeblobcyclo-elements-basis}. 
 \end{proof}
 
 \begin{remark}
-Recall that $g=0,1$ correspond respectively to the type A Hecke algebra and the Ariki--Koike algebra. In these cases we recover the well-known dimensions:
-\[
-\dim\bigl( \setstuff{H}_{0,n}^{\dpar,\bpar} \bigr) =  n! ,
-\mspace{60mu}
-\dim\bigl( \setstuff{H}_{1,n}^{\dpar,\bpar} \bigr) = (d_1)^n n! .
-\]
+Recall that $B_{0,\dpar}=1$ and $B_{1,\dpar}=d_{1}-1$, see 
+\fullref{example:blob-numbers}. Thus, we recover the dimensions
+\begin{gather*}
+\dim_{\KK}\setstuff{H}_{0,n}^{\dpar,\bpar}=n!,
+\quad
+\dim_{\KK}\setstuff{H}_{1,n}^{\dpar,\bpar}=d_{1}^{n}n!,
+\end{gather*}
+the former being well-known, of course, the latter 
+appears in \cite[(3.10)]{ArKo-hecke-algebra}.
 \end{remark}
 
-\subsubsection{Cellular structure }
+To construct a cell datum one can use the same strategy 
+as in \fullref{subsection:heckealgebras}. 
+Keeping the above discussion in mind, {\eg} 
+\fullref{proposition:heckeblobcyclo-elements-basis}, the 
+only difference is that $\setstuff{B}_{\lambda}$ 
+is now the algebra obtained by taking the quotient of
+$\setstuff{L}_{g,n}H_{\lambda}$ by 
+the cyclotomic relations \eqref{eq:hecke-cyclotomic}. 
+Otherwise nothing changes and we obtain a set 
+\begin{gather*}
+\{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
+b\in\setstuff{B}_{\lambda}\},
+\end{gather*} 
+as well as the two results, where the denote the 
+aforementioned quotient by $\setstuff{L}_{g,n}^{\dpar,\bpar}H_{\lambda}$:
 
-\paragraph{Colored multitableaux}
+\begin{proposition}
+The above defines a 
+cell datum for $\setstuff{H}_{g,n}^{\dpar,\bpar}$.\qed
+\end{proposition}
 
-\paragraph{Cellular basis}
+\begin{theorem}\label{theorem:checke}
+Let $\KK=\K$ be a field.
+\begin{enumerate}
 
-{\color{purple}Let $\setstuff{H}_{g,n,\ell}^{\dpar,\bpar}$ denote the $\KK$-vector space spanned by all elements of $\setstuff{H}_{g,n}^{\dpar,\bpar}$ with up to $\ell$ blobs.
-The algebra $\setstuff{H}_{g,n,\ell}^{\dpar,\bpar}$ is filtered by blobs:\PV{Is this usefull?}
-\[
-\setstuff{H}_{g,n,0}^{\dpar,\bpar}\subset \setstuff{H}_{g,n,1}^{\dpar,\bpar}
-\dotsm \subset \setstuff{H}_{g,n,\ell}^{\dpar,\bpar}\subset \dotsm \subset
-\setstuff{H}_{g,n}^{\dpar,\bpar} . 
-\]
+\item A $\lambda\in\Lambda$ is an apex 
+if and only if $\lambda$ is $e$-restricted.
 
-}
+\item The simple $\setstuff{H}_{n,g}^{\dpar,\bpar}$-modules of 
+apex $\lambda\in\Lambda$ 
+are parameterized by simple modules of $\setstuff{L}_{g,n}^{\dpar,\bpar}H_{\lambda}$.
 
-\paragraph{Some simple modules}
+\item The simple $\setstuff{H}_{n,g}^{\dpar,\bpar}$-modules of 
+apex $\lambda\in\Lambda$ can be constructed as 
+the simple heads of
+$\mathrm{Ind}_{\setstuff{L}_{g,n}^{\dpar,\bpar}
+H_{\lambda}}^{\setstuff{H}_{n,g}^{\dpar,\bpar}}(K)$, 
+where $K$ runs over (equivalence classes of) 
+simple $\setstuff{L}_{g,n}^{\dpar,\bpar}H_{\lambda}$-modules.\qed
 
-\input{sections/references.tex}
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+For $g=0$ nothing new happens of course 
+compared to \fullref{theorem:cellhecke}, 
+while the $g=1$ version of \fullref{theorem:checke} 
+is a non-explicit version of \cite[Theorem 3.30]{DiJaMa-cyclotomic-q-schur}.
+\end{example}
+
+\begin{thebibliography}{BCDV13}
+
+\bibitem[Al02]{allcock}  
+D.~Allcock.
+\newblock Braid pictures for Artin groups.
+\newblock {\em Trans. Amer. Math. Soc.}, 354(9):3455--3474, 2002.
+\newblock \url{https://arxiv.org/abs/math/9907194}
+\newblock \href{https://doi.org/10.1090/S0002-9947-02-02944-6}
+{\path{doi:10.1090/S0002-9947-02-02944-6}}.
+
+\bibitem[AK94]{ArKo-hecke-algebra}
+S.~Ariki and K.~Koike.
+\newblock A {H}ecke algebra of {$(\mathbb{Z}/r\mathbb{Z})\wr\mathfrak{S}_{n}$}
+and construction of its irreducible representations.
+\newblock {\em Adv. Math.}, 106(2):216--243, 1994.
+\newblock \href {https://doi.org/10.1006/aima.1994.1057}
+{\path{doi:10.1006/aima.1994.1057}}.
+
+\bibitem[AST17]{AnStTu-semisimple-tilting}
+H.H.~Andersen, C.~Stroppel, and D.~Tubbenhauer.
+\newblock Semisimplicity of {H}ecke and (walled) {B}rauer algebras.
+\newblock {\em J. Aust. Math. Soc.}, 103(1):1--44, 2017.
+\newblock \url{https://arxiv.org/abs/1507.07676}, \href
+{https://doi.org/10.1017/S1446788716000392}
+{\path{doi:10.1017/S1446788716000392}}.
+
+\bibitem[AST18]{AnStTu-cellular-tilting}
+H.H.~Andersen, C.~Stroppel, and D.~Tubbenhauer.
+\newblock Cellular structures using {$\mathrm{U}_q$}-tilting modules.
+\newblock {\em Pacific J. Math.}, 292(1):21--59, 2018.
+\newblock \url{https://arxiv.org/abs/1503.00224}, \href
+{https://doi.org/10.2140/pjm.2018.292.21}
+{\path{doi:10.2140/pjm.2018.292.21}}.
+
+\bibitem[Ba17]{Ba-braid-handlebodies}
+V.G.~Bardakov.
+\newblock Braid groups in handlebodies and corresponding {H}ecke algebras.
+\newblock In {\em Algebraic modeling of topological and computational
+structures and applications}, volume 219 of {\em Springer Proc. Math. Stat.},
+pages 189--203. Springer, Cham, 2017.
+\newblock \url{https://arxiv.org/abs/1701.03631}.
+
+\bibitem[BCDV13]{BoCoDeVi-decomposition-cyclotomic-brauer}
+C.~Bowman, A.~Cox, and M.~De~Visscher.
+\newblock Decomposition numbers for the cyclotomic {B}rauer algebras in
+characteristic zero.
+\newblock {\em J. Algebra}, 378:80--102, 2013.
+\newblock \url{https://arxiv.org/abs/1205.3345}, \href
+{https://doi.org/10.1016/j.jalgebra.2012.12.020}
+{\path{doi:10.1016/j.jalgebra.2012.12.020}}.
+
+\bibitem[Br73]{Brieskorn}
+E.~Brieskorn.
+\newblock Sur les groupes de tresses [d'apr{\`e}s {V}. {I}. {A}rnol'd].
+\newblock {\em  S{\'e}minaire {B}ourbaki, 24{\`e}me ann{\'e}e}, (1971/1972), {E}xp. {N}o. 401, 21--44. Lecture Notes in Math., Vol. 317, 1973.
+\newblock \href {https://doi.org/10.1007/BFb0069274}
+{\path{doi:10.1007/BFb0069274}}
+
+\bibitem[BM93]{BrMa-hecke}
+M.~Brou{\'e} and G.~Malle.
+\newblock Zyklotomische {H}eckealgebren.
+\newblock {\em Ast{\'e}risque}, no.212, 119--189, 1993.
+\newblock \url{http://www.numdam.org/item/AST_1993__212__119_0/}
+
+\bibitem[Ch87]{Ch-gelfandtzetlin}
+I.V.~Cherednik.
+\newblock A new interpretation of {G}elfand--{T}zetlin bases.
+\newblock {\em Duke Math. J.}, 54(2):563--577, 1987.
+\newblock \href {https://doi.org/10.1215/S0012-7094-87-05423-8}
+{\path{doi:10.1215/S0012-7094-87-05423-8}}.
+
+\bibitem[dGN09]{deGiNi-two-boundary-tl}
+J.~de~Gier and A.~Nichols.
+\newblock The two-boundary {T}emperley--{L}ieb algebra.
+\newblock {\em J. Algebra}, 321(4):1132--1167, 2009.
+\newblock \url{https://arxiv.org/abs/math/0703338}, \href
+{https://doi.org/10.1016/j.jalgebra.2008.10.023}
+{\path{doi:10.1016/j.jalgebra.2008.10.023}}.
+
+\bibitem[DR18]{DaRa-two-boundary-hecke}
+Z.~Daugherty and A.~Ram.
+\newblock Two boundary {H}ecke algebras and combinatorics of type {C}.
+\newblock 2018.
+\newblock \url{https://arxiv.org/abs/1804.10296}.
+
+\bibitem[DJM98]{DiJaMa-cyclotomic-q-schur}
+R.~Dipper and G.~James and A.~Mathas.
+\newblock Cyclotomic q-Schur algebras.
+\newblock {\em Math. Z.}, 229(3):385--416, 1998.
+\newblock \href{https://doi.org/10.1007/PL00004665}
+{\path{doi:10.1007/PL00004665}}.
+
+\bibitem[ET21]{EhTu-relcell}
+M.~Ehrig and D.~Tubbenhauer.
+\newblock Relative cellular algebras.
+\newblock {\em Transform. Groups}, 26, no. 1, 229--277, 2021.
+\newblock \url{https://arxiv.org/abs/1710.02851}, \href
+{https://doi.org/10.1007/S00031-019-09544-5}
+{\path{doi:10.1007/S00031-019-09544-5}}.
+
+\bibitem[EL16]{ElLa-trace-hecke}
+B.~Elias and A.D.~Lauda.
+\newblock Trace decategorification of the {H}ecke category.
+\newblock {\em J. Algebra}, 449:615--634, 2016.
+\newblock \url{https://arxiv.org/abs/1504.05267}, \href
+{https://doi.org/10.1016/j.jalgebra.2015.11.028}
+{\path{doi:10.1016/j.jalgebra.2015.11.028}}.
+
+\bibitem[GL97]{Geck-Lambropoulou}
+M.~Geck and S.~Lambropoulou.
+\newblock  Markov traces and knot invariants related to 
+Iwahori--Hecke algebras of type B.
+\newblock {\em J. Reine Angew. Math.}, 482:191--213, 1997.
+\newblock \url{https://arxiv.org/abs/math/0405508}, 
+\href{https://doi.org/10.1515/crll.1997.482.191}{doi:10.1515/crll.1997.482.191}.
+
+\bibitem[GHM11]{GoHaMo-cyclotomic-bmw2}
+F.M.~Goodman and H.~Hauchschild Mosley.
+\newblock Cyclotomic {B}irman--{W}enzl--{M}urakami algebras, {II}:
+admissibility relations and freeness.
+\newblock {\em Algebr. Represent. Theory}, 14(1):1--39, 2011.
+\newblock \url{https://arxiv.org/abs/0906.1496}, \href
+{https://doi.org/10.1007/s10468-009-9173-2}
+{\path{doi:10.1007/s10468-009-9173-2}}.
+
+\bibitem[GL96]{GrLe-cellular}
+J.J.~Graham and G.I.~Lehrer.
+\newblock Cellular algebras.
+\newblock {\em Invent. Math.}, 123(1):1--34, 1996.
+\newblock \href {https://doi.org/10.1007/BF01232365}
+{\path{doi:10.1007/BF01232365}}.
+
+\bibitem[GL98]{GrLe-affine-tl}
+J.J.~Graham and G.I.Lehrer.
+\newblock The representation theory of affine {T}emperley--{L}ieb algebras.
+\newblock {\em Enseign. Math. (2)}, 36(3-4):173--218, 1998.
+\newblock \href {https://doi.org/10.5169/seals-63902}
+{\path{doi:10.5169/seals-63902}}.
+
+\bibitem[GMS09]{GaMaSt-irreps-semigroups}
+O.~Ganyushkin, V.~Mazorchuk, and B.~Steinberg.
+\newblock On the irreducible representations of a finite semigroup.
+\newblock {\em Proc. Amer. Math. Soc.}, 137(11):3585--3592, 2009.
+\newblock \url{https://arxiv.org/abs/0712.2076}, \href
+{https://doi.org/10.1090/S0002-9939-09-09857-8}
+{\path{doi:10.1090/S0002-9939-09-09857-8}}.
+
+\bibitem[Gr51]{Gr-semigroups}
+J.A.~Green.
+\newblock On the structure of semigroups.
+\newblock {\em Ann. Math.}, 54(3):163--172, 1951.
+\newblock \href {https://doi.org/10.2307/1969317} {\path{doi:10.2307/1969317}}.
+
+\bibitem[Gre98]{Gr-gen-tl-algebra}
+R.M.~Green.
+\newblock Generalized {T}emperley--{L}ieb algebras and decorated tangles.
+\newblock {\em J. Knot Theory Ramifications}, 7(2):155--171, 1998.
+\newblock \url{https://arxiv.org/abs/q-alg/9712018}, \href
+{https://doi.org/10.1142/S0218216598000103}
+{\path{doi:10.1142/S0218216598000103}}.
+
+\bibitem[GW15]{GuWi-almost-cellular}
+N.~Guay and S.~Wilcox.
+\newblock Almost cellular algebras.
+\newblock {\em J. Pure Appl. Algebra}, 219(9):4105--4116, 2015.
+\newblock \href {https://doi.org/10.1016/j.jpaa.2015.02.010}
+{\path{doi:10.1016/j.jpaa.2015.02.010}}.
+
+\bibitem[HO01a]{HaOl-actions-tensor-categories}
+R.~H{\"a}ring-Oldenburg.
+\newblock Actions of tensor categories, cylinder braids and their {K}auffman
+polynomial.
+\newblock {\em Topology Appl.}, 112(3):297--314, 2001.
+\newblock \url{https://arxiv.org/abs/q-alg/9712031}, \href
+{https://doi.org/10.1016/S0166-8641(00)00006-7}
+{\path{doi:10.1016/S0166-8641(00)00006-7}}.
+
+\bibitem[HO01b]{HaOl-cyclotomic-bmw}
+R.~H{\"a}ring-Oldenburg.
+\newblock Cyclotomic {B}irman--{M}urakami--{W}enzl algebras.
+\newblock {\em J. Pure Appl. Algebra}, 161(1-2):113--144, 2001.
+\newblock \href {https://doi.org/10.1016/S0022-4049(00)00100-6}
+{\path{doi:10.1016/S0022-4049(00)00100-6}}.
+
+\bibitem[HOL02]{HaOlLa-handlebodies}
+R.~H{\"a}ring-Oldenburg and S.~Lambropoulou.
+\newblock Knot theory in handlebodies.
+\newblock {\em J. Knot Theory Ramifications}, 11(6):921--943, 2002.
+\newblock Knots 2000 Korea, Vol. 3 (Yongpyong).
+\newblock \url{https://arxiv.org/abs/math/0405502}, \href
+{https://doi.org/10.1142/S0218216502002050}
+{\path{doi:10.1142/S0218216502002050}}.
+
+\bibitem[Hu11]{Hu-bmw-typec}
+J.~Hu.
+\newblock {BMW} algebra, quantized coordinate algebra and type {C}
+{S}chur--{W}eyl duality.
+\newblock {\em Represent. Theory}, 15:1--62, 2011.
+\newblock \url{https://arxiv.org/abs/0708.3009}, \href
+{https://doi.org/10.1090/S1088-4165-2011-00369-1}
+{\path{doi:10.1090/S1088-4165-2011-00369-1}}.
+
+\bibitem[ILZ21]{IoLeZh-verma-schur-weyl}
+K.~Iohara, G.~Lehrer, and R.~Zhang.
+\newblock Equivalence of a tangle category 
+and a category of infinite dimensional
+{$U_{q}(\mathfrak{sl}_{2})$}-modules.
+\newblock {\em Represent. Theory}, 25, 265--299, 2021.
+\newblock \url{https://arxiv.org/abs/1811.01325}, 
+\href{https://doi.org/10.1090/ert/568}{doi:10.1090/ert/568}.
+
+\bibitem[IMO14]{IsMoOg-bmw-idempotents}
+A.P.~Isaev, A.I.~Molev, and O.V.~Ogievetsky.
+\newblock Idempotents for {Birman}--{M}urakami--{W}enzl algebras and reflection
+equation.
+\newblock {\em Adv. Theor. Math. Phys.}, 18(1):1--25, 2014.
+\newblock \url{https://arxiv.org/abs/1111.2502}, \href
+{https://doi.org/10.4310/ATMP.2014.v18.n1.a1}
+{\path{doi:10.4310/ATMP.2014.v18.n1.a1}}.
+
+\bibitem[JK11]{JaKe-verma-lkb}
+C.~Jackson and T.~Kerler.
+\newblock The {L}awrence--{K}rammer--{B}igelow {R}epresentations of the {B}raid
+{G}roups via {Q}uantum {$SL_{2}$}.
+\newblock {\em Adv. Math.}, 228(3):1689--1717, 2011.
+\newblock \url{https://arxiv.org/abs/0912.2114}, \href
+{https://doi.org/10.1016/j.aim.2011.06.027}
+{\path{doi:10.1016/j.aim.2011.06.027}}.
+
+\bibitem[KaLi94]{KaLi-TL-recoupling}
+L.H.~Kauffman and S.L.~Lins.
+\newblock {\em Temperley--{L}ieb recoupling theory and invariants of
+{$3$}-manifolds}, volume 134 of {\em Annals of Mathematics Studies}.
+\newblock Princeton University Press, Princeton, NJ, 1994.
+\newblock \href {https://doi.org/10.1515/9781400882533}
+{\path{doi:10.1515/9781400882533}}.
+
+\bibitem[KhLa09]{KL1}
+M.~Khovanov and A.~Lauda,
+\newblock A diagrammatic approach to categorification of quantum groups {I}.
+\newblock {\em Represent. Theory} 13, 309--347, 2009.
+\newblock \url{https://arxiv.org/abs/0803.4121},
+\href{https://doi.org/10.1090/S1088-4165-09-00346-X}
+{\path{doi.org/10.1090/S1088-4165-09-00346-X}}.
+
+\bibitem[KX01]{KoXi-brauer}
+S.~K{\"o}nig and C.~Xi.
+\newblock A characteristic free approach to {B}rauer algebras.
+\newblock {\em Adv. Math.}, 353(4):1489--1505, 2001.
+\newblock \href {https://doi.org/10.1090/S0002-9947-00-02724-0}
+{\path{doi:10.1090/S0002-9947-00-02724-0}}.
+
+\bibitem[KX12]{KoXi-affine-cellular}
+S.~K{\"o}nig and C.~Xi.
+\newblock Affine cellular algebras.
+\newblock {\em Adv. Math.}, 229(1):139--182, 2012.
+\newblock \href {https://doi.org/10.1016/j.aim.2011.08.010}
+{\path{doi:10.1016/j.aim.2011.08.010}}.
+
+\bibitem[KX99]{KoXi-cellular-inflation-morita}
+S.~K{\"o}nig and C.~Xi.
+\newblock Cellular algebras: inflations and {M}orita equivalences.
+\newblock {\em J. London Math. Soc. (2)}, 60(3):700--722, 1999.
+\newblock \href {https://doi.org/10.1112/S0024610799008212}
+{\path{doi:10.1112/S0024610799008212}}.
+
+\bibitem[LNV20]{lacabanne-naisse-vaz}
+A.~Lacabanne, G.~Naisse, and P.~Vaz,
+\newblock {Tensor product categorifications, Verma modules, and the blob algebra}. 
+\newblock 2020.
+\newblock To appear in Quantum Topol.
+\newblock \url{https://arxiv.org/abs/2005.06257}.
+
+\bibitem[LV21]{LV}
+A.~Lacabanne and P.~Vaz.
+\newblock {Schur--Weyl duality, Verma modules, and row quotients of  Ariki--Koike algebras}.
+\newblock {\em Pacific J. Math.}, 311, no.1, 113--133, 2021.
+\newblock \url{https://arxiv.org/abs/2004.01065},
+\href{https://doi.org/10.2140/pjm.2021.311.113}
+{\path{doi:10.2140/pjm.2021.311.113}}.
+
+\bibitem[La93]{La-PhDThesis}
+S.~Lambropoulou.
+\newblock A study of braids in 3-manifolds.
+\newblock Ph.D. thesis,  University of Warwick, 1993.
+\newblock \url{http://wrap.warwick.ac.uk/73390/}.
+
+\bibitem[La00]{La-handlebodies}
+S.~Lambropoulou.
+\newblock Braid structures in knot complements, handlebodies and
+3-manifolds.
+\newblock In {\em Knots in {H}ellas '98 ({D}elphi)}, volume 24 of {\em Ser.
+Knots Everything}, pages 274--289. World Sci. Publ., River Edge, NJ, 2000.
+\newblock \url{https://arxiv.org/abs/math/0008235}, \href
+{https://doi.org/10.1142/9789812792679_0017}
+{\path{doi:10.1142/9789812792679_0017}}.
+
+\bibitem[LZ15]{LeZh-brauer-invariant-theory}
+G.I.~Lehrer and R.B.~Zhang.
+\newblock The {B}rauer category and invariant theory.
+\newblock {\em J. Eur. Math. Soc. (JEMS)}, 17(9):2311--2351, 2015.
+\newblock \url{https://arxiv.org/abs/1207.5889}, \href
+{https://doi.org/10.4171/JEMS/558} {\path{doi:10.4171/JEMS/558}}.
+
+\bibitem[MV19]{maksimau-vaz}
+R.~Maksimau and P.~Vaz.
+\newblock {DG}-enhanced {H}ecke and {KLR} algebras.
+\newblock 2019.
+\newblock \url{https://arxiv.org/abs/1906.03055}.
+
+\bibitem[Ma99]{Ma-hecke-schur}
+A.~Mathas.
+\newblock {I}wahori--{H}ecke algebras and {S}chur algebras of the symmetric group.
+\newblock {\em University Lecture Series}, 15. American Mathematical Society, Providence, RI, xiv+188, 1999.
+
+\bibitem[MS94]{MaSa-blob}
+P.~Martin and H.~Saleur.
+\newblock The blob algebra and the periodic {T}emperley--{L}ieb algebra.
+\newblock {\em Lett. Math. Phys.}, 30, no.3, 189--206, 1994.
+\newblock \url{https://arxiv.org/abs/hep-th/9302094}, \href
+{https://doi.org/10.1007/BF00805852} {\path{doi:10.1007/BF00805852}}.
+
+\bibitem[MS21]{MaSp-lp-jw}
+S.~Martin and R.A.~Spencer.
+\newblock {$(\ell,p)$}-{J}ones--{W}enzl idempotents.
+\newblock 2021.
+\newblock \url{https://arxiv.org/abs/2102.08205v1}.
+
+\bibitem[Mu95]{Mu-typea-hecke}
+G.E.~Murphy.
+\newblock The representations of {H}ecke algebras of type {$A_{n}$}.
+\newblock {\em J. Algebra}, 173, no.1, 97--121, 1995.
+\newblock \href
+{https://doi.org/10.1006/jabr.1995.1079} {\path{10.1006/jabr.1995.1079}}.
+
+\bibitem[NV17]{naissevaz3}
+G.~Naisse and P.~Vaz.
+\newblock 2-{V}erma modules.
+\newblock 2017.
+\newblock \url{https://arxiv.org/abs/1710.06293}.
+
+\bibitem[NV18]{naissevaz2}
+G.~Naisse and P.~Vaz.
+\newblock On 2-{V}erma modules for quantum $\mathfrak{sl}_2$.
+\newblock {\em Selecta Math. (N.S.)}, 24(4):3763--3821, 2018.
+\newblock \url{https://arxiv.org/abs/1704.08205},
+\href{https://doi.org/10.1007/s00029-018-0397-z}
+{\path {doi.org/10.1007/s00029-018-0397-z}}.
+
+\bibitem[OR07]{OrRa-affine-braids}
+R.~Orellana and A.~Ram.
+\newblock Affine braids, {M}arkov traces and the category {O}.
+\newblock In {\em Proceedings of the International Colloquium on Algebraic
+Groups and Homogeneous Spaces Mumbai 2004}, volume 19 of {\em Tata Inst.
+Fund. Res. Stud. Math.}, pages 423--473. Tata Inst. Fund. Res., Mumbai, 2007.
+\newblock \url{https://arxiv.org/abs/math/0401317}.
+
+\bibitem[RT19]{RoTu-homflypt-typea}
+D.E.V.~Rose and D.~Tubbenhauer.
+\newblock {HOMFLYPT} homology for links in handlebodies via type {$\mathsf{A}$}
+{S}oergel bimodules.
+\newblock 2019.
+\newblock To appear in Quantum Topol.
+\newblock \url{https://arxiv.org/abs/1908.06878}.
+
+\bibitem[RT16]{RoTu-symmetric-howe}
+D.E.V.~Rose and D.~Tubbenhauer.
+\newblock Symmetric webs, {J}ones--{W}enzl recursions, and {$q$}-{H}owe
+duality.
+\newblock {\em Int. Math. Res. Not. IMRN}, (17):5249--5290, 2016.
+\newblock \url{https://arxiv.org/abs/1501.00915}, \href
+{https://doi.org/10.1093/imrn/rnv302} {\path{doi:10.1093/imrn/rnv302}}.
+
+\bibitem[STWZ21]{SuTuWeZh-mixedsl2}
+L.~Sutton, D.~Tubbenhauer, P.~Wedrich, and J.~Zhu.
+\newblock {$\mathrm{SL}_{2}$} tilting modules in the mixed case.
+\newblock 2021.
+\newblock In preparation.
+
+\bibitem[tD94]{tDi-sym-bridges}
+T.~tom Dieck.
+\newblock Symmetrische {B}r{\"u}cken und {K}notentheorie zu den
+{D}ynkin-{D}iagrammen vom {T}yp {$B$}.
+\newblock {\em J. Reine Angew. Math.}, 451:71--88, 1994.
+\newblock \href {https://doi.org/10.1515/crll.1994.451.71}
+{\path{doi:10.1515/crll.1994.451.71}}.
+
+\bibitem[Ve98]{Ve-handlebodies}
+V.V.~Vershinin.
+\newblock On braid groups in handlebodies.
+\newblock {\em Sibirsk. Mat. Zh.}, 39(4):755--764, i, 1998.
+\newblock \href {https://doi.org/10.1007/BF02673050}
+{\path{doi:10.1007/BF02673050}}.
+
+\bibitem[Web17]{webster}
+B.~Webster.
+\newblock Knot invariants and higher representation theory.
+\newblock {\em Mem. Amer. Math. Soc.}, 250, no.1191, v+141pp, 2017.
+\newblock \url{https://arxiv.org/abs/1309.3796},
+\href{https://doi.org/10.1090/memo/1191}
+{\path{doi.org/10.1090/memo/1191}}. 
+
+\bibitem[Wes09]{We-tensors-cellular-categories}
+B.W.~Westbury.
+\newblock Invariant tensors and cellular categories.
+\newblock {\em J. Algebra}, 321(11):3563--3567, 2009.
+\newblock \url{https://arxiv.org/abs/0806.4045}, \href
+{https://doi.org/10.1016/j.jalgebra.2008.07.004}
+{\path{doi:10.1016/j.jalgebra.2008.07.004}}.
+
+\bibitem[WY11]{WiYu-cyclotomic-bmw}
+S.~Wilcox and S.~Yu.
+\newblock The cyclotomic {BMW} algebra associated with the two string type {B}
+braid group.
+\newblock {\em Comm. Algebra}, 39(11):4428--4446, 2011.
+\newblock \url{https://arxiv.org/abs/math/0611518v2}, \href
+{https://doi.org/10.1080/00927872.2011.611927}
+{\path{doi:10.1080/00927872.2011.611927}}.
+
+\bibitem[Xi00]{Xi-bmw}
+C.~Xi.
+\newblock On the quasi-heredity of {B}irman--{W}enzl algebras.
+\newblock {\em Adv. Math.}, 154:280--298, 2000.
+\newblock \href {https://doi.org/10.1006/aima.2000.1919}
+{\path{doi:10.1006/aima.2000.1919}}.
+
+\bibitem[Yu08]{Yu-cyclotomic-bmw}
+S.H.~Yu.
+\newblock The cyclotomic {B}irman--{M}urakami--{W}enzl algebras.
+\newblock Ph.D. thesis, University of Sydney, 2008.
+\newblock \url{https://arxiv.org/abs/0810.0069},
+\href{https://core.ac.uk/download/pdf/41231891.pdf}{https://core.ac.uk/download/pdf/41231891.pdf}
+
+\end{thebibliography}
 
 \end{document}
