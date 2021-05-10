@@ -279,7 +279,7 @@ pdftoolbar=true,
 pdfmenubar=true,
 pdffitwindow=false,
 pdfstartview={FitH},
-pdftitle={Handlebodies, diagram algebras and cellularity},
+pdftitle={Handlebody diagram algebras},
 pdfauthor={Daniel Tubbenhauer and Pedro Vaz},
 pdfsubject={},
 pdfcreator={Daniel Tubbenhauer and Pedro Vaz},
@@ -352,8 +352,8 @@ linktocpage=true
 \end{NoHyper}
 }
 
-\title[Handlebodies, diagram algebras and cellularity]
-{Handlebodies, diagram algebras and cellularity}
+\title[Handlebody diagram algebras]
+{Handlebody diagram algebras}
 \author[Daniel Tubbenhauer and Pedro Vaz]{Daniel Tubbenhauer and Pedro Vaz}
 
 \address{D.T.: Hausdorff Center for Mathematics,
@@ -546,7 +546,8 @@ to[out=0,in=270] (3,0) to (3,2.25) to[out=90,in=0] (2.75,2.75) to[out=180,in=90]
 \,,
 \end{gather*}
 the core strands correspond to cores of a three dimensional 
-handlebody, hence the name. All links in such handlebodies can 
+handlebody as explained in {\eg} 
+\cite[Section 2]{RoTu-homflypt-typea}, hence the name. All links in such handlebodies can 
 be obtained by this closing procedure, and there is also an associated 
 Markov theorem. In other words, the handlebody braid group gives an 
 algebraic way to study links in handlebodies. The main references 
@@ -2333,17 +2334,17 @@ algebra (we will treat this case for higher genus in
 We leave the details to the interested reader. 
 \end{remark}
 
-\section{Handlebody braid an Coxeter groups}\label{section:braids}
+\section{Handlebody braid and Coxeter groups}\label{section:braids}
 
 Throughout, we fix the \emph{genus} $g\in\N$ as well as the 
 \emph{number of strands} $n\in\N_{>0}$. As 
-a general conventions, all notions involving $g$ are vacuous if $g=0$, and similarly all notions involving $n$ are vacuous for $n=1$.
+a general conventions, all notions involving $g$ are vacuous if $g=0$, 
+and similarly all notions involving $n$ are vacuous for $n=1$.
 
 \subsection{Handlebody braid diagrams}\label{subsection:braids}
 
 In this section we consider 
-\emph{handlebody braid diagrams} (of genus $g$ and 
-$n$ strands).
+\emph{handlebody braid diagrams} (in $n$ strands and of genus $g$).
 These diagrams are similar to classical braid diagrams with $g+n$ strands 
 in the following sense. We let
 \begin{gather}\label{eq:lefttoright-labels}
@@ -2380,12 +2381,12 @@ to[out=90,in=270] (0.5,0.75)node[above,black,yshift=-3pt]{$i{+}1$};
 \end{gather}
 Here the numbers indicate the corresponding positions, reading left to right.
 We have \emph{usual strands}, illustrated in black, and \emph{core strands}, 
-illustrated blue-gray. We note that all of our diagrams have $g$ core strands 
+illustrated blue-grayish. We note that all of our diagrams have $g$ core strands 
 and $n$ usual strands, but we tend to illustrate local pictures, 
 as we already did above. The elements of the form $\tau_{u}$ 
 and their inverses are called \emph{positive twists} 
 and \emph{negative twists}, respectively. We also 
-sometimes say \emph{twists} for short.
+say \emph{twists} for short.
 
 \begin{definition}\label{definition:handlebody-braidgroup}
 We let the \emph{handlebody braid group} (in $n$ strands and of genus $g$)
@@ -2413,8 +2414,7 @@ straightforward way, see {\eg} \cite[Remark 4]{La-handlebodies}
 and \cite[(1-7)]{RoTu-homflypt-typea}. 
 
 \begin{remark}\label{remark:braidcox}
-Special cases of \fullref{definition:handlebody-braidgroup} are (see {\eg} 
-\cite[Section 1B]{RoTu-homflypt-typea} and references therein):	
+Special cases of \fullref{definition:handlebody-braidgroup} are:	
 \begin{enumerate}
 
 \setlength\itemsep{0.15cm}
@@ -2423,11 +2423,13 @@ Special cases of \fullref{definition:handlebody-braidgroup} are (see {\eg}
 
 \item For $g=1$ the handlebody braid group is the 
 braid group of extended affine type A, which 
-is also the braid group of Coxeter type C$=$B.
+is also the braid group of Coxeter type C$=$B, 
+see \cite{Brieskorn} or \cite{allcock}.
 
 \item A perhaps surprising fact is that the handlebody braid group 
 for $g=2$ is 
-isomorphic to the braid group of affine Coxeter type C.
+isomorphic to the braid group of affine Coxeter type C, 
+see \cite{allcock}.
 
 \item To the best of our knowledge the case $g>2$ was first 
 studied in \cite{Ve-handlebodies}, 
@@ -2436,7 +2438,7 @@ and then further in \cite{HaOlLa-handlebodies}.
 \end{enumerate}
 \end{remark}
 
-\begin{remark}
+\begin{remark}\label{remark:handlebody-closing}
 The handlebody braid group describes 
 the configuration space of a disk with $g$ punctures. 
 Moreover, after taking an appropriate 
@@ -2694,7 +2696,7 @@ A pleasant exercise (see also {\eg} \cite[Section 5]{HaOlLa-handlebodies}).
 \end{proof}
 
 The following allows us to use topological 
-arguments in proofs.
+arguments and is used several times.
 
 \begin{proposition}\label{proposition:embedding}
 The rule
@@ -2768,9 +2770,7 @@ We write $t_{u}$ and $s_{i}$ for the images of
 $\tau_{u}$ respectively $\beta_{i}$ in the quotient.
 \end{definition}
 
-Note that the $t_{u}$ span a free group $\setstuff{F}_{g}$, 
-and $\setstuff{F}_{g}$ is thus a subgroup of $\setstuff{W}_{g,n}$.
-However, the asymmetry in \eqref{eq:handlebody-summary2} 
+The asymmetry in \eqref{eq:handlebody-summary2} 
 vanishes and we have the defining relations:
 \begin{gather}
 \label{eq:coxhandlebody-summary1}
@@ -2788,12 +2788,14 @@ t_{u}(s_{1}t_{v}s_{1})
 =(s_{1}t_{v}s_{1})t_{u}
 .
 \end{gather}
-The relations in \eqref{eq:coxhandlebody-summary1} imply that 
-the symmetric group $\setstuff{S}_{n}$ is 
-a subgroup of $\setstuff{W}_{g,n}$.
+By \eqref{eq:coxhandlebody-summary1}
+we see that $\setstuff{S}_{n}\hookrightarrow\setstuff{W}_{g,n}$,
+while the $t_{u}$ span a free group $\setstuff{F}_{g}$, 
+and $\setstuff{F}_{g}$ is thus also a subgroup of $\setstuff{W}_{g,n}$
+(both in the evident way). We use this below.
 
 As for the handlebody braid group, we think of \fullref{definition:handlebody-coxetergroup} as a 
-handlebody-generalization of the extended affine Coxeter group of type A. 
+handlebody generalization of the extended affine Coxeter group of type A. 
 
 \begin{remark}
 Special cases of \fullref{definition:handlebody-coxetergroup} are:
@@ -2801,12 +2803,11 @@ Special cases of \fullref{definition:handlebody-coxetergroup} are:
 
 \setlength\itemsep{0.15cm}
 
-\item The case $g=0$ is the symmetric group $\setstuff{W}_{0,n}$.
+\item The case $g=0$ is the symmetric group $\setstuff{S}_{n}$.
 
 \item For $g=1$ the handlebody Coxeter group is not the 
-Coxeter type C$=$B, but rather the extended affine Coxeter (Weyl) group of type A.
-
-\item For higher genus nothing appears to be known.
+Coxeter type C$=$B, but rather the extended affine 
+Coxeter (Weyl) group of type A.
 
 \end{enumerate}
 \end{remark}
@@ -2816,7 +2817,7 @@ group $\setstuff{B}_{g,n}$ embeds into the classical braid group with
 $g+n$ strands. However, the analog of this 
 embedding does not exist for $\setstuff{W}_{g,n}$ since 
 this group is infinite for 
-for $g>0$, {\cf} \fullref{proposition:jm-elements-basis} below.
+$g>0$, {\cf} \fullref{proposition:jm-elements-basis} below.
 
 For the further study of $\setstuff{W}_{g,n}$ we use
 $\Zf=\Z[\zvar^{\pm 1},Y_{1},\dots,Y_{g}]$ as our ground ring.
@@ -2829,8 +2830,8 @@ by:
 
 \setlength\itemsep{0.15cm}
 
-\item The generators $s_{i}$ act by the permutation action under the identification 
-$\setstuff{S}_{n}\cong\setstuff{W}_{0,n}$.
+\item The generators $s_{i}$ act by the permutation action of
+$\setstuff{S}_{n}$.
 
 \item The generators $t_{u}$ act by
 \begin{gather}\label{eq:action}
@@ -2908,8 +2909,9 @@ X_{1}\actsright t_{u}t_{u}^{-1}
 =
 X_{1}.
 \end{gather*}
-Moreover, by construction of the action, the only thing 
-that remains to be checked is \eqref{eq:coxhandlebody-summary2}.
+Moreover, by construction of the action, the only 
+non-trivial check is that 
+\eqref{eq:coxhandlebody-summary2} holds.
 The left equality in \eqref{eq:coxhandlebody-summary2} 
 is immediate, and for the right we compute
 \begin{gather*}
@@ -2940,7 +2942,7 @@ To this end, we define certain elements, called
 
 \begin{definition}\label{definition:jm-elements}
 Define elements $\jm_{u,i}^{\pm 1}\in\setstuff{B}_{g,n}$ as follows. 
-For $i=1$ we let $\jm_{u,i}^{\pm 1}=\tau_{u}^{\pm 1}$.
+We let $\jm_{u,1}^{\pm 1}=\tau_{u}^{\pm 1}$.
 For $i>1$ we define $\jm_{u,i}^{\pm 1}
 =\beta_{1}^{\pm 1}\dots\beta_{i-1}^{\pm 1}
 \tau_{u}^{\pm 1}\beta_{i-1}^{\pm 1}\dots\beta_{1}^{\pm 1}$, or diagrammatically
@@ -3239,14 +3241,14 @@ then the displayed elements do not commute (unless $\jm_{u,i}^{\pm 1}\jm_{u,i}^{
 
 \begin{lemma}\label{lemma:jm-order-lemma}
 Any word in the Jucys--Murphy elements can be ordered 
-such that $\jm_{u,i}^{\pm}$ appears right/above
+such that $\jm_{u,i}^{\pm}$ appears right=above of
 $\jm_{v,j}^{\pm}$ only if $j<i$.
 \end{lemma}
 
 \begin{proof}
 We use the final relation in \eqref{eq:jm-relations}
 inductively: First, start with $i=n$ and pull 
-all $\jm_{u,n}^{\pm}$, for all $u$, to the right/top, 
+all $\jm_{u,n}^{\pm}$, for all $u$, to the right=top, 
 without changing their order (they form a free group).
 We freeze these elements in their positions and
 we can thus use induction 
@@ -3262,7 +3264,7 @@ The set
 \jmc_{u_{m},i_{m}}^{a_{m}}w 
 \,\middle\vert\,
 \begin{gathered}
-w\in\setstuff{W}_{0,n},
+w\in\setstuff{S}_{n},
 m\in\N,
 \bsym{a}\in\Z^{m},
 \\
@@ -3297,7 +3299,7 @@ is a $\Z$-basis of $\Z\setstuff{W}_{g,n}$.
 By \fullref{lemma:jm-elements-span}, it only remains to verify that 
 the elements of the set \eqref{eq:jm-basis}
 are linearly independent. To this end, we 
-first observe that we can let $\underline{w}$ be trivial 
+first observe that we can let $w$ be trivial 
 since the action of $\setstuff{S}_{n}$ 
 used in \fullref{lemma:jm-elements-span} is 
 the faithful permutation action. Now, the 
@@ -6919,7 +6921,7 @@ $\setstuff{H}_{g,n}$ does not embed into
 a Hecke algebra of type A. 
 \end{remark}
 
-For all $w\in\setstuff{W}_{0,n}$ we choose a 
+For all $w\in\setstuff{S}_{n}$ we choose a 
 reduced expression $\underline{w}=s_{i_{k}}\dots 
 s_{i_{1}}\in\setstuff{W}_{0,n}$ 
 once and for all. We define $H_{w}=H_{\underline{w}}=H_{i_{k}}\dots H_{i_{1}}$. 
@@ -6934,7 +6936,7 @@ The set
 \jm_{u_{m},i_{m}}^{a_{m}}H_{w} 
 \,\middle\vert\,
 \begin{gathered}
-w\in\setstuff{W}_{0,n},
+w\in\setstuff{S}_{n},
 m\in\N,
 \bsym{a}\in\Z^{m},
 \\
@@ -7410,7 +7412,7 @@ b_{k_{1},i_{1}}^{a_{1}}\dots
 b_{k_{m},i_{m}}^{a_{m}}H_{w} 
 \,\middle\vert\,
 \begin{gathered}
-w\in\setstuff{W}_{0,n},
+w\in\setstuff{S}_{n},
 m\in\N,
 \bsym{a}\in\Z^{m},
 \\
@@ -7504,7 +7506,7 @@ b_{k_{1},i_{1}}^{a_{1}}\dots
 b_{k_{m},i_{m}}^{a_{m}}H_{w} 
 \,\middle\vert\,
 \begin{gathered}
-w\in\setstuff{W}_{0,n},
+w\in\setstuff{S}_{n},
 m\in\N,
 \bsym{a}\in\Z^{m},
 \\
