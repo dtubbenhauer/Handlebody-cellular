@@ -170,9 +170,8 @@ mark=at position #1 with {\node[blob,#3,label=right:$\!#2$]at (0,0){};}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\K}{\mathbb{K}}
-\newcommand{\KK}{\mathbbm{k}}
-\newcommand{\KKL}{\mathbbm{l}}
+\newcommand{\KK}{\mathbbm{K}}
+\newcommand{\KKL}{\mathbbm{L}}
 \newcommand{\N}{\mathbb{N}}
 
 % general convetions for parameters etc
@@ -752,7 +751,9 @@ is gratefully acknowledged.
 
 Let $\KK$ be a unital, commutative, Noetherian domain, {\eg} 
 the integers or a field, or polynomial rings over these. Everything 
-in this paper is linear over $\KK$. We write $\K$ if we assume that $\KK$ is a field, which is needed for classification results.
+in this paper is linear over $\KK$. We 
+sometimes assume that $\KK$ is a field, 
+which is for example needed for classification results.
 
 \subsection{Inflation by algebras}\label{subsection:groups-inflation}
 
@@ -766,13 +767,12 @@ of it.
 
 \begin{remark}\label{remark:green}
 Our discussion below is motivated by Green's 
-classical theory of cells \cite{Gr-semigroups}, 
+classical theory of 
+cells \cite{Gr-semigroups},
 often called Green's relations, 
-in semigroup theory, and the 
-corresponding reduction theorems, 
-{\eg} the Clifford--Munn--Ponizovski\u{\i} theorem 
-(a modern formulation 
-can be found {\eg} in \cite{GaMaSt-irreps-semigroups}). 
+and the Clifford--Munn--Ponizovski\u{\i} theorem 
+(see {\eg} \cite{GaMaSt-irreps-semigroups} 
+for a modern formulation). 
 In fact, we have borrowed 
 part of the terminology from the literature on semigroups.
 \end{remark}
@@ -796,8 +796,8 @@ b\in\setstuff{B}_{\lambda}\}$ of $\setstuff{A}$;
 such that we have
 \begin{gather}\label{eq:cell-mult}
 c_{D,b,U}^{\lambda}c_{D^{\prime},b^{\prime},U^{\prime}}^{\lambda^{\prime}}
-\equiv_{\leq_{\Lambda}} r(U,D^{\prime})\cdot
-c_{D,F,U^{\prime}}^{\max_{\Lambda}(\lambda,\lambda^{\prime})},
+\equiv_{\leq_{\Lambda}}r(U,D^{\prime})\cdot
+c_{D,F,U^{\prime}}^{\max_{\leq_{\Lambda}}(\lambda,\lambda^{\prime})},
 \end{gather}
 where $r(U,D^{\prime})\in\KK$, 
 $F=F(b,U,D^{\prime},b^{\prime})=
@@ -817,7 +817,7 @@ We also define:
 A sandwich cellular algebra $\setstuff{A}$ is called \emph{involutive} 
 if it admits an antiinvolution $(\placeholder)^{\star}\colon\setstuff{A}\to\setstuff{A}$ 
 compatible with the cell structure. That is, 
-$(\placeholder)^{\star}$ is also 
+$(\placeholder)^{\star}$ restricts to
 an antiinvolution $(\placeholder)^{\star}\colon\setstuff{B}_{\lambda}\to\setstuff{B}_{\lambda}$
 for all $\lambda\in\Lambda$, and we have
 \begin{gather}\label{eq:antiinvolution}
@@ -859,17 +859,14 @@ summarized by
 \draw[densely dotted,->] (-2,0)to (-2,1.5)node[left]{read}to (-2,3);
 \end{tikzpicture}
 \leftrightsquigarrow
-ab=
-b\circ a,
+ab
+\leftrightsquigarrow
+\text{left=bottom and right=top}
+,
 \end{gather*}
 which is bottom to top and left to right.
-Moreover, 
-all such diagrams are invariant under 
-(distant) height exchange isotopy, 
-which we usually do not state anymore.
-We also omit data if it is not of importance for the 
-situation at hand, and simplify 
-drawings using topological equivalent pictures.
+We omit data, such as a label, if it is not of importance for the 
+situation at hand.
 Moreover, we use colors in this paper, but they 
 are non-essential and for illustration purpose only. 
 We however still recommend to read the paper in color.
@@ -947,10 +944,10 @@ with a fixed cell datum, using the notation from
 \fullref{definition:cellular}. 
 We will use the terminology of being a sandwich cellular algebra 
 in the sense that we have fixed a cell datum.
-As we will see in {\eg} \fullref{theorem:classification} 
-and \fullref{subsection:brauer}, our focus 
+As we will see in {\eg} \fullref{theorem:classification}, our focus 
 is indeed not on whether an algebra is sandwich cellular but rather 
-whether one can find a useful cell datum. Here is an explicit example:
+whether one can find a useful cell datum. Here is an explicit example 
+of a not very useful cell datum:
 
 \begin{example}\label{example:groups}
 For any group $\setstuff{G}$ the group element basis 
@@ -982,18 +979,18 @@ for all $\lambda\in\Lambda$,
 then a sandwich cellular algebras is affine cellular 
 as in \cite{KoXi-affine-cellular}. Allowing 
 any quotient of a finite polynomial ring as $\setstuff{B}_{\lambda}$, 
-the converse is also true as one easily sees.
+the converse is also true as one can check.
 
 \end{enumerate}
 \end{example}
 
 \begin{remark}
 Having \fullref{section:braids} in mind,
-we note that $\KK\cong\KK\big[\pi_{1}(D_{0})\big]$, the latter being 
-the fundamental group of a disc 
-$D_{0}$ without punctures.
-Moreover, $\KK[X,X^{-1}]\cong\KK\big[\pi_{1}(D_{1})\big]$, the latter 
-being the fundamental group of a punctured disc $D_{1}$.
+we note that $\KK\cong\KK\big[\pi_{1}(D_{0})\big]$ 
+and $\KK[X,X^{-1}]\cong\KK\big[\pi_{1}(D_{1})\big]$,
+where $\pi_{1}(D_{0})$ respectively $\pi_{1}(D_{1})$
+are the fundamental groups of a disc 
+$D_{0}$ or a punctured disc $D_{1}$.
 \end{remark}
 
 \begin{example}
@@ -1002,11 +999,11 @@ is a strict generalization of
 being cellular. An easy, albeit silly, example is to take 
 $\Lambda=\{\bullet\}=M_{\bullet}$ and $\setstuff{B}_{\bullet}$
 to be a non-cellular algebra
-that has a basis $\{b_{i}\}$ such that $b_{i}b_{j}$ is 
+that has a basis $\{b_{i}\}_{i}$ such that $b_{i}b_{j}$ is 
 also a basis element. As an explicit example 
 consider the set of upper triangular 
 $2$x$2$ matrices over $\KK$, and view it as a semigroup 
-so that $\{c_{\bullet,b_{i},\bullet}^{\bullet}=b_{i}\}$ 
+so that $\{c_{\bullet,b_{i},\bullet}^{\bullet}=b_{i}\}_{i}$ 
 is the semigroup basis of the semigroup ring 
 $\setstuff{B}_{\bullet}$.
 See \cite{EhTu-relcell} for several more example of non-cellular algebras
@@ -1112,7 +1109,7 @@ be cellular.
 \subsection{Cell modules}\label{subsection:cell-modules}
 
 The theory of cellular algebras is particularly nice 
-for finite-dimensional algebras. This is however rarely the 
+for finite-dimensional algebras. This is however not always the 
 case in the situation we have in mind, 
 see {\eg} \fullref{section:tlblob}. Nevertheless, 
 parts of the theory still goes through for 
@@ -1136,7 +1133,7 @@ r(U^{\prime},D)\cdot
 c_{D^{\prime},F,U}^{\lambda}&\text{if }
 \lambda^{\prime}\leq_{\Lambda}\lambda,
 \\
-0,&\text{else},
+0&\text{else},
 \end{cases}
 \end{gather*}
 which we endow with the left $\setstuff{A}$-module 
@@ -1183,10 +1180,7 @@ is called a two-sided cell or \emph{$\mathcal{J}$-cell}.
 
 Note that 
 $\mathcal{J}$-cells are $\setstuff{A}$-$\setstuff{A}$-bimodules, 
-by definition, and thus, in general non-unital, algebras. 
-(For simple modules of non-unital algebras one additionally 
-to the usual assumption of having no non-trivial submodules 
-requires that at least one element acts not as zero.)
+by definition, and thus, in general non-unital, algebras.
 In contrast, the $\mathcal{H}$-cells are only $\KK$-modules, but 
 are multiplicatively closed, as follows from 
 \eqref{eq:cell-action} and \eqref{eq:hj-cells} below, 
@@ -1270,9 +1264,9 @@ As free $\KK$-modules we clearly have
 \draw[mor] (0.25,0) to (0.25,0.5) to (0.75,0.5) to (0.75,0) to (0.25,0);
 \node at (0.5,0.25){$b$};
 \end{tikzpicture}
-,\\
+,\quad
 \mathcal{H}_{\lambda,D,U}\cong
-M_{\lambda}\hcirc_{\KK}\setstuff{B}_{\lambda}\hcirc_{\KK}M_{\lambda}
+\setstuff{B}_{\lambda}
 \leftrightsquigarrow
 \begin{tikzpicture}[anchorbase,scale=1]
 \draw[mor,orchid] (0,-0.5) to (0.25,0) to (0.75,0) to (1,-0.5) to (0,-0.5);
@@ -1306,7 +1300,8 @@ we can scale everything by $1/r(U,D)$ to get the result.
 For $F(U,D)$ being invertible we calculate 
 $c_{D,bF(U,D)^{-1},U}^{\lambda}c_{D,b^{\prime}F(U,D)^{-1},U}^{\lambda}
 =r(U,D)\cdot c_{D,bb^{\prime}F(U,D)^{-1},U}^{\lambda}$, 
-so the map $b\mapsto bF(U,D)^{-1}$ induces an isomorphism.
+so the map $b\mapsto bF(U,D)^{-1}$ induces an isomorphism 
+upon division by $r(U,D)$.
 \end{proof}
 
 \begin{lemma}\label{lemma:bilinearform}
@@ -1411,7 +1406,7 @@ Let $\mathrm{rad}(\lambda,K)$ be the radical of the
 bilinear form $\phi^{\lambda}_{K}$.
 
 \begin{lemma}\label{lemma:simples}
-Let $\KK=\K$ be a field and $K$ be a simple 
+Let $\KK$ be a field and $K$ be a simple 
 $\setstuff{B}_{\lambda}$-module.
 If $\phi^{\lambda}_{K}$ is not constant zero, then
 $L(\lambda,K)=\Delta(\lambda,K)/\mathrm{rad}(\lambda,K)$ is 
@@ -1424,8 +1419,8 @@ Any $z\in\Delta(\lambda,K)\setminus\mathrm{rad}(\lambda,K)$ is a generator
 of $\Delta(\lambda,K)$, while $\mathrm{rad}(\lambda,K)$ is a submodule 
 of $\Delta(\lambda,K)$ by \fullref{lemma:bilinearform}. 
 Thus, $L(\lambda,K)$ is a well-defined and 
-simple submodule, which is the head as $\mathrm{rad}(\lambda,K)$ equals 
-the representation-theoretical radical since all 
+simple submodule, which is the head of $\Delta(\lambda,K)$ since $\mathrm{rad}(\lambda,K)$ equals 
+the representation-theoretical radical because all 
 $z\in\Delta(\lambda,K)\setminus\mathrm{rad}(\lambda,K)$ generate.
 \end{proof}
 
@@ -1449,7 +1444,7 @@ We have the following.
 \item Every simple $\setstuff{A}$-module $L$ has a unique apex 
 $\lambda\in\Lambda$.
 
-\item If $\KK=\K$, then the simple modules $L(\lambda,K)$ 
+\item If $\KK$ is a field, then the simple modules $L(\lambda,K)$ 
 from \fullref{lemma:simples}
 have apex $\lambda$.
 
@@ -1460,6 +1455,10 @@ $\setstuff{A}$-module $L$ with apex $\lambda$, by inflation.
 
 \end{enumerate}
 \end{lemma}
+
+(For simple modules of non-unital algebras one additionally 
+to the usual assumption of having no non-trivial submodules 
+requires that at least one element acts not as zero.)
 
 \begin{proof}
 One can reformulate {\eg} \cite[Corollary 3.2]{KoXi-affine-cellular} 
@@ -1502,7 +1501,7 @@ We get an analog of the Clifford--Munn--Ponizovski\u{\i} theorem ({\cf}
 \fullref{remark:green}):
 
 \begin{theorem}\label{theorem:classification}
-Let $\KK=\K$ be a field.
+Let $\KK$ be a field.
 \begin{enumerate}
 
 \item A $\lambda\in\Lambda$ is an apex if and 
@@ -1607,11 +1606,12 @@ $e^{\prime}=1/r(U^{\prime},D^{\prime})
 r(U,D)r(U^{\prime},D^{\prime})e^{\prime}=
 c_{D^{\prime},1,U}^{\lambda}ec_{D,1,U^{\prime}}^{\lambda},
 \end{gather*}
-and all appearing scalars are non-zero, and thus invertible. Thus, $e$ 
+and all appearing scalars are non-zero, and thus invertible. Hence, $e$ 
 annihilates a simple $\mathcal{J}_{\lambda}$-module 
 if and only if $e^{\prime}$ does. All other $\mathcal{H}$-cells 
 do not contain idempotents, so a simple 
-$\mathcal{J}_{\lambda}$-module can not be annihilated by any such $e$.
+$\mathcal{J}_{\lambda}$-module can not be annihilated by any $e$ in 
+$\mathcal{J}_{\lambda}$.
 
 \textit{(c).} Apply \fullref{lemma:h-subalgebra} to the previous 
 correspondence.
@@ -1675,18 +1675,19 @@ As we will describe now this is not necessary if one wants
 to parameterize simples.
 
 We let $\Lambda=(\{n,n-2,n-4,\dots\},\leq_{\N})\subset\N$ 
-with the usual partial order.
-The $\lambda\in\Lambda$ are the through strands of the Brauer diagrams:
-The set $M_{\lambda}$ consists of all Brauer diagrams 
+with the usual partial order $\leq_{\N}$.
+The $\lambda\in\Lambda$ are the through strands of the Brauer diagrams,
+that is, we let the set $M_{\lambda}$ consist of all Brauer diagrams 
 from $n$ bottom points to $\lambda$ top points.
 Moreover, we let $\setstuff{B}_{\lambda}=\KK\setstuff{S}_{\lambda}$.
 As our $\KK$-basis we choose 
 \begin{gather*}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
-b\in\setstuff{B}_{\lambda}\}
+b\in\setstuff{B}_{\lambda}\},
 \end{gather*}
-following the usual strategy illustrated in \eqref{eq:brauer} below. 
-\begin{gather}\label{eq:brauer}
+where $b$ runs over the elements of $\setstuff{S}_{\lambda}$.
+The picture is: 
+\begin{gather*}
 \begin{aligned}
 \begin{tikzpicture}[anchorbase,scale=1]
 \draw[mor] (0,1) to (0.25,0.5) to (0.75,0.5) to (1,1) to (0,1);
@@ -1734,7 +1735,7 @@ following the usual strategy illustrated in \eqref{eq:brauer} below.
 \end{tikzpicture}
 .
 \end{aligned}
-\end{gather}
+\end{gather*}
 That is, we divide a Brauer diagram into 
 a diagram only containing caps and crossings, a diagram 
 only containing cups and crossings, and a part only containing 
@@ -2244,7 +2245,7 @@ We obtain the well-known classification of simple
 $\setstuff{Br}_{n}(\cvar)$-modules, {\cf} \cite[Theorem 4.17]{GrLe-cellular}:
 
 \begin{theorem}\label{theorem:brauer}
-Let $\KK=\K$ be a field.
+Let $\KK$ be a field.
 \begin{enumerate}
 
 \item If $\cvar\neq 0$, or $\cvar=0$ and $\lambda\neq 0$ is odd, 
@@ -2254,14 +2255,14 @@ all $\lambda\in\Lambda-\{0\}$ are apexes, but $\lambda=0$ is not an apex.
 
 \item The simple $\setstuff{Br}_{n}(\cvar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple $\K\setstuff{S}_{\lambda}$-modules.
+are parameterized by simple $\KK\setstuff{S}_{\lambda}$-modules.
 
 \item The simple $\setstuff{Br}_{n}(\cvar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\K\setstuff{S}_{\lambda}}^{\setstuff{Br}_{n}(\cvar)}(K)$, 
+$\mathrm{Ind}_{\KK\setstuff{S}_{\lambda}}^{\setstuff{Br}_{n}(\cvar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\K\setstuff{S}_{\lambda}$-modules.
+simple $\KK\setstuff{S}_{\lambda}$-modules.
 
 \end{enumerate}
 \end{theorem}
@@ -2274,7 +2275,7 @@ First, it is easy to see that the $\mathcal{H}$-cells are of a
 similar form 
 as in \fullref{example:brauer}, and,
 if $\cvar\neq 0$, then all $\mathcal{H}$-cells are 
-isomorphic to $\K\setstuff{S}_{\lambda}$.
+isomorphic to $\KK\setstuff{S}_{\lambda}$.
 For $\cvar=0$ and $\lambda\neq 0$, and any 
 two half-diagrams 
 we can find an element such that their pairing is one, by 
@@ -4035,7 +4036,7 @@ one of the corresponding parameters is invertible in $\KK$.
 \end{example}
 
 \begin{theorem}
-Let $\KK=\K$ be a field.
+Let $\KK$ be a field.
 \begin{enumerate}
 
 \item If $\cpar\neq 0$, or $\cpar=0$ and $\lambda\neq 0$ is odd, 
@@ -4045,14 +4046,14 @@ all $\lambda\in\Lambda-\{0\}$ are apexes, but $\lambda=0$ is not an apex.
 
 \item The simple $\setstuff{TL}_{n,g}(\cpar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\K\setstuff{F}_{g}$.
+are parameterized by simple modules of $\KK\setstuff{F}_{g}$.
 
 \item The simple $\setstuff{TL}_{n,g}(\cpar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\K\setstuff{F}_{g}}^{\setstuff{TL}_{n,g}(\cpar)}(K)$, 
+$\mathrm{Ind}_{\KK\setstuff{F}_{g}}^{\setstuff{TL}_{n,g}(\cpar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\K\setstuff{F}_{g}$-modules.
+simple $\KK\setstuff{F}_{g}$-modules.
 
 \end{enumerate}
 \end{theorem}
@@ -4748,7 +4749,7 @@ The cells look similar as for the handlebody Temperley--Lieb algebra,
 {\cf} \fullref{example:cells-tl}.
 
 \begin{theorem}\label{theorem:blob}
-Let $\KK=\K$ be a field.
+Let $\KK$ be a field.
 \begin{enumerate}
 
 \item If $\cpar\neq 0$, or $\cpar=0$ and $\lambda\neq 0$ is odd, 
@@ -4757,14 +4758,14 @@ $\cpar=0$ and $\lambda=0$ (this only happens if $n$ is even), all $\lambda\in\La
 
 \item The simple $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\K\setstuff{B}_{g,1}^{\dpar,\bpar}$.
+are parameterized by simple modules of $\KK\setstuff{B}_{g,1}^{\dpar,\bpar}$.
 
 \item The simple $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\K\setstuff{B}_{g}^{\dpar,\bpar}}^{\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)}(K)$, 
+$\mathrm{Ind}_{\KK\setstuff{B}_{g}^{\dpar,\bpar}}^{\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\K\setstuff{B}_{g,1}^{\dpar,\bpar}$-modules.
+simple $\KK\setstuff{B}_{g,1}^{\dpar,\bpar}$-modules.
 
 \end{enumerate}
 \end{theorem}
@@ -4781,11 +4782,11 @@ for $\lambda=0$ in the text below):
 
 \begin{enumerate}
 
-\item For $g=0$ we have $\K\setstuff{B}_{0}^{\dpar,\bpar}=\K$, so we obtains 
+\item For $g=0$ we have $\KK\setstuff{B}_{0}^{\dpar,\bpar}=\KK$, so we obtains 
 the classical parametrization of the simple modules of 
 the Temperley--Lieb algebra by through strands.
 
-\item For $g=1$ we have that $\K\setstuff{B}_{1}^{\dpar,\bpar}$ is 
+\item For $g=1$ we have that $\KK\setstuff{B}_{1}^{\dpar,\bpar}$ is 
 a finite-dimensional quotient of a polynomial ring in one variable $b$
 by an ideal of the form
 \begin{gather*}
@@ -4794,15 +4795,15 @@ by an ideal of the form
 (b-\bvar_{\dvar_{1}})=0.
 \end{gather*} 
 In particular, the number of simple modules associated to 
-$\K\setstuff{B}_{1}^{\dpar,\bpar}$ equals the number of distinct 
+$\KK\setstuff{B}_{1}^{\dpar,\bpar}$ equals the number of distinct 
 parameters in $\bpar$. For example, if $\dvar_{1}=2$, then
 \begin{gather*}
 \bvar_{1}=\bvar_{2}=0\Rightarrow
-\K\setstuff{B}_{1}^{\dpar,\bpar}\cong\K[b]/(b^{2})
+\KK\setstuff{B}_{1}^{\dpar,\bpar}\cong\KK[b]/(b^{2})
 \text{ has one simple module},
 \\
 \bvar_{1}=1,\bvar_{2}=0\Rightarrow
-\K\setstuff{B}_{1}^{\dpar,\bpar}\cong\K[b]/(b-1)b
+\KK\setstuff{B}_{1}^{\dpar,\bpar}\cong\KK[b]/(b-1)b
 \text{ has two simple modules}.
 \end{gather*}
 In the latter case $b^{2}=b$, 
@@ -5173,7 +5174,8 @@ coherent circle evaluations.
 \end{remark}
 
 \begin{remark}
-For $\qvar\in\K$ being a root of unity there are still Jones--Wenzl 
+For $\qvar\in\KK$ being a root of unity and $\KK$ being a field
+there are still Jones--Wenzl 
 type idempotents, see {\eg} \cite{MaSp-lp-jw} or \cite{SuTuWeZh-mixedsl2} 
 for general constructions of such idempotents. However their 
 endomorphism spaces are no longer trivial, so we can not use the 
@@ -6190,7 +6192,7 @@ The next theorem is
 clear by the previous discussions.
 
 \begin{theorem}\label{theorem:bmw}
-Let $\KK=\K$ be a field, and choose admissible parameters.
+Let $\KK$ be a field, and choose admissible parameters.
 \begin{enumerate}
 
 \item If $\cvar\neq 0$, or $\cvar=0$ and $\lambda\neq 0$ is odd, 
@@ -6199,14 +6201,14 @@ $\cvar=0$ and $\lambda=0$ (this only happens if $n$ is even), all $\lambda\in\La
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\K\setstuff{Br}_{g,\lambda}^{+}$.
+are parameterized by simple modules of $\KK\setstuff{Br}_{g,\lambda}^{+}$.
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\K\setstuff{Br}_{g,\lambda}^{+}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
+$\mathrm{Ind}_{\KK\setstuff{Br}_{g,\lambda}^{+}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\K\setstuff{Br}_{g,\lambda}^{+}$-modules.
+simple $\KK\setstuff{Br}_{g,\lambda}^{+}$-modules.
 
 \end{enumerate}
 \end{theorem}
@@ -6220,13 +6222,13 @@ Let us comment on the parametrization given by
 \fullref{theorem:bmw}:
 \begin{enumerate}
 
-\item For $g=0$ the algebras $\K\setstuff{Br}_{0,\lambda}^{+}$ 
+\item For $g=0$ the algebras $\KK\setstuff{Br}_{0,\lambda}^{+}$ 
 are Hecke algebras associated to Coxeter type 
 $A_{\lambda-1}$, so we get the same classification 
 as in \fullref{theorem:brauer}, but for the BMW algebra. 
 This was of course known, see {\eg} \cite[Corollary 3.14]{Xi-bmw}.
 
-\item For $g=1$ the algebras $\K\setstuff{Br}_{1,\lambda}^{+}$
+\item For $g=1$ the algebras $\KK\setstuff{Br}_{1,\lambda}^{+}$
 are extended affine Hecke algebras associated to Coxeter type 
 $A_{\lambda-1}$.
 
@@ -6802,13 +6804,13 @@ cell datum for $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$.
 By the above.
 \end{proof}
 
-Let $\K\setstuff{B}_{\lambda}^{\dpar,\bpar}$ denote the 
+Let $\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}$ denote the 
 blobed symmetric group in $\lambda$ strands, {\ie} the symmetric 
 group with blobs on strands that satisfy \eqref{eq:brauer-move1} and 
 \eqref{eq:brauer-move2}. 
 
 \begin{theorem}\label{theorem:brauerblob}
-Let $\KK=\K$ be a field, and choose admissible parameters.
+Let $\KK$ be a field, and choose admissible parameters.
 \begin{enumerate}
 
 \item If $\cpar\neq 0$, or $\cpar=0$ and $\lambda\neq 0$ is odd, 
@@ -6817,14 +6819,14 @@ $\cpar=0$ and $\lambda=0$ (this only happens if $n$ is even), all $\lambda\in\La
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\K\setstuff{B}_{\lambda}^{\dpar,\bpar}$.
+are parameterized by simple modules of $\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}$.
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\K\setstuff{B}_{\lambda}^{\dpar,\bpar}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
+$\mathrm{Ind}_{\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\K\setstuff{B}_{\lambda}^{\dpar,\bpar}$-modules.
+simple $\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}$-modules.
 
 \end{enumerate}
 \end{theorem}
@@ -6839,10 +6841,10 @@ of course just a BMW version of
 \fullref{theorem:brauer}. For $g=1$ and the Brauer 
 specialization this recovers 
 \cite[Appendix 6]{BoCoDeVi-decomposition-cyclotomic-brauer}, where 
-$\K\setstuff{B}_{\lambda}^{\dvar,\bvar}$ is a complex reflection 
+$\KK\setstuff{B}_{\lambda}^{\dvar,\bvar}$ is a complex reflection 
 group of type $G(\dvar,1,\lambda)$.
 In the semisimple case the parametrization of simples of
-$\K\setstuff{B}_{\lambda}^{\dvar,\bvar}$ (and thus, of $\setstuff{Br}_{1,n}(\cvar)$ per apex $\lambda$) is given 
+$\KK\setstuff{B}_{\lambda}^{\dvar,\bvar}$ (and thus, of $\setstuff{Br}_{1,n}(\cvar)$ per apex $\lambda$) is given 
 by $\dvar$-multipartitions of $\lambda$. 
 \end{example}
 
@@ -7223,7 +7225,7 @@ $e$ exists. A $\lambda\in\Lambda$ is called
 \emph{$e$-restricted} if $\lambda_{i}-\lambda_{i+1}<e$.
 
 \begin{theorem}\label{theorem:cellhecke}
-Let $\KK=\K$ be a field.
+Let $\KK$ be a field.
 \begin{enumerate}
 
 \item A $\lambda\in\Lambda$ is an apex 
@@ -7257,7 +7259,7 @@ The cases $g=0$ and $g=1$ of \fullref{theorem:cellhecke}
 are well-known:
 \begin{enumerate}
 
-\item We have $\setstuff{L}_{0,n}=\K$, so the above 
+\item We have $\setstuff{L}_{0,n}=\KK$, so the above 
 is the classical parametrization 
 of simple $\setstuff{H}_{g,n}$-modules, see {\eg} 
 \cite[Section 3.4]{Ma-hecke-schur}.
@@ -7582,7 +7584,7 @@ cell datum for $\setstuff{H}_{g,n}^{\dpar,\bpar}$.\qed
 \end{proposition}
 
 \begin{theorem}\label{theorem:checke}
-Let $\KK=\K$ be a field.
+Let $\KK$ be a field.
 \begin{enumerate}
 
 \item A $\lambda\in\Lambda$ is an apex 
