@@ -404,7 +404,7 @@ In all the classical examples, like the Temperley--Lieb algebra or
 the Hecke algebra, the ambient space is the three ball, and these algebras 
 are related to spherical Coxeter and Artin--Tits braid groups.
 In the simplest case beyond the three ball, when one passes to links in a solid torus, 
-these diagrams algebras get replaced by their (extended) affine versions, 
+these diagram algebras get replaced by their (extended) affine versions, 
 and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
 one could expect for more general three manifolds. Most prominently 
@@ -1617,6 +1617,12 @@ $\mathcal{J}_{\lambda}$.
 \textit{(c).} Apply \fullref{lemma:h-subalgebra} to the previous 
 correspondence.
 \end{proof}
+
+\begin{remark}
+Note a crucial difference to the case $\setstuff{B}_{\lambda}=\KK$, 
+which is (up to having an involution) the cellular case: 
+one apex can have any associated number of simples, not just one.
+\end{remark}
 
 \subsection{The Brauer algebra as an example}\label{subsection:brauer}
 
@@ -3354,7 +3360,7 @@ This follows from the proof of \fullref{proposition:jm-elements-basis}.
 
 Recall that $\KK$ denotes a unital, commutative, Noetherian domain. 
 The example the reader should keep in mind throughout this section is
-$\KK=\Z[\cpar]$ where $\cpar$ is a 
+$\KK=\Z[\cpar]$ where $\cpar=(\cvar)_{i}$ is a 
 collection of variables $\cvar_{i}$ 
 which are circle evaluations.
 Recall further that we fixed $g\in\N$ and $n\in\N_{>0}$.
@@ -3413,7 +3419,7 @@ These crossingless matchings are not allowed to have
 $\setstuff{F}_{g}$-colored circles $\gamma$, 
 but of course they could appear after concatenation. For the 
 following definition we choose a set of parameters 
-$\cpar=(\cvar_{\gamma})\in\KK$, one for each $\setstuff{F}_{g}$-colored circle $\gamma$, up to conjugacy of words.
+$\cpar=(\cvar_{\gamma})_{\gamma}\in\KK$, one for each $\setstuff{F}_{g}$-colored circle $\gamma$, up to conjugacy of words.
 
 \begin{definition}
 The evaluation of 
@@ -3455,7 +3461,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=90] (1.25,0.75);
 \end{tikzpicture}
 \leftrightsquigarrow
-\cvar_{\gamma}
+\cvar_{\gamma=uv}
 ,\quad
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
@@ -3470,7 +3476,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \draw[usual,crossline] (-0.25,0.55) to[out=90,in=270] (0.25,0.75);
 \end{tikzpicture}
 \leftrightsquigarrow
-\cvar_{\gamma^{\prime}}.
+\cvar_{\gamma^{\prime}=u^{2}v}.
 \end{gather*}
 Here the first word in $\setstuff{F}_{g}$ is the trivial word, 
 the second is $uv$, and the third is $u^{2}v$.
@@ -3493,7 +3499,7 @@ and some of them are not topological in nature, and
 the construction in \fullref{definition:handlebody-tl} 
 is one of those that are not topological. 
 In particular,
-the Kauffman Skein relation 
+the \emph{Kauffman Skein relation} 
 \begin{gather}\label{eq:kauffman}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
@@ -3717,7 +3723,7 @@ with the usual partial order.
 The $\lambda\in\Lambda$ are again the through strands of our diagrams, 
 and we let $\setstuff{B}_{\lambda}=\KK\setstuff{F}_{g}$, 
 the group ring of the free group in $g$ 
-generators $\setstuff{F}_{g}\subset\setstuff{Br}_{g,\lambda}$.
+generators $\setstuff{F}_{g}\hookrightarrow\setstuff{Br}_{g,\lambda}$.
 The construction of the basis 
 \begin{gather}\label{eq:tl-basis}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
@@ -3914,8 +3920,7 @@ to[out=90,in=270] (0.5,1.5)node[above,black,yshift=-3pt]{$v$};
 ,
 \end{gather*}
 where we used the elements in \eqref{eq:tl-basis-illustration}.
-The property of being involutive follows by construction. 
-To see this note that any potential winding is allowed 
+The property of being involutive also holds since any potential winding is allowed 
 for the diagrams $D$ and $U$, so $(\placeholder)^{\star}$ is a $1$:$1$-correspondence between down and up diagrams.
 \end{proof}
 
@@ -4121,14 +4126,13 @@ b_{v}=
 .
 \end{gather}
 That is, we use colored \emph{blobs} 
-instead of twists, hence 
-the name. We denote corresponding elements corresponding to 
+instead of twists, which clarifies the nomenclature. 
+We denote corresponding elements corresponding to 
 twists by $b_{u}$. We also say that a blob labeled $u$ has 
 \emph{type $u$}.
-
 Note that blobs are always reachable from the left via a straight line 
 coming from $-\infty$, and move 
-freely along strands, but can not pass one another:
+freely along strands in a vertical direction, but can not pass one another:
 \begin{gather}\label{eq:not-defined}
 \text{Ok:}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
@@ -4252,7 +4256,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \draw[usual,crossline] (-0.25,0.9) to[out=90,in=90] (1.25,0.75);
 \draw[usual,crossline] (-0.25,0.55) to[out=90,in=270] (0.25,0.75);
 \end{tikzpicture}
-=\cpar_{\gamma^{\prime}}
+=\cpar_{\gamma^{\prime}=u^{2}v}
 \leftrightsquigarrow
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
@@ -4260,7 +4264,21 @@ to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
 \draw[usual,blobed={0}{u}{spinach},blobed={0.5}{u}{spinach},blobed={1}{v}{tomato}] (1,0.3) 
 to[out=90,in=270] (1,1.2);
 \end{tikzpicture}
-=\cpar_{\gamma^{\prime}}
+=
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
+to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
+\draw[usual,blobed={0}{v}{tomato},blobed={0.5}{u}{spinach},blobed={1}{u}{spinach}] (1,0.3) 
+to[out=90,in=270] (1,1.2);
+\end{tikzpicture}
+=
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
+to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
+\draw[usual,blobed={0}{u}{spinach},blobed={0.5}{v}{tomato},blobed={1}{u}{spinach}] (1,0.3) 
+to[out=90,in=270] (1,1.2);
+\end{tikzpicture}
+=\cpar_{\gamma^{\prime}=u^{2}v}
 .
 \end{gather*}
 \end{example}
@@ -4303,9 +4321,9 @@ For $g=2$, let us choose $\dvar_{1}=1$ and $\dvar_{2}=2$. We get
 \begin{gather*}
 \begin{gathered}
 \bvar_{1,1}=0
-\\[-3pt]
+\\[-5pt]
 \bvar_{2,1}=0
-\\[-3pt]
+\\[-5pt]
 \bvar_{2,2}=0
 \end{gathered}
 \quad\text{gives}\quad
@@ -4326,9 +4344,9 @@ For $g=2$, let us choose $\dvar_{1}=1$ and $\dvar_{2}=2$. We get
 ,\quad
 \begin{gathered}
 \bvar_{1,1}=1
-\\[-3pt]
+\\[-5pt]
 \bvar_{2,1}=0
-\\[-3pt]
+\\[-5pt]
 \bvar_{2,2}=0
 \end{gathered}
 \quad\text{gives}\quad
@@ -4354,9 +4372,9 @@ For $g=2$, let us choose $\dvar_{1}=1$ and $\dvar_{2}=2$. We get
 \\
 \begin{gathered}
 \bvar_{1,1}=1
-\\[-3pt]
+\\[-5pt]
 \bvar_{2,1}=1
-\\[-3pt]
+\\[-5pt]
 \bvar_{2,2}=0
 \end{gathered}
 \quad\text{gives}\quad
@@ -4394,7 +4412,7 @@ For $g=2$, let us choose $\dvar_{1}=1$ and $\dvar_{2}=2$. We get
 \end{gather*}
 Note that the final expression can be resolved in two ways: First 
 by removing the blob colored 1, and then by replacing the two blobs colored 2 
-by one blob colored 2. Or by applying \eqref{eq:cyclotomic-blob} 
+by one blob colored 2. Second, by applying \eqref{eq:cyclotomic-blob} 
 directly, as we did above. 
 Both give the same result.
 \end{example}
@@ -4403,7 +4421,7 @@ Both give the same result.
 We have not defined 
 $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$
 as a quotient of $\setstuff{TL}_{g,n}(\cpar)$ 
-for the following reasons. First, blobs are invertible 
+because blobs would be invertible 
 if we define them as the image of $\tau_{u}$ in the quotient
 and we want to include the possibility of blobs being nilpotent, 
 {\cf} \fullref{example:blob}.
@@ -4431,8 +4449,6 @@ blob algebra, see {\eg}
 \cite{deGiNi-two-boundary-tl} (beware that the version of $\setstuff{Bl}_{2,n}^{\dpar,\bpar}(\cpar)$ 
 in that paper is called a two-boundary 
 Temperley--Lieb algebra).
-
-\item For higher genus \fullref{definition:blob} appears to be new.
 
 \end{enumerate}
 For $g>0$
@@ -4478,7 +4494,7 @@ Note that this sum is finite.
 
 \begin{example}\label{example:blob-numbers}
 We have $B_{0,\dpar}=1$ (by definition), 
-$B_{1,\dpar}=\dvar_{1}-1$ and, for $\dvar_{1}=2$ and $\dvar_{2}=3$, 
+$B_{1,\dpar}=\dvar_{1}$ and, for $\dvar_{1}=2$ and $\dvar_{2}=3$, 
 we get $B_{2,\dpar}=
 \binom{0}{0,0}+\binom{1}{1,0}+\binom{1}{0,1}+\binom{2}{1,1}
 +\binom{2}{0,2}+\binom{3}{1,2}=9$. 
@@ -4639,6 +4655,7 @@ to[out=0,in=270] (9,1.5)node[above]{$2n$};
 \node at (2.25,1.75) {$TL_{k-1}$};
 \node at (6.25,1.75) {$BL_{n-k}$};
 \end{tikzpicture}
+.
 \end{gather*}
 The part underneath it, denoted $TL_{k-1}$ above, 
 can not carry any blobs, so the number of possible diagrams is the same 
@@ -4654,7 +4671,7 @@ strand with the leftmost point, see \fullref{lemma:blob-onestrand}.
 
 \begin{example}
 For $g=0$ one obtains that 
-$\dim_{\KK}\setstuff{Bl}_{1,n}^{\dpar,\bpar}(\cpar)=C_{n}$, which is 
+$\dim_{\KK}\setstuff{Bl}_{0,n}^{\dpar,\bpar}(\cpar)=C_{n}$, which is 
 of course expected. For $g=1$ one can solve 
 the recursion in \eqref{eq:blob-dim} and obtains 
 $\dim_{\KK}\setstuff{Bl}_{1,n}^{\dpar,\bpar}(\cpar)=\binom{2n}{n}$, 
@@ -4826,7 +4843,7 @@ a handlebody analog let us define \emph{handlebody
 points of genus $g$}, using handlebody braid 
 diagrams as in \fullref{section:braids} and inspired 
 by \fullref{proposition:embedding}, as the tangle 
-diagrams in $n+g$ strings, which are pure on the first $g$ strings, modulo 
+diagrams in $g+n$ strings, which are pure on the first $g$ strings, modulo 
 the usual tangle relations. 
 The framing is given by a vector field pointing to the $g$th core strand 
 form the left. 
@@ -4958,14 +4975,21 @@ in $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)$ but of infinite
 order in $\setstuff{TL}_{g,n}(\cpar)$.
 
 \begin{remark}
-For $g=0$ \fullref{definition:handlebody-tl-second} 
+\leavevmode
+
+\begin{enumerate}
+
+\item For $g=0$ \fullref{definition:handlebody-tl-second} 
 is a classical definition, while the 
 case $g=1$ is related by Schur--Weyl duality 
 to Verma modules, see \cite{IoLeZh-verma-schur-weyl}.
-Without evaluation of circles the case 
+
+\item Without evaluation of circles the case 
 $g>2$ also appears in 
 \cite{IoLeZh-verma-schur-weyl} under the name multi-polar, 
 but not much appears to be known.
+
+\end{enumerate}
 \end{remark}
 
 \begin{lemma}\label{lemma:tl-span-topological}
@@ -4981,7 +5005,8 @@ That the claimed set is spanning is clear by circle evaluation and
 \end{proof}
 
 \begin{definition}
-We call parameters $\cpar$ such that the $\KK$-spanning set 
+We call parameters 
+$\cpar=(\cvar_{\gamma})_{\gamma}$ such that the $\KK$-spanning set 
 in \fullref{lemma:tl-span-topological} is a $\KK$-basis
 \emph{admissible}.
 \end{definition}
@@ -5004,6 +5029,7 @@ $\setstuff{TL}_{g,n}^{\mathrm{top}}$ as elements in
 $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)$.)
 
 \begin{lemma}\label{lemma:handlebody-tl-second}
+Let $\KK$ be a field.
 For any $\qvar\in\KK$ and $G\geq g$ such that 
 $[k]_{\qvar}\neq 0$ 
 for all $k<G+1$ there exists 
@@ -5017,7 +5043,6 @@ that is \emph{eventually injective}: for every
 non-zero element 
 $x\in\setstuff{TL}_{g,n}^{\mathrm{top}}$ without a circle 
 there exists $G$ and $\cpar^{G}$ such that $\iota^{G}(x)\neq 0$.
-
 Moreover, the parameters $\cpar^{G}$ are admissible. 
 \end{lemma}
 
