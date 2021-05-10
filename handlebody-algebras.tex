@@ -373,7 +373,7 @@ catholique de Louvain, Chemin du Cyclotron 2, building L7.01.02, 1348 Louvain-la
 In this paper we study handlebody versions 
 of classical diagram algebras, most prominently, 
 handlebody versions of Temperley--Lieb, blob, 
-Brauer (or BMW), Hecke and Ariki--Koike algebras.
+Brauer/BMW, Hecke and Ariki--Koike algebras.
 Moreover, motivated by Green--Kazhdan--Lusztig's 
 theory of cells, we reformulate the notion of 
 (sandwich, inflated or affine) cellular algebras.
@@ -400,22 +400,22 @@ they are of fundamental importance in low-dimensional topology
 and they also have a rich representation theory.
 
 Having an eye on the study of links in 
-more general 3-manifolds brings the topology of the ambient space into the play.
+more general three manifolds brings the topology of the ambient space into the play.
 In all the classical examples, like the Temperley--Lieb algebra or 
-the Hecke algebra, the ambient space is the 3-ball, and these algebras 
+the Hecke algebra, the ambient space is the three ball, and these algebras 
 are related to spherical Coxeter and Artin--Tits braid groups.
-In the simplest case beyond 3-ball, when we pass to links in a solid torus, 
+In the simplest case beyond the three ball, when one passes to links in a solid torus, 
 these diagrams algebras get replaced by their (extended) affine version, 
 and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
-one could expect for more general 3-manifolds. Most prominently 
-for this paper, (3-)handlebodies of genus $g$; the two cases mentioned 
+one could expect for more general three manifolds. Most prominently 
+for this paper, (three dimensional) handlebodies of genus $g$; the two cases mentioned 
 before are $g=0$ and $g=1$, respectively.
 
 The case $g=0$ is classical, and these diagram algebras and their associated 
 braid groups are around for Donkey's years. The $g=1$ case goes 
 back to at least Brieskorn \cite{Brieskorn}, and has a long history of work on this topic.
-For example (with more references to come in the main text), see
+For example (with more references to come in the main text after the introduction), see
 \cite{allcock} for braid pictures, \cite{Geck-Lambropoulou} or \cite{OrRa-affine-braids} for connections 
 to knot theory, \cite{Gr-gen-tl-algebra} 
 or \cite{HaOl-cyclotomic-bmw} for affine diagram algebras.
@@ -425,43 +425,28 @@ respectively H{\"a}ring-Oldenburg--Lambropoulou \cite{La-handlebodies}, \cite{Ha
 while Lambropoulou studied links in handlebodies even before that \cite{La-PhDThesis}.
 
 From the representation theoretical point of view all these 
-algebras share the common feature of being cellular in a certain sense 
+algebras share the common feature of being cellular in a certain way
 that we will make precise. In a nutshell, in the $g=0$ case 
 these algebras are cellular in the sense of Graham--Lehrer \cite{GrLe-cellular}, 
 in the $g=1$ case they are affine cellular in the sense of K{\"o}nig--Xi \cite{KoXi-affine-cellular}.
 For $g>1$ we explain how they are sandwich cellular, a notion that 
 generalizes (affine) cellularity. 
 Note hereby that this generalization is strictly speaking not new, 
-it heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita} or \cite{GuWi-almost-cellular}, 
+it heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita}, \cite{GuWi-almost-cellular} 
+or \cite{EhTu-relcell}, 
 but our exposition appears to be new.
 
-We see this paper as a continuation of these works, focusing on the diagrammatic 
-and representation theoretical aspects.
+We see this paper as a continuation of these works, focusing on the diagrammatic, 
+algebraic and representation theoretical aspects.
 
 \subsection{What this paper does}
 
-\DT{Rework!}
-
-In this paper we concentrate on various algebraic structures controling the extension to handlebodies of several classical link invariants.
-
-Our notion of cellularity recollects \PV{...} and it is the one that best fits all our examples (and many more) is \PV{sandwich. Not completely new...}
-In~\cite{ElLa-trace-hecke} (not in Libedinsky(light leaves)?) the authors have introduced the notion of object-adapted cellularity in order to study a cellular structure in the hom algebras ot the Soergel category. \PV{cite~\cite{EhTu-relcell} and/or \cite{We-tensors-cellular-categories} here? }
-
-
-
-\medskip
-
-\fullref{section:cells}:
-A generalization of cellularity
-
-
-
-\PV{Maybe add some relations between these diagrams}
-
-
-\fullref{section:braids}: Handlebody braid and Coxeter groups
-
-\[
+Our starting point are diagrammatic descriptions of 
+handlebody braid groups of genus $g$, {\ie} diagrammatic 
+descriptions of the configuration space of a disk with 
+$g$ punctures. The pictures hereby are {\eg}
+\begin{gather*}
+\text{A handlebody braid for $g=4$}\colon
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
@@ -476,15 +461,112 @@ A generalization of cellularity
 \draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,2.25);
 \draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,2.25);
 \draw[pole,crosspole] (1,1.5) to[out=90,in=270] (1,2.25);
-\draw[usual,crossline] (1.5,1.5) to[out=90,in=270] (1.5,2.25);
-\draw[usual,crossline] (2,1.5) to[out=90,in=270] (2,2.25);
-\draw[usual,crossline] (2.5,1.5) to[out=90,in=270] (2.5,2.25);
+\draw[usual,crossline] (1.5,1.5) to[out=90,in=270] (2,2.25);
+\draw[usual,crossline] (2,1.5) to[out=90,in=270] (2.5,2.25);
+\draw[usual,crossline] (2.5,1.5) to[out=90,in=270] (1.5,2.25);
+%%
+\draw[very thick,specialgray,->] (1.5,-0.75) to[out=180,in=270] (-0.5,-0.1);
+\draw[very thick,specialgray,->] (1.5,-0.75) to[out=180,in=270] (0,-0.1);
+\draw[very thick,specialgray,->] (1.5,-0.75) to[out=180,in=270] (0.5,-0.1);
+\draw[very thick,specialgray,->] (1.5,-0.75)node[right,black]{core strands} to[out=180,in=270] (1,-0.1);
+%%
+\draw[very thick,black,->] (3,3) to[out=180,in=90] (1.5,2.35);
+\draw[very thick,black,->] (3,3) to[out=180,in=90] (2,2.35);
+\draw[very thick,black,->] (3,3) node[right,black]{usual strands} to[out=180,in=90] (2.5,2.35);
 \end{tikzpicture}
-\]
+.
+\end{gather*}
+This illustrates a handlebody braid for genus $4$: 
+The three strands to the right are usual strands.
+The four thick and blue/grayish strands to the left are core
+strands and they correspond to the punctures 
+of the disk respectively the cores of the handlebody. 
+The point is that via an appropriate closure, merging 
+the core strands at infinity, illustrated by
+\begin{gather*}
+\text{An Alexander closure}\colon
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
+\draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
+\draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
+\draw[usual,crossline] (1.5,0) to[out=90,in=270] (2,1.5);
+\draw[usual,crossline] (2.5,0) to[out=90,in=270] (2.5,1.5);
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
+\draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1.5,1.5);
+%%
+\draw[pole,crosspole] (-0.5,1.5) to[out=90,in=270] (-0.5,2.25);
+\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,2.25);
+\draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,2.25);
+\draw[pole,crosspole] (1,1.5) to[out=90,in=270] (1,2.25);
+\draw[usual,crossline] (1.5,1.5) to[out=90,in=270] (2,2.25);
+\draw[usual,crossline] (2,1.5) to[out=90,in=270] (2.5,2.25);
+\draw[usual,crossline] (2.5,1.5) to[out=90,in=270] (1.5,2.25);
+\end{tikzpicture}
+\rightsquigarrow
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
+\draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
+\draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
+\draw[usual,crossline] (1.5,0) to[out=90,in=270] (2,1.5);
+\draw[usual,crossline] (2.5,0) to[out=90,in=270] (2.5,1.5);
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
+\draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1.5,1.5);
+%%
+\draw[pole,crosspole] (-0.5,1.5) to[out=90,in=270] (-0.5,2.25);
+\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,2.25);
+\draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,2.25);
+\draw[pole,crosspole] (1,1.5) to[out=90,in=270] (1,2.25);
+\draw[usual,crossline] (1.5,1.5) to[out=90,in=270] (2,2.25);
+\draw[usual,crossline] (2,1.5) to[out=90,in=270] (2.5,2.25);
+\draw[usual,crossline] (2.5,1.5) to[out=90,in=270] (1.5,2.25);
+%%
+\draw[pole] (-0.5,0) to[out=270,in=180] (0.25,-0.75);
+\draw[pole] (0,0) to[out=270,in=180] (0.25,-0.75);
+\draw[pole] (0.5,0) to[out=270,in=0] (0.25,-0.75);
+\draw[pole] (1,0) to[out=270,in=0] (0.25,-0.75);
+\draw[pole] (-0.5,2.25) to[out=90,in=180] (0.25,3);
+\draw[pole] (0,2.25) to[out=90,in=180] (0.25,3);
+\draw[pole] (0.5,2.25) to[out=90,in=0] (0.25,3);
+\draw[pole] (1,2.25) to[out=90,in=0] (0.25,3);
+\draw node[pole] at (0.25,2.8) {{\color{specialgray}\LARGE$\bullet$}};
+\draw node[pole,above] at (0.25,2.95) {\color{specialgray}$\infty$};
+\draw node[pole] at (0.25,-0.9) {{\color{specialgray}\LARGE$\bullet$}};
+\draw node[pole,below] at (0.25,-0.8) {\color{specialgray}$\infty$};
+%
+\draw[usual] (1.5,0) to[out=270,in=180] (2.75,-1) 
+to[out=0,in=270] (4,0) to (4,2.25) to[out=90,in=0] (2.75,3.25) to[out=180,in=90] (1.5,2.25);
+\draw[usual] (2,0) to[out=270,in=180] (2.75,-0.75) 
+to[out=0,in=270] (3.5,0) to (3.5,2.25) to[out=90,in=0] (2.75,3) to[out=180,in=90] (2,2.25);
+\draw[usual] (2.5,0) to[out=270,in=180] (2.75,-0.5) 
+to[out=0,in=270] (3,0) to (3,2.25) to[out=90,in=0] (2.75,2.75) to[out=180,in=90] (2.5,2.25);
+\end{tikzpicture}
+,
+\end{gather*}
+the core strands correspond to cores of a three dimensional 
+handlebody, hence the name. All links in such handlebodies can 
+be obtained by this closing procedure, and there is also an associated 
+Markov theorem. In other words, the handlebody braid group gives an 
+algebraic way to study links in handlebodies. The main references 
+here are \cite{Ve-handlebodies} and \cite{HaOlLa-handlebodies}.
+After explaining this setup more carefully, building upon the aforementioned 
+works, in \fullref{section:braids} 
+we also study an associated handlebody Coxeter group for which we find a basis 
+using appropriate versions of Jucys--Murphy elements.
 
+We stress again that the case $g=0$ is classical, while $g=1$ corresponds to 
+(extended) affine braid groups, as studied in {\eg} \cite{Brieskorn} or \cite{allcock}.
 
-\fullref{section:tlblob}: Handlebody Temperley--Lieb and blob algebras
-\[
+These handlebody braid pictures our starting point to define and study 
+various diagram algebras associated to handlebodies:
+
+\begin{enumerate}
+
+\item In \fullref{section:tlblob} we study handlebody Temperley--Lieb and blob algebras
+where the pictures to keep in mind are 
+(left Temperley--Lieb, right blob):
+\begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.5);
@@ -495,9 +577,7 @@ to[out=0,in=180] (0.75,0.8) to[out=0,in=90] (1.5,0);
 \draw[usual,crossline] (1,1.5) to[out=270,in=180] (1.25,1.25) 
 to[out=0,in=270] (1.5,1.5);
 \end{tikzpicture}
-\]
-
-\[
+,\quad
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual,blobed={0.25}{u}{spinach}] (2,1.5) 
@@ -512,13 +592,21 @@ to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 \draw[usual] (1.5,0) to[out=90,in=180] (1.75,0.25) to[out=0,in=90] (2,0);
 \draw[usual] (3.5,0) to[out=90,in=180] (3.75,0.25) to[out=0,in=90] (4,0);
 \end{tikzpicture}
-\]
+.
+\end{gather*}
+Note that the blobs illustrated in the right picture come in colors, 
+corresponding to the various cores strands. These algebras 
+generalize Temperley--Lieb algebras and blob algebras: 
+If $g=0$, then these two algebras are the same as the classical 
+Temperley--Lieb algebra.
+For $g=1$ they are not the same anymore (at least in our formulation as they appear 
+under various names in the literature), and have a long history of study
+starting with \cite{MaSa-blob}.
 
-
-\fullref{section:brauer}: Handlebody Brauer and BMW algebras
-
-``Tangle algebra''
-\[
+\item In \fullref{section:brauer} we move on to handlebody versions 
+of Brauer and BMW algebras. These are handlebody tangle algebras 
+and the picture is
+\begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
 %%
@@ -532,45 +620,101 @@ to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 \draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,3);
 \draw[usual,crossline] (-0.25,2.25) to[out=90,in=90] (1.5,1.5);
 \end{tikzpicture}
-\]
+.
+\end{gather*}
+As before, the case $g=0$ is classical and goes back to Brauer, while 
+$g=1$ appears in \cite{HaOl-actions-tensor-categories}.
+In the same section we also study their cyclotomic quotients.
 
-
-\fullref{section:hecke}: Handlebody Hecke and Ariki--Koike algebras
-
-\[
+\item Finally, \fullref{section:hecke} studies handlebody versions of Hecke and Ariki--Koike algebras.
+The picture is for handlebody Hecke algebras the same as for handlebody braid groups, 
+while we choose to illustrate handlebody versions of Ariki--Koike algebras via blobs, {\eg}
+\begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual] (2,1) to[out=90,in=270] (2,1.5);
 \draw[usual,blobed={0.58}{u}{spinach},crossline] (2.5,0) 
 to (2.5,0.5) to[out=90,in=270] (1.5,1) to[out=90,in=270] (2.5,1.5);
 \draw[usual,blobed={0.4}{v}{tomato},crossline] (2,0) to[out=90,in=270] (2,1);
 \end{tikzpicture}
-\]
+.
+\end{gather*}
+The cases $g=0$ and $g=1$ are, of course, well-studied as the correspond to 
+Hecke respectively extended affine Hecke algebras or their cyclotomic quotients, and
+we learned about the $g>1$ case from \cite{La-handlebodies}
+and \cite{Ba-braid-handlebodies}.
 
+\end{enumerate}
 
-
-
-\paragraph{Temperley--Lieb is important} The reader should read~\fullref{section:tlblob} before BMW~\fullref{section:brauer} or Hecke~\fullref{section:hecke}.
-
-
-
+Let us also point out that we study a generalization of cellularity in 
+\fullref{section:cells}, which gives us a tool to parameterize the simples 
+modules of the aforementioned algebras.
 
 \subsection{Speculations}
 
+Let us mention a number of interesting future directions.
 
-\begin{remark}
-Let us comment on a few potential generalizations.\DT{To do -- cite people}
-\end{remark}
+\begin{enumerate}[label=$\bullet$]
 
-\PV{3 items: 1 - other cellular algebras, 2 - categorification, 3 - connections to Lie theory (Schur-Weyl)}
+\item \textbf{Quantum topology.} 
+A manifest direction which we do not explore in 
+this work would be to study these above algebras 
+in connections to quantum topology and its ramifications.
+
+For example, \cite{Geck-Lambropoulou} and \cite{OrRa-affine-braids}
+study Markov traces for $g=1$ and construct link invariants, and
+these link invariants admit categorifications \cite{WeWi}. 
+For $g>1$ steps in this direction were taken in \cite{RoTu-homflypt-typea}, 
+but this direction appears to be widely open otherwise.
+
+Moreover, for $g=0$ most of these diagram algebras are related to 
+representation theory by some version of Schur--Weyl duality. 
+(In fact, this was the reason to define the Temperley--Lieb 
+algebras to begin with, see \cite{RuTeWe}.) 
+Some work for higher genus in this direction are known, 
+{\eg} in relation to Verma modules \cite{IoLeZh-verma-schur-weyl}, 
+\cite{LV}, \cite{DaRa-two-boundary-hecke} or complex reflection groups \cite{MaSt}, \cite{SaSh}. Future research in this direction seems 
+to be a worthwhile goal.
+
+\item \textbf{Diagram algebras.} There are plenty 
+of diagram algebras which we have not considered in this 
+paper, but for which (some version of) our discussion goes through.
+
+Example of such algebras that come to mind that appear in classical 
+literature are partition algebras \cite{Martin},
+rook monoid algebras \cite{Solomon}, walled 
+Brauer algebras \cite{Koike} and alike. 
+Other examples are related to knot theory and categorification 
+such as (type A) webs \cite{CKM}, \cite{RoTu-symmetric-howe} 
+or \cite{TVW}.
 
 Diagrammatic algebras are also important in categorification. 
-After its introduction by Khovanov and Lauda \cite{KL1} they have become quite popular. \PV{cite Webster papers\cite{webster}, 2-heisenberg papers, 2-Verma \cite{naissevaz2,naissevaz3,maksimau-vaz} and 2-blob \cite{lacabanne-naisse-vaz}, and Elias--Williamson}.  
-Speculate that the algebras in the papers cited above should fall in our notion of cellularity.
-\PV{Cite Kleshchev et al's papers on affine cellularity of KLR here?}
+After its introduction by Khovanov--Lauda \cite{KL1} 
+(and Rouquier \cite{Rouquier}) 
+they have become quite popular, and might admit handlebody versions.
+For example, these KLR algebras come to mind, 
+or Webster's tensor product algebras \cite{webster}, 
+algebras related to Verma categorification 
+\cite{naissevaz2}, \cite{naissevaz3}, \cite{maksimau-vaz}, \cite{lacabanne-naisse-vaz}, Soergel diagrammatics \cite{EW}, 
+just to name a few. 
 
-Mention ``hypothetical'' handlebody Soergel bimodules and~\cite{RoTu-homflypt-typea}, APS + annular Khovanov, 2-blob, etc... 
+\item \textbf{Categories instead of algebras.}
+All of our objects under study also have appropriate 
+categorical versions.
 
-What about connections to RTW or Lie algebras via Schur-Weyl like in LV\cite{LV}?
+For example, it should be fairly straightforward 
+to generalize our discussion of \fullref{section:cells} 
+to cellular categories as studied in \cite{We-tensors-cellular-categories} or
+\cite{ElLa-trace-hecke}.
+
+However, let us mention that one reason why we have not 
+touched upon categorical versions of our handlebody diagram 
+algebras is that these do not form monoidal categories 
+for $g>0$ (at least not in any reasonable sense), but 
+rather module categories. We think this deserves a thorough 
+treatment, following for example \cite{HaOl-actions-tensor-categories} 
+or \cite{SaTu}.
+
+\end{enumerate}
 
 \subsection{How to read this paper}
 
@@ -2340,7 +2484,7 @@ to[out=0,in=270] (1.5,0) to (1.5,3) to[out=90,in=0] (1.25,3.5) to[out=180,in=90]
 In the topological interpretation, as explained 
 {\eg} in \cite[Section 2]{RoTu-homflypt-typea}, 
 the core strands correspond to the cores of the handles 
-of a solid $3$-dimensional handlebody.
+of a solid three dimensional handlebody.
 This motivates our nomenclature.
 \end{remark}
 
@@ -7459,8 +7603,8 @@ is a non-explicit version of \cite[Theorem 3.30]{DiJaMa-cyclotomic-q-schur}.
 D.~Allcock.
 \newblock Braid pictures for Artin groups.
 \newblock {\em Trans. Amer. Math. Soc.}, 354(9):3455--3474, 2002.
-\newblock \url{https://arxiv.org/abs/math/9907194}
-\newblock \href{https://doi.org/10.1090/S0002-9947-02-02944-6}
+\newblock \url{https://arxiv.org/abs/math/9907194},
+\href{https://doi.org/10.1090/S0002-9947-02-02944-6}
 {\path{doi:10.1090/S0002-9947-02-02944-6}}.
 
 \bibitem[AK94]{ArKo-hecke-algebra}
@@ -7509,13 +7653,21 @@ E.~Brieskorn.
 \newblock Sur les groupes de tresses [d'apr{\`e}s {V}. {I}. {A}rnol'd].
 \newblock {\em  S{\'e}minaire {B}ourbaki, 24{\`e}me ann{\'e}e}, (1971/1972), {E}xp. {N}o. 401, 21--44. Lecture Notes in Math., Vol. 317, 1973.
 \newblock \href {https://doi.org/10.1007/BFb0069274}
-{\path{doi:10.1007/BFb0069274}}
+{\path{doi:10.1007/BFb0069274}}.
 
 \bibitem[BM93]{BrMa-hecke}
 M.~Brou{\'e} and G.~Malle.
 \newblock Zyklotomische {H}eckealgebren.
 \newblock {\em Ast{\'e}risque}, no.212, 119--189, 1993.
-\newblock \url{http://www.numdam.org/item/AST_1993__212__119_0/}
+\newblock \url{http://www.numdam.org/item/AST_1993__212__119_0/}.
+
+\bibitem[CKM14]{CKM}
+S.~Cautis, J.~Kamnitzer and S.~Morrison.
+\newblock Webs and quantum skew Howe duality.
+\newblock {\em Math. Ann.}, 360-1-2, 351--390, 2014.
+\newblock \url{https://arxiv.org/abs/1210.6437},
+\href {https://doi.org/10.1007/s00208-013-0984-4}
+{\path{doi:10.1007/s00208-013-0984-4}}.
 
 \bibitem[Ch87]{Ch-gelfandtzetlin}
 I.V.~Cherednik.
@@ -7561,13 +7713,22 @@ B.~Elias and A.D.~Lauda.
 {https://doi.org/10.1016/j.jalgebra.2015.11.028}
 {\path{doi:10.1016/j.jalgebra.2015.11.028}}.
 
+\bibitem[EW16]{EW}
+B.~Elias and G.~Williamson.
+\newblock Soergel calculus.
+\newblock {\em Represent. Theory}, 20, 295--374, 2014.
+\newblock \url{https://arxiv.org/abs/1309.0865}, \href
+{http://dx.doi.org/10.1090/ert/481}
+{\path{doi:10.1090/ert/481}}.
+
 \bibitem[GL97]{Geck-Lambropoulou}
 M.~Geck and S.~Lambropoulou.
 \newblock  Markov traces and knot invariants related to 
 Iwahori--Hecke algebras of type B.
 \newblock {\em J. Reine Angew. Math.}, 482:191--213, 1997.
 \newblock \url{https://arxiv.org/abs/math/0405508}, 
-\href{https://doi.org/10.1515/crll.1997.482.191}{doi:10.1515/crll.1997.482.191}.
+\href{https://doi.org/10.1515/crll.1997.482.191}
+{\path{doi:10.1515/crll.1997.482.191}}.
 
 \bibitem[GHM11]{GoHaMo-cyclotomic-bmw2}
 F.M.~Goodman and H.~Hauchschild Mosley.
@@ -7662,7 +7823,7 @@ and a category of infinite dimensional
 {$U_{q}(\mathfrak{sl}_{2})$}-modules.
 \newblock {\em Represent. Theory}, 25, 265--299, 2021.
 \newblock \url{https://arxiv.org/abs/1811.01325}, 
-\href{https://doi.org/10.1090/ert/568}{doi:10.1090/ert/568}.
+\href{https://doi.org/10.1090/ert/568}{\path{doi:10.1090/ert/568}}.
 
 \bibitem[IMO14]{IsMoOg-bmw-idempotents}
 A.P.~Isaev, A.I.~Molev, and O.V.~Ogievetsky.
@@ -7696,7 +7857,14 @@ M.~Khovanov and A.~Lauda,
 \newblock {\em Represent. Theory} 13, 309--347, 2009.
 \newblock \url{https://arxiv.org/abs/0803.4121},
 \href{https://doi.org/10.1090/S1088-4165-09-00346-X}
-{\path{doi.org/10.1090/S1088-4165-09-00346-X}}.
+{\path{doi:10.1090/S1088-4165-09-00346-X}}.
+
+\bibitem[Ko89]{Koike}
+K.~Koike.
+\newblock On the decomposition of tensor products of the representations of the classical groups: by means of the universal characters.
+\newblock {\em Adv. Math.}, 74(1):57--86, 1989.
+\newblock \href {https://doi.org/10.1016/0001-8708(89)90004-2}
+{\path{doi:10.1016/0001-8708(89)90004-2}}.
 
 \bibitem[KX01]{KoXi-brauer}
 S.~K{\"o}nig and C.~Xi.
@@ -7768,25 +7936,40 @@ A.~Mathas.
 \newblock {I}wahori--{H}ecke algebras and {S}chur algebras of the symmetric group.
 \newblock {\em University Lecture Series}, 15. American Mathematical Society, Providence, RI, xiv+188, 1999.
 
-\bibitem[MS94]{MaSa-blob}
+\bibitem[Ma91]{Martin}
+P.~Martin.
+\newblock Potts models and related problems in statistical mechanics.
+\newblock {\em Series on Advances in Statistical Mechanics}, 5. World Scientific Publishing Co., Inc., Teaneck, NJ, {\rm xiv}+344 pp, 1991.
+\newblock \href
+{https://doi.org/10.1142/0983} {\path{doi:10.1142/0983}}.
+
+\bibitem[MaSa94]{MaSa-blob}
 P.~Martin and H.~Saleur.
 \newblock The blob algebra and the periodic {T}emperley--{L}ieb algebra.
 \newblock {\em Lett. Math. Phys.}, 30, no.3, 189--206, 1994.
 \newblock \url{https://arxiv.org/abs/hep-th/9302094}, \href
 {https://doi.org/10.1007/BF00805852} {\path{doi:10.1007/BF00805852}}.
 
-\bibitem[MS21]{MaSp-lp-jw}
+\bibitem[MaSp21]{MaSp-lp-jw}
 S.~Martin and R.A.~Spencer.
 \newblock {$(\ell,p)$}-{J}ones--{W}enzl idempotents.
 \newblock 2021.
 \newblock \url{https://arxiv.org/abs/2102.08205v1}.
+
+\bibitem[MaSt16]{MaSt}
+V.~Mazorchuk and C.~Stroppel.
+\newblock $G(l,k,d)$-modules via groupoids.
+\newblock {\em J. Algebraic Combin.}, 43(1):11--32, 2016.
+\newblock \url{http://arxiv.org/abs/1412.4494},
+\href{https://doi.org/10.1007/s10801-015-0623-0}
+{\path {doi:10.1007/s10801-015-0623-0}}.
 
 \bibitem[Mu95]{Mu-typea-hecke}
 G.E.~Murphy.
 \newblock The representations of {H}ecke algebras of type {$A_{n}$}.
 \newblock {\em J. Algebra}, 173, no.1, 97--121, 1995.
 \newblock \href
-{https://doi.org/10.1006/jabr.1995.1079} {\path{10.1006/jabr.1995.1079}}.
+{https://doi.org/10.1006/jabr.1995.1079} {\path{doi:10.1006/jabr.1995.1079}}.
 
 \bibitem[NV17]{naissevaz3}
 G.~Naisse and P.~Vaz.
@@ -7800,7 +7983,7 @@ G.~Naisse and P.~Vaz.
 \newblock {\em Selecta Math. (N.S.)}, 24(4):3763--3821, 2018.
 \newblock \url{https://arxiv.org/abs/1704.08205},
 \href{https://doi.org/10.1007/s00029-018-0397-z}
-{\path {doi.org/10.1007/s00029-018-0397-z}}.
+{\path{doi:10.1007/s00029-018-0397-z}}.
 
 \bibitem[OR07]{OrRa-affine-braids}
 R.~Orellana and A.~Ram.
@@ -7826,6 +8009,42 @@ duality.
 \newblock \url{https://arxiv.org/abs/1501.00915}, \href
 {https://doi.org/10.1093/imrn/rnv302} {\path{doi:10.1093/imrn/rnv302}}.
 
+\bibitem[Ro08]{Rouquier}
+R.~Rouquier.
+\newblock 2-Kac--Moody algebras.
+\newblock 2008.
+\newblock \url{http://arxiv.org/abs/0812.5023}.
+
+\bibitem[RTW32]{RuTeWe}
+G.~Rumer, E.~Teller, and H.~Weyl.
+\newblock Eine f{\"u}r die {V}alenztheorie geeignete {B}asis der bin{\"a}ren
+{V}ektorinvarianten.
+\newblock {\em Nachrichten von der Ges. der Wiss. Zu G{\"o}ttingen. Math.-Phys.
+Klasse}, 1932:498--504, 1932.
+\newblock \url{http://eudml.org/doc/59396}.
+
+\bibitem[SS99]{SaSh}
+M.~Sakamoto and T.~Shoji.
+\newblock Schur--Weyl reciprocity for Ariki--Koike algebras.
+\newblock {\em J. Algebra}, 221(1):293--314, 1999.
+\newblock \href{https://doi.org/10.1006/jabr.1999.7973}
+{\path{doi:10.1006/jabr.1999.7973}}.
+
+\bibitem[ST19]{SaTu}
+A.~Sartori and D.~Tubbenhauer.
+\newblock Webs and $q$-Howe dualities in types BCD.
+\newblock {\em Trans. Amer. Math. Soc.}, 371, no. 10, 7387--7431, 2019.
+\newblock \url{https://arxiv.org/abs/1701.02932}, \href
+{https://doi.org/10.1090/tran/7583} {\path{doi:10.1090/tran/7583}}.
+
+\bibitem[So90]{Solomon}
+L.~Solomon.
+\newblock The Bruhat decomposition, Tits system and 
+Iwahori ring for the monoid of matrices over a finite field.
+\newblock {\em Geom. Dedicata}, 36(1):15--49, 1990.
+\newblock \url{https://arxiv.org/abs/1701.02932}, \href
+{https://doi.org/10.1007/BF00181463} {\path{doi:10.1007/BF00181463}}.
+
 \bibitem[STWZ21]{SuTuWeZh-mixedsl2}
 L.~Sutton, D.~Tubbenhauer, P.~Wedrich, and J.~Zhu.
 \newblock {$\mathrm{SL}_{2}$} tilting modules in the mixed case.
@@ -7839,6 +8058,14 @@ T.~tom Dieck.
 \newblock {\em J. Reine Angew. Math.}, 451:71--88, 1994.
 \newblock \href {https://doi.org/10.1515/crll.1994.451.71}
 {\path{doi:10.1515/crll.1994.451.71}}.
+
+\bibitem[TVW17]{TVW}
+D.~Tubbenhauer, P.~Vaz, and P.~Wedrich.
+\newblock Super {$q$}-{H}owe duality and web categories.
+\newblock {\em Algebr. Geom. Topol.}, 17(6):3703--3749, 2017.
+\newblock \url{https://arxiv.org/abs/1504.05069}, \href
+{http://dx.doi.org/10.2140/agt.2017.17.3703}
+{\path{doi:10.2140/agt.2017.17.3703}}.
 
 \bibitem[Ve98]{Ve-handlebodies}
 V.V.~Vershinin.
@@ -7854,6 +8081,14 @@ B.~Webster.
 \newblock \url{https://arxiv.org/abs/1309.3796},
 \href{https://doi.org/10.1090/memo/1191}
 {\path{doi.org/10.1090/memo/1191}}. 
+
+\bibitem[WW11]{WeWi}
+B.~Webster and G.~Williamson.
+\newblock The geometry of {M}arkov traces.
+\newblock {\em Duke Math. J.}, 160(2):401--419, 2011.
+\newblock URL: \url{https://arxiv.org/abs/0911.4494}, \href
+{http://dx.doi.org/10.1215/00127094-1444268}
+{\path{doi:10.1215/00127094-1444268}}.
 
 \bibitem[Wes09]{We-tensors-cellular-categories}
 B.W.~Westbury.
@@ -7884,7 +8119,7 @@ S.H.~Yu.
 \newblock The cyclotomic {B}irman--{M}urakami--{W}enzl algebras.
 \newblock Ph.D. thesis, University of Sydney, 2008.
 \newblock \url{https://arxiv.org/abs/0810.0069},
-\href{https://core.ac.uk/download/pdf/41231891.pdf}{https://core.ac.uk/download/pdf/41231891.pdf}
+\href{https://core.ac.uk/download/pdf/41231891.pdf}{https://core.ac.uk/download/pdf/41231891.pdf}.
 
 \end{thebibliography}
 
