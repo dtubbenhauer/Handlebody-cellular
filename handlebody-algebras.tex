@@ -376,8 +376,8 @@ handlebody versions of Temperley--Lieb, blob,
 Brauer/BMW, Hecke and Ariki--Koike algebras.
 Moreover, motivated by Green--Kazhdan--Lusztig's 
 theory of cells, we reformulate the notion of 
-(sandwich, inflated or affine) cellular algebras.
-We will explain this reformulation
+(sandwich, inflated or affine) cellular algebras,
+and we explain this reformulation
 and how all of the above algebras 
 are part of this theory.
 
@@ -400,12 +400,12 @@ they are of fundamental importance in low-dimensional topology
 and they also have a rich representation theory.
 
 Having an eye on the study of links in 
-more general three manifolds brings the topology of the ambient space into the play.
+three manifolds brings the topology of the ambient space into the play.
 In all the classical examples, like the Temperley--Lieb algebra or 
 the Hecke algebra, the ambient space is the three ball, and these algebras 
 are related to spherical Coxeter and Artin--Tits braid groups.
 In the simplest case beyond the three ball, when one passes to links in a solid torus, 
-these diagrams algebras get replaced by their (extended) affine version, 
+these diagrams algebras get replaced by their (extended) affine versions, 
 and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
 one could expect for more general three manifolds. Most prominently 
@@ -413,31 +413,33 @@ for this paper, (three dimensional) handlebodies of genus $g$; the two cases men
 before are $g=0$ and $g=1$, respectively.
 
 The case $g=0$ is classical, and these diagram algebras and their associated 
-braid groups are around for Donkey's years. The $g=1$ case goes 
-back to at least Brieskorn \cite{Brieskorn}, and has a long history of work on this topic.
-For example (with more references to come in the main text after the introduction), see
+braid groups are around for Donkey's years. 
+In case $g=1$ there is a long history of work on this topic which 
+goes back to at least Brieskorn \cite{Brieskorn}.
+For example (with more references to come later), see
 \cite{allcock} for braid pictures, \cite{Geck-Lambropoulou} or \cite{OrRa-affine-braids} for connections 
 to knot theory, \cite{Gr-gen-tl-algebra} 
 or \cite{HaOl-cyclotomic-bmw} for affine diagram algebras.
 To the best of our knowledge, the first attempts to give a
 description of braids in handlebodies are due to Vershinin \cite{Ve-handlebodies}
 respectively H{\"a}ring-Oldenburg--Lambropoulou \cite{La-handlebodies}, \cite{HaOlLa-handlebodies}, 
-while Lambropoulou studied links in handlebodies even before that \cite{La-PhDThesis}.
+while Lambropoulou studied links in three manifolds even before that \cite{La-PhDThesis}.
 
 From the representation theoretical point of view all these 
 algebras share the common feature of being cellular in a certain way
 that we will make precise. In a nutshell, in the $g=0$ case 
-these algebras are cellular in the sense of Graham--Lehrer \cite{GrLe-cellular}, 
-in the $g=1$ case they are affine cellular in the sense of K{\"o}nig--Xi \cite{KoXi-affine-cellular}.
-For $g>1$ we explain how they are sandwich cellular, a notion that 
+these algebras are often cellular in the sense of Graham--Lehrer \cite{GrLe-cellular}, 
+in the $g=1$ case they are often affine cellular in the sense of K{\"o}nig--Xi \cite{KoXi-affine-cellular}.
+
+We see this paper as a continuation of these works, focusing on the diagrammatic, 
+algebraic and representation theoretical aspects. That is, we generalizes 
+(some) diagram algebras to higher genus, and 
+we explain how they are sandwich cellular, a notion that 
 generalizes (affine) cellularity. 
 Note hereby that this generalization is strictly speaking not new, 
 it heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita}, \cite{GuWi-almost-cellular} 
 or \cite{EhTu-relcell}, 
 but our exposition appears to be new.
-
-We see this paper as a continuation of these works, focusing on the diagrammatic, 
-algebraic and representation theoretical aspects.
 
 \subsection{What this paper does}
 
@@ -477,11 +479,11 @@ $g$ punctures. The pictures hereby are {\eg}
 .
 \end{gather*}
 This illustrates a handlebody braid for genus $4$: 
-The three strands to the right are usual strands.
-The four thick and blue/grayish strands to the left are core
+The three strands on the right are usual strands.
+The four thick and blue/grayish strands on the left are core
 strands and they correspond to the punctures 
 of the disk respectively the cores of the handlebody. 
-The point is that via an appropriate closure, merging 
+The point is that via an appropriate closure, {\ie} merging 
 the core strands at infinity, illustrated by
 \begin{gather*}
 \text{An Alexander closure}\colon
@@ -542,7 +544,7 @@ to[out=0,in=270] (3.5,0) to (3.5,2.25) to[out=90,in=0] (2.75,3) to[out=180,in=90
 \draw[usual] (2.5,0) to[out=270,in=180] (2.75,-0.5) 
 to[out=0,in=270] (3,0) to (3,2.25) to[out=90,in=0] (2.75,2.75) to[out=180,in=90] (2.5,2.25);
 \end{tikzpicture}
-,
+\,,
 \end{gather*}
 the core strands correspond to cores of a three dimensional 
 handlebody, hence the name. All links in such handlebodies can 
@@ -558,14 +560,16 @@ using appropriate versions of Jucys--Murphy elements.
 We stress again that the case $g=0$ is classical, while $g=1$ corresponds to 
 (extended) affine braid groups, as studied in {\eg} \cite{Brieskorn} or \cite{allcock}.
 
-These handlebody braid pictures our starting point to define and study 
+These handlebody braid pictures are our starting point to define and study 
 various diagram algebras associated to handlebodies:
 
 \begin{enumerate}
 
-\item In \fullref{section:tlblob} we study handlebody Temperley--Lieb and blob algebras
-where the pictures to keep in mind are 
-(left Temperley--Lieb, right blob):
+\item In \fullref{section:tlblob} we study handlebody Temperley--Lieb and blob algebras. The pictures to keep in mind are crossingless matchings 
+and core strands
+(left, Temperley--Lieb)
+respectively crossingless matchings decorated with colored blobs
+(right, blob):
 \begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -599,24 +603,24 @@ corresponding to the various cores strands. These algebras
 generalize Temperley--Lieb algebras and blob algebras: 
 If $g=0$, then these two algebras are the same as the classical 
 Temperley--Lieb algebra.
-For $g=1$ they are not the same anymore (at least in our formulation as they appear 
-under various names in the literature), and have a long history of study
-starting with \cite{MaSa-blob}.
+For $g=1$ they are not the same anymore (at least 
+in our formulation), and have a long history of study
+starting with {\eg} \cite{MaSa-blob}.
 
 \item In \fullref{section:brauer} we move on to handlebody versions 
-of Brauer and BMW algebras. These are handlebody tangle algebras 
+of Brauer and BMW algebras. These are tangle algebras with core strands
 and the picture is
 \begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
 %%
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
-\draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} to[out=90,in=270] (0,1.5);
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1.5,1.5);
 %%
 \draw[usual,crossline] (1,1.5) to[out=90,in=270] (-0.25,2.25);
-\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,3)node[above,black,yshift=-3pt]{$u$};
+\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,3);
 \draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,3);
 \draw[usual,crossline] (-0.25,2.25) to[out=90,in=90] (1.5,1.5);
 \end{tikzpicture}
@@ -638,15 +642,15 @@ to (2.5,0.5) to[out=90,in=270] (1.5,1) to[out=90,in=270] (2.5,1.5);
 \end{tikzpicture}
 .
 \end{gather*}
-The cases $g=0$ and $g=1$ are, of course, well-studied as the correspond to 
-Hecke respectively extended affine Hecke algebras or their cyclotomic quotients, and
-we learned about the $g>1$ case from \cite{La-handlebodies}
+The cases $g=0$ and $g=1$ are, of course, well-studied and they correspond to 
+Hecke respectively extended affine Hecke algebras or cyclotomic quotients.
+We learned about the $g>1$ case from \cite{La-handlebodies}
 and \cite{Ba-braid-handlebodies}.
 
 \end{enumerate}
 
 Let us also point out that we study a generalization of cellularity in 
-\fullref{section:cells}, which gives us a tool to parameterize the simples 
+\fullref{section:cells}, giving us a toolkit to parameterize the simples 
 modules of the aforementioned algebras.
 
 \subsection{Speculations}
@@ -657,26 +661,29 @@ Let us mention a number of interesting future directions.
 
 \item \textbf{Quantum topology.} 
 A manifest direction which we do not explore in 
-this work would be to study these above algebras 
+this work would be to study these algebras 
 in connections to quantum topology and its ramifications.
 
-For example, \cite{Geck-Lambropoulou} and \cite{OrRa-affine-braids}
-study Markov traces for $g=1$ and construct link invariants, and
+For example, for $g=1$ \cite{Geck-Lambropoulou} and \cite{OrRa-affine-braids}
+construct link invariants 
+from Markov traces, and
 these link invariants admit categorifications \cite{WeWi}. 
-For $g>1$ steps in this direction were taken in \cite{RoTu-homflypt-typea}, 
+For $g>1$ \cite{RoTu-homflypt-typea} takes a few first steps towards 
+categorical handlebody link invariants, 
 but this direction appears to be widely open otherwise.
 
 Moreover, for $g=0$ most of these diagram algebras are related to 
-representation theory by some version of Schur--Weyl duality. 
-(In fact, this was the reason to define the Temperley--Lieb 
+representation theory by some form of Schur--Weyl duality. 
+(In fact, this was the reason to define {\eg} the Temperley--Lieb 
 algebras to begin with, see \cite{RuTeWe}.) 
-Some work for higher genus in this direction are known, 
+Some work for higher genus on this representation theoretical 
+aspect is done, 
 {\eg} in relation to Verma modules \cite{IoLeZh-verma-schur-weyl}, 
-\cite{LV}, \cite{DaRa-two-boundary-hecke} or complex reflection groups \cite{MaSt}, \cite{SaSh}. Future research in this direction seems 
-to be a worthwhile goal.
+\cite{LV}, \cite{DaRa-two-boundary-hecke} or complex reflection groups \cite{MaSt}, \cite{SaSh}. Following this track for higher genus
+seems to be a worthwhile goal.
 
 \item \textbf{Diagram algebras.} There are plenty 
-of diagram algebras which we have not considered in this 
+of diagram algebras which we do not considered in this 
 paper, but for which (some version of) our discussion goes through.
 
 Example of such algebras that come to mind that appear in classical 
@@ -684,29 +691,30 @@ literature are partition algebras \cite{Martin},
 rook monoid algebras \cite{Solomon}, walled 
 Brauer algebras \cite{Koike} and alike. 
 Other examples are related to knot theory and categorification 
-such as (type A) webs \cite{CKM}, \cite{RoTu-symmetric-howe} 
-or \cite{TVW}.
+such as (type A) webs \cite{CKM}, \cite{RoTu-symmetric-howe}, 
+\cite{TVW}.
 
 Diagrammatic algebras are also important in categorification. 
-After its introduction by Khovanov--Lauda \cite{KL1} 
-(and Rouquier \cite{Rouquier}) 
-they have become quite popular, and might admit handlebody versions.
-For example, these KLR algebras come to mind, 
-or Webster's tensor product algebras \cite{webster}, 
-algebras related to Verma categorification 
+After the introduction of the diagrammatic version of the 
+KLR algebra \cite{KL1} 
+(see also \cite{Rouquier}) 
+they have become quite popular, and might admit handlebody extensions.
+For example, alongside with KLR algebras 
+Webster's tensor product algebras \cite{webster}, 
+algebras related to Verma categorifications 
 \cite{naissevaz2}, \cite{naissevaz3}, \cite{maksimau-vaz}, \cite{lacabanne-naisse-vaz}, Soergel diagrammatics \cite{EW}, 
-just to name a few. 
+come to mind, just to name a few. 
 
 \item \textbf{Categories instead of algebras.}
-All of our objects under study also have appropriate 
+All of our algebras and concepts under study also have appropriate 
 categorical versions.
 
 For example, it should be fairly straightforward 
 to generalize our discussion of \fullref{section:cells} 
-to cellular categories as studied in \cite{We-tensors-cellular-categories} or
+to cellular categories as defined and studied in \cite{We-tensors-cellular-categories} or
 \cite{ElLa-trace-hecke}.
 
-However, let us mention that one reason why we have not 
+However, let us mention that a reason why we have not 
 touched upon categorical versions of our handlebody diagram 
 algebras is that these do not form monoidal categories 
 for $g>0$ (at least not in any reasonable sense), but 
@@ -718,10 +726,10 @@ or \cite{SaTu}.
 
 \subsection{How to read this paper}
 
-The second section \fullref{section:cells} explains our generalization 
+\fullref{section:cells} explains our generalization 
 of cellularity and is independent of the rest. It can be easily skipped 
 during a first reading.
-The third section \fullref{section:braids} is fundamental for 
+\fullref{section:braids} is fundamental for 
 all sections following it. Moreover, to avoid 
 too much repetition, we decided to construct the remaining section 
 assuming that \fullref{section:tlblob} has been read, so 
@@ -732,14 +740,19 @@ or \fullref{section:hecke}, the Hecke part.
 
 \noindent\textbf{Acknowledgments.}
 We thank David Rose, Catharina Stroppel and Arik Wilbert for discussions related 
-to the diagrammatics of handlebodies. We also thank zoom -- you deserve it!
+to the diagrammatics of handlebodies.
+
+D.T. does not deserve to be supported, but was still supported
+by the Hausdorff Research Institute for Mathematics (HIM) 
+during the Junior Trimester Program New Trends in Representation Theory.
+Part of this paper were written during that program, which 
+is gratefully acknowledged.
 
 \section{A generalization of cellularity}\label{section:cells}
 
 Let $\KK$ be a unital, commutative, Noetherian domain, {\eg} 
-the integers or a field, or polynomial rings over these. 
-We write $\K$ if we assume that $\KK$ is a field. Everything 
-in this section will be linear over $\KK$ or $\K$.
+the integers or a field, or polynomial rings over these. Everything 
+in this paper is linear over $\KK$. We write $\K$ if we assume that $\KK$ is a field, which is needed for classification results.
 
 \subsection{Inflation by algebras}\label{subsection:groups-inflation}
 
