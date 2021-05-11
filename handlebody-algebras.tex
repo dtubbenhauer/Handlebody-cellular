@@ -6883,7 +6883,7 @@ The \emph{handlebody Hecke algebra}
 (in $n$ strands and of genus $g$) $\setstuff{H}_{g,n}$
 is the algebra whose underlying free $\KK$-module is
 spanned by isotopy classes of all handlebody braid diagrams, with multiplication 
-given by concatenation of diagrams, modulo the local Skein relation 
+given by concatenation of diagrams, modulo the \emph{Skein relation} 
 \begin{gather}\label{eq:hecke-skein}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
@@ -6913,13 +6913,17 @@ for $i=1,\dots,n-1$.
 In this interpretation, we write $H_{i}$ for the image of 
 $\beta_{i}$ in the quotient, but keep the notation $\tau_{u}$ for the others.
 In defining $\setstuff{H}_{g,n}$ we only demand that
-the $H_{i}$ satisfy a quadratic relation, but not the $\tau_{u}$, which 
+the $H_{i}$ satisfy a quadratic relation which 
 is equivalent to either of
 \begin{gather*}
 H_{i}^{2}=(\qvar-\qvar^{-1})H_{i}+1,
 \quad
 H_{i}^{-1}=H_{i}-(\qvar-\qvar^{-1}).
 \end{gather*}
+Note that the twists $\tau_{u}$ do not satisfy 
+a polynomial relation, Hence, as for the handlebody Coxeter group, 
+$\setstuff{H}_{g,n}$ does not embed into 
+a Hecke algebra of type A. 
 
 \begin{remark}\label{remark:hecke}
 With respect to \fullref{definition:hecke} we note:	
@@ -6933,14 +6937,11 @@ With respect to \fullref{definition:hecke} we note:
 has been studied in \cite{Ba-braid-handlebodies}, 
 but not much appears to be known.
 \end{enumerate}
-As for the handlebody Coxeter group, 
-$\setstuff{H}_{g,n}$ does not embed into 
-a Hecke algebra of type A. 
 \end{remark}
 
 For all $w\in\setstuff{S}_{n}$ we choose a 
 reduced expression $\underline{w}=s_{i_{k}}\dots 
-s_{i_{1}}\in\setstuff{W}_{0,n}$ 
+s_{i_{1}}\in\setstuff{S}_{n}$ 
 once and for all. We define $H_{w}=H_{\underline{w}}=H_{i_{k}}\dots H_{i_{1}}$. 
 We still have the Jucys--Murphy elements $\jm_{u,i}$ 
 from \eqref{eq:jm-elements}, and the analog of \fullref{proposition:jm-elements-basis} is:
@@ -6966,7 +6967,7 @@ is a $\KK$-basis of $\setstuff{H}_{g,n}$.
 \end{proposition}
 
 \fullref{proposition:heckejm-elements-basis} can be seen 
-as an infinite and higher genus version of
+as a higher genus version of
 \cite[Equation (3.10)]{ArKo-hecke-algebra}.
 
 \begin{proof}
@@ -7008,8 +7009,10 @@ with the respective
 statement for the handlebody Coxeter group, see \fullref{proposition:jm-elements-basis}, we get:
 
 \begin{corollary}
-We have an isomorphism of $\KK$-algebras $\setstuff{H}_{g,n}\xrightarrow{\cong}\KK\setstuff{W}_{g,n}$, 
-$\tau_{u}\mapsto t_{u},h_{i}\mapsto s_{i}$.
+For $\qvar=1$
+the map given by
+$\tau_{u}\mapsto t_{u},h_{i}\mapsto s_{i}$
+is an isomorphism of $\KK$-algebras $\setstuff{H}_{g,n}\xrightarrow{\cong}\KK\setstuff{W}_{g,n}$.
 \end{corollary}
 
 In order to define a cell datum we first note that
@@ -7037,16 +7040,16 @@ Moreover, any filling $T$ of $[\lambda]$ with non-repeating
 numbers from $\{1,\dots,n\}$ is called a \emph{tableaux} 
 of shape $\lambda$. Such a $T$ is further 
 called \emph{standard} if its entries increase along rows and columns.
-The canonical tableaux $T_{c}$ is the filling where 
+The \emph{canonical tableaux} $T_{c}$ is the filling where 
 the numbers increase 
 from left to right and top to bottom.
 
 To a $S$ of shape $\lambda$ we can associate 
 a down morphism $D$ using the classical \emph{permute entries strategy}.
-We also need the Young subgroup $S_{\lambda}^{row}=\prod_{i}S_{r(i)}$ 
+We also need the Young subgroup $\setstuff{S}_{\lambda}^{row}=\prod_{i}\setstuff{S}_{r(i)}$ 
 being the row stabilizer of $\lambda$, 
 {\ie} $r(i)$ is the length of the $i$th row of $[\lambda]$.
-Then let $H_{\lambda}=\prod_{i}(\sum_{w\in S_{r(i)}}H_{w})$ 
+Then let $H_{\lambda}=\prod_{i}(\sum_{w\in\setstuff{S}_{r(i)}}H_{w})$ 
 (note that the bracketed terms commute, so 
 the order is not important)
 and let $H_{T}$ be the positive braid lifts 
@@ -7054,8 +7057,8 @@ of (a choice of)
 minimal permutation from $T$ to $T_{c}$, 
 identifying $s_{i}$ with the transposition $(i,i+1)$. We then let 
 $D=D(T)=H_{T}$, $U=U(T)=D(T)^{\star}$ and 
-$c_{U,D}^{\lambda}=UH_{\lambda}D$. 
-Note that the middle $H_{\lambda}$ of $c_{U,D}^{\lambda}$ is a 
+$c_{D,U}^{\lambda}=DH_{\lambda}U$. 
+Note that the middle $H_{\lambda}$ of $c_{D,U}^{\lambda}$ is a 
 quasi-idempotent, {\ie} $H_{\lambda}^{2}=rH_{\lambda}$ for some 
 $r\in\KK$ (that might be not invertible).
 
@@ -7088,7 +7091,7 @@ we construct $D=D(T)$ respectively $U=D(T^{\prime})^{\star}$ by
 \draw[very thick] (1.5,-4) rectangle node[pos=0.5]{$6$} (2.25,-3.25);
 \draw[very thick] (0,-4.75) rectangle node[pos=0.5]{$5$} (0.75,-4);
 %%
-\draw[usual,tomato,->] (-1.5,-3.5) to (-1.5,-2)node[right]{$s_{4}s_{3}s_{5}s_{2}$} to (-1.5,-0.5);
+\draw[usual,tomato,->] (-1.5,-3.5) to (-1.5,-2)node[right]{$s_{4}s_{5}s_{3}s_{2}$} to (-1.5,-0.5);
 \end{tikzpicture}
 ,\quad
 \begin{tikzpicture}[anchorbase,scale=0.75]
@@ -7115,7 +7118,7 @@ we construct $D=D(T)$ respectively $U=D(T^{\prime})^{\star}$ by
 \draw[usual,tomato,->] (-1.5,-3.5) to (-1.5,-2)node[right]{$s_{4}s_{5}s_{3}$} to (-1.5,-0.5);
 \end{tikzpicture}
 \rightsquigarrow
-c_{U,D}^{\lambda}=
+c_{D,U}^{\lambda}=
 \begin{tikzpicture}[anchorbase,scale=0.75]
 \draw[usual,crossline] (5,0) to[out=90,in=270] (3,2);
 \draw[usual,crossline] (4,0) to[out=90,in=270] (5,2);
@@ -7138,8 +7141,8 @@ c_{U,D}^{\lambda}=
 where we illustrated $H_{\lambda}$ as a box.
 \end{example}
 
-We let $\Lambda=(\Lambda,<)$ be the set of all partitions of $n$, 
-which are ordered by the dominance order (we use the convention 
+We let $\Lambda=(\Lambda,\leq_{d})$ be the set of all partitions of $n$, 
+which are ordered by the dominance order $\leq_{d}$ (we use the convention 
 from \cite[Section 3.1]{Ma-hecke-schur}).
 The set $M_{\lambda}$ is the set of all standard tableaux 
 of shape $\lambda$.
@@ -7148,7 +7151,7 @@ The middle part is $\setstuff{B}_{\lambda}=
 is the subalgebra of $\setstuff{H}_{g,n}$ spanned 
 by the Jucys--Murphy elements.
 We then let $c_{D,b,U}^{\lambda}=D(T)bU(T^{\prime})$ 
-where $b$ runs over elements 
+where $b=b(\bsym{a},\bsym{u},\bsym{i})$ runs over elements 
 of the form $\jm_{u_{1},i_{1}}^{a_{1}}\dots 
 \jm_{u_{m},i_{m}}^{a_{m}}H_{\lambda}$ with the 
 same indexes as in \eqref{eq:jm-basis-hecke1}. We then get
@@ -7181,7 +7184,8 @@ To show that \eqref{eq:hecke-basis} is a basis we observe that,
 left aside error terms, the process of moving $D$ to the left 
 does not change the number $m$, 
 the powers $\bsym{a}$, and associated cores $\bsym{u}$, while 
-$\bsym{i}$, but the property $i_{1}\leq\dots\leq i_{m}$. Hence, 
+$\bsym{i}$ changes, but the property 
+$i_{1}\leq\dots\leq i_{m}$ is preserved. Hence, 
 a counting argument ensures that \eqref{eq:jm-basis-hecke1} and 
 \eqref{eq:hecke-basis} have the same (finite) size per fixed 
 $(m,\bsym{a},\bsym{u})$, 
@@ -7202,25 +7206,25 @@ D^{\prime}H_{\mu}U^{\prime}(\bsym{L}^{\prime})^{\dagger}
 \\
 &\equiv_{\leq_{\Lambda}}
 r(U,D^{\prime})
-\bsym{L}^{\dagger}DH_{\max_{\Lambda}(\lambda,\mu)}
+\bsym{L}^{\dagger}DH_{\max_{\leq_{d}}(\lambda,\mu)}
 U^{\prime}(\bsym{L}^{\prime})^{\dagger}
 +\text{error terms}
 \\
 &=
-D\bsym{L}H_{\max_{\Lambda}(\lambda,\mu)}
+D\bsym{L}H_{\max_{\leq_{d}}(\lambda,\mu)}
 \bsym{L}^{\prime}U^{\prime}
 +\text{error terms}
 =
 D\bsym{L}
-(\bsym{L}^{\prime})^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+(\bsym{L}^{\prime})^{\dagger}H_{\max_{\leq_{d}}(\lambda,\mu)}U^{\prime}
 +\text{error terms}
 \\
 &\equiv_{\leq_{\Lambda}}
 D\bsym{L}
-(\bsym{L}^{\prime})^{\dagger}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+(\bsym{L}^{\prime})^{\dagger}H_{\max_{\leq_{d}}(\lambda,\mu)}U^{\prime}
 =
 D\bsym{L}
-F\bsym{L}^{\prime}H_{\max_{\Lambda}(\lambda,\mu)}U^{\prime}
+F\bsym{L}^{\prime}H_{\max_{\leq_{d}}(\lambda,\mu)}U^{\prime}
 ,
 \end{align*}
 where the $\dagger$ means that there is 
@@ -7269,7 +7273,9 @@ Claims (b) and (c) follow immediately from the abstract theory, as
 in the cases discussed before. The statement (a) follows 
 because whether the form $\Phi^{\lambda}$ is constant 
 zero or not can be detected on the component where the Jucys--Murphy 
-elements are trivial, so the classical theory applies, see {\eg} 
+elements are trivial, meaning those $c_{D,b,U}^{\lambda}$ 
+with $b=H_{\lambda}$.
+Hence, the classical theory applies, see {\eg} 
 \cite[Section 3.4]{Ma-hecke-schur}.
 \end{proof}
 
@@ -7336,10 +7342,10 @@ b_{v}=
 \end{gather*}
 Although blobs are defined on the first 
 strand from the left, one can define 
-blobs on other strands exactly as in \eqref{eq:blob-right}
+blobs on other strands exactly as in \eqref{eq:blob-right}.
 These are the Jucys--Murphy elements 
 from \fullref{definition:jm-elements}, but 
-we will denote that by $b_{u,i}$ to distinguish them. 
+we will denote these by $b_{u,i}$ to distinguish them. 
 
 Using the Skein relation \eqref{eq:hecke-skein}
 the same calculations as in \fullref{lemma:blob-rels} give:
@@ -7388,7 +7394,7 @@ and \eqref{eq:height-blob-switch} and
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
-\end{tikzpicture}
+\end{tikzpicture}\hspace{-0.2cm}
 +(\qvar-\qvar^{-1})\cdot
 \hspace{-0.2cm}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
@@ -7404,7 +7410,7 @@ and \eqref{eq:height-blob-switch} and
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,rblobed={0.15}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
-\end{tikzpicture}
+\end{tikzpicture}\hspace{-0.2cm}
 +(\qvar-\qvar^{-1})\cdot
 \hspace{-0.2cm}
 \begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
@@ -7431,7 +7437,7 @@ b_{k_{m},i_{m}}^{a_{m}}H_{w}
 \begin{gathered}
 w\in\setstuff{S}_{n},
 m\in\N,
-\bsym{a}\in\Z^{m},
+\bsym{a}\in\N^{m},
 \\
 (\bsym{u},\bsym{i})\in(\{1,\dots,g\}\times\{1,\dots,n\})^{m},
 i_{1}\leq\dots\leq i_{m}
@@ -7441,8 +7447,8 @@ i_{1}\leq\dots\leq i_{m}
 is a $\KK$-basis of $\setstuff{H}_{g,n}^{+}$.\qed
 \end{lemma}
 
-As in the previous sections, we fix \emph{cyclotomic parameters} 
-$\bpar=(\bvar_{u,i})\in\KK^{d_{1}+\dots+d_{g}}$, and a \emph{degree vector}
+As in the previous sections, we fix cyclotomic parameters 
+$\bpar=(\bvar_{u,i})\in\KK^{d_{1}+\dots+d_{g}}$, and a degree vector
 $\dpar=(\dvar_{u})\in\N^{g}$.
 
 \begin{definition}\label{definition:cyclotomic-hecke}
@@ -7469,11 +7475,6 @@ word in $b_{v}$ for $v\neq u$.
 The relations imply that no strand can 
 carry more than $d_{u}$ blobs of type $u$.
 
-\begin{remark}
-Imposing a single relation implying only $\tau_{g}$ (this is the first twist counting from the right, {\cf} \eqref{eq:lefttoright-labels}) gives a handlebody version of Ariki--Koike algebras.
-For $g=2$ this case can be interpreted as an extended affine version Ariki--Koike algebras.  
-\end{remark}
-
 \begin{remark}\label{remark:cyclotomic-hecke}
 With respect to \fullref{definition:cyclotomic-hecke} we note:	
 \begin{enumerate}
@@ -7489,19 +7490,17 @@ is the Ariki--Koike algebra as defined and studied in {\eg} \cite{ArKo-hecke-alg
 $\setstuff{H}_{2,n}^{\dpar,\bpar}$ is the two 
 boundary Hecke algebra as in \cite{DaRa-two-boundary-hecke}.
 
-\item All other cases of $g$ and $\dpar$ appear to be new.
-
 \end{enumerate}
 Note also that imposing a single relation involving only $\tau_{g}$ 
 (this is the first twist counting from the right, {\cf} \eqref{eq:lefttoright-labels}) gives a handlebody 
 version of Ariki--Koike algebras.
 For $g=2$ this case can be interpreted as an extended 
-affine version Ariki--Koike algebras.
+affine version of Ariki--Koike algebras.
 \end{remark}
 
 Our next aim to find a basis 
 and a dimension formula 
-for $\setstuff{H}_{g,n}^{\dpar,\bpar}$ and a dimension formula.
+for $\setstuff{H}_{g,n}^{\dpar,\bpar}$.
 
 \begin{lemma}\label{lemma:hecke-blobsorder}
 If $b_{u,1}$ is of 
@@ -7525,7 +7524,7 @@ b_{k_{m},i_{m}}^{a_{m}}H_{w}
 \begin{gathered}
 w\in\setstuff{S}_{n},
 m\in\N,
-\bsym{a}\in\Z^{m},
+\bsym{a}\in\N^{m},
 \\
 (\bsym{u},\bsym{i})\in(\{1,\dots,g\}\times\{1,\dots,n\})^{m},
 i_{1}\leq\dots\leq i_{m},a_{j}<d_{j}
@@ -7555,7 +7554,8 @@ together with the observation that $A\cap J_{u}=\emptyset$.
 Recall the blob numbers $B_{g,\dpar}$ from \eqref{eq:blob-numbers}.
 
 \begin{proposition}
-The dimension of the $\Bbbk$-module $\setstuff{H}_{g,n}^{\dpar,\bpar}$ is
+The dimension of the 
+free $\Bbbk$-module $\setstuff{H}_{g,n}^{\dpar,\bpar}$ is
 \begin{gather*}
 \dim_{\KK}\setstuff{H}_{g,n}^{\dpar,\bpar}
 =(B_{g,\dpar})^{n}n!. 
@@ -7570,12 +7570,12 @@ claim follows from \fullref{proposition:heckeblobcyclo-elements-basis}.
 \end{proof}
 
 \begin{remark}
-Recall that $B_{0,\dpar}=1$ and $B_{1,\dpar}=d_{1}-1$, see 
+Recall that $B_{0,\dpar}=1$ and $B_{1,\dpar}=\dvar_{1}$, see 
 \fullref{example:blob-numbers}. Thus, we recover the dimensions
 \begin{gather*}
 \dim_{\KK}\setstuff{H}_{0,n}^{\dpar,\bpar}=n!,
 \quad
-\dim_{\KK}\setstuff{H}_{1,n}^{\dpar,\bpar}=d_{1}^{n}n!,
+\dim_{\KK}\setstuff{H}_{1,n}^{\dpar,\bpar}=\dvar_{1}^{n}n!,
 \end{gather*}
 the former being well-known, of course, the latter 
 appears in \cite[(3.10)]{ArKo-hecke-algebra}.
