@@ -31,6 +31,7 @@
 \usepackage{mathrsfs}
 \usepackage{array}
 \newcolumntype{C}{>{$}c<{$}}
+\usepackage{colortbl}
 \usepackage{caption} 
 \captionsetup{belowskip=5pt,aboveskip=5pt}
 \usepackage[yyyymmdd,hhmmss]{datetime}
@@ -113,7 +114,7 @@
 tinynodes/.style={font=\tiny,text height=0.25ex,text depth=0.05ex},
 smallnodes/.style={font=\scriptsize,text height=0.75ex,text depth=0.15ex},
 usual/.style={line width=0.9,color=black},
-dusual/.style={line width=0.9,color=tomato,densely dashed},
+dusual/.style={line width=0.9,color=spinach,densely dashed},
 pole/.style={line width=3.0,color=specialgray},
 crossline/.style={preaction={draw=white,line width=5.0pt,-},preaction={draw=black,line width=0.9pt,-}},
 crosspole/.style={preaction={draw=white,line width=6.0pt,-},preaction={draw=specialgray,line width=3.0pt,-}},
@@ -435,10 +436,13 @@ algebraic and representation theoretical aspects. That is, we generalizes
 (some) diagram algebras to higher genus, and 
 we explain how they are sandwich cellular, a notion that 
 generalizes (affine) cellularity. 
-Note hereby that this generalization is strictly speaking not new, 
-it heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita}, \cite{GuWi-almost-cellular} 
-or \cite{EhTu-relcell}, 
-but our exposition appears to be new.
+
+Sandwich cellular roughly speaking means that the original 
+algebra can be obtained by sandwiching a smaller algebra.
+One of the upshots of being sandwich cellular is that the 
+classification of simple modules is reduced 
+from the original algebra to the sandwiched algebra, 
+as we will explain.
 
 \subsection{What this paper does}
 
@@ -448,7 +452,7 @@ descriptions of the configuration space of a disk with
 $g$ punctures. The pictures hereby are {\eg}
 \begin{gather*}
 \text{A handlebody braid for $g=4$}\colon
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -486,7 +490,7 @@ The point is that via an appropriate closure, {\ie} merging
 the core strands at infinity, illustrated by
 \begin{gather*}
 \text{An Alexander closure}\colon
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -505,7 +509,7 @@ the core strands at infinity, illustrated by
 \draw[usual,crossline] (2.5,1.5) to[out=90,in=270] (1.5,2.25);
 \end{tikzpicture}
 \rightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -571,7 +575,8 @@ and core strands
 respectively crossingless matchings decorated with colored blobs
 (right, blob):
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\text{A Temperley--Lieb picture}\colon
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.5);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
@@ -582,7 +587,8 @@ to[out=0,in=180] (0.75,0.8) to[out=0,in=90] (1.5,0);
 to[out=0,in=270] (1.5,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\text{A blob picture}\colon
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual,blobed={0.25}{u}{spinach}] (2,1.5) 
 to[out=270,in=180] (2.25,1.25) to[out=0,in=270] (2.5,1.5);
@@ -603,7 +609,7 @@ corresponding to the various cores strands. These algebras
 generalize Temperley--Lieb algebras and blob algebras: 
 If $g=0$, then these two algebras are the same as the classical 
 Temperley--Lieb algebra.
-For $g=1$ they are not the same anymore (at least 
+For $g\geq 1$ they are not the same anymore (at least 
 in our formulation), and have a long history of study
 starting with {\eg} \cite{MaSa-blob}.
 
@@ -611,7 +617,8 @@ starting with {\eg} \cite{MaSa-blob}.
 of Brauer and BMW algebras. These are tangle algebras with core strands
 and the picture is
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\text{A BMW picture}\colon
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
 %%
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
@@ -634,7 +641,8 @@ In the same section we also study their cyclotomic quotients.
 The picture is for handlebody Hecke algebras the same as for handlebody braid groups, 
 while we choose to illustrate handlebody versions of Ariki--Koike algebras via blobs, {\eg}
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\text{A Ariki--Koike picture}\colon
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (2,1) to[out=90,in=270] (2,1.5);
 \draw[usual,blobed={0.58}{u}{spinach},crossline] (2.5,0) 
 to (2.5,0.5) to[out=90,in=270] (1.5,1) to[out=90,in=270] (2.5,1.5);
@@ -652,6 +660,10 @@ and \cite{Ba-braid-handlebodies}.
 Let us also point out that we study a generalization of cellularity in 
 \fullref{section:cells}, giving us a toolkit to parameterize the simples 
 modules of the aforementioned algebras.
+Note hereby that this generalization is strictly speaking not new, 
+it heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita}, \cite{GuWi-almost-cellular} 
+or \cite{EhTu-relcell}, 
+but our exposition appears to be new. 
 
 \subsection{Speculations}
 
@@ -994,7 +1006,7 @@ are the fundamental groups of a disc
 $D_{0}$ or a punctured disc $D_{1}$.
 \end{remark}
 
-\begin{example}
+\begin{example}\label{example:sandwich}
 The notion of being (involutive) sandwich cellular 
 is a strict generalization of 
 being cellular. An easy, albeit silly, example is to take 
@@ -1024,6 +1036,9 @@ with a refined cell datum.
 Conversely, if at least one $\setstuff{B}_{\lambda}$ is non-cellular, then 
 $\setstuff{A}$ is non-cellular.
 \end{proposition}
+
+Note that an algebra can be sandwich cellular without the 
+$\setstuff{B}_{\lambda}$ being cellular, {\cf} \fullref{example:sandwich}.
 
 \begin{proof}
 The trick is to use the cell datum of the 
@@ -1114,9 +1129,7 @@ for finite-dimensional algebras. This is however not always the
 case in the situation we have in mind, 
 see {\eg} \fullref{section:tlblob}. Nevertheless, 
 parts of the theory still goes through for 
-infinite-dimensional cellular algebras, see \cite{GrLe-cellular} or \cite{KoXi-affine-cellular} 
-(and also \cite{EhTu-relcell} where the assumption of finite-dimensionality 
-is specified in each statement where it is relevant). In particular, the 
+infinite-dimensional cellular algebras, see \cite{GrLe-cellular}, \cite{KoXi-affine-cellular} or \cite{EhTu-relcell}. In particular, the 
 existence of cell modules, cells 
 and some of their properties, as we will discuss now.
 
@@ -1168,60 +1181,17 @@ we will write $\Delta(\lambda)$ and $(\lambda)\Delta$ for
 any choice of $D,U\in M_{\lambda}$ (for the basis elements 
 of these modules we omit the fixed index). 
 In the theory of cellular algebras, 
-these are then also called left respectively right 
+these are then also called left, respectively right, 
 \emph{cell modules}.
 
 The space $\mathcal{H}_{\lambda,D,U}=\mathcal{R}(\lambda,D)\hcirc_{\setstuff{A}}
 \mathcal{L}(\lambda,U)$ 
 is called an 
 \emph{$\mathcal{H}$-cell}.
-Moreover, $\mathcal{J}_{\lambda}=\mathcal{L}(\lambda)
-\hcirc_{\setstuff{B}_{\lambda}}\mathcal{R}(\lambda)$ 
+Moreover, $\mathcal{J}_{\lambda}=\mathcal{L}(\lambda,U)
+\hcirc_{\setstuff{B}_{\lambda}}\mathcal{R}(\lambda,D)$ 
 is called a two-sided cell or \emph{$\mathcal{J}$-cell}. 
 
-Note that 
-$\mathcal{J}$-cells are $\setstuff{A}$-$\setstuff{A}$-bimodules, 
-by definition, and thus, in general non-unital, algebras.
-In contrast, the $\mathcal{H}$-cells are only $\KK$-modules, but 
-are multiplicatively closed, as follows from 
-\eqref{eq:cell-action} and \eqref{eq:hj-cells} below, 
-so they form, in general non-unital, subalgebras of the $\mathcal{J}$-cells.
-
-The terminology above is justified by the following illustration:
-\begin{gather}\label{eq:cell-diagram}
-\begin{tikzpicture}[baseline=(A.center),every node/.style=
-{anchor=base,minimum width=1.4cm,minimum height=1cm}]
-\matrix (A) [matrix of math nodes,ampersand replacement=\&] 
-{
-c_{D_{1}*U_{1}} \& c_{D_{1}*U_{2}} 
-\& c_{D_{1}*U_{3}} \& c_{D_{1}*U_{4}} \& \dots \\
-c_{D_{2}*U_{1}} \& c_{D_{2}*U_{2}} 
-\& c_{D_{2}*U_{3}} \& c_{D_{2}*U_{4}} \& \ddots \\
-c_{D_{3}*U_{1}} \& c_{D_{3}*U_{2}} 
-\& c_{D_{3}*U_{3}} \& c_{D_{3}*U_{4}} \& \ddots \\
-c_{D_{4}*U_{1}} \& c_{D_{4}*U_{2}} 
-\& c_{D_{4}*U_{3}} \& c_{D_{4}*U_{4}} \& \ddots \\
-\vdots \& \ddots \& \ddots \& \ddots \& \ddots \\
-};
-\draw[fill=blue,opacity=0.25] (A-3-1.north west) node[blue,left,yshift=-0.5cm,opacity=1] 
-{$\mathcal{R}(\lambda,D_{3})$} to (A-3-5.north east) 
-to (A-3-5.south east) to (A-3-1.south west) to (A-3-1.north west);
-\draw[fill=red,opacity=0.25] (A-1-3.north west) node[red,above,xshift=0.7cm,opacity=1] 
-{$\mathcal{L}(\lambda,U_{3})$} to (A-5-3.south west) 
-to (A-5-3.south east) to (A-1-3.north east) to (A-1-3.north west);
-\draw[black] (A-1-1.north west) node[black,above] {$\mathcal{J}_{\lambda}$} to 
-(A-1-5.north east) to (A-5-5.south east) 
-to (A-5-1.south west) to (A-1-1.north west);
-\draw[black,->] ($(A-3-5.south east)+(0.5,0.15)$) 
-node[right]{$\mathcal{H}_{\lambda,D_{3},U_{3}}$} 
-to[out=180,in=0] ($(A-3-3.south east)+(0,0.2)$);
-\draw[black,->] ($(A-2-5.south east)+(0.5,0.15)$) 
-node[right]{$\mathcal{H}_{\lambda,D_{2},U_{3}}$} 
-to[out=180,in=0] ($(A-2-3.south east)+(0,0.2)$);
-\end{tikzpicture}
-,
-\end{gather}
-where $*$ runs over all $b\in\setstuff{B}_{\lambda}$.
 As free $\KK$-modules we clearly have
 \begin{gather}\label{eq:hj-cells}
 \begin{gathered}
@@ -1284,6 +1254,50 @@ As free $\KK$-modules we clearly have
 \end{gather}
 In \eqref{eq:hj-cells} we highlighted 
 the parts which are fixed and do not vary.
+
+Note that 
+$\mathcal{J}$-cells are $\setstuff{A}$-$\setstuff{A}$-bimodules, 
+by definition, and thus, in general non-unital, algebras.
+In contrast, the $\mathcal{H}$-cells are only $\KK$-modules, but 
+are multiplicatively closed, as follows from 
+\eqref{eq:cell-action} and \eqref{eq:hj-cells} below, 
+so they form, in general non-unital, subalgebras of the $\mathcal{J}$-cells.
+
+The terminology above is justified by the following illustration:
+\begin{gather}\label{eq:cell-diagram}
+\begin{tikzpicture}[baseline=(A.center),every node/.style=
+{anchor=base,minimum width=1.4cm,minimum height=1cm}]
+\matrix (A) [matrix of math nodes,ampersand replacement=\&] 
+{
+c_{D_{1}*U_{1}} \& c_{D_{1}*U_{2}} 
+\& c_{D_{1}*U_{3}} \& c_{D_{1}*U_{4}} \& \dots \\
+c_{D_{2}*U_{1}} \& c_{D_{2}*U_{2}} 
+\& c_{D_{2}*U_{3}} \& c_{D_{2}*U_{4}} \& \ddots \\
+c_{D_{3}*U_{1}} \& c_{D_{3}*U_{2}} 
+\& c_{D_{3}*U_{3}} \& c_{D_{3}*U_{4}} \& \ddots \\
+c_{D_{4}*U_{1}} \& c_{D_{4}*U_{2}} 
+\& c_{D_{4}*U_{3}} \& c_{D_{4}*U_{4}} \& \ddots \\
+\vdots \& \ddots \& \ddots \& \ddots \& \ddots \\
+};
+\draw[fill=blue,opacity=0.25] (A-3-1.north west) node[blue,left,yshift=-0.5cm,opacity=1] 
+{$\mathcal{R}(\lambda,D_{3})$} to (A-3-5.north east) 
+to (A-3-5.south east) to (A-3-1.south west) to (A-3-1.north west);
+\draw[fill=red,opacity=0.25] (A-1-3.north west) node[red,above,xshift=0.7cm,opacity=1] 
+{$\mathcal{L}(\lambda,U_{3})$} to (A-5-3.south west) 
+to (A-5-3.south east) to (A-1-3.north east) to (A-1-3.north west);
+\draw[black] (A-1-1.north west) node[black,above] {$\mathcal{J}_{\lambda}$} to 
+(A-1-5.north east) to (A-5-5.south east) 
+to (A-5-1.south west) to (A-1-1.north west);
+\draw[black,->] ($(A-3-5.south east)+(0.5,0.15)$) 
+node[right]{$\mathcal{H}_{\lambda,D_{3},U_{3}}$} 
+to[out=180,in=0] ($(A-3-3.south east)+(0,0.2)$);
+\draw[black,->] ($(A-2-5.south east)+(0.5,0.15)$) 
+node[right]{$\mathcal{H}_{\lambda,D_{2},U_{3}}$} 
+to[out=180,in=0] ($(A-2-3.south east)+(0,0.2)$);
+\end{tikzpicture}
+,
+\end{gather}
+where $*$ runs over all $b\in\setstuff{B}_{\lambda}$.
 
 \begin{lemma}\label{lemma:h-subalgebra}
 If $r(U,D)$ is invertible in $\KK$, then 
@@ -1634,15 +1648,16 @@ denote the symmetric group in $\lambda$ strands.
 
 \begin{remark}
 The construction we present below 
-is not new, see {\eg} \cite{KoXi-brauer}. However, 
+is not new, see {\eg} \cite{FG} 
+or \cite{KoXi-brauer}. However, 
 our exposition is new and might be of some use.
 \end{remark}
 
 The Brauer algebra has a well-known diagrammatic description 
-given by \emph{perfect matchings of $2n$ points}, and a typical 
-\emph{Brauer diagram} for $n=4$ is
+given by \emph{perfect matchings of $2n$ points}, and typical 
+\emph{Brauer diagrams} for $n=4$ are
 \begin{gather*}%\label{eq:brauer}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
@@ -1650,7 +1665,7 @@ given by \emph{perfect matchings of $2n$ points}, and a typical
 \end{tikzpicture}
 ,\mspace{60mu}
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=270,in=180] (1,-0.25) to[out=0,in=270] (1.5,0);
 \draw[usual] (0,-0.75) to[out=90,in=180] (0.25,-0.5) to[out=0,in=90] (0.5,-0.75);
 \draw[usual] (0,0) to (1.5,-0.75);
@@ -1658,7 +1673,7 @@ given by \emph{perfect matchings of $2n$ points}, and a typical
 \end{tikzpicture}
 \right)^{\star}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -1679,11 +1694,11 @@ $\mathcal{H}$-cells of size one, which is achieved in
 basis of $\KK\setstuff{S}_{n}$, which is 
 a subalgebra of $\setstuff{Br}_{n}(\cvar)$.
 As we will describe now this is not necessary if one wants 
-to parameterize simples.
+to parameterize simple modules.
 
 We let $\Lambda=(\{n,n-2,n-4,\dots\},\leq_{\N})\subset\N$ 
 with the usual partial order $\leq_{\N}$.
-The $\lambda\in\Lambda$ are the through strands of the Brauer diagrams,
+The $\lambda\in\Lambda$ are the \emph{through strands} of the Brauer diagrams,
 that is, we let the set $M_{\lambda}$ consist of all Brauer diagrams 
 from $n$ bottom points to $\lambda$ top points.
 Moreover, we let $\setstuff{B}_{\lambda}=\KK\setstuff{S}_{\lambda}$.
@@ -1701,7 +1716,7 @@ The picture is:
 \node at (0.5,0.75){$U$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (-0.5,0) to[out=270,in=90] (-0.5,-0.75);
 \draw[usual] (0.5,0) to[out=270,in=90] (0,-0.75);
 \draw[usual] (0,0) to[out=270,in=90] (0.5,-0.75);
@@ -1719,7 +1734,7 @@ The picture is:
 \node at (0.8,0.25){\phantom{$b$}};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
@@ -1730,7 +1745,7 @@ The picture is:
 \node at (0.5,-0.25){$D$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (-0.5,0) to[out=90,in=270] (-0.5,0.75);
 \draw[usual] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual] (0,0) to[out=90,in=270] (0.5,0.75);
@@ -1760,20 +1775,24 @@ Identifying Brauer diagrams with immersed one-dimensional cobordisms
 \begin{example}\label{example:brauer}
 The following illustrates basis elements and the cell structure 
 of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$ 
-(using the same conventions as in \eqref{eq:cell-diagram}):
+(using the same conventions as in \eqref{eq:cell-diagram}). 
+In particular, the columns are $\mathcal{L}$-cells, the rows are $\mathcal{R}$-cells 
+and the small boxes are $\mathcal{H}$-cells.
 \begin{gather*}
+\noalign{\global\arrayrulewidth=1mm}
 \xy
 (0,0)*{\begin{gathered}
 \begin{tabular}{C|C|C|C|C}
+\arrayrulecolor{tomato}
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (1,0) to (1,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (1,0) to (1.5,0.75);
@@ -1781,14 +1800,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (1,0) to (0,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (1.5,0) to (0,0.75);
@@ -1796,14 +1815,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (1,0) to (0,0.75);
 \draw[usual] (1.5,0) to (0.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (1,0) to (0.5,0.75);
@@ -1811,14 +1830,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (1,0) to (0.5,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (1,0) to (1.5,0.75);
@@ -1826,14 +1845,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (1,0) to (0,0.75);
 \draw[usual] (1.5,0) to (1,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (1,0) to (1,0.75);
@@ -1841,16 +1860,16 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered}
 \\
-\hline
+\arrayrulecolor{tomato}\hline
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -1858,14 +1877,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -1873,14 +1892,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (1.5,0) to (0.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (1.5,0) to (0,0.75);
@@ -1888,14 +1907,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} & 
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (0.5,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -1903,14 +1922,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (1.5,0) to (1,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (0.75,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (1.5,0) to (0,0.75);
@@ -1918,16 +1937,16 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered}
 \\
-\hline
+\arrayrulecolor{tomato}\hline
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
 \draw[usual] (0.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -1935,14 +1954,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (0.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -1950,14 +1969,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0.5,0.75);
@@ -1965,14 +1984,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (0.5,0.75);
 \draw[usual] (0.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0.5,0) to (0.5,0.75);
@@ -1980,14 +1999,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (0.5,0) to (1,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0.5,0) to (0,0.75);
@@ -1995,16 +2014,16 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered}
 \\
-\hline
+\arrayrulecolor{tomato}\hline
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0.5,0) to (1,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (1.5,0) to (1,0.75);
@@ -2012,14 +2031,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0.5,0) to (0,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0.5,0) to (1.5,0.75);
@@ -2027,14 +2046,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0.5,0) to (0,0.75);
 \draw[usual] (1.5,0) to (0.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0.5,0) to (0.5,0.75);
@@ -2042,14 +2061,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0.5,0) to (0.5,0.75);
 \draw[usual] (1.5,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0.5,0) to (1.5,0.75);
@@ -2057,14 +2076,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} & 
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0.5,0) to (0,0.75);
 \draw[usual] (1.5,0) to (1,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=180] (0.5,0.25) to[out=0,in=90] (1,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (1.5,0) to (0,0.75);
@@ -2072,17 +2091,17 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered}
 \\
-\hline
+\arrayrulecolor{tomato}\hline
 \cellcolor{mydarkblue!25}
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
 \draw[usual] (1,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -2090,14 +2109,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (1,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (0.75,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -2105,14 +2124,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (1,0) to (0.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0.5,0.75);
@@ -2120,14 +2139,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (0.5,0.75);
 \draw[usual] (1,0) to (1.5,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.5,0.5) to[out=0,in=270] (1,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -2135,14 +2154,14 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 \end{gathered} &
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (0,0.75);
 \draw[usual] (1,0) to (1,0.75);
 \end{tikzpicture}
-\\[2pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\\[3pt]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0.5,0.75) to[out=270,in=180] (1,0.5) to[out=0,in=270] (1.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
@@ -2162,7 +2181,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{gathered}
 \colon
 \begin{gathered}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -2174,7 +2193,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \draw[usual] (1,0.75) to (1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -2182,7 +2201,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 ,
 \\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
@@ -2194,7 +2213,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \draw[usual] (1,0.75) to (1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
@@ -2202,7 +2221,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 ,
 \\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -2214,7 +2233,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \draw[usual] (1,0.75) to (1.5,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
@@ -2222,7 +2241,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \end{tikzpicture}
 ,
 \\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1,0.75);
@@ -2234,7 +2253,7 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 \draw[usual] (1,0.75) to (1.5,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=180] (1,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \draw[usual] (0,0) to (1.5,0.75);
@@ -2243,7 +2262,8 @@ of the cell $\mathcal{J}_{2}$ with two through strands for $n=4$
 .
 \end{gathered}
 \end{gather*}
-The colored box is an $\mathcal{H}$-cell
+Each $\mathcal{H}$-cell is of size two, and
+the colored box is an $\mathcal{H}$-cell
 isomorphic to $\KK\setstuff{S}_{2}$ regardless
 of $\cvar$, which is illustrated on the right.
 \end{example}
@@ -2291,14 +2311,14 @@ Here is an example that easily generalizes:
 \begin{gather*}
 \phi^{\lambda}
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (-1,0) to[out=270,in=0] (-1.25,-0.25) 
 to[out=180,in=270] (-1.5,0);
 \draw[usual] (0,0) to (0,-0.75);
 \draw[usual] (-0.5,0) to (-0.5,-0.75);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,-0.75) to[out=90,in=0] (-0.5,-0.5) 
 to[out=180,in=90] (-1,-0.75);
 \draw[usual] (0,0) to (-0.5,-0.75);
@@ -2306,7 +2326,7 @@ to[out=180,in=90] (-1,-0.75);
 \end{tikzpicture}
 \right)
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,-0.75) to[out=90,in=0] (-0.5,-0.5) 
 to[out=180,in=90] (-1,-0.75);
 \draw[usual] (0,0) to (-0.5,-0.75);
@@ -2319,7 +2339,7 @@ to[out=180,in=270] (-1.5,-0.75);
 \end{tikzpicture}
 =
 1\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to (0.5,0.75);
 \draw[usual] (0.5,0) to (0,0.75);
 \end{tikzpicture}
@@ -2356,7 +2376,7 @@ in the following sense. We let
 \begin{gather}\label{eq:lefttoright-labels}
 \tau_{u}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0)node[below,black,yshift=-1pt]{$1$} 
 to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (-0.5,0)node[below,black,yshift=-1pt]{$u{-}1$} 
@@ -2377,7 +2397,7 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 ,\quad
 \beta_{i}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0)node[below,black,yshift=-1pt]{$i{+}1$} 
 to[out=90,in=270] (0,0.75)node[above,black,yshift=-3pt]{$i$};
 \draw[usual,crossline] (0,0)node[below,black,yshift=-1pt]{$i$} 
@@ -2460,7 +2480,7 @@ groups give an algebraic way to study links in handlebodies.
 \text{merges cores at infinity:}
 \end{gathered}
 \quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
@@ -2474,7 +2494,7 @@ groups give an algebraic way to study links in handlebodies.
 \draw[usual,crossline] (0.25,2.25) to[out=90,in=270] (1,3);
 \end{tikzpicture}
 \rightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75]
+\begin{tikzpicture}[anchorbase,scale=0.7]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
@@ -2513,7 +2533,7 @@ This motivates our nomenclature.
 The diagrammatic interpretations of the relations
 \eqref{eq:handlebody-summary1} and \eqref{eq:handlebody-summary2} are
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75) to (0,1.5);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75) to (0.5,1.5);
 %%
@@ -2521,7 +2541,7 @@ The diagrammatic interpretations of the relations
 \draw[usual,crossline] (1,0) to (1,0.75) to[out=90,in=270] (1.5,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to (0.5,0.75) to[out=90,in=270] (0,1.5);
 \draw[usual,crossline] (0,0) to (0,0.75) to[out=90,in=270] (0.5,1.5);
 %%
@@ -2529,7 +2549,7 @@ The diagrammatic interpretations of the relations
 \draw[usual,crossline] (1,0) to[out=90,in=270] (1.5,0.75) to (1.5,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (1,0.75);
@@ -2543,7 +2563,7 @@ The diagrammatic interpretations of the relations
 \draw[usual,crossline] (1,1.5) to[out=90,in=270] (1,2.25);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (1,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0,0.75);
@@ -2558,7 +2578,7 @@ The diagrammatic interpretations of the relations
 \end{tikzpicture}
 ,
 \\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,2.25);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5) to (0.5,2.25);
@@ -2570,7 +2590,7 @@ The diagrammatic interpretations of the relations
 \draw[usual,crossline] (2,0) to (2,1.5) to[out=90,in=270] (2.5,2.25);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,2.25);
 \draw[usual,crossline] (1.5,0) to (1.5,0.75) to[out=90,in=270] (-0.25,1.5);
 \draw[pole,crosspole] (0.5,0) to (0.5,0.75) to[out=90,in=270] (0.5,2.25);
@@ -2582,7 +2602,7 @@ The diagrammatic interpretations of the relations
 \draw[usual,crossline] (2,0) to[out=90,in=270] (2.5,0.75) to (2.5,2.25);
 \end{tikzpicture},
 \quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,4.5);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0.5,0)node[below,black,yshift=-1pt]{$v$} 
@@ -2605,7 +2625,7 @@ to (0.5,4.5)node[above,black,yshift=-3pt]{$v$};
 \draw[usual,crossline] (1.5,3.75) to[out=90,in=270] (2,4.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,4.5);
 \draw[usual,crossline] (1.5,0.75) to[out=90,in=270] (0.25,1.5);
 \draw[pole,crosspole] (1,0) to (1,0.75) to[out=90,in=270] (1,2.25);
@@ -2642,7 +2662,7 @@ $\tilde{\tau}_{g}=
 \tilde{\tau}_{u-1}^{-1}
 \dots\tilde{\tau}_{g}^{-1}\tau_{u}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0)node[below,black,yshift=-1pt]{$u{-}1$} 
 to[out=90,in=270] (-0.5,1.5)node[above,black,yshift=-3pt]{$u{-}1$};
 \draw[pole,crosspole] (-1,0)node[below,black,yshift=-1pt]{$1$} 
@@ -2707,7 +2727,7 @@ arguments and is used several times.
 \begin{proposition}\label{proposition:embedding}
 The rule
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0)node[below,black,yshift=-1pt]{$1$} 
 to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -2719,7 +2739,7 @@ to[out=90,in=270] (-0.25,0.75);
 (1.5,1.5)node[above,black,yshift=-3pt]{$1$};
 \end{tikzpicture}
 \mapsto
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0)node[below,black,yshift=-1pt]{$g{+}1$} 
 to[out=90,in=270] (-0.25,0.75);
 \draw[usual,crossline] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -2731,14 +2751,14 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 (1.5,1.5)node[above,black,yshift=-3pt]{$g{+}1$};
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0)node[below,black,yshift=-1pt]{$i{+}1$} 
 to[out=90,in=270] (0,0.75)node[above,black,yshift=-3pt]{$i$};
 \draw[usual,crossline] (0,0)node[below,black,yshift=-1pt]{$i$} 
 to[out=90,in=270] (0.5,0.75)node[above,black,yshift=-3pt]{$i{+}1$};
 \end{tikzpicture}
 \mapsto
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75)node[above,black,yshift=-3pt,xshift=-2pt]{$g{+}i$};
 \draw[usual,crossline] (0,0)node[below,black,xshift=-2pt]{$g{+}i$} 
 to[out=90,in=270] (0.5,0.75);
@@ -2798,7 +2818,8 @@ By \eqref{eq:coxhandlebody-summary1}
 we see that $\setstuff{S}_{n}\hookrightarrow\setstuff{W}_{g,n}$,
 while the $t_{u}$ span a free group $\setstuff{F}_{g}$, 
 and $\setstuff{F}_{g}$ is thus also a subgroup of $\setstuff{W}_{g,n}$
-(both in the evident way). We use this below.
+(both in the evident way). We use this below. 
+Note also that $\setstuff{F}_{g}$ is of infinite order unless $g=0$.
 
 As for the handlebody braid group, we think of \fullref{definition:handlebody-coxetergroup} as a 
 handlebody generalization of the extended affine Coxeter group of type A. 
@@ -2812,7 +2833,7 @@ Special cases of \fullref{definition:handlebody-coxetergroup} are:
 \item The case $g=0$ is the symmetric group $\setstuff{S}_{n}$.
 
 \item For $g=1$ the handlebody Coxeter group is not the 
-Coxeter type C$=$B, but rather the extended affine 
+Coxeter group of type C$=$B, but rather the extended affine 
 Coxeter (Weyl) group of type A.
 
 \end{enumerate}
@@ -2863,7 +2884,7 @@ X_{i}&\text{otherwise}.
 
 The pictorial version of the action \eqref{eq:action} is
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0)node[below,black,yshift=-2pt]{$X_{1}$} 
 to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -2943,7 +2964,7 @@ holds evidently.
 
 The action in \fullref{definition:action} is actually 
 faithful, and this is what we are going to show next.
-To this end, we define certain elements, called 
+To this end, we define certain elements of $\setstuff{B}_{g,n}$, called 
 \emph{Jucys--Murphy elements}:
 
 \begin{definition}\label{definition:jm-elements}
@@ -2955,7 +2976,7 @@ For $i>1$ we define $\jm_{u,i}^{\pm 1}
 \begin{gather}\label{eq:jm-elements}
 \jm_{u,i}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2.5,0)node[below,black,yshift=-1pt]{$i$} 
 to[out=90,in=270] (-0.25,0.75);
@@ -2971,7 +2992,7 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 ,\quad
 \jm_{u,i}^{-1}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] 
 (2.5,1.5)node[above,black,yshift=-3pt]{$i$};
@@ -2986,7 +3007,6 @@ to[out=90,in=270] (-0.25,0.75);
 \end{tikzpicture}
 .
 \end{gather}
-Their images in $\setstuff{W}_{g,n}$ are denoted by $\jmc_{u,i}^{\pm 1}$.
 \end{definition}
 
 \begin{lemma}\label{lemma:jm-elements}
@@ -3033,7 +3053,7 @@ Using topological arguments, all of these are easy
 to verify. For example, the middle relations in 
 \eqref{eq:jm-relations} are of the form
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -3052,7 +3072,7 @@ to verify. For example, the middle relations in
 \draw[usual,crossline] (2.5,1.5) to[out=90,in=270] (2.5,2.25);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -3074,7 +3094,7 @@ to verify. For example, the middle relations in
 \end{gather*}
 The bottom relations in \eqref{eq:jm-relations} take the form
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
 \draw[usual,crossline] (2.5,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
@@ -3096,7 +3116,7 @@ The bottom relations in \eqref{eq:jm-relations} take the form
 \node at (0,3.5) {\phantom{a}};
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
 \draw[usual,crossline] (2.5,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,0.75);
@@ -3125,7 +3145,7 @@ The bottom relations in \eqref{eq:jm-relations} take the form
 \node at (0,3.5) {\phantom{a}};
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -3147,7 +3167,7 @@ The bottom relations in \eqref{eq:jm-relations} take the form
 \node at (0,3.5) {\phantom{a}};
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -3169,7 +3189,7 @@ The bottom relations in \eqref{eq:jm-relations} take the form
 \node at (0,3.5) {\phantom{a}};
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
 \draw[usual,crossline] (2.5,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
@@ -3199,7 +3219,7 @@ Note that if $[v,j]\not\subset[u,i[$
 in the final relation in \eqref{eq:jm-relations}, 
 then the displayed elements do not commute (unless $\jm_{u,i}^{\pm 1}\jm_{u,i}^{\mp 1}=1$ applies). For example,
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
 \draw[usual,crossline] (2.5,0) to[out=90,in=270] (0.25,0.75);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
@@ -3221,7 +3241,7 @@ then the displayed elements do not commute (unless $\jm_{u,i}^{\pm 1}\jm_{u,i}^{
 \node at (0,3.5) {\phantom{a}};
 \end{tikzpicture}
 \neq
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,3);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5);
@@ -3261,6 +3281,9 @@ we can thus use induction
 on the remaining Jucys--Murphy elements 
 as their maximal second index is $n-1$.
 \end{proof}
+
+Let us denote the images of the Jucys--Murphy elements
+in $\setstuff{W}_{g,n}$ by $\jmc_{u,i}^{\pm 1}$.
 
 \begin{lemma}\label{lemma:jm-elements-span}
 The set
@@ -3319,7 +3342,7 @@ X_{j}\actsright\jmc_{u,i}
 X_{j}&\text{otherwise},
 \end{cases}
 \leftrightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2.5,0)node[below,black,yshift=-1pt]{$X_{i}$} 
 to[out=90,in=270] (-0.25,0.75);
@@ -3349,7 +3372,7 @@ Taking all this together shows that the elements of
 \end{proof}
 
 \begin{theorem}\label{theorem:action}
-The action in \fullref{definition:action} is faithful.
+The action of $\setstuff{W}_{g,n}$ in \fullref{definition:action} is faithful.
 \end{theorem}
 
 \begin{proof}
@@ -3360,19 +3383,21 @@ This follows from the proof of \fullref{proposition:jm-elements-basis}.
 
 Recall that $\KK$ denotes a unital, commutative, Noetherian domain. 
 The example the reader should keep in mind throughout this section is
-$\KK=\Z[\cpar]$ where $\cpar=(\cvar)_{i}$ is a 
+$\KK=\Z[\cpar]$ where $\cpar=(\cvar_{i})_{i}$ is a 
 collection of variables $\cvar_{i}$ 
 which are circle evaluations.
-Recall further that we fixed $g\in\N$ and $n\in\N_{>0}$.
+Recall further that we have fixed $g\in\N$ and $n\in\N_{>0}$.
 
 \subsection{Handlebody Temperley--Lieb algebras}\label{subsection:handlebody-tl}
 
 In this section we
 consider non-topological
 \emph{crossingless matchings of $2n$ points of genus $g$}, which 
-are crossingless matching in the usual sense together 
+are all pairings $(i,k)$ of integers from $\{1,\dots,2n\}$ 
+such that $i<j<k<l$ for all $(i,k)$ and $(j,l)$ together 
 with a choice of a reduced word in the free group $\setstuff{F}_{g}$
-for each appearing strand.
+for each appearing pair.
+
 In slightly misleading pictures, {\cf} \fullref{remark:non-topological},
 these are crossingless matchings of $2n$ points where usual strands 
 can wind around the cores, but not among themselves.
@@ -3380,7 +3405,7 @@ Here we use the same conventions as in \fullref{section:braids} in the sense
 that all cores are to the left.
 For example, if $g=3$ and $n=2$, then
 \begin{gather}\label{eq:twist}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) 
@@ -3393,7 +3418,7 @@ to[out=0,in=90] (1.5,-1.5);
 \end{tikzpicture}
 ,\quad
 \tau_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1.5,1.5);
@@ -3403,10 +3428,10 @@ to[out=0,in=90] (1.5,-1.5);
 \end{tikzpicture}
 ,
 \end{gather}
-are prototypical examples of such crossingless matchings.
+are examples of such crossingless matchings.
 Using the analog of \fullref{proposition:embedding},
 diagrams are then taken up to isotopy in the interpretation
-of usual tangle isotopies of tangles with $g+n$ strands 
+of usual isotopies of tangles with $g+n$ strands 
 (of crossingless tangles in a disc with $g$ punctures times an interval).
 
 \begin{remark}
@@ -3423,7 +3448,7 @@ $\cpar=(\cvar_{\gamma})_{\gamma}\in\KK$, one for each $\setstuff{F}_{g}$-colored
 
 \begin{definition}
 The evaluation of 
-a closed circle $\gamma$ is defined to be the removal 
+a $\setstuff{F}_{g}$-colored circle $\gamma$ is defined to be the removal 
 of a closed component, contributing a factor 
 $\cvar_{\gamma}$. We call this \emph{circle evaluation}.
 \end{definition}
@@ -3437,7 +3462,7 @@ the trivial coloring $\gamma=1$ and are evaluated to $\cvar_{1}$.
 \begin{example}\label{example:essential-loops}
 Here are a few examples:
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-2,0) to[out=90,in=270] (-2,1.5);
 \draw[pole,crosspole] (-1.5,0)node[below,black]{$u$} 
 to[out=90,in=270] (-1.5,1.5)node[above,black,yshift=-3pt]{$u$};
@@ -3450,7 +3475,7 @@ to[out=90,in=270] (-0.5,1.5)node[above,black,yshift=-3pt]{$v$};
 \leftrightsquigarrow
 \cvar_{1}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.75);
@@ -3463,7 +3488,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \leftrightsquigarrow
 \cvar_{\gamma=uv}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.55);
@@ -3482,13 +3507,21 @@ Here the first word in $\setstuff{F}_{g}$ is the trivial word,
 the second is $uv$, and the third is $u^{2}v$.
 \end{example}
 
+An \emph{$\setstuff{F}_{g}$-colored concatenation} of 
+crossingless matchings $x$ and $y$ of $2n$ points of genus $g$ 
+is, up to colors, a concatenation $xy$ in the usual sense 
+and the colors are concatenated reading bottom to top along 
+the strings respectively starting anywhere and moving 
+clockwise along closed components.
+
 \begin{definition}\label{definition:handlebody-tl}
 We let the \emph{handlebody Temperley--Lieb algebra} 
 (in $n$ strands and of genus $g$) $\setstuff{TL}_{g,n}(\cpar)$ be 
 the algebra whose underlying free $\KK$-module is the
 $\KK$-linear span of all 
 crossingless matchings of $2n$ points of genus $g$, and
-with multiplication given by concatenation of diagrams modulo 
+with multiplication given by $\setstuff{F}_{g}$-colored 
+concatenation of diagrams modulo 
 circle evaluation.
 \end{definition}
 
@@ -3501,19 +3534,19 @@ is one of those that are not topological.
 In particular,
 the \emph{Kauffman Skein relation} 
 \begin{gather}\label{eq:kauffman}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 =
 \qvar^{1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 +
 \qvar^{-1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.25,0.25) to[out=0,in=90] (1.5,0);
 \draw[usual,crossline] (1,0.75) to[out=270,in=180] (1.25,0.5) to[out=0,in=270] (1.5,0.75);
 \end{tikzpicture}
@@ -3530,7 +3563,7 @@ being is that this relation implies that twists satisfy
 an order two relation. This follow from the calculation
 \begin{gather}\label{eq:order-two}
 \begin{aligned}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
@@ -3539,7 +3572,7 @@ an order two relation. This follow from the calculation
 (1,1.5);
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0.5) to[out=90,in=270] (0,1);
 \draw[usual,crossline] (0,0.5) to[out=90,in=270] (0.5,1);
 %%
@@ -3555,7 +3588,7 @@ an order two relation. This follow from the calculation
 \end{tikzpicture}
 =
 \qvar^{1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0.5) to[out=90,in=270] (0.5,1);
 \draw[usual,crossline] (0,0.5) to[out=90,in=270] (0,1);
 %%
@@ -3571,7 +3604,7 @@ an order two relation. This follow from the calculation
 \end{tikzpicture}
 +
 \qvar^{-1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0.5) to[out=90,in=90] (0.5,0.5);
 \draw[usual,crossline] (0,1) to[out=270,in=270] (0.5,1);
 %%
@@ -3588,7 +3621,7 @@ an order two relation. This follow from the calculation
 \\
 &=
 \qvar^{1/2}\cvar_{\gamma}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
@@ -3597,7 +3630,7 @@ an order two relation. This follow from the calculation
 \end{tikzpicture}
 +
 \qvar^{-1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] 
 (1,1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -3612,7 +3645,7 @@ an order two relation. This follow from the calculation
 \item In a topological model \eqref{eq:kauffman} also implies relations among 
 the circle parameters $\cvar_{\gamma}$:
 \begin{gather}\label{eq:parameter-problems}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0)node[below,black]{$u$} 
@@ -3622,7 +3655,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=90] (1.25,0.75);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0)node[below,black]{$u$} 
@@ -3633,7 +3666,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \end{tikzpicture}
 =
 \qvar^{1/2}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (1,0)node[below,black]{$v$} 
 to[out=90,in=270] (1,0.75);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
@@ -3646,7 +3679,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \end{tikzpicture}
 +
 \qvar^{-1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (-0.25,0.75) to[out=270,in=270] (0.25,0.75);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (0.75,0.75);
@@ -3668,11 +3701,22 @@ among parameters.
 
 For completeness we note an easy fact:
 
-\begin{lemmaqed}\label{lemma:tl-basis}
+\begin{lemma}\label{lemma:tl-basis}
 The algebra $\setstuff{TL}_{g,n}(\cpar)$ is an associative, unital 
 algebra with a $\KK$-basis given by all crossingless 
 matchings of $2n$ points of genus $g$.
-\end{lemmaqed}
+\end{lemma}
+
+\begin{proof}
+Note that the $\setstuff{F}_{g}$-colored 
+concatenation of closed components makes it clear why 
+circle evaluation only depends on the associated word in $\setstuff{F}_{g}$ 
+modulo conjugation.
+Thus, the only claim which is not immediate is 
+that the $\setstuff{F}_{g}$-colored 
+concatenation is associative. This however follows 
+by identifying the colors by dots on the strings.
+\end{proof}
 
 Note that the algebra $\setstuff{TL}_{g,n}(\cpar)$ is 
 infinite-dimensional unless $g=0$, since the group-like elements $\tau_{u}$ 
@@ -3774,7 +3818,7 @@ to[out=0,in=90] (4,0);
 \node at (0.5,0.75){$U$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (2,0) to[out=270,in=0] (0,-0.2) 
 to[out=180,in=90] (-0.25,-0.4);
@@ -3797,7 +3841,7 @@ to[out=0,in=270] (1.5,0);
 \node at (0.8,0.25){\phantom{$b$}};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
 \draw[usual,crossline] (0.25,0.75) to[out=90,in=270] (1,1.5);
@@ -3811,7 +3855,7 @@ to[out=0,in=270] (1.5,0);
 \node at (0.5,-0.25){$D$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (-0.25,0.5) to[out=90,in=180] (0,0.75) 
 to[out=0,in=90] (2.5,0);
@@ -3835,7 +3879,7 @@ one only reverses the words in $\setstuff{F}_{g}$ but does not
 invert them), {\eg} 
 \begin{gather}\label{eq:tl-antiinvolution}
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.5);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
@@ -3847,7 +3891,7 @@ to[out=0,in=270] (1.5,1.5);
 \end{tikzpicture}
 \right)^{\star}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) to[out=0,in=270] (1.5,0);
 \draw[pole,crosspole] (0,0) to[out=270,in=90] (0,-1.5);
@@ -3884,7 +3928,7 @@ construction; one basically calculates
 \node at (0.5,-0.75){$U$};
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (-0.25,0.5) to[out=90,in=180] (0,0.75) to[out=0,in=90] (2.5,0);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
@@ -3908,7 +3952,7 @@ to[out=0,in=90] (2,0);
 \end{tikzpicture}
 =
 \cvar_{\gamma}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0)node[below,black]{$u$} 
@@ -3934,6 +3978,7 @@ Then the cells $\mathcal{J}_{4}$
 from smallest (bottom) to biggest (top) are given by
 \begin{gather*}
 \begin{tabular}{C|C}
+\arrayrulecolor{tomato}
 \begin{tikzpicture}[anchorbase]
 \draw[dusual] (0,0) to[out=90,in=180] (0.25,0.2) to[out=0,in=90] (0.5,0);
 \draw[dusual] (0,0.5) to[out=270,in=180] (0.25,0.3) to[out=0,in=270] (0.5,0.5);
@@ -3947,7 +3992,7 @@ from smallest (bottom) to biggest (top) are given by
 \draw[dusual] (1,0.5) to[out=270,in=180] (1.25,0.3) to[out=0,in=270] (1.5,0.5);
 \end{tikzpicture}
 \\
-\hline
+\arrayrulecolor{tomato}\hline
 \begin{tikzpicture}[anchorbase]
 \draw[dusual] (0,0) to[out=90,in=180] (0.25,0.2) to[out=0,in=90] (0.5,0);
 \draw[dusual] (1,0) to[out=90,in=180] (1.25,0.2) to[out=0,in=90] (1.5,0);
@@ -3963,6 +4008,7 @@ from smallest (bottom) to biggest (top) are given by
 \end{tabular}
 \\[1pt]
 \begin{tabular}{C|C|C}
+\arrayrulecolor{tomato}
 \begin{tikzpicture}[anchorbase]
 \draw[dusual] (0,0) to[out=90,in=180] (0.25,0.2) to[out=0,in=90] (0.5,0);
 \draw[dusual] (0,0.5) to[out=270,in=180] (0.25,0.3) to[out=0,in=270] (0.5,0.5);
@@ -3982,7 +4028,7 @@ from smallest (bottom) to biggest (top) are given by
 \draw[usual] (0.5,0) to (1.5,0.5);
 \end{tikzpicture}
 \\
-\hline
+\arrayrulecolor{tomato}\hline
 \begin{tikzpicture}[anchorbase]
 \draw[dusual] (0,0) to[out=90,in=180] (0.25,0.2) to[out=0,in=90] (0.5,0);
 \draw[usual] (0.5,0.5) to[out=270,in=180] (0.75,0.3) to[out=0,in=270] (1,0.5);
@@ -4002,7 +4048,7 @@ from smallest (bottom) to biggest (top) are given by
 \draw[usual] (0.5,0.5) to[out=270,in=180] (0.75,0.3) to[out=0,in=270] (1,0.5);
 \end{tikzpicture}
 \\
-\hline
+\arrayrulecolor{tomato}\hline
 \cellcolor{mydarkblue!25}
 \begin{tikzpicture}[anchorbase]
 \draw[dusual] (0,0) to[out=90,in=180] (0.25,0.2) to[out=0,in=90] (0.5,0);
@@ -4086,7 +4132,7 @@ for everything not involving any core strands
 the diagrams stays the same. Moreover, we will use
 \begin{gather}\label{eq:blobs}
 \tau_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0)node[below,black]{$1$} 
 to[out=90,in=270] (-0.25,0.75);
@@ -4099,14 +4145,14 @@ to[out=90,in=270] (0.5,1.5)node[above,black,yshift=-3pt]{$v$};
 \end{tikzpicture}
 \rightsquigarrow
 b_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{u}{spinach}] 
 (1,0)node[below,black]{$1$} to[out=90,in=270]
 (1,1.5)node[above,black,yshift=-3pt]{$1$};
 \end{tikzpicture}
 ,\quad
 \tau_{v}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0)node[below,black]{$1$} 
 to[out=90,in=270] (0.25,0.75);
@@ -4119,7 +4165,7 @@ to[out=90,in=270] (0.5,1.5)node[above,black,yshift=-3pt]{$v$};
 \end{tikzpicture}
 \rightsquigarrow
 b_{v}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{v}{tomato}] (1,0)node[below,black]{$1$} to[out=90,in=270]
 (1,1.5)node[above,black,yshift=-3pt]{$1$};
 \end{tikzpicture}
@@ -4135,41 +4181,41 @@ coming from $-\infty$, and move
 freely along strands in a vertical direction, but can not pass one another:
 \begin{gather}\label{eq:not-defined}
 \text{Ok:}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{u}{spinach}] (0.5,0)to[out=90,in=270](0.5,1.5);
 \draw[usual] (1,0)to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.2}{u}{spinach}] 
 (1,0) to[out=270,in=180] (1.25,-0.5) to[out=0,in=270] (1.5,0);
 \end{tikzpicture}
 ,\quad
 \text{not defined}:
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0)to[out=90,in=270](0.5,1.5);
 \draw[usual,rblobed={0.5}{u}{spinach}] (1,0)to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.8}{u}{spinach}] 
 (1,0) to[out=270,in=180] (1.25,-0.5) to[out=0,in=270] (1.5,0);
 \end{tikzpicture}
 ,\quad
 \text{not equal}:
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{u}{spinach},blobed={0.66}{v}{tomato}] 
 (1,0)to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 \neq
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{v}{tomato},blobed={0.66}{u}{spinach}] 
 (1,0)to[out=90,in=270](1,1.5);
 \end{tikzpicture}.
 \end{gather} 
 An example of such a diagram is:
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual,blobed={0.25}{u}{spinach}] (2,1.5) 
 to[out=270,in=180] (2.25,1.25) to[out=0,in=270] (2.5,1.5);
@@ -4197,7 +4243,7 @@ The reader might wonder whether
 (for appropriate parameters $\qvar^{\pm 1/2}$) 
 one can not use \eqref{eq:kauffman} to define
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole,white] (2,0)node[below,white,yshift=-1pt]{$u$} to[out=90,in=270] (2,1.5)node[above,white,yshift=-3pt]{$u$};
 %%
 \draw[usual] (2.5,0)node[below,black,yshift=-1pt]{$i$} to[out=90,in=270] (1.25,0.75);
@@ -4207,7 +4253,7 @@ one can not use \eqref{eq:kauffman} to define
 \draw[usual,blobed={1}{u}{spinach}] (1.25,0.65) to (1.25,0.85);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole,white] (2,0)node[below,white,yshift=-1pt]{$u$} to[out=90,in=270] (2,1.5)node[above,white,yshift=-3pt]{$u$};
 %%
 \draw[usual,rblobed={0.5}{u}{spinach}] (2.5,0)node[below,black,yshift=-1pt]{$i$} to[out=90,in=270] (2.5,1.5)node[above,black,yshift=-3pt]{$i$};
@@ -4244,7 +4290,7 @@ The circle evaluation of the handlebody Temperley--Lieb
 algebra becomes 
 blob circle evaluation, {\eg}
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.55);
@@ -4258,21 +4304,21 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \end{tikzpicture}
 =\cpar_{\gamma^{\prime}=u^{2}v}
 \leftrightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
 to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
 \draw[usual,blobed={0}{u}{spinach},blobed={0.5}{u}{spinach},blobed={1}{v}{tomato}] (1,0.3) 
 to[out=90,in=270] (1,1.2);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
 to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
 \draw[usual,blobed={0}{v}{tomato},blobed={0.5}{u}{spinach},blobed={1}{u}{spinach}] (1,0.3) 
 to[out=90,in=270] (1,1.2);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.2) to[out=90,in=180] (1.25,1.35) to[out=0,in=90] (1.5,1.2) 
 to (1.5,0.3) to[out=270,in=0] (1.25,0.15) to[out=180,in=270] (1,0.3);
 \draw[usual,blobed={0}{u}{spinach},blobed={0.5}{v}{tomato},blobed={1}{u}{spinach}] (1,0.3) 
@@ -4327,16 +4373,16 @@ For $g=2$, let us choose $\dvar_{1}=1$ and $\dvar_{2}=2$. We get
 \bvar_{2,2}=0
 \end{gathered}
 \quad\text{gives}\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{1}{spinach}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{2}{tomato},blobed={0.66}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.25}{2}{tomato},blobed={0.5}{1}{spinach},blobed={0.75}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
@@ -4350,20 +4396,20 @@ For $g=2$, let us choose $\dvar_{1}=1$ and $\dvar_{2}=2$. We get
 \bvar_{2,2}=0
 \end{gathered}
 \quad\text{gives}\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{1}{spinach}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{2}{tomato},blobed={0.66}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.25}{2}{tomato},blobed={0.5}{1}{spinach},blobed={0.75}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
@@ -4378,34 +4424,34 @@ For $g=2$, let us choose $\dvar_{1}=1$ and $\dvar_{2}=2$. We get
 \bvar_{2,2}=0
 \end{gathered}
 \quad\text{gives}\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{1}{spinach}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{2}{tomato},blobed={0.66}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{2}{tomato}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 \quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.25}{2}{tomato},blobed={0.5}{1}{spinach},blobed={0.75}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{1}{spinach},blobed={0.66}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{2}{tomato}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 .
@@ -4501,41 +4547,41 @@ we get $B_{2,\dpar}=
 Note that there are nine blob diagrams 
 with one strand and at most one $1$ blobs and two $2$ blobs:
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{1}{spinach}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{2}{tomato}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{1}{spinach},blobed={0.66}{2}{tomato}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{2}{tomato},blobed={0.66}{1}{spinach}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{2}{tomato},blobed={0.66}{2}{tomato}] (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.25}{1}{spinach},blobed={0.5}{2}{tomato},blobed={0.75}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.25}{2}{tomato},blobed={0.5}{1}{spinach},blobed={0.75}{2}{tomato}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.25}{2}{tomato},blobed={0.5}{2}{tomato},blobed={0.75}{1}{spinach}] 
 (1,0) to[out=90,in=270](1,1.5);
 \end{tikzpicture}
@@ -4593,7 +4639,7 @@ By \fullref{lemma:blob-basis}, it suffices to count
 handlebody blob diagrams of genus $g$.
 Moreover, that is suffices to study the clapped situation:
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual,blobed={0.15}{u}{spinach}] (2,1.5) 
 to[out=270,in=180] (2.25,1.25) to[out=0,in=270] (2.5,1.5);
@@ -4610,7 +4656,7 @@ to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 \draw[very thick,mygray,->] (2.5,0) to[out=270,in=180] (3.75,-0.5) to[out=0,in=270] (5,0) to (5,1.5);
 \end{tikzpicture}
 \leftrightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual,blobed={0.25}{u}{spinach}] (2,1.5) 
 to[out=270,in=180] (2.25,1.25) to[out=0,in=270] (2.5,1.5);
@@ -4635,7 +4681,7 @@ and one can divide the diagram into two parts: a part underneath it
 $TL_{k-1}$ and a part to the right of it $BL_{n-k}$. For example,
 \begin{gather*}
 n=9,k=4\colon
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,orchid,blobed={0.1}{w}{orchid},blobed={0.3}{v}{tomato}] (0.5,1.5) 
 to[out=270,in=180] (2.25,0.25) to[out=0,in=270] (4,1.5)node[above]{$2k$};
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
@@ -4688,7 +4734,7 @@ with blobs and through strands without blobs, and the middle
 has blobs on through strands.
 The picture to keep in mind is
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual,blobed={0.25}{u}{spinach}] (2,1.5) to[out=270,in=180] 
 (2.25,1.25) to[out=0,in=270] (2.5,1.5);
@@ -4709,7 +4755,7 @@ to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 \node at (0.5,0.75){$U$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=270,in=180] (1.25,-0.25) to[out=0,in=270] (1.5,0);
 \draw[usual,blobed={0.25}{u}{spinach}] (2,0) 
 to[out=270,in=180] (2.25,-0.25) to[out=0,in=270] (2.5,0);
@@ -4724,7 +4770,7 @@ to[out=270,in=180] (3.25,-0.25) to[out=0,in=270] (3.5,0);
 \node at (0.8,0.25){\phantom{$b$}};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,rblobed={0.3}{w}{orchid},rblobed={0.7}{v}{tomato}] (1,0) to[out=90,in=270] (1,1);
 \end{tikzpicture}
 ,
@@ -4734,7 +4780,7 @@ to[out=270,in=180] (3.25,-0.25) to[out=0,in=270] (3.5,0);
 \node at (0.5,-0.25){$D$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.1}{v}{tomato},blobed={0.3}{u}{spinach}] (1,0) 
 to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 \draw[usual] (1.5,0) to[out=90,in=180] (1.75,0.25) to[out=0,in=90] (2,0);
@@ -4833,7 +4879,7 @@ algebra from \cite{MaSa-blob}.
 
 \end{example}
 
-\subsection{A few words about the topology of handlebody Temperley--Lieb algebras}\label{subsection:handlebody-tl-topology}
+\subsection{Topology of handlebody Temperley--Lieb algebras}\label{subsection:handlebody-tl-topology}
 
 Another way of defining the classical Temperley--Lieb algebra
 would be as the quotient of the algebra of tangles by circle 
@@ -4849,7 +4895,7 @@ The framing is given by a vector field pointing to the $g$th core strand
 form the left. 
 The examples to keep in mind are
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) to[out=0,in=270] (1.5,0);
@@ -4863,7 +4909,7 @@ to[out=0,in=90] (1.5,-1.5);
 ,\quad
 \jm_{u,i}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2.5,0)node[below,black,yshift=-1pt]{$i$} 
 to[out=90,in=270] (-0.25,0.75);
@@ -4878,7 +4924,7 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 \end{tikzpicture}
 ,\quad
 \tau_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} 
@@ -4896,7 +4942,7 @@ around a core, as one can see
 from the example below, see also
 \cite[Figure 3]{HaOl-actions-tensor-categories}.
 \begin{gather}\label{eq:framingblobs}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
 %%
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
@@ -4910,7 +4956,7 @@ from the example below, see also
 \draw[usual,crossline] (-0.25,2.25) to[out=90,in=90] (1.5,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,3);
 \draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} 
 to[out=90,in=270] (0,3)node[above,black,yshift=-3pt]{$u$};
@@ -4925,7 +4971,7 @@ Let us also mention that these diagrams satisfy the classical
 Reidemeister relations and other types of 
 isotopy relations, {\eg}
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=270,in=180] (0.25,-0.25) 
 to[out=0,in=270] (0.5,0) to[out=90,in=270] (1,0.75) to (1,2);
 \draw[usual,crossline] (1,-0.75) to[out=90,in=270] (1,0) 
@@ -4939,7 +4985,7 @@ to[out=90,in=270] (0.5,0.75) to (0.5,1.5) to[out=90,in=0] (0.25,1.75) to[out=180
 \draw[usual,crossline] (-1.75,0.75) to[out=90,in=270] (0,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (-1.75,0.75) to[out=90,in=270] (0,2);
 \draw[usual,crossline] (0,-0.75) to[out=90,in=270] (-1.75,0.75);
 \draw[pole,crosspole] (-2,-0.75) to[out=90,in=270] (-2,2);
@@ -5079,7 +5125,7 @@ defines an algebra homomorphism
 \end{gather*}
 The pictures illustrating the above constructions are
 \begin{gather}\label{eq:flanking}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
@@ -5088,7 +5134,7 @@ The pictures illustrating the above constructions are
 (1,1.5);
 \end{tikzpicture}
 \mapsto
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (-0.43,0) to[out=90,in=270] (-0.43,1.5);
 \draw[usual,crossline] (-0.57,0) to[out=90,in=270] (-0.57,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
@@ -5100,7 +5146,7 @@ The pictures illustrating the above constructions are
 (1,1.5);
 \end{tikzpicture}
 \mapsto
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (-0.43,0) to[out=90,in=270] (-0.43,1.5);
 \draw[usual,crossline] (-0.57,0) to[out=90,in=270] (-0.57,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
@@ -5115,7 +5161,7 @@ The pictures illustrating the above constructions are
 \draw[mor] (-0.65,1.5) rectangle (0.65,1.75);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
@@ -5123,7 +5169,7 @@ The pictures illustrating the above constructions are
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=90] (1.25,0.75);
 \end{tikzpicture}
 \mapsto
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.43,0) to[out=90,in=270] (0.43,1.5);
 \draw[usual,crossline] (0.57,0) to[out=90,in=270] (0.57,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.75);
@@ -5134,7 +5180,7 @@ The pictures illustrating the above constructions are
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=90] (1.25,0.75);
 \end{tikzpicture}
 \mapsto
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.43,0) to[out=90,in=270] (0.43,1.5);
 \draw[usual,crossline] (0.57,0) to[out=90,in=270] (0.57,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.75);
@@ -5150,7 +5196,7 @@ The pictures illustrating the above constructions are
 =
 \cvar_{\gamma}
 \cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.43,0) to[out=90,in=270] (0.43,1.5);
 \draw[usual,crossline] (0.57,0) to[out=90,in=270] (0.57,1.5);
 \draw[usual,crossline] (-0.07,0) to[out=90,in=270] (-0.07,1.5);
@@ -5216,7 +5262,7 @@ are the only admissible choices. The same will be true
 throughout, {\eg} for BMW algebras in \fullref{section:brauer}.
 \end{remark}
 
-\subsection{A few words about the topology of handlebody blob algebras}\label{subsection:handlebody-blob-topology}
+\subsection{Topology of handlebody blob algebras}\label{subsection:handlebody-blob-topology}
 
 The purpose of this section is to explain a different 
 diagrammatic presentation for $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)$.
@@ -5277,7 +5323,7 @@ Examples of such tangled blob diagrams and how they relate
 to the diagrammatic used in 
 \fullref{subsection:handlebody-tl-topology} are
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) to[out=0,in=270] (1.5,0);
@@ -5289,7 +5335,7 @@ to[out=270,in=90] (0,-1.5)node[below,black,yshift=-1pt]{$u$};
 to[out=0,in=90] (1.5,-1.5);
 \end{tikzpicture}
 \rightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 %%
 \draw[usual,crossline,blobed={0.25}{u}{spinach}] (1,0) to[out=270,in=180] (1.25,-0.25) to[out=0,in=270] (1.5,0);
 \draw[usual,crossline] (1,-1.5) to[out=90,in=180] (1.25,-1.25) to[out=0,in=90] (1.5,-1.5);
@@ -5297,7 +5343,7 @@ to[out=0,in=90] (1.5,-1.5);
 ,\quad
 \jm_{u,i}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2.5,0)node[below,black,yshift=-1pt]{$i$} to[out=90,in=270] (-0.25,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1.5,1.5);
@@ -5311,7 +5357,7 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 \rightsquigarrow
 b_{u,i}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole,white] (2,0)node[below,white,yshift=-1pt]{$u$} 
 to[out=90,in=270] (2,1.5)node[above,white,yshift=-3pt]{$u$};
 %%
@@ -5323,7 +5369,7 @@ to[out=90,in=270] (2,1.5)node[above,white,yshift=-3pt]{$u$};
 \end{tikzpicture}
 ,\quad
 \tau_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} 
@@ -5333,7 +5379,7 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 \end{tikzpicture}
 \rightsquigarrow
 b_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole,white] (0,0)node[below,white,yshift=-1pt]{$u$} 
 to[out=90,in=270] (0,1.5)node[above,white,yshift=-3pt]{$u$};
 %%
@@ -5349,7 +5395,7 @@ Note that we can introduce blobs on any possible strand via
 \begin{gather}\label{eq:blob-right}
 \jm_{u,i}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (2.5,0)node[below,black,yshift=-1pt]{$i$} to[out=90,in=270] (-0.25,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1.5,1.5);
@@ -5363,7 +5409,7 @@ to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 \rightsquigarrow
 b_{u,i}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole,white] (2,0)node[below,white,yshift=-1pt]{$u$} 
 to[out=90,in=270] (2,1.5)node[above,white,yshift=-3pt]{$u$};
 %%
@@ -5374,7 +5420,7 @@ to[out=90,in=270] (2,1.5)node[above,white,yshift=-3pt]{$u$};
 \draw[usual,blobed={1}{u}{spinach}] (1.25,0.65) to (1.25,0.85);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole,white] (2,0)node[below,white,yshift=-1pt]{$u$} 
 to[out=90,in=270] (2,1.5)node[above,white,yshift=-3pt]{$u$};
 %%
@@ -5396,61 +5442,61 @@ Precisely, we have:
 \begin{lemma}\label{lemma:blob-rels}
 Blobs satisfy the following relations.
 \begin{align}\label{eq:blobslides}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,rblobed={0.15}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}&=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.85}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 .
 \\
 \label{eq:dots-capscups}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.2}{u}{spinach},rblobed={0.8}{u}{spinach}] 
 (1,0) to[out=90,in=180] (1.25,0.5) to[out=0,in=90] (1.5,0);
 \end{tikzpicture}
 \hspace{-0.2cm}&=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.25,0.5) to[out=0,in=90] (1.5,0);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes,yscale=-1]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes,yscale=-1]
 \draw[usual,crossline,blobed={0.2}{u}{spinach},rblobed={0.8}{u}{spinach}] 
 (1,0) to[out=90,in=180] (1.25,0.5) to[out=0,in=90] (1.5,0);
 \end{tikzpicture}
 \hspace{-0.2cm}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes,yscale=-1]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes,yscale=-1]
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.25,0.5) to[out=0,in=90] (1.5,0);
 \end{tikzpicture}
 .
 \end{align}
 \begin{gather}\label{eq:height-blob-switch}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,rblobed={0.66}{u}{spinach}] (2.5,0) to[out=90,in=270] (2.5,1.5);
 \draw[usual,blobed={0.33}{v}{tomato}] (2,0) to[out=90,in=270] (2,1.5);
 \end{tikzpicture}
 =
 \begin{cases}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,rblobed={0.33}{u}{spinach}] (2.5,0) to[out=90,in=270] (2.5,1.5);
 \draw[usual,blobed={0.66}{v}{tomato}] (2,0) to[out=90,in=270] (2,1.5);
 \end{tikzpicture}
 &\text{if } v\geq u,
 \\[2ex]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (2.5,1.0) to[out=90,in=270] (2.0,1.5);
 \draw[usual,crossline] (2.0,1.0) to[out=90,in=270] (2.5,1.5);
 \draw[usual,crossline] (2.0,0) to[out=90,in=270] (2.5,0.5);
@@ -5463,23 +5509,23 @@ Blobs satisfy the following relations.
 \end{gather}
 \begin{gather}\label{eq:more-slides}
 \begin{aligned}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}&=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 +(\qvar^{1/2}-\qvar^{-1/2})\cdot
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0);
 \draw[usual,crossline,rblobed={0.75}{u}{spinach}] (0,0.75) 
@@ -5487,23 +5533,23 @@ to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}\right)
 ,\\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.12}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}&=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.87}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 +(\qvar^{1/2}-\qvar^{-1/2})\cdot
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.75}{u}{spinach}] (0,0) 
 to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual,crossline] (0,0.75) to[out=270,in=180] (0.25,0.5) 
@@ -5512,23 +5558,23 @@ to[out=0,in=270] (0.5,0.75);
 \hspace{-0.2cm}\right)
 ,
 \\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}+(\qvar^{1/2}-\qvar^{-1/2})\cdot
 \left(\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.5}{u}{spinach}] (0,0) to (0,0.75);
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.25}{u}{spinach}] (0,0) 
 to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual,crossline] (0,0.75) to[out=270,in=180] (0.25,0.5) 
@@ -5536,23 +5582,23 @@ to[out=0,in=270] (0.5,0.75);
 \end{tikzpicture}
 \right)
 ,\\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,blobed={0.85}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,rblobed={0.15}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}+(\qvar^{1/2}-\qvar^{-1/2})\cdot
 \left(\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.5}{u}{spinach}] (0,0) to (0,0.75);
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,] (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0);
 \draw[usual,crossline,blobed={0.25}{u}{spinach}] (0,0.75) 
@@ -5589,26 +5635,26 @@ in the case $v\geq u$ is the last
 relation in \fullref{lemma:jm-elements}. 
 In the case $v\leq u$ we calculate
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,rblobed={0.66}{u}{spinach}] (2.5,0) to[out=90,in=270] (2.5,1.5);
 \draw[usual,blobed={0.33}{v}{tomato}] (2,0) to[out=90,in=270] (2,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (2,1) to[out=90,in=270] (2,1.5);
 \draw[usual,blobed={0.58}{u}{spinach},crossline] (2.5,0) 
 to (2.5,0.5) to[out=90,in=270] (1.5,1) to[out=90,in=270] (2.5,1.5);
 \draw[usual,blobed={0.4}{v}{tomato},crossline] (2,0) to[out=90,in=270] (2,1);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,rblobed={0.42}{v}{tomato},crossline] (2,0) 
 to[out=90,in=270] (2,1.5);
 \draw[usual,blobed={0.58}{u}{spinach},crossline] (2.5,0) 
 to[out=90,in=270] (1.5,0.5) to[out=90,in=270] (1.5,1) to[out=90,in=270] (2.5,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,rblobed={0.6}{v}{tomato},crossline] (2,0) 
 to[out=90,in=270] (2,1.5);
 \draw[usual,blobed={0.425}{u}{spinach},crossline] (2.5,0) 
@@ -5624,43 +5670,43 @@ Kauffman skein relation \eqref{eq:kauffman}.
 Precisely, \eqref{eq:blobslides} and \eqref{eq:kauffman}
 imply {\eg}
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}=
 \qvar^{1/2}
 \cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 +\qvar^{-1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0);
 \draw[usual,crossline,rblobed={0.75}{u}{spinach}] (0,0.75) 
 to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}=
 \qvar^{-1/2}
 \cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 +\qvar^{1/2}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0);
 \draw[usual,crossline,rblobed={0.75}{u}{spinach}] (0,0.75) 
@@ -5718,50 +5764,50 @@ with multiplication given by concatenation of diagrams modulo
 circle evaluation, and the \emph{Skein 
 relation} \eqref{eq:skein} and \eqref{eq:framing-rel} 
 \begin{gather}\label{eq:skein}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes,xscale=-1]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes,xscale=-1]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 = (\qvar-\qvar^{-1})\cdot
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to(0.5,0.75);
 \draw[usual,crossline] (0,0) to (0,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual,crossline] (0,0.75) to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \end{tikzpicture}
 \right)
 ,\\
 \label{eq:framing-rel}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0,0.75) to[out=90,in=180] (0.25,1) to[out=0,in=90] (0.5,0.75);
 \end{tikzpicture}
 = 
 \avar\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to(0.5,0.75);
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline] (0,0.75) to[out=90,in=180] (0.25,1) to[out=0,in=90] (0.5,0.75);
 \end{tikzpicture}
 ,\quad 
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes,xscale=-1]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes,xscale=-1]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0,0.75) to[out=90,in=180] (0.25,1) to[out=0,in=90] (0.5,0.75);
 \end{tikzpicture}
 =
 \avar^{-1}\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline] (0,0.75) to[out=90,in=180] (0.25,1) to[out=0,in=90] (0.5,0.75);
@@ -5780,17 +5826,17 @@ $\setstuff{Br}_{g,n}(\cpar)$. Note that
 in this specialization we can 
 use a simplified notation for the crossings
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}  
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
@@ -5830,7 +5876,7 @@ We keep the conventions of the
 previous sections and consider that all cores are at the left. 
 For example, if $g=3$ and $n=2$, then
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) to[out=0,in=270] (1.5,0);
@@ -5841,7 +5887,7 @@ to[out=0,in=180] (0.75,-0.8) to[out=0,in=270] (1.5,0);
 to[out=0,in=90] (1.5,-1.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) to[out=0,in=100] (1.5,-1.5);
@@ -5851,7 +5897,7 @@ to[out=0,in=180] (0.75,-0.8) to[out=0,in=100] (1.5,-1.5);
 \draw[usual] (1,-1.5) to[out=85,in=-90] (1.5,0);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1.5,1.5);
@@ -5879,13 +5925,13 @@ by lifting crossings
 Note however that we have an ambiguity coming from
 \begin{gather*}
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.75,0.75) 
 to[out=0,in=90] (2.5,0);
 \draw[usual] (1.75,0) to[out=90,in=270] (2.25,0.75) to[out=90,in=270] (1.75,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,0) to[out=90,in=180] (1.75,0.75) 
 to[out=0,in=90] (2.5,0);
 \draw[usual] (1.75,0) to[out=90,in=270] (1.25,0.75) to[out=90,in=270] (1.75,1.5);
@@ -5893,13 +5939,13 @@ to[out=0,in=90] (2.5,0);
 \right)
 \mapsto
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.75,0.75) 
 to[out=0,in=90] (2.5,0);
 \draw[usual,crossline] (1.75,0) to[out=90,in=270] (2.25,0.75) to[out=90,in=270] (1.75,1.5);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.75,0.75) 
 to[out=0,in=90] (2.5,0);
 \draw[usual,crossline] (1.75,0) to[out=90,in=270] (1.25,0.75) to[out=90,in=270] (1.75,1.5);
@@ -5911,12 +5957,12 @@ In order to avoid this we call a \emph{positive lift}
 a lift such that all through strands for a positive braid monoid, 
 using 
 \begin{gather}\label{eq:positive-braid}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \mapsto
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
@@ -5929,18 +5975,18 @@ caps and cups are also underneath one another, going from left
 For example,
 \begin{gather*}
 \text{Ok}\colon
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.75,0.5) 
 to[out=0,in=90] (2.5,0);
 \draw[usual,crossline] (1.75,0) to[out=90,in=270] (1.75,0.75);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,white] (1.75,0) to[out=90,in=270] (1.75,0.75);
 %%
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.75,0.5) 
@@ -5950,18 +5996,18 @@ to[out=0,in=90] (3,0);
 \end{tikzpicture}
 ,\quad
 \text{not allowed}\colon
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.75,0) to[out=90,in=270] (1.75,0.75);
 \draw[usual,crossline] (1,0) to[out=90,in=180] (1.75,0.5) 
 to[out=0,in=90] (2.5,0);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,white] (1.75,0) to[out=90,in=270] (1.75,0.75);
 %%
 \draw[usual,crossline] (1.5,0) to[out=90,in=180] (2.25,0.5) 
@@ -6141,7 +6187,7 @@ to[out=0,in=90] (4,-4);
 \node at (0.5,0.75){$U$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (2,0) to[out=270,in=0] (0,-0.75) 
 to[out=180,in=90] (-0.25,-1);
@@ -6162,7 +6208,7 @@ to[out=0,in=270] (1.5,0);
 \node at (0.8,0.25){\phantom{$b$}};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (1.5,1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
@@ -6178,7 +6224,7 @@ to[out=0,in=270] (1.5,0);
 \node at (0.5,-0.25){$D$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (-0.25,0.5) to[out=90,in=180] (0,0.75) 
 to[out=0,in=90] (2.5,0);
@@ -6286,23 +6332,23 @@ and \eqref{eq:height-blob-switch},
 and also
 \begin{gather}\label{eq:bmw-more-slides}
 \begin{aligned}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}&=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 +(\qvar-\qvar^{-1})\cdot
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0);
 \draw[usual,crossline,rblobed={0.75}{u}{spinach}] (0,0.75) 
@@ -6310,23 +6356,23 @@ to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}\right)
 ,\\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.12}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}&=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.87}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 +(\qvar-\qvar^{-1})\cdot
 \left(
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.75}{u}{spinach}] (0,0) 
 to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual,crossline] (0,0.75) to[out=270,in=180] (0.25,0.5) 
@@ -6335,23 +6381,23 @@ to[out=0,in=270] (0.5,0.75);
 \hspace{-0.2cm}\right)
 ,
 \\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}+(\qvar-\qvar^{-1})\cdot
 \left(\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.5}{u}{spinach}] (0,0) to (0,0.75);
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.25}{u}{spinach}] (0,0) 
 to[out=90,in=180] (0.25,0.25) to[out=0,in=90] (0.5,0);
 \draw[usual,crossline] (0,0.75) to[out=270,in=180] (0.25,0.5) 
@@ -6359,23 +6405,23 @@ to[out=0,in=270] (0.5,0.75);
 \end{tikzpicture}
 \right)
 ,\\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,blobed={0.85}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,rblobed={0.15}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}+(\qvar-\qvar^{-1})\cdot
 \left(\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.5}{u}{spinach}] (0,0) to (0,0.75);
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,] (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0);
 \draw[usual,crossline,blobed={0.25}{u}{spinach}] (0,0.75) 
@@ -6408,34 +6454,34 @@ and \eqref{eq:brauer-move2}.
 Brauer blobs satisfy the following relations
 additionally to \eqref{eq:dots-capscups}.
 \begin{gather}\label{eq:brauer-move1}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,rblobed={0.15}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.85}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 =
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 .
 \end{gather}
 \begin{gather}\label{eq:brauer-move2}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.66}{u}{spinach}] (0,0) to[out=90,in=270] (0,1.5);
 \draw[usual,rblobed={0.33}{v}{tomato}] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \end{tikzpicture}
 \hspace{-0.2cm}=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{u}{spinach}] (0,0) to[out=90,in=270] (0,1.5);
 \draw[usual,rblobed={0.66}{v}{tomato}] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \end{tikzpicture}
@@ -6508,7 +6554,7 @@ is connected by a cup with exactly one Morse point, and there is
 a minimal number of intersection between the cups.
 Here is an example:
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.25}{u}{spinach}] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
 \draw[usual,blobed={0.25}{u}{spinach}] (2,1.5) to[out=270,in=180] (3.5,0.5) to[out=0,in=270] (5,1.5);
 \draw[usual] (2.5,1.5) to[out=270,in=180] (2.75,1.25) to[out=0,in=270] (3,1.5);
@@ -6528,7 +6574,7 @@ unclapping and simultaneously sliding all blobs
 to the left that may fall on caps or cups.
 This procedure is illustrated in the diagram below. 
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{u}{spinach}] (2,1.5) to[out=270,in=180] (2.25,1.25) to[out=0,in=270] (2.5,1.5);
 \draw[usual,blobed={0.33}{u}{spinach}] (3,1.5) to[out=270,in=180] (3.5,1.0) to[out=0,in=270] (4.0,1.5);
 \draw[usual,blobed={0.3}{v}{tomato},rblobed={0.7}{w}{orchid}] (3.5,1.5) to (3.5,1.4) to[out=270,in=180] (4.5,0.6) to[out=0,in=270] (5.5,1.4) to (5.5,1.5);
@@ -6537,7 +6583,7 @@ This procedure is illustrated in the diagram below.
 \draw[very thick,mygray,densely dashed] (3.75,1.5) to (5.75,1.5);
 \end{tikzpicture}
 \rightsquigarrow
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.33}{u}{spinach}] (2,1.5) to[out=270,in=180] (2.25,1.25) to[out=0,in=270] (2.5,1.5);
 \draw[usual,blobed={0.15}{u}{spinach}] (3,1.5) to[out=270,in=90]  (3.5,0);
 \draw[usual,blobed={0.45}{w}{orchid},rblobed={0.85}{v}{tomato}] (2,0) to (2,0.1) to[out=90,in=270] (3.5,1.5);
@@ -6618,22 +6664,22 @@ and right $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$-modules
 \begin{gather*}
 \setstuff{Caps}=
 \left\{
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.4);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.1}{u}{spinach}] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.4);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.1}{v}{tomato}] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.4);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.075}{u}{spinach},blobed={0.3}{v}{tomato}] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.4);
 \end{tikzpicture}
@@ -6642,22 +6688,22 @@ to[out=0,in=90] (0.5,0) to (0.5,-0.4);
 ,\quad
 \setstuff{Cups}=
 \left\{
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
 to[out=0,in=270] (0.5,0) to (0.5,0.4);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.25}{u}{spinach}] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
 to[out=0,in=270] (0.5,0) to (0.5,0.4);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.25}{v}{tomato}] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
 to[out=0,in=270] (0.5,0) to (0.5,0.4);
 \end{tikzpicture}
 ,
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.075}{u}{spinach},blobed={0.3}{v}{tomato}] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
 to[out=0,in=270] (0.5,0) to (0.5,0.4);
 \end{tikzpicture}
@@ -6674,25 +6720,25 @@ happens if and only if the $B_{1,\dpar}$-$B_{1,\dpar}$ pairing matrix
 P=
 \begin{pmatrix}
 \hspace*{0.5cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
 \end{tikzpicture}
 &
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.1}{u}{spinach}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
 \end{tikzpicture}
 &
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
 \end{tikzpicture}
 &
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.1}{u}{spinach},blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
@@ -6700,25 +6746,25 @@ to[out=180,in=270] (0,-0.75);
 &
 \dots
 \\[10pt]
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0}{u}{spinach}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
 \end{tikzpicture}
 &
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0}{u}{spinach},blobed={0.1}{u}{spinach}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
 \end{tikzpicture}
 &
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0}{u}{spinach},blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
 \end{tikzpicture}
 &
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0}{u}{spinach},blobed={0.1}{u}{spinach},blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
 to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
 to[out=180,in=270] (0,-0.75);
@@ -6903,7 +6949,7 @@ to[out=0,in=90] (4,-4);
 \node at (0.5,0.75){$U$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1,0) to[out=270,in=180] (1.5,-0.25) 
 to[out=0,in=270] (2,0);
 \draw[usual,crossline] (1.5,0) to[out=270,in=180] (2.5,-0.5) to[out=0,in=270] (3.5,0);
@@ -6918,7 +6964,7 @@ to[out=0,in=270] (2,0);
 \node at (0.8,0.25){\phantom{$b$}};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (2,0) to[out=90,in=270] (1.5,1.5);
 \draw[usual,crossline,blobed={0.05}{w}{orchid},blobed={0.2}{v}{tomato}] (1,0) to (1,0.75) to[out=90,in=270] (2,1.5);
@@ -6930,7 +6976,7 @@ to[out=0,in=270] (2,0);
 \node at (0.5,-0.25){$D$};
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.05}{w}{orchid},blobed={0.2}{u}{spinach}] (1,0) to[out=90,in=180] (1.75,0.75) 
 to[out=0,in=90] (2.5,0);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (1.5,0.75) to (1.5,1.5);
@@ -7011,17 +7057,17 @@ is the algebra whose underlying free $\KK$-module is
 spanned by isotopy classes of all handlebody braid diagrams, with multiplication 
 given by concatenation of diagrams, modulo the \emph{Skein relation} 
 \begin{gather}\label{eq:hecke-skein}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 -
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes,xscale=-1]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes,xscale=-1]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 =(\qvar-\qvar^{-1})\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \draw[usual,crossline] (0,0) to  (0,0.75);
 \end{tikzpicture}
@@ -7196,7 +7242,7 @@ generators $s_{1}$, $s_{2}$ and $s_{3}$. Moreover, for $T$
 respectively $T^{\prime}$ as below 
 we construct $D=D(T)$ respectively $U=D(T^{\prime})^{\star}$ by
 \begin{gather*}
-\begin{tikzpicture}[anchorbase,scale=0.75]
+\begin{tikzpicture}[anchorbase,scale=0.7]
 \node at (-1.5,0) {$T_{c}$};
 %%
 \draw[very thick] (0,0) rectangle node[pos=0.5]{$1$} (-0.75,0.75);
@@ -7220,7 +7266,7 @@ we construct $D=D(T)$ respectively $U=D(T^{\prime})^{\star}$ by
 \draw[usual,tomato,->] (-1.5,-3.5) to (-1.5,-2)node[right]{$s_{4}s_{5}s_{3}s_{2}$} to (-1.5,-0.5);
 \end{tikzpicture}
 ,\quad
-\begin{tikzpicture}[anchorbase,scale=0.75]
+\begin{tikzpicture}[anchorbase,scale=0.7]
 \node at (-1.5,0) {$T_{c}$};
 %%
 \draw[very thick] (0,0) rectangle node[pos=0.5]{$1$} (-0.75,0.75);
@@ -7245,7 +7291,7 @@ we construct $D=D(T)$ respectively $U=D(T^{\prime})^{\star}$ by
 \end{tikzpicture}
 \rightsquigarrow
 c_{D,U}^{\lambda}=
-\begin{tikzpicture}[anchorbase,scale=0.75]
+\begin{tikzpicture}[anchorbase,scale=0.7]
 \draw[usual,crossline] (5,0) to[out=90,in=270] (3,2);
 \draw[usual,crossline] (4,0) to[out=90,in=270] (5,2);
 \draw[usual,crossline] (3,0) to[out=90,in=270] (2,2);
@@ -7436,7 +7482,7 @@ introduce elements $b_{1},\dots,b_{g}$ in $\setstuff{H}_{g,n}^{+}$
 using the same pictures as in \eqref{eq:blobs}:
 \begin{gather*}
 \tau_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0)node[below,black]{$1$} to[out=90,in=270] (-0.25,0.75);
 \draw[pole,crosspole] (0,0)node[below,black]{$u$} to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
@@ -7445,13 +7491,13 @@ using the same pictures as in \eqref{eq:blobs}:
 \end{tikzpicture}
 \rightsquigarrow
 b_{u}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{u}{spinach}] (1,0)node[below,black]{$1$} to[out=90,in=270]
 (1,1.5)node[above,black,yshift=-3pt]{$1$};
 \end{tikzpicture}
 ,\quad
 \tau_{v}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0)node[below,black]{$1$} to[out=90,in=270] (0.25,0.75);
 \draw[pole,crosspole] (0,0)node[below,black]{$u$} to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
@@ -7460,7 +7506,7 @@ b_{u}=
 \end{tikzpicture}
 \rightsquigarrow
 b_{v}=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,blobed={0.5}{v}{tomato}] (1,0)node[below,black]{$1$} to[out=90,in=270]
 (1,1.5)node[above,black,yshift=-3pt]{$1$};
 \end{tikzpicture}
@@ -7481,65 +7527,65 @@ Blobs satisfy relations \eqref{eq:blobslides}
 and \eqref{eq:height-blob-switch} and
 \begin{gather}\label{eq:hecke:more-slides}
 \begin{aligned}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}&=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 +(\qvar-\qvar^{-1})\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 ,\\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.12}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 \hspace{-0.2cm}&=\hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.87}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \end{tikzpicture}
 +(\qvar-\qvar^{-1})\cdot
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to (0,0.75);
 \draw[usual,crossline,rblobed={0.5}{u}{spinach}] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 ,
 \\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.15}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,rblobed={0.85}{u}{spinach}] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}\hspace{-0.2cm}
 +(\qvar-\qvar^{-1})\cdot
 \hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.5}{u}{spinach}] (0,0) to (0,0.75);
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
 ,\\
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,blobed={0.85}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}
 &=
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0,0) to[out=90,in=270] (0.5,0.75);
 \draw[usual,crossline,rblobed={0.15}{u}{spinach}] (0.5,0) to[out=90,in=270] (0,0.75);
 \end{tikzpicture}\hspace{-0.2cm}
 +(\qvar-\qvar^{-1})\cdot
 \hspace{-0.2cm}
-\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline,blobed={0.5}{u}{spinach}] (0,0) to (0,0.75);
 \draw[usual,crossline] (0.5,0) to (0.5,0.75);
 \end{tikzpicture}
@@ -7880,6 +7926,13 @@ B.~Elias and G.~Williamson.
 \newblock \url{https://arxiv.org/abs/1309.0865}, \href
 {http://dx.doi.org/10.1090/ert/481}
 {\path{doi:10.1090/ert/481}}.
+
+\bibitem[FG95]{FG}
+S.~Fishel and I.~Grojnowski.
+\newblock Canonical bases for the Brauer centralizer algebra.
+\newblock {\em Math. Res. Lett.}, 2, no. 1, 15--26, 1995.
+\newblock \href{http://dx.doi.org/10.4310/MRL.1995.v2.n1.a3}
+{\path{doi:10.4310/MRL.1995.v2.n1.a3}}.
 
 \bibitem[GL97]{Geck-Lambropoulou}
 M.~Geck and S.~Lambropoulou.
