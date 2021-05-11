@@ -6478,9 +6478,6 @@ expression not involving $b_{u}$ such that all
 $b_{u}$ in \eqref{eq:cyclotomic-brauer-blob} are on the same strand.
 \end{definition}
 
-%The relation \eqref{eq:cyclotomic-brauer-blob} is again called 
-%the \emph{cyclotomic relation}.
-
 \begin{remark}
 Note that the Skein relation \eqref{eq:skein} and also 
 \eqref{eq:dots-capscups} imply compatibility 
@@ -6584,7 +6581,6 @@ On the other side, each diagram of
 $\setstuff{Br}^{+}_{g,n}(\cpar)$ defines a 
 clapped, blobed perfect 
 matching by clapping and then arranging the result until it is of the required form.
-%since blobs slide freely on clapped, blobed perfect matchings.
 These are inverse 
 procedures and so the $\KK$-module 
 $\setstuff{Br}^{+}_{g,n}(\cpar)$ 
@@ -6605,27 +6601,157 @@ where $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$ acts on,
 so we can not copy the arguments from {\eg} the proof of \fullref{lemma:handlebody-tl-second}. We rather do the following 
 (which includes the cases where the parameters are generic):
 
-\DT{To clean on}
-
 \begin{lemma}\label{lemma:handlebody-blobbmw-second}
-Let $\KKL$ be a transcendental ring extension of $\KK$.
-For each choice of $\dpar$ and $\bpar$ in $\KK$ there exists $\cpar$
-in $\KKL$
-such that $(\dpar,\bpar,\cpar)$ is admissible.
+Let $\KK$ be a field and
+$\KKL$ be a field extension of $\KK$ 
+of degree $[\KKL:\KK]\gg 1$.
+For each choice of $\dpar$ and $\bpar$ 
+there exists $\cpar$ and $\bpar$ with entries in
+in $\KKL$ such that $(\dpar,\bpar,\cpar)$ is admissible.
 \end{lemma}
 
 \begin{proof}
-In case $g=1$ there is such a choice $\cpar^{\prime}$ 
-for which $\cpar^{\prime}$ is in $\KK$, see 
-\cite[Theorem 3.2]{GoHaMo-cyclotomic-bmw2}, see also
-\cite{WiYu-cyclotomic-bmw}.
-Take this choice for any evaluation parameter that contains 
-only blobs of a fixed type, and fill in the other 
-needed parameters such that they do not satisfy any 
-polynomial relation with parameters in $\KK$.\DT{continue}
+The same arguments as in \cite{GoHaMo-cyclotomic-bmw2}
+prove that admissibility is equivalent to 
+the left 
+and right $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$-modules
+\begin{gather*}
+\setstuff{Caps}=
+\left\{
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.4);
+\end{tikzpicture}
+,
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline,blobed={0.1}{u}{spinach}] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.4);
+\end{tikzpicture}
+,
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline,blobed={0.1}{v}{tomato}] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.4);
+\end{tikzpicture}
+,
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline,blobed={0.075}{u}{spinach},blobed={0.3}{v}{tomato}] (0,-0.4) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.4);
+\end{tikzpicture}
+,\dots
+\right\}
+,\quad
+\setstuff{Cups}=
+\left\{
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
+to[out=0,in=270] (0.5,0) to (0.5,0.4);
+\end{tikzpicture}
+,
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline,blobed={0.25}{u}{spinach}] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
+to[out=0,in=270] (0.5,0) to (0.5,0.4);
+\end{tikzpicture}
+,
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline,blobed={0.25}{v}{tomato}] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
+to[out=0,in=270] (0.5,0) to (0.5,0.4);
+\end{tikzpicture}
+,
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,crossline,blobed={0.075}{u}{spinach},blobed={0.3}{v}{tomato}] (0,0.4) to (0,0) to[out=270,in=180] (0.25,-0.25) 
+to[out=0,in=270] (0.5,0) to (0.5,0.4);
+\end{tikzpicture}
+,\dots
+\right\}
+\end{gather*}
+of all possible blob placements on a cap respectively 
+cup not affected by 
+the cyclotomic relation \eqref{eq:cyclotomic-brauer-blob}
+being free of rank $B_{1,\dpar}$. 
+Note now that closing diagrams implies that this 
+happens if and only if the $B_{1,\dpar}$-$B_{1,\dpar}$ pairing matrix
+\begin{gather*}
+P=
+\begin{pmatrix}
+\hspace*{0.5cm}
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,blobed={0.1}{u}{spinach}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,blobed={0.1}{u}{spinach},blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\dots
+\\[10pt]
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,blobed={0}{u}{spinach}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,blobed={0}{u}{spinach},blobed={0.1}{u}{spinach}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,blobed={0}{u}{spinach},blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[anchorbase,scale=0.75,tinynodes]
+\draw[usual,blobed={0}{u}{spinach},blobed={0.1}{u}{spinach},blobed={0.2}{v}{tomato}] (0,-0.75) to (0,0) to[out=90,in=180] (0.25,0.25) 
+to[out=0,in=90] (0.5,0) to (0.5,-0.75) to[out=270,in=0] (0.25,-1) 
+to[out=180,in=270] (0,-0.75);
+\end{tikzpicture}
+&
+\dots
+\\
+\vdots
+&
+\ddots
+&
+\ddots
+&
+\ddots
+&
+\ddots
+\end{pmatrix}
+\end{gather*}
+is non-degenerate, {\ie} of rank $B_{1,\dpar}$. 
+Note that each row contains a unique 
+combination of $\bvar_{i}$ and $\cvar_{j}$. Thus, 
+choosing them all such that they do not satisfy 
+any polynomial equation of low order ensures 
+that the determinant of $P$ is non-zero.
 \end{proof}
 
-\DT{To clean off}
+\begin{remark}
+In case $g=1$ there is such an effective 
+criterion to get an admissible choice, see 
+\cite[Theorem 3.2]{GoHaMo-cyclotomic-bmw2}, see also
+\cite{WiYu-cyclotomic-bmw}. It would be interesting 
+to have such a criterion for $g>1$.
+\end{remark}
 
 The key players to calculate 
 $\dim_{\KK}\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$
