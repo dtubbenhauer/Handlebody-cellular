@@ -3444,7 +3444,8 @@ These crossingless matchings are not allowed to have
 $\setstuff{F}_{g}$-colored circles $\gamma$, 
 but of course they could appear after concatenation. For the 
 following definition we choose a set of parameters 
-$\cpar=(\cvar_{\gamma})_{\gamma}\in\KK$, one for each $\setstuff{F}_{g}$-colored circle $\gamma$, up to conjugacy of words.
+$\cpar=(\cvar_{\gamma})_{\gamma}\in\KK$, one for 
+each $\setstuff{F}_{g}$-colored circle $\gamma$, up to conjugacy of words.
 
 \begin{definition}
 The evaluation of 
@@ -3720,7 +3721,7 @@ by identifying the colors by dots on the strings.
 
 Note that the algebra $\setstuff{TL}_{g,n}(\cpar)$ is 
 infinite-dimensional unless $g=0$, since the group-like elements $\tau_{u}$ 
-are of infinite order.
+are of infinite order and span $\setstuff{F}_{g}$.
 
 \begin{remark}\label{remark:tl}
 For low genus $\setstuff{TL}_{g,n}(\cpar)$ is well-studied 
@@ -3757,8 +3758,7 @@ is a version of these.
 Note that Temperley--Lieb algebras for $g<2$
 are sometimes assumed to satisfy a quadratic relation for the twist 
 elements, but we do not assume that.
-We will call such algebras blob algebras instead 
-and study them in \fullref{subsection:handlebody-blob} below.
+These algebras are studied in \fullref{subsection:handlebody-blob} below.
 \end{remark}
 
 Similarly as in \fullref{subsection:brauer}, 
@@ -5271,13 +5271,12 @@ diagrammatic presentation for $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)$.
 We will also use a similar construction as 
 presented in this section for 
 cyclotomic handlebody Brauer and BMW algebras later on, 
-so we decided to spell it out here although 
-\fullref{lemma:same} implies that we are not saying anything new 
-compared to \fullref{subsection:handlebody-tl-topology}.
+so we decided to spell it out here despite 
+\fullref{lemma:same}.
 However, while the topological handlebody 
 blob algebra is the same as the topological handlebody 
-Temperley--Lieb algebra, this will be not true 
-in \fullref{subsection:cbrauer}.
+Temperley--Lieb algebra, this phenomena is no longer true for 
+handlebody Brauer and BMW algebras.
 \end{remark}
 
 \begin{definition}\label{definition:handlebody-blob-second}
@@ -5818,12 +5817,16 @@ relation} \eqref{eq:skein} and \eqref{eq:framing-rel}
 
 Note that $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
 is infinite-dimensional because the twists span a free group.
+
+\begin{definition}
 We call the specialization $\qvar=\avar=1$ the \emph{Brauer 
 specialization} and the associated algebra
 the \emph{handlebody Brauer algebra} 
 (in $n$ strands and of genus $g$) 
-$\setstuff{Br}_{g,n}(\cpar)$. Note that 
-in this specialization we can 
+$\setstuff{Br}_{g,n}(\cpar)$. 
+\end{definition}
+
+In the specialization $\setstuff{Br}_{g,n}(\cpar)$ we can 
 use a simplified notation for the crossings
 \begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
@@ -5912,7 +5915,7 @@ These perfect matchings are equal if they describe the same perfect matching
 with the same winding around cores. 
 
 \begin{remark}
-With blobs the situation the situation is trickier 
+With blobs the situation is trickier 
 because we need to be careful 
 with the relation \eqref{eq:dots-capscups}.
 Without blobs we do not have this problem and we can treat 
@@ -6129,17 +6132,17 @@ For the cellular structure we fix a cell datum as in
 \fullref{subsection:brauer}, and also with a very similar 
 cellular basis. Let us for brevity just stress the differences.
 First, we only consider positive lifts and we let 
-$\setstuff{Br}_{g,\lambda}^{+}$ denote the handlebody braid monoid, {\ie}
+$\setstuff{B}_{g,\lambda}^{+}$ denote the handlebody braid monoid, {\ie}
 \fullref{definition:handlebody-braidgroup} 
 using only positive twists and $\beta_{i}$ 
 for the definition, {\ie} positive crossings \eqref{eq:positive-braid}.
 
 Note that there is a map 
-$\setstuff{Br}_{g,\lambda}^{+}\to\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
+$\setstuff{B}_{g,\lambda}^{+}\to\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
 that sends positive twists to 
 positive twists and positive crossings to positive crossings.
 We let $\setstuff{B}_{\lambda}=
-\KK\setstuff{Br}_{g,\lambda}^{+}$.
+\KK\setstuff{B}_{g,\lambda}^{+}$.
 We then get
 \begin{gather}\label{eq:bmw-basis}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
@@ -6273,14 +6276,14 @@ $\cvar=0$ and $\lambda=0$ (this only happens if $n$ is even), all $\lambda\in\La
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\KK\setstuff{Br}_{g,\lambda}^{+}$.
+are parameterized by simple modules of $\KK\setstuff{B}_{g,\lambda}^{+}$.
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\KK\setstuff{Br}_{g,\lambda}^{+}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
+$\mathrm{Ind}_{\KK\setstuff{B}_{g,\lambda}^{+}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\KK\setstuff{Br}_{g,\lambda}^{+}$-modules.
+simple $\KK\setstuff{B}_{g,\lambda}^{+}$-modules.
 
 \end{enumerate}
 \end{theorem}
@@ -6294,13 +6297,13 @@ Let us comment on the parametrization given by
 \fullref{theorem:bmw}:
 \begin{enumerate}
 
-\item For $g=0$ the algebras $\KK\setstuff{Br}_{0,\lambda}^{+}$ 
+\item For $g=0$ the algebras $\KK\setstuff{B}_{0,\lambda}^{+}$ 
 are Hecke algebras associated to Coxeter type 
 $A_{\lambda-1}$, so we get the same classification 
 as in \fullref{theorem:brauer}, but for the BMW algebra. 
 This was of course known, see {\eg} \cite[Corollary 3.14]{Xi-bmw}.
 
-\item For $g=1$ the algebras $\KK\setstuff{Br}_{1,\lambda}^{+}$
+\item For $g=1$ the algebras $\KK\setstuff{B}_{1,\lambda}^{+}$
 are extended affine Hecke algebras associated to Coxeter type 
 $A_{\lambda-1}$.
 
