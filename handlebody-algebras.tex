@@ -361,7 +361,7 @@ linktocpage=true
 Villa Maria, Endenicher Allee 62, 53115 Bonn,
 Germany,\newline
 \href{www.dtubbenhauer.com}{www.dtubbenhauer.com}}
-\email{daniel.tubbenhauer@math.uzh.ch}
+\email{dtubbenhauer@gmail.com}
 
 \address{P.V.: Institut de recherche en math\'{e}matique et physique (IRMP), Universit\'{e} 
 catholique de Louvain, Chemin du Cyclotron 2, building L7.01.02, 1348 Louvain-la-Neuve, Belgium,\newline \href{https://perso.uclouvain.be/pedro.vaz/}{https://perso.uclouvain.be/pedro.vaz/}}
@@ -409,10 +409,10 @@ these diagram algebras get replaced by their (extended) affine versions,
 and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
 one could expect for more general three manifolds. Most prominently 
-for this paper, (three dimensional) handlebodies of genus $g$; the two cases mentioned 
-before are $g=0$ and $g=1$, respectively.
+for this paper, (three dimensional) handlebodies of genus $g$. The two cases mentioned 
+before are $g=0$ (called classical in this paper) and $g=1$, respectively.
 
-The case $g=0$ is classical, and these diagram algebras and their associated 
+In case $g=0$ these diagram algebras and their associated 
 braid groups are around for Donkey's years. 
 In case $g=1$ there is a long history of work on this topic which 
 goes back to at least Brieskorn \cite{Brieskorn}.
@@ -759,6 +759,8 @@ by the Hausdorff Research Institute for Mathematics (HIM)
 during the Junior Trimester Program New Trends in Representation Theory.
 Part of this paper were written during that program, which 
 is gratefully acknowledged.
+P.V. was supported by the Fonds de la Recherche
+Scientifique - FNRS under Grant no. MIS-F.4536.19.
 
 \section{A generalization of cellularity}\label{section:cells}
 
@@ -3430,9 +3432,9 @@ to[out=0,in=90] (1.5,-1.5);
 \end{gather}
 are examples of such crossingless matchings.
 Using the analog of \fullref{proposition:embedding},
-diagrams are then taken up to isotopy in the interpretation
-of usual isotopies of tangles with $g+n$ strands 
-(of crossingless tangles in a disc with $g$ punctures times an interval).
+diagrams are then taken up to
+isotopies of tangle diagrams with $g+n$ strands 
+that restrict to planar isotopies on usual strands.
 
 \begin{remark}
 We will use a similar notation as in 
@@ -3533,7 +3535,7 @@ and some of them are not topological in nature, and
 the construction in \fullref{definition:handlebody-tl} 
 is one of those that are not topological. 
 In particular,
-the \emph{Kauffman Skein relation} 
+the \emph{Kauffman skein relation} 
 \begin{gather}\label{eq:kauffman}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
@@ -4530,11 +4532,11 @@ coefficients:
 \begin{gather}\label{eq:blob-numbers}
 B_{g,\dpar}=
 \sum_{k\in\N}\,
-\sum_{\substack{0\leq bl_{u}\leq\min(k,\dvar_{u}-1)\\bl_{1}+\dots+bl_{g}=k}}
-\binom{k}{bl_{1},\dots,bl_{g}},
+\sum_{\substack{0\leq k_{u}\leq\min(k,\dvar_{u}-1)\\k_{1}+\dots+k_{g}=k}}
+\binom{k}{k_{1},\dots,k_{g}},
 \end{gather}
 where the sums run over all $k\in\N$ and all 
-$0\leq bl_{u}\leq\min(k,\dvar_{u}-1)$,
+$0\leq k_{u}\leq\min(k,\dvar_{u}-1)$,
 for $u\in\{1,\dots,g\}$, that sum up to $k$.
 Note that this sum is finite.
 
@@ -4637,7 +4639,7 @@ generality and that we learned from \cite{tDi-sym-bridges}.
 \begin{proof}
 By \fullref{lemma:blob-basis}, it suffices to count 
 handlebody blob diagrams of genus $g$.
-Moreover, that is suffices to study the clapped situation:
+It actually suffices to study the clapped situation:
 \begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual] (1,1.5) to[out=270,in=180] (1.25,1.25) to[out=0,in=270] (1.5,1.5);
@@ -4810,8 +4812,7 @@ involutive cell datum for $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$.
 The proof is, {\muta}, as in \fullref{proposition:tl} and omitted.
 \end{proof}
 
-The cells look similar as for the handlebody Temperley--Lieb algebra, 
-{\cf} \fullref{example:cells-tl}.
+The cells look similar as in \fullref{example:cells-tl}.
 
 \begin{theorem}\label{theorem:blob}
 Let $\KK$ be a field.
@@ -4883,12 +4884,12 @@ algebra from \cite{MaSa-blob}.
 
 Another way of defining the classical Temperley--Lieb algebra
 would be as the quotient of the algebra of tangles by circle 
-evaluation and the Kauffman Skein relation. To discuss 
+evaluation and the Kauffman skein relation. To discuss 
 a handlebody analog let us define \emph{handlebody 
 (framed) tangle diagrams of $2n$ 
 points of genus $g$}, using handlebody braid 
 diagrams as in \fullref{section:braids} and inspired 
-by \fullref{proposition:embedding}, as the tangle 
+by \fullref{proposition:embedding}, as the (isotopy classes of) tangle 
 diagrams in $g+n$ strings, which are pure on the first $g$ strings, modulo 
 the usual tangle relations. 
 The framing is given by a vector field pointing to the $g$th core strand 
@@ -5222,7 +5223,7 @@ to the point needed) to define
 a representation of $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar^{G})$ 
 on $\mathrm{Sym}^{G}_{\qvar}(\KK^{2})\hcirc\KK^{2}\hcirc\dots\hcirc\KK^{2}$.
 This representation is eventually injective by quantum symmetric Howe duality.
-Precisely, we observe that the Kauffman Skein relation \eqref{eq:kauffman} 
+Precisely, we observe that the Kauffman skein relation \eqref{eq:kauffman} 
 to sort diagrams into a handlebody braid part and a Temperley--Lieb part
 similarly as in \eqref{eq:jm-basis}. The Temperley--Lieb part 
 acts linearly independently by classical Schur--Weyl duality. 
@@ -5747,7 +5748,7 @@ are evaluated as in \fullref{subsection:handlebody-tl}, and we
 fix $\cvar_{\gamma}\in\KK$ as before except for 
 $\cvar_{1}$ which we define as
 \begin{gather*}
-\cvar_{1}=1+\tfrac{\avar-\avar^{-1}}{\qvar-\qvar^{-1}}.
+\cvar_{1}=1+\frac{\avar-\avar^{-1}}{\qvar-\qvar^{-1}}.
 \end{gather*}
 For $\qvar=\qvar^{-1}$ we also let $\avar=\avar^{-1}$
 and let $\cvar_{1}\in\KK$ be any parameter.
@@ -5760,7 +5761,7 @@ $\KK$-linear span of all
 handlebody tangle diagrams of $2n$ points 
 of genus $g$, and
 with multiplication given by concatenation of diagrams modulo 
-circle evaluation, and the \emph{Skein 
+circle evaluation, and the \emph{skein 
 relation} \eqref{eq:skein} and \eqref{eq:framing-rel} 
 \begin{gather}\label{eq:skein}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
@@ -6108,7 +6109,7 @@ To see this we can use the explicit bounds given in
 
 \begin{remark}
 The idempotents used in the proof of 
-\fullref{lemma:handlebody-bmw-second} do not have 
+\fullref{lemma:handlebody-bmw-second} do not satisfy 
 an easy recursion as the Jones--Wenzl projectors used in 
 the proof of \fullref{lemma:handlebody-tl-second}.
 See however \cite{IsMoOg-bmw-idempotents} or \cite{LeZh-brauer-invariant-theory} 
@@ -6320,11 +6321,6 @@ here we identify blobed diagrams with a subalgebra
 of $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
 spanned by all elements containing only positive twists.
 
-\begin{remark}
-For the same reasons as in \fullref{remark:no-inverses}, restricting to 
-diagrams without negative twists is mostly for convenience.
-\end{remark}
-
 We note the following analog of \fullref{lemma:blob-rels}. The proof 
 is the same as the one in \fullref{lemma:blob-rels} and omitted.
 
@@ -6528,7 +6524,7 @@ $b_{u}$ in \eqref{eq:cyclotomic-brauer-blob} are on the same strand.
 \end{definition}
 
 \begin{remark}
-Note that the Skein relation \eqref{eq:skein} and also 
+Note that the skein relation \eqref{eq:skein} and also 
 \eqref{eq:dots-capscups} imply compatibility 
 conditions between parameters (See \fullref{def:bmw-admissible}, \fullref{lemma:handlebody-blobbmw-second} and \fullref{proposition:brauer-dim} below).
 \end{remark}
@@ -6540,7 +6536,7 @@ We assume that these perfect
 matchings points are clapped, similar to the crossingless 
 matchings in the proof of 
 \fullref{proposition:blob-dim}.
-Strands can carry blobs that can move 
+Strands can carry blobs that move 
 freely on the strand they belong but are not allowed 
 to pass each other. In particular, there is no condition 
 on being reachable from the left.
@@ -6903,7 +6899,9 @@ most $\dvar_{u}$ blobs of the corresponding type.
 \end{lemma}
 
 In particular, the dimension of  $\setstuff{BMW}_{g,n}^{\dpar,\bpar}(\cpar,\qvar,\avar)$
-is also given by the formula in \eqref{eq:brauer-dim}.
+is also given by the formula in \eqref{eq:brauer-dim}, namely 
+it is $\dim_{\KK}\setstuff{BMW}_{g,n}^{\dpar,\bpar}(\cpar,\qvar,\avar)
+=(B_{g,\dpar})^{n}(2n-1)!!$.
 
 \begin{proof}
 By the procedure described in 
@@ -7000,7 +6998,7 @@ cell datum for $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$.\qed
 
 Let $\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}$ denote the 
 blobed symmetric group in $\lambda$ strands, {\ie} the symmetric 
-group with blobs on strands that satisfy \eqref{eq:brauer-move1} and 
+group with blobs on any strands that satisfy \eqref{eq:brauer-move1} and 
 \eqref{eq:brauer-move2}. 
 
 \begin{theorem}\label{theorem:brauerblob}
@@ -7046,7 +7044,7 @@ by $\dvar$-multipartitions of $\lambda$.
 
 In this section we define handlebody Hecke algebras as quotients of handlebody braid groups.  
 All algebras can alternatively be defined as quotients of an appropriate
-BMW from \fullref{section:brauer}. 
+BMW algebra from \fullref{section:brauer}. 
 
 \subsection{Handlebody Hecke algebras}\label{subsection:heckealgebras}
 
@@ -7058,7 +7056,7 @@ The \emph{handlebody Hecke algebra}
 (in $n$ strands and of genus $g$) $\setstuff{H}_{g,n}$
 is the algebra whose underlying free $\KK$-module is
 spanned by isotopy classes of all handlebody braid diagrams, with multiplication 
-given by concatenation of diagrams, modulo the \emph{Skein relation} 
+given by concatenation of diagrams, modulo the \emph{skein relation} 
 \begin{gather}\label{eq:hecke-skein}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
@@ -7150,7 +7148,7 @@ That the set in \eqref{eq:jm-basis-hecke1} spans can be proven {\muta} as
 in \fullref{lemma:jm-elements-span}. 
 That is, we use the relations in \eqref{eq:jm-relations} 
 together with the following immediate consequences 
-of \eqref{eq:jm-relations} and the Skein relation \eqref{eq:hecke-skein}:
+of \eqref{eq:jm-relations} and the skein relation \eqref{eq:hecke-skein}:
 \begin{gather}\label{eq:hecke-pull}
 \begin{gathered}
 H_{i-1}\jm_{u,i}
@@ -7181,12 +7179,13 @@ linearly independent if $\qvar=1$, which implies that they are linearly independ
 
 Combining \fullref{proposition:heckejm-elements-basis} 
 with the respective 
-statement for the handlebody Coxeter group, see \fullref{proposition:jm-elements-basis}, we get:
+statement for the handlebody Coxeter 
+group \fullref{proposition:jm-elements-basis} we get:
 
 \begin{corollary}
 For $\qvar=1$
 the map given by
-$\tau_{u}\mapsto t_{u},h_{i}\mapsto s_{i}$
+$\tau_{u}\mapsto t_{u},H_{i}\mapsto s_{i}$
 is an isomorphism of $\KK$-algebras $\setstuff{H}_{g,n}\xrightarrow{\cong}\KK\setstuff{W}_{g,n}$.
 \end{corollary}
 
@@ -7203,7 +7202,9 @@ The cellular basis we are going to recall is not the Kazhdan--Lusztig
 basis, but the so-called \emph{Murphy basis} or
 \emph{standard basis}. This basis 
 has the advantage that it has a known generalization to the case of $g=1$, 
-see \cite{DiJaMa-cyclotomic-q-schur}.
+see \cite{DiJaMa-cyclotomic-q-schur}. 
+On the other hand, we are not aware of a generalization 
+of Kazhdan--Lusztig theory to higher genus.
 \end{remark}
 
 Recall that a \emph{partition} $\lambda$ of $n$ of length 
@@ -7239,7 +7240,8 @@ $r\in\KK$ (that might be not invertible).
 
 \begin{example}
 The above is best illustrated in an example. For $\lambda=(4,2)$ 
-we have $H_{\lambda}=(1+H_{1}+\dots+H_{w_{0}})(1+H_{5})$, where 
+we have $\setstuff{S}_{\lambda}^{row}=\setstuff{S}_{4}\times\setstuff{S}_{2}$ and
+$H_{\lambda}=(1+H_{1}+\dots+H_{w_{0}})(1+H_{5})$, where 
 $w_{0}$ is the longest element in $S_{4}$ written in terms of the 
 generators $s_{1}$, $s_{2}$ and $s_{3}$. Moreover, for $T$ 
 respectively $T^{\prime}$ as below 
@@ -7316,6 +7318,9 @@ c_{D,U}^{\lambda}=
 where we illustrated $H_{\lambda}$ as a box.
 \end{example}
 
+Note that $H_{0,n}$ is a subalgebra of $H_{g,n}$, 
+so we can use the above construction for $H_{g,n}$ as well.
+
 We let $\Lambda=(\Lambda,\leq_{d})$ be the set of all partitions of $n$, 
 which are ordered by the dominance order $\leq_{d}$ (we use the convention 
 from \cite[Section 3.1]{Ma-hecke-schur}).
@@ -7329,7 +7334,7 @@ We then let $c_{D,b,U}^{\lambda}=D(T)bU(T^{\prime})$
 where $b=b(\bsym{a},\bsym{u},\bsym{i})$ runs over elements 
 of the form $\jm_{u_{1},i_{1}}^{a_{1}}\dots 
 \jm_{u_{m},i_{m}}^{a_{m}}H_{\lambda}$ with the 
-same indexes as in \eqref{eq:jm-basis-hecke1}. We then get
+same indices as in \eqref{eq:jm-basis-hecke1}. We then get
 \begin{gather}\label{eq:hecke-basis}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
 b\in\setstuff{B}_{\lambda}\}.
@@ -7345,7 +7350,8 @@ To argue that \eqref{eq:hecke-basis} spans
 $\setstuff{H}_{g,n}$ we use \cite[Proposition 3.16]{Ma-hecke-schur} as follows.
 Instead of the elements $H_{w}\in\setstuff{H}_{0,n}\subset
 \setstuff{H}_{g,n}$ in \eqref{eq:jm-basis-hecke1} we could 
-also use the Murphy basis $DH_{\lambda}U$ (as explained above) of $\setstuff{H}_{0,n}$. Then, by 
+also use the Murphy basis $DH_{\lambda}U$ (as explained above, {\ie} 
+\eqref{eq:hecke-basis} for $g=0$) of $\setstuff{H}_{0,n}$. Then, by 
 \eqref{eq:jm-relations} and \eqref{eq:hecke-pull}, we can push 
 the $D$ to the left, that is, 
 \begin{gather*}
@@ -7369,8 +7375,8 @@ so \eqref{eq:hecke-basis} is indeed a basis.
 It remains to prove \eqref{eq:cell-mult} as all other claimed 
 properties hold by construction. Let us write 
 $\bsym{L}=\jm_{u_{1},i_{1}}^{a_{1}}\dots 
-\jm_{u_{m},i_{m}}^{a_{m}}$ for short, omitting the precise indexes.
-We calculated: 
+\jm_{u_{m},i_{m}}^{a_{m}}$ for short, omitting the precise indices.
+We calculate: 
 \begin{align*}
 D\bsym{L}H_{\lambda}U
 D^{\prime}\bsym{L}^{\prime}H_{\mu}U^{\prime}
@@ -7402,8 +7408,8 @@ D\bsym{L}
 F\bsym{L}^{\prime}H_{\max_{\leq_{d}}(\lambda,\mu)}U^{\prime}
 ,
 \end{align*}
-where the $\dagger$ means that there is 
-a shift of the indexes, as before, and $F$ 
+where the $\dagger$ indicates
+a shift of the indices, as before, and $F$ 
 is some product of Jucys--Murphy elements. 
 In this calculation we used 
 \eqref{eq:jm-relations} 
@@ -7461,7 +7467,7 @@ are well-known:
 
 \item We have $\setstuff{L}_{0,n}=\KK$, so the above 
 is the classical parametrization 
-of simple $\setstuff{H}_{g,n}$-modules, see {\eg} 
+of simple $\setstuff{H}_{0,n}$-modules, see {\eg} 
 \cite[Section 3.4]{Ma-hecke-schur}.
 
 \item For $g=1$ \fullref{theorem:cellhecke}
@@ -7472,8 +7478,8 @@ can be matched with {\eg} \cite[Theorem 5.8]{KoXi-affine-cellular}.
 
 \subsection{Cyclotomic handlebody Hecke algebras}\label{subsection:ak-hecke}
 
-Similarly as in the previous sections 
-({\eg} keeping most of the terminology), in order 
+We keep the terminology from 
+the previous sections. In order 
 to define and work with cyclotomic 
 quotients, we use \emph{blob diagrams of braids} instead of twists.
 
@@ -7519,10 +7525,11 @@ Although blobs are defined on the first
 strand from the left, one can define 
 blobs on other strands exactly as in \eqref{eq:blob-right}.
 These are the Jucys--Murphy elements 
-from \fullref{definition:jm-elements}, but 
-we will denote these by $b_{u,i}$ to distinguish them. 
+from \fullref{definition:jm-elements} which 
+we denote by $b_{u,i}$ to emphasize that 
+they are not necessarily invertible.
 
-Using the Skein relation \eqref{eq:hecke-skein}
+Using the skein relation \eqref{eq:hecke-skein}
 the same calculations as in \fullref{lemma:blob-rels} give:
 
 \begin{lemma}\label{lemma:blob-hecke-rels}
@@ -7939,7 +7946,7 @@ S.~Fishel and I.~Grojnowski.
 
 \bibitem[GL97]{Geck-Lambropoulou}
 M.~Geck and S.~Lambropoulou.
-\newblock  Markov traces and knot invariants related to 
+\newblock Markov traces and knot invariants related to 
 Iwahori--Hecke algebras of type B.
 \newblock {\em J. Reine Angew. Math.}, 482:191--213, 1997.
 \newblock \url{https://arxiv.org/abs/math/0405508}, 
@@ -8105,14 +8112,14 @@ S.~K{\"o}nig and C.~Xi.
 
 \bibitem[LNV20]{lacabanne-naisse-vaz}
 A.~Lacabanne, G.~Naisse, and P.~Vaz,
-\newblock {Tensor product categorifications, Verma modules, and the blob algebra}. 
+\newblock Tensor product categorifications, Verma modules, and the blob algebra. 
 \newblock 2020.
 \newblock To appear in Quantum Topol.
 \newblock \url{https://arxiv.org/abs/2005.06257}.
 
 \bibitem[LV21]{LV}
 A.~Lacabanne and P.~Vaz.
-\newblock {Schur--Weyl duality, Verma modules, and row quotients of  Ariki--Koike algebras}.
+\newblock Schur--Weyl duality, Verma modules, and row quotients of  Ariki--Koike algebras.
 \newblock {\em Pacific J. Math.}, 311, no.1, 113--133, 2021.
 \newblock \url{https://arxiv.org/abs/2004.01065},
 \href{https://doi.org/10.2140/pjm.2021.311.113}
