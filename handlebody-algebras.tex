@@ -202,6 +202,7 @@ mark=at position #1 with {\node[blob,#3,label=right:$\!#2$]at (0,0){};}
 \newcommand{\bvar}{\varsym{b}}
 \newcommand{\dpar}{\bsym{d}}
 \newcommand{\dvar}{\varsym{d}}
+\newcommand{\bbvar}{\varsym{BN}}
 
 % bmw
 
@@ -359,8 +360,7 @@ linktocpage=true
 
 \address{D.T.: Hausdorff Center for Mathematics,
 Villa Maria, Endenicher Allee 62, 53115 Bonn,
-Germany,\newline
-\href{www.dtubbenhauer.com}{www.dtubbenhauer.com}}
+Germany, \href{www.dtubbenhauer.com}{www.dtubbenhauer.com}}
 \email{dtubbenhauer@gmail.com}
 
 \address{P.V.: Institut de recherche en math\'{e}matique et physique (IRMP), Universit\'{e} 
@@ -380,13 +380,11 @@ theory of cells, we reformulate the notion of
 and we explain this reformulation
 and how all of the above algebras 
 are part of this theory.
-
-Compiled on \today\ at \currenttime
 \end{abstract}
 
 \renewcommand{\theequation}{\thesection-\arabic{equation}}
 
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 
 \maketitle
 
@@ -408,13 +406,13 @@ In the simplest case beyond the three ball, when one passes to links in a solid 
 these diagram algebras get replaced by their (extended) affine versions, 
 and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
-one could expect for more general three manifolds. Most prominently 
-for this paper, (three dimensional) handlebodies of genus $g$. The two cases mentioned 
+one could expect for more general three manifolds. 
+In this paper we consider (three dimensional) handlebodies of genus $g$. The two cases mentioned 
 before are $g=0$ (called classical in this paper) and $g=1$, respectively.
 
 In case $g=0$ these diagram algebras and their associated 
 braid groups are around for Donkey's years. 
-In case $g=1$ there is a long history of work on this topic which 
+For $g=1$ there is a long history of work on this topic which 
 goes back to at least Brieskorn \cite{Brieskorn}.
 For example (with more references to come later), see
 \cite{allcock} for braid pictures, \cite{Geck-Lambropoulou} or \cite{OrRa-affine-braids} for connections 
@@ -432,7 +430,7 @@ these algebras are often cellular in the sense of Graham--Lehrer \cite{GrLe-cell
 in the $g=1$ case they are often affine cellular in the sense of K{\"o}nig--Xi \cite{KoXi-affine-cellular}.
 
 We see this paper as a continuation of these works, focusing on the diagrammatic, 
-algebraic and representation theoretical aspects. That is, we generalizes 
+algebraic and representation theoretical aspects. That is, we generalize 
 (some) diagram algebras to higher genus, and 
 we explain how they are sandwich cellular, a notion that 
 generalizes (affine) cellularity. 
@@ -660,14 +658,14 @@ and \cite{Ba-braid-handlebodies}.
 Let us also point out that we study a generalization of cellularity in 
 \fullref{section:cells}, giving us a toolkit to parameterize the simples 
 modules of the aforementioned algebras.
-Note hereby that this generalization is strictly speaking not new, 
-it heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita}, \cite{GuWi-almost-cellular} 
-or \cite{EhTu-relcell}, 
-but our exposition appears to be new. 
+Note hereby that this generalization heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita}, \cite{GuWi-almost-cellular} 
+or \cite{EhTu-relcell}. 
+Although it might be known to experts,
+our exposition is new. 
 
 \subsection{Speculations}
 
-Let us mention a number of interesting future directions.
+Let us mention a number of possible future directions.
 
 \begin{enumerate}[label=$\bullet$]
 
@@ -715,7 +713,10 @@ For example, alongside with KLR algebras
 Webster's tensor product algebras \cite{webster}, 
 algebras related to Verma categorifications 
 \cite{naissevaz2}, \cite{naissevaz3}, \cite{maksimau-vaz}, \cite{lacabanne-naisse-vaz}, Soergel diagrammatics \cite{EW}, 
-come to mind, just to name a few. 
+come to mind, just to name a few.
+
+We expect these handlebody diagram 
+algebras to be sandwich cellular.
 
 \item \textbf{Categories instead of algebras.}
 All of our algebras and concepts under study also have appropriate 
@@ -741,10 +742,13 @@ or \cite{SaTu}.
 \fullref{section:cells} explains our generalization 
 of cellularity and is independent of the rest. It can be easily skipped 
 during a first reading.
-\fullref{section:braids} is fundamental for 
+\fullref{section:braids}
+treats handlebody braid and Coxeter groups and
+is fundamental for 
 all sections following it. Moreover, to avoid 
 too much repetition, we decided to construct the remaining section 
-assuming that \fullref{section:tlblob} has been read, so 
+assuming that \fullref{section:tlblob}, in which we
+construct handlebody Temperley--Lieb and blob algebras, has been read. So 
 this section is mandatory if one wants to read either \fullref{section:brauer}, the BMW part, 
 or \fullref{section:hecke}, the Hecke part.
 
@@ -766,7 +770,8 @@ Scientifique - FNRS under Grant no. MIS-F.4536.19.
 
 Let $\KK$ be a unital, commutative, Noetherian domain, {\eg} 
 the integers or a field, or polynomial rings over these. Everything 
-in this paper is linear over $\KK$. We 
+in this paper is linear over $\KK$. 
+In particular, algebras are $\KK$-algebras. We 
 sometimes assume that $\KK$ is a field, 
 which is for example needed for classification results.
 
@@ -1637,7 +1642,7 @@ correspondence.
 \begin{remark}
 Note a crucial difference to the case $\setstuff{B}_{\lambda}=\KK$, 
 which is (up to having an involution) the cellular case: 
-one apex can have any associated number of simples, not just one.
+one apex can have any number of simples associated to it.
 \end{remark}
 
 \subsection{The Brauer algebra as an example}\label{subsection:brauer}
@@ -2429,8 +2434,8 @@ $\{\tau_{u},\beta_{i}\mid 1\leq u\leq g,1\leq i\leq n\}$ modulo
 \tau_{u}\beta_{i}
 =\beta_{i}\tau_{u}\;\text{if }i>1,
 \quad
-\tau_{u}(\beta_{1}\tau_{v}\beta_{1})
-=(\beta_{1}\tau_{v}\beta_{1})\tau_{u}
+\tau_{v}(\beta_{1}\tau_{u}\beta_{1})
+=(\beta_{1}\tau_{u}\beta_{1})\tau_{v}
 \;\text{if }u\leq v.
 \end{gather}
 \end{definition}
@@ -2606,46 +2611,46 @@ The diagrammatic interpretations of the relations
 \quad
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,4.5);
-\draw[usual,crossline] (1.5,0) to[out=90,in=270] (-0.25,0.75);
+\draw[usual,crossline] (1.5,0) to[out=90,in=270] (0.25,0.75);
 \draw[pole,crosspole] (0.5,0)node[below,black,yshift=-1pt]{$v$} 
 to[out=90,in=270] (0.5,1.5) to (0.5,2.25);
 \draw[pole,crosspole] (1,0) to[out=90,in=270] (1,1.5) to (1,2.25);
 \draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} 
 to[out=90,in=270] (0,1.5) to (0,2.25);
 \draw[usual,crossline] (2,0) to (2,1.5) to[out=90,in=270] (1.5,2.25);
-\draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1.5,1.5);
+\draw[usual,crossline] (0.25,0.75) to[out=90,in=270] (1.5,1.5);
 \draw[usual,crossline] (1.5,1.5) to[out=90,in=270] (2,2.25);
 %%
-\draw[usual,crossline] (1.5,2.25) to[out=90,in=270] (0.25,3);
+\draw[usual,crossline] (1.5,2.25) to[out=90,in=270] (-0.25,3);
 \draw[pole,crosspole] (1,2.25) to[out=90,in=270] (1,3.75) to (1,4.5);
 \draw[pole,crosspole] (0,2.25) to[out=90,in=270] (0,3.75) 
 to (0,4.5)node[above,black,yshift=-3pt]{$u$};
 \draw[pole,crosspole] (0.5,2.25) to[out=90,in=270] (0.5,3.75) 
 to (0.5,4.5)node[above,black,yshift=-3pt]{$v$};
-\draw[usual,crossline] (0.25,3) to[out=90,in=270] (1.5,3.75);
+\draw[usual,crossline] (-0.25,3) to[out=90,in=270] (1.5,3.75);
 \draw[usual,crossline] (2,2.25) to (2,3.75) to[out=90,in=270] (1.5,4.5);
 \draw[usual,crossline] (1.5,3.75) to[out=90,in=270] (2,4.5);
 \end{tikzpicture}
 =
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,4.5);
-\draw[usual,crossline] (1.5,0.75) to[out=90,in=270] (0.25,1.5);
+\draw[usual,crossline] (1.5,0.75) to[out=90,in=270] (-0.25,1.5);
 \draw[pole,crosspole] (1,0) to (1,0.75) to[out=90,in=270] (1,2.25);
 \draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} 
 to (0,0.75) to[out=90,in=270] (0,2.25);
 \draw[pole,crosspole] (0.5,0)node[below,black,yshift=-1pt]{$v$} 
 to (0.5,0.75) to[out=90,in=270] (0.5,2.25);
-\draw[usual,crossline] (0.25,1.5) to[out=90,in=270] (1.5,2.25);
+\draw[usual,crossline] (-0.25,1.5) to[out=90,in=270] (1.5,2.25);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (1.5,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (2,0.75) to (2,2.25);
 %%
-\draw[usual,crossline] (1.5,3) to[out=90,in=270] (-0.25,3.75);
+\draw[usual,crossline] (1.5,3) to[out=90,in=270] (0.25,3.75);
 \draw[pole,crosspole] (0.5,2.25) to (0.5,3) to[out=90,in=270] 
 (0.5,4.5)node[above,black,yshift=-3pt]{$v$};
 \draw[pole,crosspole] (1,2.25) to (1,3) to[out=90,in=270] (1,4.5);
 \draw[pole,crosspole] (0,2.25) to (0,3) to[out=90,in=270] 
 (0,4.5)node[above,black,yshift=-3pt]{$u$};
-\draw[usual,crossline] (-0.25,3.75) to[out=90,in=270] (1.5,4.5);
+\draw[usual,crossline] (0.25,3.75) to[out=90,in=270] (1.5,4.5);
 \draw[usual,crossline] (2,2.25) to[out=90,in=270] (1.5,3);
 \draw[usual,crossline] (1.5,2.25) to[out=90,in=270] (2,3) to (2,4.5);
 \end{tikzpicture}
@@ -2710,8 +2715,8 @@ The handlebody braid group admits the following alternative presentation.
 \beta_{1}\tilde{\tau}_{u}\beta_{1}\tilde{\tau}_{u},
 \quad
 \\
-\tilde{\tau}_{u}(\beta_{1}\tilde{\tau}_{v}\beta_{1}^{-1})
-=(\beta_{1}\tilde{\tau}_{v}\beta_{1}^{-1})\tilde{\tau}_{u}
+\tilde{\tau}_{v}(\beta_{1}\tilde{\tau}_{u}\beta_{1}^{-1})
+=(\beta_{1}\tilde{\tau}_{u}\beta_{1}^{-1})\tilde{\tau}_{v}
 \;\text{if }u<v
 \end{gathered}
 $}
@@ -2814,6 +2819,8 @@ t_{u}s_{i}
 \quad
 t_{u}(s_{1}t_{v}s_{1})
 =(s_{1}t_{v}s_{1})t_{u}
+\;\forall
+u,v
 .
 \end{gather}
 By \eqref{eq:coxhandlebody-summary1}
@@ -4530,7 +4537,7 @@ For our fixed genus $g$ and degree vector $\dpar$ we define
 the (corresponding) \emph{blob numbers} using multinomial
 coefficients:
 \begin{gather}\label{eq:blob-numbers}
-B_{g,\dpar}=
+\bbvar_{g,\dpar}=
 \sum_{k\in\N}\,
 \sum_{\substack{0\leq k_{u}\leq\min(k,\dvar_{u}-1)\\k_{1}+\dots+k_{g}=k}}
 \binom{k}{k_{1},\dots,k_{g}},
@@ -4541,9 +4548,9 @@ for $u\in\{1,\dots,g\}$, that sum up to $k$.
 Note that this sum is finite.
 
 \begin{example}\label{example:blob-numbers}
-We have $B_{0,\dpar}=1$ (by definition), 
-$B_{1,\dpar}=\dvar_{1}$ and, for $\dvar_{1}=2$ and $\dvar_{2}=3$, 
-we get $B_{2,\dpar}=
+We have $\bbvar_{0,\dpar}=1$ (by definition), 
+$\bbvar_{1,\dpar}=\dvar_{1}$ and, for $\dvar_{1}=2$ and $\dvar_{2}=3$, 
+we get $\bbvar_{2,\dpar}=
 \binom{0}{0,0}+\binom{1}{1,0}+\binom{1}{0,1}+\binom{2}{1,1}
 +\binom{2}{0,2}+\binom{3}{1,2}=9$. 
 Note that there are nine blob diagrams 
@@ -4601,7 +4608,7 @@ For any $\cpar$, we have an isomorphism of algebras
 .
 \end{gather*}
 In particular, 
-$\dim_{\KK}\setstuff{Bl}_{g,1}^{\dpar,\bpar}(\cpar)=B_{g,\dpar}$.
+$\dim_{\KK}\setstuff{Bl}_{g,1}^{\dpar,\bpar}(\cpar)=\bbvar_{g,\dpar}$.
 \end{lemma}
 
 \begin{proof}
@@ -4620,11 +4627,11 @@ $\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)$:
 
 \begin{proposition}\label{proposition:blob-dim}
 We have $\dim_{\KK}\setstuff{Bl}_{g,0}^{\dpar,\bpar}(\cpar)=1$, 
-$\dim_{\KK}\setstuff{Bl}_{g,1}^{\dpar,\bpar}(\cpar)=B_{g,\dpar}$ and
+$\dim_{\KK}\setstuff{Bl}_{g,1}^{\dpar,\bpar}(\cpar)=\bbvar_{g,\dpar}$ and
 \begin{gather}\label{eq:blob-dim}
 \dim_{\KK}\setstuff{Bl}_{g,n}^{\dpar,\bpar}(\cpar)
 =
-B_{g,\dpar}
+\bbvar_{g,\dpar}
 {\textstyle\sum_{k=2}^{2n}}\,C_{k-1}\dim_{\KK}
 \setstuff{Bl}_{g,n-k}^{\dpar,\bpar}(\cpar)
 \quad\text{(step $2$ summation)},
@@ -4893,7 +4900,7 @@ by \fullref{proposition:embedding}, as the (isotopy classes of) tangle
 diagrams in $g+n$ strings, which are pure on the first $g$ strings, modulo 
 the usual tangle relations. 
 The framing is given by a vector field pointing to the $g$th core strand 
-form the left. 
+from the left. 
 The examples to keep in mind are
 \begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
@@ -5918,7 +5925,7 @@ with the same winding around cores.
 \begin{remark}
 With blobs the situation is trickier 
 because we need to be careful 
-with the relation \eqref{eq:dots-capscups}.
+with relation \eqref{eq:dots-capscups}.
 Without blobs we do not have this problem and we can treat 
 these perfect matchings as topological objects.
 \end{remark}
@@ -6322,7 +6329,7 @@ of $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$
 spanned by all elements containing only positive twists.
 
 We note the following analog of \fullref{lemma:blob-rels}. The proof 
-is the same as the one in \fullref{lemma:blob-rels} and omitted.
+is the same as for \fullref{lemma:blob-rels} and omitted.
 
 \begin{lemmaqed}\label{lemma:blob-bmw-rels}
 Blobs satisfy the following relations. First, 
@@ -6712,9 +6719,9 @@ to[out=0,in=270] (0.5,0) to (0.5,0.4);
 of all possible blob placements on a cap respectively 
 cup not affected by 
 the cyclotomic relation \eqref{eq:cyclotomic-brauer-blob}
-being free of rank $B_{1,\dpar}$. 
+being free of rank $\bbvar_{1,\dpar}$. 
 Note now that closing diagrams implies that this 
-happens if and only if the $B_{1,\dpar}$-$B_{1,\dpar}$ pairing matrix
+happens if and only if the $\bbvar_{1,\dpar}$-$\bbvar_{1,\dpar}$ pairing matrix
 \begin{gather*}
 P=
 \begin{pmatrix}
@@ -6782,7 +6789,7 @@ to[out=180,in=270] (0,-0.75);
 \ddots
 \end{pmatrix}
 \end{gather*}
-is non-degenerate, {\ie} of rank $B_{1,\dpar}$. 
+is non-degenerate, {\ie} of rank $\bbvar_{1,\dpar}$. 
 Note that each row contains a unique 
 combination of $\bvar_{i}$ and $\cvar_{j}$. Thus, 
 choosing them all such that they do not satisfy 
@@ -6800,7 +6807,7 @@ to have such a criterion for $g>1$.
 
 The key players to calculate 
 $\dim_{\KK}\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$
-are again the blob numbers $B_{g,\dpar}$
+are again the blob numbers $\bbvar_{g,\dpar}$
 from \eqref{eq:blob-numbers}:
 
 \begin{proposition}\label{proposition:brauer-dim}
@@ -6808,7 +6815,7 @@ For admissible parameters we have
 \begin{gather}\label{eq:brauer-dim}
 \dim_{\KK}\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)
 =
-(B_{g,\dpar})^{n}(2n-1)!!.
+(\bbvar_{g,\dpar})^{n}(2n-1)!!.
 \end{gather}
 Moreover, For an admissible parameters, the cyclotomic handlebody 
 Brauer algebra $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$ can be alternatively 
@@ -6820,9 +6827,9 @@ condition.
 
 \begin{proof}
 By \fullref{lemma:blob-onestrand}, the number of ways to put blobs 
-on a single strand is $B_{g,\dpar}$. Hence, 
+on a single strand is $\bbvar_{g,\dpar}$. Hence, 
 the number of ways to put these on $n$ strands is 
-$(B_{g,\dpar})^{n}$. Since there are $(2n)!!$ corresponding 
+$(\bbvar_{g,\dpar})^{n}$. Since there are $(2n)!!$ corresponding 
 perfect matchings all having $n$ strands, 
 the dimension formula follows at once from \fullref{lemma:brauer-basis2}.
 \end{proof}
@@ -6839,10 +6846,9 @@ Note also the difference of our construction to
 \cite{HaOl-cyclotomic-bmw} or
 \cite{Yu-cyclotomic-bmw}: we define 
 $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$ as a tangle algebra 
-to begin with, while those papers have to prove that they 
-have the suggestive diagrammatic presentation.
-(In particular, our construction is in some sense weaker than 
-the ones in those papers.)
+to begin with, while those papers 
+start with an algebraic formulation and
+then prove that they have the suggestive diagrammatic presentation.
 \end{remark}
 
 We keep the cyclotomic parameters $\bpar$ 
@@ -6901,7 +6907,7 @@ most $\dvar_{u}$ blobs of the corresponding type.
 In particular, the dimension of  $\setstuff{BMW}_{g,n}^{\dpar,\bpar}(\cpar,\qvar,\avar)$
 is also given by the formula in \eqref{eq:brauer-dim}, namely 
 it is $\dim_{\KK}\setstuff{BMW}_{g,n}^{\dpar,\bpar}(\cpar,\qvar,\avar)
-=(B_{g,\dpar})^{n}(2n-1)!!$.
+=(\bbvar_{g,\dpar})^{n}(2n-1)!!$.
 
 \begin{proof}
 By the procedure described in 
@@ -7425,14 +7431,14 @@ have a lower number of $H_{i}$, so correspond to Young diagrams with shorter row
 
 Let $e\in\N$ be the smallest number such that 
 $[e]_{\qvar}=0$, or let $e=\infty$ if no such 
-$e$ exists. A $\lambda\in\Lambda$ is called 
+$e$ exists. An element $\lambda\in\Lambda$ is called 
 \emph{$e$-restricted} if $\lambda_{i}-\lambda_{i+1}<e$.
 
 \begin{theorem}\label{theorem:cellhecke}
 Let $\KK$ be a field.
 \begin{enumerate}
 
-\item A $\lambda\in\Lambda$ is an apex 
+\item An element $\lambda\in\Lambda$ is an apex 
 if and only if $\lambda$ is $e$-restricted.
 
 \item The simple $\setstuff{H}_{n,g}$-modules of 
@@ -7452,7 +7458,7 @@ simple $\setstuff{L}_{g,n}H_{\lambda}$-modules.
 \begin{proof}
 Claims (b) and (c) follow immediately from the abstract theory, as 
 in the cases discussed before. The statement (a) follows 
-because whether the form $\Phi^{\lambda}$ is constant 
+because whether the form $\phi^{\lambda}$ is constant 
 zero or not can be detected on the component where the Jucys--Murphy 
 elements are trivial, meaning those $c_{D,b,U}^{\lambda}$ 
 with $b=H_{\lambda}$.
@@ -7733,26 +7739,26 @@ Linear independence follows from
 together with the observation that $A\cap J_{u}=\emptyset$. 
 \end{proof}
 
-Recall the blob numbers $B_{g,\dpar}$ from \eqref{eq:blob-numbers}.
+Recall the blob numbers $\bbvar_{g,\dpar}$ from \eqref{eq:blob-numbers}.
 
 \begin{proposition}
 The dimension of the 
 free $\Bbbk$-module $\setstuff{H}_{g,n}^{\dpar,\bpar}$ is
 \begin{gather*}
 \dim_{\KK}\setstuff{H}_{g,n}^{\dpar,\bpar}
-=(B_{g,\dpar})^{n}n!. 
+=(\bbvar_{g,\dpar})^{n}n!. 
 \end{gather*}
 \end{proposition}
 
 \begin{proof}
 There are $n!$ elements $H_{w}$, each one having $n$ strands.
 Since every strand can carry up 
-to $B_{g,\dpar}$ blobs the 
+to $\bbvar_{g,\dpar}$ blobs the 
 claim follows from \fullref{proposition:heckeblobcyclo-elements-basis}. 
 \end{proof}
 
 \begin{remark}
-Recall that $B_{0,\dpar}=1$ and $B_{1,\dpar}=\dvar_{1}$, see 
+Recall that $\bbvar_{0,\dpar}=1$ and $\bbvar_{1,\dpar}=\dvar_{1}$, see 
 \fullref{example:blob-numbers}. Thus, we recover the dimensions
 \begin{gather*}
 \dim_{\KK}\setstuff{H}_{0,n}^{\dpar,\bpar}=n!,
