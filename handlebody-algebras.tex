@@ -376,8 +376,8 @@ handlebody versions of Temperley--Lieb, blob,
 Brauer/BMW, Hecke and Ariki--Koike algebras.
 Moreover, motivated by Green--Kazhdan--Lusztig's 
 theory of cells, we reformulate the notion of 
-(sandwich, inflated or affine) cellular algebras,
-and we explain this reformulation
+(sandwich, inflated or affine) cellular algebras.
+We explain this reformulation
 and how all of the above algebras 
 are part of this theory.
 \end{abstract}
@@ -392,29 +392,37 @@ are part of this theory.
 
 \section{Introduction}\label{section:intro}
 
-A large collection of diagram algebras, such as the Temperley--Lieb algebra 
-or the (type A) Hecke algebra, are interesting from at least two perspectives:
+A large collection of diagram algebras, such as Temperley--Lieb 
+or (type A) Hecke algebras, are interesting from at least two perspectives:
 they are of fundamental importance in low-dimensional topology 
 and they also have a rich representation theory.
 
 Having an eye on the study of links in 
 three manifolds brings the topology of the ambient space into the play.
-In all the classical examples, like the Temperley--Lieb algebra or 
-the Hecke algebra, the ambient space is the three ball, and these algebras 
+In all the classical examples, like Temperley--Lieb or 
+Hecke algebras, the ambient space is the three ball, and these algebras 
 are related to spherical Coxeter and Artin--Tits braid groups.
-In the simplest case beyond the three ball, when one passes to links in a solid torus, 
+In the simplest case beyond the three ball, 
+when one passes to links in a solid torus, 
 these diagram algebras get replaced by their (extended) affine versions, 
 and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
-one could expect for more general three manifolds. 
-In this paper we consider (three dimensional) handlebodies of genus $g$. The two cases mentioned 
-before are $g=0$ (called classical in this paper) and $g=1$, respectively.
+one could expect for more general three manifolds.
+
+In this paper we consider (three dimensional) handlebodies of genus $g$. 
+The three ball and the solid torus correspond to 
+$g=0$ (called classical in this paper) and $g=1$, respectively.
+As we will see, the Temperley--Lieb and Hecke algebras, their 
+affine versions as well 
+as algebras along the same lines, 
+can be seen as a low genus class
+of a more general, higher genus, class of diagram algebras.
 
 In case $g=0$ these diagram algebras and their associated 
 braid groups are around for Donkey's years. 
 For $g=1$ there is a long history of work on this topic which 
 goes back to at least Brieskorn \cite{Brieskorn}.
-For example (with more references to come later), see
+For example (with more references to come later on), see
 \cite{allcock} for braid pictures, \cite{Geck-Lambropoulou} or \cite{OrRa-affine-braids} for connections 
 to knot theory, \cite{Gr-gen-tl-algebra} 
 or \cite{HaOl-cyclotomic-bmw} for affine diagram algebras.
@@ -432,15 +440,14 @@ in the $g=1$ case they are often affine cellular in the sense of K{\"o}nig--Xi \
 We see this paper as a continuation of these works, focusing on the diagrammatic, 
 algebraic and representation theoretical aspects. That is, we generalize 
 (some) diagram algebras to higher genus, and 
-we explain how they are sandwich cellular, a notion that 
-generalizes (affine) cellularity. 
-
-Sandwich cellular roughly speaking means that the original 
+we show that they are sandwich cellular.
+(Sandwich cellular is a notion that 
+generalizes cellularity. Roughly speaking it means that the original 
 algebra can be obtained by sandwiching a smaller algebra.
 One of the upshots of being sandwich cellular is that the 
 classification of simple modules is reduced 
 from the original algebra to the sandwiched algebra, 
-as we will explain.
+as we will explain.)
 
 \subsection{What this paper does}
 
@@ -479,7 +486,7 @@ $g$ punctures. The pictures hereby are {\eg}
 \end{tikzpicture}
 .
 \end{gather*}
-This illustrates a handlebody braid for genus $4$: 
+This illustrates a handlebody braid of genus $4$: 
 The three strands on the right are usual strands.
 The four thick and blue/grayish strands on the left are core
 strands and they correspond to the punctures 
@@ -547,7 +554,7 @@ to[out=0,in=270] (3,0) to (3,2.25) to[out=90,in=0] (2.75,2.75) to[out=180,in=90]
 \end{tikzpicture}
 \,,
 \end{gather*}
-the core strands correspond to cores of a three dimensional 
+the core strands correspond to cores of a 
 handlebody as explained in {\eg} 
 \cite[Section 2]{RoTu-homflypt-typea}, hence the name. All links in such handlebodies can 
 be obtained by this closing procedure, and there is also an associated 
@@ -557,12 +564,9 @@ here are \cite{Ve-handlebodies} and \cite{HaOlLa-handlebodies}.
 After explaining this setup more carefully, building upon the aforementioned 
 works, in \fullref{section:braids} 
 we also study an associated handlebody Coxeter group for which we find a basis 
-using appropriate versions of Jucys--Murphy elements.
+using versions of Jucys--Murphy elements.
 
-We stress again that the case $g=0$ is classical, while $g=1$ corresponds to 
-(extended) affine braid groups, as studied in {\eg} \cite{Brieskorn} or \cite{allcock}.
-
-These handlebody braid pictures are our starting point to define and study 
+These handlebody braid pictures are also our starting point to define and study 
 various diagram algebras associated to handlebodies:
 
 \begin{enumerate}
@@ -655,7 +659,7 @@ and \cite{Ba-braid-handlebodies}.
 
 \end{enumerate}
 
-Let us also point out that we study a generalization of cellularity in 
+We also study a generalization of cellularity in 
 \fullref{section:cells}, giving us a toolkit to parameterize the simples 
 modules of the aforementioned algebras.
 Note hereby that this generalization heavily builds on and borrows from \cite{Gr-semigroups}, \cite{KoXi-cellular-inflation-morita}, \cite{GuWi-almost-cellular} 
@@ -713,9 +717,9 @@ For example, alongside with KLR algebras
 Webster's tensor product algebras \cite{webster}, 
 algebras related to Verma categorifications 
 \cite{naissevaz2}, \cite{naissevaz3}, \cite{maksimau-vaz}, \cite{lacabanne-naisse-vaz}, Soergel diagrammatics \cite{EW}, 
-come to mind, just to name a few.
+potentially admit handlebody versions, just to name a few.
 
-We expect these handlebody diagram 
+We also expect these handlebody diagram 
 algebras to be sandwich cellular.
 
 \item \textbf{Categories instead of algebras.}
@@ -724,9 +728,8 @@ categorical versions.
 
 For example, it should be fairly straightforward 
 to generalize our discussion of \fullref{section:cells} 
-to cellular categories as defined and studied in \cite{We-tensors-cellular-categories} or
+to cellular categories \cite{We-tensors-cellular-categories},
 \cite{ElLa-trace-hecke}.
-
 However, let us mention that a reason why we have not 
 touched upon categorical versions of our handlebody diagram 
 algebras is that these do not form monoidal categories 
@@ -747,8 +750,8 @@ treats handlebody braid and Coxeter groups and
 is fundamental for 
 all sections following it. Moreover, to avoid 
 too much repetition, we decided to construct the remaining section 
-assuming that \fullref{section:tlblob}, in which we
-construct handlebody Temperley--Lieb and blob algebras, has been read. So 
+assuming the reader knows \fullref{section:tlblob}, in which we
+construct handlebody Temperley--Lieb and blob algebras. So 
 this section is mandatory if one wants to read either \fullref{section:brauer}, the BMW part, 
 or \fullref{section:hecke}, the Hecke part.
 
@@ -5501,7 +5504,7 @@ Blobs satisfy the following relations.
 \draw[usual,rblobed={0.33}{u}{spinach}] (2.5,0) to[out=90,in=270] (2.5,1.5);
 \draw[usual,blobed={0.66}{v}{tomato}] (2,0) to[out=90,in=270] (2,1.5);
 \end{tikzpicture}
-&\text{if } v\geq u,
+&\text{if }u\leq v,
 \\[2ex]
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (2.5,1.0) to[out=90,in=270] (2.0,1.5);
@@ -5511,7 +5514,7 @@ Blobs satisfy the following relations.
 \draw[usual,blobed={0}{u}{spinach}] (2,0.5) to[out=90,in=270] (2,1.0);
 \draw[usual,rblobed={1}{v}{tomato}] (2.5,0.5) to[out=90,in=270] (2.5,1.0);
 \end{tikzpicture}
-&\text{if }v\leq u.
+&\text{if }u\geq v.
 \end{cases}
 \end{gather}
 \begin{gather}\label{eq:more-slides}
