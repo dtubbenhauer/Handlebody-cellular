@@ -409,7 +409,7 @@ and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
 one could expect for more general three manifolds.
 
-In this paper we consider (three dimensional) handlebodies of genus $g$. 
+In this paper we consider (three-dimensional) handlebodies of genus $g$. 
 The three ball and the solid torus correspond to 
 $g=0$ (called classical in this paper) and $g=1$, respectively.
 As we will see, the Temperley--Lieb and Hecke algebras, their 
@@ -774,9 +774,7 @@ Scientifique - FNRS under Grant no. MIS-F.4536.19.
 Let $\KK$ be a unital, commutative, Noetherian domain, {\eg} 
 the integers or a field, or polynomial rings over these. Everything 
 in this paper is linear over $\KK$. 
-In particular, algebras are $\KK$-algebras. We 
-sometimes assume that $\KK$ is a field, 
-which is for example needed for classification results.
+In particular, algebras are $\KK$-algebras.
 
 \subsection{Inflation by algebras}\label{subsection:groups-inflation}
 
@@ -790,8 +788,7 @@ of it.
 
 \begin{remark}\label{remark:green}
 Our discussion below is motivated by Green's 
-classical theory of 
-cells \cite{Gr-semigroups},
+theory of cells \cite{Gr-semigroups},
 often called Green's relations, 
 and the Clifford--Munn--Ponizovski\u{\i} theorem 
 (see {\eg} \cite{GaMaSt-irreps-semigroups} 
@@ -834,6 +831,15 @@ M_{\lambda},b\in\setstuff{B}_{\lambda}\}$
 is called a \emph{(sandwich) cellular basis}.
 \end{definition}
 
+\begin{remark}
+One of the advantages of the basis-focused formulation 
+above is that
+\fullref{definition:cellular} works, {\muta}, for relative 
+cellular algebras as in \cite{EhTu-relcell} 
+or (strictly object-adapted) cellular 
+categories \cite{We-tensors-cellular-categories}, \cite{ElLa-trace-hecke}.
+\end{remark}
+
 We also define:
 
 \begin{definition}\label{definition:cellular-involution}
@@ -848,15 +854,6 @@ for all $\lambda\in\Lambda$, and we have
 .
 \end{gather}
 \end{definition}
-
-\begin{remark}
-One of the advantages of the basis-focused formulation 
-above is that
-\fullref{definition:cellular} works, {\muta}, for relative 
-cellular algebras as in \cite{EhTu-relcell} 
-or (strictly object-adapted) cellular 
-categories as in \cite{We-tensors-cellular-categories} or \cite{ElLa-trace-hecke}.
-\end{remark}
 
 \begin{convention}\label{convention:diagram-conventions}
 We will use diagrammatics from now on. 
@@ -983,9 +980,6 @@ does not reduce the classification
 problem of finding the simple $\KK\setstuff{G}$-modules.
 \end{example}
 
-We will give more examples later on, but
-the first class of examples are classical:
-
 \begin{example}
 For (important) special cases, the above has appeared in the literature. 
 If $\setstuff{A}$ is involutive, then:
@@ -1005,16 +999,13 @@ any quotient of a finite polynomial ring as $\setstuff{B}_{\lambda}$,
 the converse is also true as one can check.
 
 \end{enumerate}
-\end{example}
-
-\begin{remark}
 Having \fullref{section:braids} in mind,
 we note that $\KK\cong\KK\big[\pi_{1}(D_{0})\big]$ 
 and $\KK[X,X^{-1}]\cong\KK\big[\pi_{1}(D_{1})\big]$,
 where $\pi_{1}(D_{0})$ respectively $\pi_{1}(D_{1})$
 are the fundamental groups of a disc 
 $D_{0}$ or a punctured disc $D_{1}$.
-\end{remark}
+\end{example}
 
 \begin{example}\label{example:sandwich}
 The notion of being (involutive) sandwich cellular 
@@ -1167,8 +1158,7 @@ by using the symbols $\actsleft$ respectively
 $\actsright$.) In pictures, this means acting on the bottom.
 There is also a \emph{right 
 cell} $\mathcal{R}(\lambda,D)$ 
-with the same underlying free $\KK$-module by acting 
-on the top.
+defined {\ver}, where the actions is from the top.
 
 \begin{lemma}\label{lemma:delta-welldefined}
 We have the following.
@@ -1201,7 +1191,6 @@ is called an
 Moreover, $\mathcal{J}_{\lambda}=\mathcal{L}(\lambda,U)
 \hcirc_{\setstuff{B}_{\lambda}}\mathcal{R}(\lambda,D)$ 
 is called a two-sided cell or \emph{$\mathcal{J}$-cell}. 
-
 As free $\KK$-modules we clearly have
 \begin{gather}\label{eq:hj-cells}
 \begin{gathered}
@@ -1273,7 +1262,7 @@ are multiplicatively closed, as follows from
 \eqref{eq:cell-action} and \eqref{eq:hj-cells} below, 
 so they form, in general non-unital, subalgebras of the $\mathcal{J}$-cells.
 
-The terminology above is justified by the following illustration:
+The above is can be illustrated by
 \begin{gather}\label{eq:cell-diagram}
 \begin{tikzpicture}[baseline=(A.center),every node/.style=
 {anchor=base,minimum width=1.4cm,minimum height=1cm}]
@@ -1346,9 +1335,9 @@ satisfies, for all $a\in\setstuff{A}$, that
 \phi^{\lambda}
 (x,y\actsright a)=
 \phi^{\lambda}
-(a\actsleft x,y)
+(a\actsleft x,y).
 \end{gather*}
-It gives rise to a symmetric bilinear form on $\Delta(\lambda)$. 
+It gives rise to a symmetric bilinear form $\phi^{\lambda}$ on $\Delta(\lambda)$. 
 This symmetric bilinear form extends to 
 a symmetric bilinear form $\phi^{\lambda}_{K}$
 on $\Delta(\lambda,K)=\Delta(\lambda)\hcirc_{\setstuff{B}_{\lambda}}K$ 
@@ -1427,7 +1416,7 @@ $\phi^{\lambda}_{K}=\phi^{\lambda}\hcirc_{\setstuff{B}_{\lambda}}\idmor_{K}$,
 having the same properties.
 \end{proof}
 
-Let $\mathrm{rad}(\lambda,K)$ be the radical of the 
+Denote by $\mathrm{rad}(\lambda,K)$ the radical of the 
 bilinear form $\phi^{\lambda}_{K}$.
 
 \begin{lemma}\label{lemma:simples}
@@ -1444,18 +1433,18 @@ Any $z\in\Delta(\lambda,K)\setminus\mathrm{rad}(\lambda,K)$ is a generator
 of $\Delta(\lambda,K)$, while $\mathrm{rad}(\lambda,K)$ is a submodule 
 of $\Delta(\lambda,K)$ by \fullref{lemma:bilinearform}. 
 Thus, $L(\lambda,K)$ is a well-defined and 
-simple submodule, which is the head of $\Delta(\lambda,K)$ since $\mathrm{rad}(\lambda,K)$ equals 
+simple submodule. It is the head of $\Delta(\lambda,K)$ since $\mathrm{rad}(\lambda,K)$ equals 
 the representation-theoretical radical because all 
 $z\in\Delta(\lambda,K)\setminus\mathrm{rad}(\lambda,K)$ generate.
 \end{proof}
 
-\subsection{Classification of simples and other properties}\label{subsection:simples}
+\subsection{Classification of simple modules}\label{subsection:simples}
 
 For an $\setstuff{A}$-module $M$ let 
 $\mathrm{Ann}_{\setstuff{A}}(M)=
 \{a\in A\mid a\actsleft M=0\}$ be the annihilator.
 An \emph{apex} of an $\setstuff{A}$-module $M$ 
-is a $\lambda\in X$ such that 
+is a $\lambda\in\Lambda$ such that 
 $\mathrm{Ann}_{\setstuff{A}}(M)=
 \mathcal{J}_{{>_{\Lambda}}\lambda}=
 \bigcup_{\mu>_{\Lambda}\lambda}\mathcal{J}_{\mu}$ 
@@ -1653,7 +1642,8 @@ one apex can have any number of simples associated to it.
 Let $\setstuff{Br}_{n}(\cvar)$ be the \emph{Brauer algebra} in $n$-strands 
 with circle evaluation parameter $\cvar\in\KK$.
 The reader unfamiliar with the Brauer algebra is referred 
-to {\eg} \cite[Section 4]{GrLe-cellular}. Let also $\setstuff{S}_{\lambda}$ 
+to {\eg} \cite[Section 4]{GrLe-cellular}. Alternatively,
+take $g=0$ in \fullref{section:brauer} below. Let also $\setstuff{S}_{\lambda}$ 
 denote the symmetric group in $\lambda$ strands.
 
 \begin{remark}
@@ -1700,9 +1690,12 @@ It is known that the Brauer algebra is cellular, see
 \cite[Section 4]{GrLe-cellular} or \cite[Section 5]{AnStTu-cellular-tilting}. 
 To make $\setstuff{Br}_{n}(\cvar)$ cellular one needs 
 $\mathcal{H}$-cells of size one, which is achieved in 
-\cite[Section 4]{GrLe-cellular} by using the Kazhdan--Lusztig 
-basis of $\KK\setstuff{S}_{n}$, which is 
-a subalgebra of $\setstuff{Br}_{n}(\cvar)$.
+\cite[Section 4]{GrLe-cellular} by using 
+that $\KK\setstuff{S}_{n}$ is 
+a subalgebra of $\setstuff{Br}_{n}(\cvar)$. Then
+they work with
+the Kazhdan--Lusztig 
+basis of $\KK\setstuff{S}_{n}$.
 As we will describe now this is not necessary if one wants 
 to parameterize simple modules.
 
@@ -2275,7 +2268,7 @@ and the small boxes are $\mathcal{H}$-cells.
 Each $\mathcal{H}$-cell is of size two, and
 the colored box is an $\mathcal{H}$-cell
 isomorphic to $\KK\setstuff{S}_{2}$ regardless
-of $\cvar$, which is illustrated on the right.
+of $\cvar$. This is illustrated on the right.
 \end{example}
 
 We obtain the well-known classification of simple 
@@ -2536,7 +2529,7 @@ to[out=0,in=270] (1.5,0) to (1.5,3) to[out=90,in=0] (1.25,3.5) to[out=180,in=90]
 In the topological interpretation, as explained 
 {\eg} in \cite[Section 2]{RoTu-homflypt-typea}, 
 the core strands correspond to the cores of the handles 
-of a solid three dimensional handlebody.
+of a solid three-dimensional handlebody.
 This motivates our nomenclature.
 \end{remark}
 
