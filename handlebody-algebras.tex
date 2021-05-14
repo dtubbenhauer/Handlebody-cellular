@@ -2806,8 +2806,7 @@ handlebody generalization of the extended affine Coxeter group of type A.
 
 The asymmetry in \eqref{eq:handlebody-summary2} 
 vanishes and we have the defining relations:
-\begin{gather}
-\label{eq:coxhandlebody-summary1}
+\begin{gather}\label{eq:coxhandlebody-summary1}
 s_{i}^{2}=1
 ,\quad
 s_{i}s_{j}=s_{j}s_{i}\;\text{if }|i-j|>1,
@@ -3645,7 +3644,7 @@ an order two relation. This follow from the calculation
 
 \item In a topological model \eqref{eq:kauffman} also implies relations among 
 the circle parameters $\cvar_{\gamma}$:
-\begin{gather}\label{eq:parameter-problems}
+\begin{gather*}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (1.25,0.75) to[out=270,in=270] (-0.25,0.75);
@@ -3692,7 +3691,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \draw[usual,crossline] (0.75,0.75) to[out=90,in=90] (1.25,0.75);
 \end{tikzpicture}
 .
-\end{gather}
+\end{gather*}
 
 \end{enumerate}
 
@@ -7046,7 +7045,7 @@ by $\dvar$-multipartitions of $\lambda$.
 
 \section{Handlebody Hecke and Ariki--Koike algebras}\label{section:hecke}
 
-In this section we define handlebody Hecke algebras as quotients of handlebody braid groups.  
+We define handlebody Hecke algebras as quotients of handlebody braid groups.  
 All algebras can alternatively be defined as quotients of an appropriate
 BMW algebra from \fullref{section:brauer}. 
 
@@ -7100,7 +7099,7 @@ H_{i}^{-1}=H_{i}-(\qvar-\qvar^{-1}).
 Note that the twists $\tau_{u}$ do not satisfy 
 a polynomial relation, Hence, as for the handlebody Coxeter group, 
 $\setstuff{H}_{g,n}$ does not embed into 
-a Hecke algebra of type A. 
+a Hecke algebra of type A.
 
 \begin{remark}\label{remark:hecke}
 With respect to \fullref{definition:hecke} we note:	
@@ -7178,7 +7177,10 @@ H_{i}\jm_{u,i}^{-1}
 \end{gather}
 Moreover, 
 \fullref{proposition:jm-elements-basis} shows the elements in \eqref{eq:jm-basis-hecke1} are 
-linearly independent if $\qvar=1$, which implies that they are linearly independent for generic $\qvar$.
+linearly independent if $\qvar=1$ 
+(note that the handlebody Coxeter group $\setstuff{W}_{g,n}$
+can be obtained from $\setstuff{H}_{g,n}$
+by specializing $\qvar=1$), which implies that they are linearly independent for generic $\qvar$.
 \end{proof}
 
 Combining \fullref{proposition:heckejm-elements-basis} 
@@ -7224,7 +7226,7 @@ The \emph{canonical tableaux} $T_{c}$ is the filling where
 the numbers increase 
 from left to right and top to bottom.
 
-To a $S$ of shape $\lambda$ we can associate 
+To a standard tableaux $T$ of shape $\lambda$ we can associate 
 a down morphism $D$ using the classical \emph{permute entries strategy}.
 We also need the Young subgroup $\setstuff{S}_{\lambda}^{row}=\prod_{i}\setstuff{S}_{r(i)}$ 
 being the row stabilizer of $\lambda$, 
@@ -7236,11 +7238,13 @@ and let $H_{T}$ be the positive braid lifts
 of (a choice of)
 minimal permutation from $T$ to $T_{c}$, 
 identifying $s_{i}$ with the transposition $(i,i+1)$. We then let 
-$D=D(T)=H_{T}$, $U=U(T)=D(T)^{\star}$ and 
+$D=D(T)=H_{T}$, $U=U(T^{\prime})=D(T^{\prime})^{\star}$ and 
 $c_{D,U}^{\lambda}=DH_{\lambda}U$. 
 Note that the middle $H_{\lambda}$ of $c_{D,U}^{\lambda}$ is a 
 quasi-idempotent, {\ie} $H_{\lambda}^{2}=rH_{\lambda}$ for some 
 $r\in\KK$ (that might be not invertible).
+Note also that $H_{0,n}$ is a subalgebra of $H_{g,n}$, 
+so we can use the above construction for $H_{g,n}$ as well.
 
 \begin{example}
 The above is best illustrated in an example. For $\lambda=(4,2)$ 
@@ -7322,9 +7326,6 @@ c_{D,U}^{\lambda}=
 where we illustrated $H_{\lambda}$ as a box.
 \end{example}
 
-Note that $H_{0,n}$ is a subalgebra of $H_{g,n}$, 
-so we can use the above construction for $H_{g,n}$ as well.
-
 We let $\Lambda=(\Lambda,\leq_{d})$ be the set of all partitions of $n$, 
 which are ordered by the dominance order $\leq_{d}$ (we use the convention 
 from \cite[Section 3.1]{Ma-hecke-schur}).
@@ -7352,10 +7353,10 @@ cell datum for $\setstuff{H}_{g,n}$.
 \begin{proof}
 To argue that \eqref{eq:hecke-basis} spans
 $\setstuff{H}_{g,n}$ we use \cite[Proposition 3.16]{Ma-hecke-schur} as follows.
-Instead of the elements $H_{w}\in\setstuff{H}_{0,n}\subset
+Instead of the elements $H_{w}\in\setstuff{H}_{0,n}\hookrightarrow
 \setstuff{H}_{g,n}$ in \eqref{eq:jm-basis-hecke1} we could 
 also use the Murphy basis $DH_{\lambda}U$ (as explained above, {\ie} 
-\eqref{eq:hecke-basis} for $g=0$) of $\setstuff{H}_{0,n}$. Then, by 
+\eqref{eq:hecke-basis} for $g=0$). Then, by 
 \eqref{eq:jm-relations} and \eqref{eq:hecke-pull}, we can push 
 the $D$ to the left, that is, 
 \begin{gather*}
@@ -7469,7 +7470,7 @@ The cases $g=0$ and $g=1$ of \fullref{theorem:cellhecke}
 are well-known:
 \begin{enumerate}
 
-\item We have $\setstuff{L}_{0,n}=\KK$, so the above 
+\item We have $\setstuff{L}_{0,n}H_{\lambda}=\KK$, so the above 
 is the classical parametrization 
 of simple $\setstuff{H}_{0,n}$-modules, see {\eg} 
 \cite[Section 3.4]{Ma-hecke-schur}.
@@ -7533,7 +7534,7 @@ from \fullref{definition:jm-elements} which
 we denote by $b_{u,i}$ to emphasize that 
 they are not necessarily invertible.
 
-Using the skein relation \eqref{eq:hecke-skein}
+Using the skein relation \eqref{eq:hecke-skein},
 the same calculations as in \fullref{lemma:blob-rels} give:
 
 \begin{lemma}\label{lemma:blob-hecke-rels}
@@ -7606,7 +7607,7 @@ and \eqref{eq:height-blob-switch} and
 .                     
 \end{aligned}
 \end{gather}
-(In comparison to 
+(In comparison with 
 \fullref{lemma:blob-rels}, note the missing cup-cap term.)\qed
 \end{lemma}
 
@@ -7673,7 +7674,7 @@ is the type A Hecke algebra.
 is the Ariki--Koike algebra as defined and studied in {\eg} \cite{ArKo-hecke-algebra}, \cite{BrMa-hecke} or \cite{Ch-gelfandtzetlin}. 
 
 \item For $g=2$ and $d_{1}=d_{2}=2$ the algebra 
-$\setstuff{H}_{2,n}^{\dpar,\bpar}$ is the two 
+$\setstuff{H}_{2,n}^{\dpar,\bpar}$ can be compared to the two 
 boundary Hecke algebra as in \cite{DaRa-two-boundary-hecke}.
 
 \end{enumerate}
@@ -7741,7 +7742,7 @@ Recall the blob numbers $\bbvar_{g,\dpar}$ from \eqref{eq:blob-numbers}.
 
 \begin{proposition}
 The dimension of the 
-free $\Bbbk$-module $\setstuff{H}_{g,n}^{\dpar,\bpar}$ is
+free $\KK$-module $\setstuff{H}_{g,n}^{\dpar,\bpar}$ is
 \begin{gather*}
 \dim_{\KK}\setstuff{H}_{g,n}^{\dpar,\bpar}
 =(\bbvar_{g,\dpar})^{n}n!. 
