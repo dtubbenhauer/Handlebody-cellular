@@ -119,7 +119,7 @@ pole/.style={line width=3.0,color=specialgray},
 crossline/.style={preaction={draw=white,line width=5.0pt,-},preaction={draw=black,line width=0.9pt,-}},
 crosspole/.style={preaction={draw=white,line width=6.0pt,-},preaction={draw=specialgray,line width=3.0pt,-}},
 mor/.style={line width=0.75,color=black,fill=cream},
-blob/.style={circle,fill,minimum size=6pt,inner sep=0pt,outer sep=0pt},
+blob/.style={circle,fill,minimum size=5.0pt,inner sep=0pt,outer sep=0pt},
 blobed/.style n args={3}{decoration={markings,post length=0.5mm,pre length=0.5mm,
 mark=at position #1 with {\node[blob,#3,label=left:$#2\!$]at (0,0){};}
 },postaction={decorate}},
@@ -2915,7 +2915,7 @@ polynomial representation of the extended affine Weyl group of type A.
 
 \item The case $g=1$, $\zvar=-1$ and $Y_{1}=0$ recovers 
 the root-theoretic version of Tits' reflection representation 
-of type $C=B$, {\ie} the representation where the type 
+of type C$=$B, {\ie} the representation where the type 
 $A$ subdiagram acts by permutation and the 
 additional generator acts as 
 $-1$ on $X_{1}$.
@@ -3387,8 +3387,8 @@ This follows from the proof of \fullref{proposition:jm-elements-basis}.
 
 Recall that $\KK$ denotes a unital, commutative, Noetherian domain. 
 The example the reader should keep in mind throughout this section is
-$\KK=\Z[\cpar]$ where $\cpar=(\cvar_{i})_{i}$ is a 
-collection of variables $\cvar_{i}$ 
+$\KK=\Z[\cpar]$ where $\cpar=(\cvar_{\gamma})_{\gamma}$ is a 
+collection of variables $\cvar_{\gamma}$ 
 which are circle evaluations.
 Recall further that we have fixed $g\in\N$ and $n\in\N_{>0}$.
 
@@ -3426,17 +3426,13 @@ to[out=0,in=90] (1.5,-1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1.5,1.5);
-\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
+\draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$}  to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$} ;
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1,1.5);
 \end{tikzpicture}
 ,
 \end{gather}
 are examples of such crossingless matchings.
-Using the analog of \fullref{proposition:embedding},
-diagrams are then taken up to
-isotopies of tangle diagrams with $g+n$ strands 
-that restrict to planar isotopies on usual strands.
 
 \begin{remark}
 We will use a similar notation as in 
@@ -3508,7 +3504,7 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \leftrightsquigarrow
 \cvar_{\gamma^{\prime}=u^{2}v}.
 \end{gather*}
-Here the first word in $\setstuff{F}_{g}$ is the trivial word, 
+The first word in $\setstuff{F}_{g}$ is the trivial word, 
 the second is $uv$, and the third is $u^{2}v$.
 \end{example}
 
@@ -3697,8 +3693,6 @@ to[out=90,in=270] (1,1.5)node[above,black,yshift=-3pt]{$v$};
 \end{tikzpicture}
 .
 \end{gather}
-Our formulation avoids this, so there are no relations 
-among parameters.
 
 \end{enumerate}
 
@@ -3714,7 +3708,7 @@ matchings of $2n$ points of genus $g$.
 
 \begin{proof}
 Note that the $\setstuff{F}_{g}$-colored 
-concatenation of closed components makes it clear why 
+concatenation of closed components ensures that the 
 circle evaluation only depends on the associated word in $\setstuff{F}_{g}$ 
 modulo conjugation.
 Thus, the only claim which is not immediate is 
@@ -3725,7 +3719,8 @@ by identifying the colors by dots on the strings.
 
 Note that the algebra $\setstuff{TL}_{g,n}(\cpar)$ is 
 infinite-dimensional unless $g=0$, since the group-like elements $\tau_{u}$ 
-are of infinite order and span $\setstuff{F}_{g}$.
+are of infinite order and span $\setstuff{F}_{g}\cong
+\setstuff{TL}_{g,1}(\cpar)\hookrightarrow\setstuff{TL}_{g,n}(\cpar)$.
 
 \begin{remark}\label{remark:tl}
 For low genus $\setstuff{TL}_{g,n}(\cpar)$ is well-studied 
@@ -3742,9 +3737,9 @@ Temperley--Lieb algebra in its crossingless matching definition.
 
 \item In case $g=1$ there are the so-called 
 affine Temperley--Lieb algebra or the
-type B$=$C Temperley--Lieb algebra 
+type C$=$B Temperley--Lieb algebra 
 (the name comes from the relation of this algebra 
-to the braid group of type B$=$C 
+to the braid group of type C$=$B
 as recalled in \fullref{remark:braidcox}), 
 which were studied in many works such as {\eg} \cite{GrLe-affine-tl}.
 The algebra $\setstuff{TL}_{1,n}(\cpar)$ is a version of these.
@@ -3762,7 +3757,8 @@ is a version of these.
 Note that Temperley--Lieb algebras for $g<2$
 are sometimes assumed to satisfy a quadratic relation for the twist 
 elements, but we do not assume that.
-These algebras are studied in \fullref{subsection:handlebody-blob} below.
+These algebras are studied in 
+the sections below.
 \end{remark}
 
 Similarly as in \fullref{subsection:brauer}, 
@@ -3771,7 +3767,16 @@ with the usual partial order.
 The $\lambda\in\Lambda$ are again the through strands of our diagrams, 
 and we let $\setstuff{B}_{\lambda}=\KK\setstuff{F}_{g}$, 
 the group ring of the free group in $g$ 
-generators $\setstuff{F}_{g}\hookrightarrow\setstuff{Br}_{g,\lambda}$.
+generators $\setstuff{F}_{g}\cong\setstuff{Br}_{g,1}\hookrightarrow\setstuff{Br}_{g,\lambda}$.
+
+\begin{remark}
+Recall that we assume that $\setstuff{Br}_{g,\lambda}$ 
+is trivial if $\lambda=0$.
+In particular, $\KK\setstuff{F}_{g}\cong\KK$ for $\lambda=0$, since 
+we identify $\setstuff{F}_{g}$ with a subgroup of $\setstuff{Br}_{g,\lambda}$, 
+and the latter is trivial for $\lambda=0$.
+\end{remark}
+
 The construction of the basis 
 \begin{gather}\label{eq:tl-basis}
 \{c_{D,b,U}^{\lambda}\mid\lambda\in\Lambda,D,U\in M_{\lambda},
@@ -3935,9 +3940,8 @@ construction; one basically calculates
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (-0.25,0.5) to[out=90,in=180] (0,0.75) to[out=0,in=90] (2.5,0);
-\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
-\draw[pole,crosspole] (0.5,0) to[out=90,in=270] 
-(0.5,1.5)node[above,black,yshift=-3pt]{$v$};
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.5);
 \draw[usual,crossline] (1.5,0) to[out=90,in=180] (1.75,0.25)node[above]{$\gamma$} 
 to[out=0,in=90] (2,0);
@@ -3947,8 +3951,8 @@ to[out=0,in=90] (2,0);
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (2,0) to[out=270,in=0] (0,-0.2) to[out=180,in=90] (-0.25,-0.4);
 \draw[usual,crossline] (-0.25,-1.2) to[out=270,in=180] (0,-1.4) to[out=0,in=270] (3.5,0);
-\draw[pole,crosspole] (0,0) to[out=270,in=90] (0,-1.5)node[below,black]{$u$};
-\draw[pole,crosspole] (0.5,0) to[out=270,in=90] (0.5,-1.5)node[below,black]{$v$};
+\draw[pole,crosspole] (0,0) to[out=270,in=90] (0,-1.5);
+\draw[pole,crosspole] (0.5,0) to[out=270,in=90] (0.5,-1.5);
 \draw[usual,crossline] (-0.25,-0.4) to[out=270,in=180] (0,-0.6) to[out=0,in=270] (2.5,0);
 \draw[usual,crossline] (3,0) to[out=270,in=0] (0,-1) to[out=180,in=90] (-0.25,-1.2);
 \draw[usual,crossline] (1,0) to[out=270,in=180] (1.25,-0.25) to[out=0,in=270] (1.5,0);
@@ -3959,10 +3963,8 @@ to[out=0,in=90] (2,0);
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
-\draw[pole,crosspole] (0,0)node[below,black]{$u$} 
-to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
-\draw[pole,crosspole] (0.5,0)node[below,black]{$v$} 
-to[out=90,in=270] (0.5,1.5)node[above,black,yshift=-3pt]{$v$};
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1,1.5);
 \end{tikzpicture}
 ,
@@ -3974,10 +3976,11 @@ for the diagrams $D$ and $U$, so $(\placeholder)^{\star}$ is a $1$:$1$-correspon
 
 \begin{example}\label{example:cells-tl}
 The cells of the algebra $\setstuff{TL}_{n,g}(\cpar)$ are 
-of infinite size, so we can not illustrate them here. 
+of infinite size, so we can not display them here. 
 However, let us illustrate strands of $\setstuff{TL}_{4,g}(\cpar)$ 
 dashed (and colored) if they can wind around cores.
-Then the cells $\mathcal{J}_{4}$ 
+Using the same conventions 
+as in \fullref{example:brauer}: then the cells $\mathcal{J}_{4}$ 
 (bottom) to $\mathcal{J}_{0}$ (top), in order 
 from smallest (bottom) to biggest (top) are given by
 \begin{gather*}
@@ -4235,12 +4238,12 @@ to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 \end{tikzpicture}
 .
 \end{gather*}
-Note that the blob of type $w$ and the two top blobs of type $u$ 
+(Some of the blobs in this illustration
 are strictly speaking not reachable 
 from the left as they are behind cups and caps when drawing 
 a straight line.
 But here and throughout, to simplify illustrations, 
-we will suppress the relevant height moves since they do not play any role.
+we will suppress the relevant height moves since they do not play any role.)
 
 \begin{remark}
 The reader might wonder whether 
@@ -4794,7 +4797,7 @@ to[out=90,in=180] (1.75,0.75) to[out=0,in=90] (2.5,0);
 .
 \end{aligned}
 \end{gather*}
-Note that the middle part is
+Note that the middle part is $\setstuff{B}_{0}=\KK$ and
 \begin{gather*}
 \setstuff{B}_{\lambda}=\KK\setstuff{B}_{g,1}^{\dpar,\bpar}=
 \KK\langle b_{u}\mid u\in\{1,\dots,g\}\rangle
@@ -4850,11 +4853,11 @@ for $\lambda=0$ in the text below):
 
 \begin{enumerate}
 
-\item For $g=0$ we have $\KK\setstuff{B}_{0}^{\dpar,\bpar}=\KK$, so we obtains 
+\item For $g=0$ we have $\KK\setstuff{B}_{0,1}^{\dpar,\bpar}=\KK$, so we obtains 
 the classical parametrization of the simple modules of 
 the Temperley--Lieb algebra by through strands.
 
-\item For $g=1$ we have that $\KK\setstuff{B}_{1}^{\dpar,\bpar}$ is 
+\item For $g=1$ we have that $\KK\setstuff{B}_{1,1}^{\dpar,\bpar}$ is 
 a finite-dimensional quotient of a polynomial ring in one variable $b$
 by an ideal of the form
 \begin{gather*}
@@ -4863,15 +4866,15 @@ by an ideal of the form
 (b-\bvar_{\dvar_{1}})=0.
 \end{gather*} 
 In particular, the number of simple modules associated to 
-$\KK\setstuff{B}_{1}^{\dpar,\bpar}$ equals the number of distinct 
+$\KK\setstuff{B}_{1,1}^{\dpar,\bpar}$ equals the number of distinct 
 parameters in $\bpar$. For example, if $\dvar_{1}=2$, then
 \begin{gather*}
 \bvar_{1}=\bvar_{2}=0\Rightarrow
-\KK\setstuff{B}_{1}^{\dpar,\bpar}\cong\KK[b]/(b^{2})
+\KK\setstuff{B}_{1,1}^{\dpar,\bpar}\cong\KK[b]/(b^{2})
 \text{ has one simple module},
 \\
 \bvar_{1}=1,\bvar_{2}=0\Rightarrow
-\KK\setstuff{B}_{1}^{\dpar,\bpar}\cong\KK[b]/(b-1)b
+\KK\setstuff{B}_{1,1}^{\dpar,\bpar}\cong\KK[b]/(b-1)b
 \text{ has two simple modules}.
 \end{gather*}
 In the latter case $b^{2}=b$, 
@@ -4902,8 +4905,7 @@ The examples to keep in mind are
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) to[out=0,in=270] (1.5,0);
-\draw[pole,crosspole] (0,0)node[above,black,yshift=-3pt]{$u$} 
-to[out=270,in=90] (0,-1.5)node[below,black,yshift=-1pt]{$u$};
+\draw[pole,crosspole] (0,0) to[out=270,in=90] (0,-1.5);
 \draw[pole,crosspole] (0.5,0) to[out=270,in=90] (0.5,-1.5);
 \draw[usual,crossline] (1,0) to[out=270,in=90] (-0.25,-0.5);
 \draw[usual,crossline] (1,-1.5) to[out=90,in=180] (1.25,-1.25) 
@@ -4949,20 +4951,19 @@ from the example below, see also
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,1.5);
 %%
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
-\draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} to[out=90,in=270] (0,1.5);
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1.5,1.5);
 %%
 \draw[usual,crossline] (1,1.5) to[out=90,in=270] (-0.25,2.25);
-\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,3)node[above,black,yshift=-3pt]{$u$};
+\draw[pole,crosspole] (0,1.5) to[out=90,in=270] (0,3);
 \draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,3);
 \draw[usual,crossline] (-0.25,2.25) to[out=90,in=90] (1.5,1.5);
 \end{tikzpicture}
 =
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,3);
-\draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} 
-to[out=90,in=270] (0,3)node[above,black,yshift=-3pt]{$u$};
+\draw[pole,crosspole] (0,0) to[out=90,in=270] (0,3);
 \draw[pole,crosspole] (0.5,1.5) to[out=90,in=270] (0.5,3);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (1.5,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1,0.75);
@@ -5002,8 +5003,16 @@ to[out=90,in=270] (0.5,0.75) to (0.5,1.5) to[out=90,in=0] (0.25,1.75) to[out=180
 \end{remark}
 
 As before we fix circle 
-evaluations $\cpar=(\cvar_{\gamma})_{\gamma}$, but now also any invertible 
+evaluations $\cpar=(\cvar_{\gamma})_{\gamma}$, one for any isotopy 
+class of circles $\gamma$. 
+We also fix any invertible 
 element $\qvar\in\KK$ that has a square root in $\KK$.
+
+\begin{definition}
+The evaluation of a circle $\gamma$ is defined to be the removal 
+of a closed component, contributing a factor 
+$\cvar_{\gamma}$. We call this \emph{circle evaluation}.
+\end{definition}
 
 \begin{definition}\label{definition:handlebody-tl-second}
 We let the \emph{topological handlebody Temperley--Lieb algebra} 
@@ -5034,7 +5043,7 @@ case $g=1$ is related by Schur--Weyl duality
 to Verma modules, see \cite{IoLeZh-verma-schur-weyl}.
 
 \item Without evaluation of circles the case 
-$g>2$ also appears in 
+$g>2$ can also be found in 
 \cite{IoLeZh-verma-schur-weyl} under the name multi-polar, 
 but not much appears to be known.
 
@@ -5071,11 +5080,6 @@ the algebra $\setstuff{TL}_{G}(-[2]_{\qvar})
 =\setstuff{TL}_{0,G}^{\mathrm{top}}(\cpar)$ 
 is the classical Temperley--Lieb algebra on $G$ strands 
 whose circle evaluates to $-[2]_{\qvar}$.
-Let also denote $\setstuff{TL}_{g,n}^{\mathrm{top}}$ the 
-topological handlebody Temperley--Lieb algebra 
-without specifying a circle evaluation. (We will consider elements in 
-$\setstuff{TL}_{g,n}^{\mathrm{top}}$ as elements in 
-$\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)$.)
 
 \begin{lemma}\label{lemma:handlebody-tl-second}
 Let $\KK$ be a field.
@@ -5113,7 +5117,7 @@ $\obstuff{e}_{G}\setstuff{TL}_{G}\big(-[2]_{\qvar}\big)\obstuff{e}_{G}$.
 By the properties of $\obstuff{e}_{G}$ we have 
 $\obstuff{e}_{G}\setstuff{TL}_{G}\big(-[2]_{\qvar}\big)\obstuff{e}_{G}\cong
 \KK\{\obstuff{e}_{G}\}$, 
-so for any circle $\gamma$ in $\setstuff{TL}_{G}(-[2]_{\qvar})$
+so for any circle $\gamma$ in $\obstuff{e}_{G}\setstuff{TL}_{G}(-[2]_{\qvar})\obstuff{e}_{G}$
 we get a scalar $\cvar_{\gamma}^{G}$. 
 Fix some partitioning of $G=M_{1}+\dots+M_{g}$ for $M_{i}\in\N_{>0}$.
 With the choices $\cvar_{\gamma}^{G}$ it is easy to see that 
@@ -5238,9 +5242,9 @@ in the limit become the LKB representation by \cite[Sections 4 and 5]{JaKe-verma
 \begin{remark}
 Our proof of \fullref{lemma:handlebody-tl-second} is directly 
 inspired by \cite{RoTu-homflypt-typea}: As pointed out in that paper, 
-the handlebody closing \eqref{eq:handlebody-closing} can algebraically 
-be neatly interpreted as, in the appropriate 
-algebraic framework, putting an idempotent on bottom and top.
+the handlebody closing \eqref{eq:handlebody-closing} can
+be interpreted, in the appropriate 
+algebraic framework, by putting an idempotent on bottom and top.
 Moreover and alternatively to the usage of 
 (growing) symmetric powers, one might want to associate Verma modules 
 to the core strands as in the $g=1$ case, see \cite{IoLeZh-verma-schur-weyl}.
@@ -5258,12 +5262,10 @@ endomorphism spaces are no longer trivial, so we can not use the
 argument in the proof of \fullref{lemma:handlebody-tl-second}.
 \end{remark}
 
-\begin{remark}
 Note that we do not claim the admissible choices 
 from \fullref{lemma:handlebody-tl-second} 
 are the only admissible choices. The same will be true 
-throughout, {\eg} for BMW algebras in \fullref{section:brauer}.
-\end{remark}
+{\eg} for Brauer/BMW algebras in \fullref{section:brauer}.
 
 \subsection{Topology of handlebody blob algebras}\label{subsection:handlebody-blob-topology}
 
