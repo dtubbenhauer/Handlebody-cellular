@@ -5748,7 +5748,7 @@ points of genus $g$ as in \fullref{subsection:handlebody-tl-topology}.
 We fix invertible scalars 
 $\qvar,\avar\in\KK$ with $\qvar\neq\qvar^{-1}$.
 Circles that may appear after concatenation of these diagrams 
-are evaluated as in \fullref{subsection:handlebody-tl}, and we 
+are evaluated as in \fullref{subsection:handlebody-tl-topology}, and we 
 fix $\cvar_{\gamma}\in\KK$ as before except for 
 $\cvar_{1}$ which we define as
 \begin{gather*}
@@ -5865,7 +5865,7 @@ of affine BMW or Brauer algebras in many works, {\eg} in
 \cite{HaOl-actions-tensor-categories} or \cite{OrRa-affine-braids}.
 
 \item For $g=2$ we were not able to find a reference, but the 
-definition is easily deduced from the classical affine type $C$ 
+definition is easily deduced from the affine type C 
 braid group combinatorics. However, this would give 
 a two-boundary version of the above, with one 
 core strand to the left and one to the right, 
@@ -6159,34 +6159,36 @@ namely only caps respectively caps are allowed to wind around the cores.
 The picture is
 \begin{gather}\label{eq:bmw-basis-illustration}
 \begin{tikzpicture}[anchorbase,scale=1]
+\draw[usual,crossline] (3,-4) to[out=90,in=270] (3,-1.8);
+%%
 \draw[pole,crosspole] (-0.5,-0.5) to[out=270,in=90] (-0.5,-2);
-\draw[usual,crossline] (2,-0.5) to[out=270,in=0] (0,-1.25) 
-to[out=180,in=90] (-0.25,-1.5);
-\draw[pole,crosspole] (0,-0.5) to[out=270,in=90] (0,-2);
-\draw[pole,crosspole] (0.5,-0.5) to[out=270,in=90] (0.5,-2);
 \draw[usual,crossline] (-0.25,-1.5) to[out=270,in=180] (0,-1.75) 
 to[out=0,in=270] (3.5,-0.5);
+\draw[pole,crosspole] (0,-0.5) to[out=270,in=90] (0,-2);
+\draw[pole,crosspole] (0.5,-0.5) to[out=270,in=90] (0.5,-2);
+\draw[usual,crossline] (2,-0.5) to[out=270,in=0] (0,-1.25) 
+to[out=180,in=90] (-0.25,-1.5);
 \draw[usual,crossline] (1,-0.5) to[out=270,in=180] (1.25,-0.75) 
 to[out=0,in=270] (1.5,-0.5);
 %%
+\draw[usual,crossline] (1,-3.25) to[out=0,in=90] (2.5,-4);
 \draw[usual,crossline] (2.5,-0.5) to[out=270,in=90] (2,-3.2);
 %%
+\draw[usual,crossline] (2,-4) to[out=90,in=270] (1.5,-3.25) to[out=90,in=270] (0.25,-2.75);
+\draw[pole,crosspole] (0.5,-3.1) to[out=90,in=270] (0.5,-2);
+\draw[usual,crossline] (1,-4) to[out=90,in=270] (-0.25,-3.5);
 \draw[usual,crossline] (0.25,-2.75) to[out=90,in=180] (1.5,-2.5) 
 to[out=0,in=270] (4,-0.5);
-\draw[pole,crosspole] (0.5,-3.1) to[out=90,in=270] (0.5,-2);
-\draw[usual,crossline] (-0.25,-3.5) to[out=90,in=180] (0,-3.25) 
-to[out=0,in=90] (2.5,-4);
-\draw[usual,crossline] (2,-4) to[out=90,in=270] (1.5,-3.25) to[out=90,in=270] (0.25,-2.75);
 %%
 \draw[pole,crosspole] (-0.5,-4) to[out=90,in=270] (-0.5,-2);
 \draw[pole,crosspole] (0,-4) to[out=90,in=270] (0,-2);
 \draw[pole,crosspole] (0.5,-4) to[out=90,in=270] (0.5,-3.1);
-\draw[usual,crossline] (1,-4) to[out=90,in=270] (-0.25,-3.5);
+\draw[usual,crossline] (-0.25,-3.5) to[out=90,in=180] (0,-3.25) to (1,-3.25);
 \draw[usual,crossline] (1.5,-4) to[out=90,in=270] (2,-3.25) to (2,-3.2);
 \draw[usual,crossline] (3.5,-4) to[out=90,in=180] (3.75,-3.75) 
 to[out=0,in=90] (4,-4);
 %%
-\draw[usual,crossline] (3,-4) to[out=90,in=270] (3,-0.5);
+\draw[usual,crossline] (3,-1.8) to[out=90,in=270] (3,-0.5);
 \end{tikzpicture}
 ,\quad
 \begin{aligned}
@@ -6197,12 +6199,12 @@ to[out=0,in=90] (4,-4);
 &=
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=270,in=90] (-0.5,-1.5);
-\draw[usual,crossline] (2,0) to[out=270,in=0] (0,-0.75) 
-to[out=180,in=90] (-0.25,-1);
-\draw[pole,crosspole] (0,0) to[out=270,in=90] (0,-1.5);
-\draw[pole,crosspole] (0.5,0) to[out=270,in=90] (0.5,-1.5);
 \draw[usual,crossline] (-0.25,-1) to[out=270,in=180] (0,-1.25) 
 to[out=0,in=270] (3.5,0);
+\draw[pole,crosspole] (0,0) to[out=270,in=90] (0,-1.5);
+\draw[pole,crosspole] (0.5,0) to[out=270,in=90] (0.5,-1.5);
+\draw[usual,crossline] (2,0) to[out=270,in=0] (0,-0.75) 
+to[out=180,in=90] (-0.25,-1);
 \draw[usual,crossline] (1,0) to[out=270,in=180] (1.25,-0.25) 
 to[out=0,in=270] (1.5,0);
 \draw[usual,crossline] (2.5,0) to[out=270,in=90] (2.5,-1.5);
@@ -6221,9 +6223,9 @@ to[out=0,in=270] (1.5,0);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (1.5,1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
-\draw[usual,crossline] (0.25,0.75) to[out=90,in=270] (2,1.5);
-\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (0.25,0.75);
+\draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
+\draw[usual,crossline] (0.25,0.75) to[out=90,in=270] (2,1.5);
 \end{tikzpicture}
 ,
 \\
@@ -6234,11 +6236,11 @@ to[out=0,in=270] (1.5,0);
 &=
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
-\draw[usual,crossline] (-0.25,0.5) to[out=90,in=180] (0,0.75) 
-to[out=0,in=90] (2.5,0);
+\draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.5);
 \draw[pole,crosspole] (0,0) to[out=90,in=270] (0,1.5);
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
-\draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.5);
+\draw[usual,crossline] (-0.25,0.5) to[out=90,in=180] (0,0.75) 
+to[out=0,in=90] (2.5,0);
 \draw[usual,crossline] (2,0) to[out=90,in=270] (1.5,0.75) to (1.5,1.5);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (2,0.75) to (2,1.5);
 \draw[usual,crossline] (3,0) to[out=90,in=270] (3,1.5);
@@ -6319,13 +6321,13 @@ $A_{\lambda-1}$.
 
 Recall the notion of blobed presentations from 
 \fullref{subsection:handlebody-blob-topology}, and retain 
-the notation from that subsection.
+the notation from that section.
 One difference to that section is that 
 here we identify blobed diagrams with a subalgebra 
 of $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
 spanned by all elements containing only positive twists.
 
-We note the following analog of \fullref{lemma:blob-rels}. The proof 
+We have the following analog of \fullref{lemma:blob-rels}. The proof 
 is the same as for \fullref{lemma:blob-rels} and omitted.
 
 \begin{lemmaqed}\label{lemma:blob-bmw-rels}
@@ -6530,7 +6532,7 @@ $b_{u}$ in \eqref{eq:cyclotomic-brauer-blob} are on the same strand.
 \begin{remark}
 Note that the skein relation \eqref{eq:skein} and also 
 \eqref{eq:dots-capscups} imply compatibility 
-conditions between parameters (See \fullref{def:bmw-admissible}, \fullref{lemma:handlebody-blobbmw-second} and \fullref{proposition:brauer-dim} below).
+conditions between parameters. See \fullref{def:bmw-admissible}, \fullref{lemma:handlebody-blobbmw-second} and \fullref{proposition:brauer-dim} below.
 \end{remark}
 
 We consider \emph{clapped, blobed perfect matchings of $2n$ 
@@ -6546,12 +6548,12 @@ to pass each other. In particular, there is no condition
 on being reachable from the left.
 This implies that 
 each strand with blobs defines a word in 
-the free monoid $\setstuff{F}_{g}^{+}$. 
+the free monoid $\setstuff{F}_{g}^{+}\cong
+\setstuff{Br}^{+}_{g,1}(\cpar)\hookrightarrow\setstuff{Br}^{+}_{g,n}(\cpar)$. 
 
 Note that we consider them as perfect matchings, so 
-there is an ambiguity in how to illustrate these without further conditions, which is 
-in particular troublesome with 
-respect to \eqref{eq:dots-capscups}. This problem is 
+there is an ambiguity in how to illustrate 
+these without further conditions. This problem is 
 however resolved by demanding that each matched pair 
 is connected by a cup with exactly one Morse point, and there is 
 a minimal number of intersection between the cups.
@@ -6626,7 +6628,7 @@ The above defines a $\KK$-module map from
 the free $\KK$-module spanned by all 
 clapped, blobed perfect matchings to 
 $\setstuff{Br}^{+}_{g,n}(\cpar)$.	
-On the other side, each diagram of 
+On the other hand, each diagram of 
 $\setstuff{Br}^{+}_{g,n}(\cpar)$ defines a 
 clapped, blobed perfect 
 matching by clapping and then arranging the result until it is of the required form.
@@ -6645,7 +6647,7 @@ We call parameters $(\dpar,\bpar,\cpar)$ such that the $\KK$-spanning set
 in \fullref{lemma:brauer-basis2} is a $\KK$-basis \emph{admissible}.
 \end{definition}
 
-Sadly we do not know any representation theoretical space 
+We do not know any representation theoretical space 
 where $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$ acts on, 
 so we can not copy the arguments from {\eg} the proof of \fullref{lemma:handlebody-tl-second}. We rather do the following 
 (which includes the cases where the parameters are generic):
@@ -6711,7 +6713,7 @@ to[out=0,in=270] (0.5,0) to (0.5,0.4);
 to[out=0,in=270] (0.5,0) to (0.5,0.4);
 \end{tikzpicture}
 ,\dots
-\right\}
+\right\},
 \end{gather*}
 of all possible blob placements on a cap respectively 
 cup not affected by 
@@ -6795,9 +6797,9 @@ that the determinant of $P$ is non-zero.
 \end{proof}
 
 \begin{remark}
-In case $g=1$ there is such an effective 
-criterion to get an admissible choice, see 
-\cite[Theorem 3.2]{GoHaMo-cyclotomic-bmw2}, see also
+For $g=1$ there is such an effective 
+criterion to get admissible parameters, see 
+\cite[Theorem 3.2]{GoHaMo-cyclotomic-bmw2},
 \cite{WiYu-cyclotomic-bmw}. It would be interesting 
 to have such a criterion for $g>1$.
 \end{remark}
@@ -6814,7 +6816,7 @@ For admissible parameters we have
 =
 (\bbvar_{g,\dpar})^{n}(2n-1)!!.
 \end{gather}
-Moreover, For an admissible parameters, the cyclotomic handlebody 
+Moreover, for admissible parameters, the cyclotomic handlebody 
 Brauer algebra $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$ can be alternatively 
 described as the free $\KK$-module spanned by 
 perfect matchings of $2n$ points of genus $g$ with multiplication 
@@ -6826,13 +6828,13 @@ condition.
 By \fullref{lemma:blob-onestrand}, the number of ways to put blobs 
 on a single strand is $\bbvar_{g,\dpar}$. Hence, 
 the number of ways to put these on $n$ strands is 
-$(\bbvar_{g,\dpar})^{n}$. Since there are $(2n)!!$ corresponding 
+$(\bbvar_{g,\dpar})^{n}$. Since there are $(2n-1)!!$ corresponding 
 perfect matchings all having $n$ strands, 
 the dimension formula follows at once from \fullref{lemma:brauer-basis2}.
 \end{proof}
 
 \begin{example}
-For $g=0$ \eqref{eq:brauer-dim} is not surprisingly the dimension 
+For $g=0$ \eqref{eq:brauer-dim} is the dimension 
 of the Brauer algebra. For $g=1$ \eqref{eq:brauer-dim} 
 is the formula in {\eg} \cite[Section 11]{HaOl-cyclotomic-bmw} or
 \cite[Theorem 4.11]{Yu-cyclotomic-bmw}.
@@ -6919,13 +6921,19 @@ specialization. To see that these span we use
 For the cell structure we now combine 
 the one from \fullref{subsection:handlebody-blob} with the 
 one from \fullref{subsection:BMW} 
-(in particular, using positive lifts). The only two
+(in particular, using positive lifts). The two
 differences worthwhile spelling out are first 
 that \eqref{eq:dots-capscups} 
 tell us to demand that blobs on caps and cups are 
 to the right of any of their Morse points. 
-Second, for the middle part $\setstuff{B}_{\lambda}$ 
-we need to choose an order of  blobs and crossings. We choose 
+Let $\setstuff{B}_{\lambda}=
+\KK\setstuff{B}_{g,\lambda}^{+,\dpar,\bpar}$ denote the 
+blobed positive braid monoid in $\lambda$ 
+strands, {\ie} the positive braid monoid with blobs satisfying the relations in 
+\fullref{lemma:blob-bmw-rels}
+and \eqref{eq:cyclotomic-bmw-blob}.
+Because of these relations
+we need to choose an order of blobs and crossings. We choose 
 to put blobs below all crossings, with blobs on the first strand 
 below blobs on the second strand {\etc}
 We leave the details to the reader, and rather give an example:
@@ -6993,16 +7001,13 @@ to[out=0,in=90] (4,0);
 \end{aligned}
 \end{gather*}
 
+The next two statements follow as before. The proofs are omitted.
+
 \begin{proposition}
 For a choice of admissible parameters 
 the above defines an involutive 
 cell datum for $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$.\qed
 \end{proposition}
-
-Let $\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}$ denote the 
-blobed symmetric group in $\lambda$ strands, {\ie} the symmetric 
-group with blobs on any strands that satisfy \eqref{eq:brauer-move1} and 
-\eqref{eq:brauer-move2}. 
 
 \begin{theorem}\label{theorem:brauerblob}
 Let $\KK$ be a field, and choose admissible parameters.
@@ -7014,32 +7019,28 @@ $\cpar=0$ and $\lambda=0$ (this only happens if $n$ is even), all $\lambda\in\La
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ 
-are parameterized by simple modules of $\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}$.
+are parameterized by simple modules of $\KK\setstuff{B}_{g,\lambda}^{+,\dpar,\bpar}$.
 
 \item The simple $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$-modules of 
 apex $\lambda\in\Lambda$ can be constructed as 
 the simple heads of
-$\mathrm{Ind}_{\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
+$\mathrm{Ind}_{\KK\setstuff{B}_{g,\lambda}^{+,\dpar,\bpar}}^{\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)}(K)$, 
 where $K$ runs over (equivalence classes of) 
-simple $\KK\setstuff{B}_{\lambda}^{\dpar,\bpar}$-modules.
+simple $\KK\setstuff{B}_{g,\lambda}^{+,\dpar,\bpar}$-modules.\qed
 
 \end{enumerate}
 \end{theorem}
 
-\begin{proof}
-As before.
-\end{proof}
-
 \begin{example}
-For $g=0$ \fullref{theorem:brauerblob} is 
-of course just a BMW version of
+For $g=0$ \fullref{theorem:brauerblob} is, 
+of course, a BMW version of
 \fullref{theorem:brauer}. For $g=1$ and the Brauer 
 specialization this recovers 
 \cite[Appendix 6]{BoCoDeVi-decomposition-cyclotomic-brauer}, where 
-$\KK\setstuff{B}_{\lambda}^{\dvar,\bvar}$ is a complex reflection 
+$\KK\setstuff{B}_{1,\lambda}^{+,\dpar,\bpar}$ is a complex reflection 
 group of type $G(\dvar,1,\lambda)$.
 In the semisimple case the parametrization of simples of
-$\KK\setstuff{B}_{\lambda}^{\dvar,\bvar}$ (and thus, of $\setstuff{Br}_{1,n}(\cvar)$ per apex $\lambda$) is given 
+$\KK\setstuff{B}_{1,\lambda}^{+,\dpar,\bpar}$ (and thus, of $\setstuff{Br}_{1,n}(\cvar)$ per apex $\lambda$) is given 
 by $\dvar$-multipartitions of $\lambda$. 
 \end{example}
 
