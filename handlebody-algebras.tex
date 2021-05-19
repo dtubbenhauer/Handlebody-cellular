@@ -401,19 +401,19 @@ they are of fundamental importance in low-dimensional topology
 and they also have a rich representation theory.
 
 Having an eye on the study of links in 
-three manifolds brings the topology of the ambient space into the play.
+3-manifolds brings the topology of the ambient space into play.
 In all the classical examples, like Temperley--Lieb or 
-Hecke algebras, the ambient space is the three ball, and these algebras 
+Hecke algebras, the ambient space is the 3-ball, and these algebras 
 are related to spherical Coxeter and Artin--Tits braid groups.
-In the simplest case beyond the three ball, 
+In the simplest case beyond the 3-ball, 
 when one passes to links in a solid torus, 
 these diagram algebras get replaced by their (extended) affine versions, 
 and the related objects are now affine Coxeter and Artin--Tits braid groups.
 A natural question is what kind of diagrammatics and Coxeter combinatorics 
-one could expect for more general three manifolds.
+one could expect for more general 3-manifolds.
 
 In this paper we consider (three-dimensional) handlebodies of genus $g$. 
-The three ball and the solid torus correspond to 
+The 3-ball and the solid torus correspond to 
 $g=0$ (called classical in this paper) and $g=1$, respectively.
 As we will see, the Temperley--Lieb and Hecke algebras, their 
 affine versions as well 
@@ -432,7 +432,7 @@ or \cite{HaOl-cyclotomic-bmw} for affine diagram algebras.
 To the best of our knowledge, the first attempts to give a
 description of braids in handlebodies are due to Vershinin \cite{Ve-handlebodies}
 respectively H{\"a}ring-Oldenburg--Lambropoulou \cite{La-handlebodies}, \cite{HaOlLa-handlebodies}, 
-while Lambropoulou studied links in three manifolds even before that \cite{La-PhDThesis}.
+while Lambropoulou studied links in 3-manifolds even before that \cite{La-PhDThesis}.
 
 From the representation theoretical point of view all these 
 algebras share the common feature of being cellular in a certain way
@@ -442,21 +442,20 @@ in the $g=1$ case they are often affine cellular in the sense of K{\"o}nig--Xi \
 
 We see this paper as a continuation of these works, focusing on the diagrammatic, 
 algebraic and representation theoretical aspects. That is, we generalize 
-(some) diagram algebras to higher genus, and 
+some diagram algebras to higher genus, and 
 we show that they are sandwich cellular.
 (Sandwich cellular is a notion that 
 generalizes cellularity. Roughly speaking it means that the original 
 algebra can be obtained by sandwiching a smaller algebra.
 One of the upshots of being sandwich cellular is that the 
 classification of simple modules is reduced 
-from the original algebra to the sandwiched algebra, 
-as we will explain.)
+from the original algebra to the sandwiched algebra.)
 
 \subsection{What this paper does}
 
 Our starting point is a diagrammatic description of 
-handlebody braid groups of genus $g$, {\ie} diagrammatic 
-descriptions of the configuration space of a disk with 
+handlebody braid groups of genus $g$, {\ie} a diagrammatic 
+description of the configuration space of a disk with 
 $g$ punctures. The pictures hereby are {\eg}
 \begin{gather*}
 \text{A handlebody braid for $g=4$}\colon
@@ -494,7 +493,7 @@ The three strands on the right are usual strands.
 The four thick and blue/grayish strands on the left are core
 strands and they correspond to the punctures 
 of the disk respectively the cores of the handlebody. 
-The point is that via an appropriate closure, {\ie} merging 
+The point is that by an appropriate closure, {\ie} merging 
 the core strands at infinity, illustrated by
 \begin{gather*}
 \text{An Alexander closure}\colon
@@ -643,8 +642,8 @@ $g=1$ appears in \cite{HaOl-actions-tensor-categories}.
 In the same section we also study their cyclotomic quotients.
 
 \item Finally, \fullref{section:hecke} studies handlebody versions of Hecke and Ariki--Koike algebras.
-The picture is for handlebody Hecke algebras the same as for handlebody braid groups, 
-while we choose to illustrate handlebody versions of Ariki--Koike algebras via blobs, {\eg}
+The picture for handlebody Hecke algebras is the same as for handlebody braid groups, 
+while we choose to illustrate handlebody versions of Ariki--Koike algebras using blobs, {\eg}
 \begin{gather*}
 \text{A Ariki--Koike picture}\colon
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
@@ -700,15 +699,17 @@ aspect is done,
 seems to be a worthwhile goal.
 
 \item \textbf{Diagram algebras.} There are plenty 
-of diagram algebras which we do not considered in this 
+of diagram algebras that we do not considered in this 
 paper, but for which (some version of) our discussion goes through.
 
-Example of such algebras that come to mind that appear in classical 
+Examples of such algebras that come to mind that appear in classical 
 literature are partition algebras \cite{Martin},
 rook monoid algebras \cite{Solomon}, walled 
 Brauer algebras \cite{Koike} and alike. 
 Other examples are related to knot theory and categorification 
-such as (type A) webs \cite{CKM}, \cite{RoTu-symmetric-howe}, 
+such as (type A) webs appearing in a version 
+of Schur--Weyl duality \cite{CKM}, \cite{RoTu-symmetric-howe}, 
+\cite{QS}, 
 \cite{TVW}.
 
 Diagrammatic algebras are also important in categorification. 
@@ -1350,7 +1351,7 @@ for any simple $\setstuff{B}_{\lambda}$-module $K$.
 \begin{proof}
 The map $\phi^{\lambda}$ is clearly bilinear, 
 as it is just the multiplication in $\mathcal{J}_{\lambda}$.
-The remaining claim can illustrate via
+The remaining claim can illustrate by
 \begin{gather*}
 \phi^{\lambda}
 \left(
@@ -3416,7 +3417,7 @@ For example, if $g=3$ and $n=2$, then
 \draw[usual,crossline] (-0.25,-0.5) to[out=270,in=180] (0.25,-0.8) 
 to[out=0,in=180] (0.75,-0.8) 
 to[out=0,in=270] (1.5,0);
-\draw[pole,crosspole] (0,0) to[out=270,in=90] (0,-1.5);
+\draw[pole,crosspole] (0,0)node[above,white,yshift=-3pt]{$u$} to[out=270,in=90] (0,-1.5)node[below,white,yshift=-1pt]{$u$};
 \draw[pole,crosspole] (0.5,0) to[out=270,in=90] (0.5,-1.5);
 \draw[usual,crossline] (1,0) to[out=270,in=90] (-0.25,-0.5);
 \draw[usual,crossline] (1,-1.5) to[out=90,in=180] (1.25,-1.25) 
@@ -3428,7 +3429,8 @@ to[out=0,in=90] (1.5,-1.5);
 \draw[pole,crosspole] (-0.5,0) to[out=90,in=270] (-0.5,1.5);
 \draw[usual,crossline] (1,0) to[out=90,in=270] (-0.25,0.75);
 \draw[usual,crossline] (1.5,0) to[out=90,in=270] (1.5,1.5);
-\draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$}  to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$} ;
+\draw[pole,crosspole] (0,0)node[below,black,yshift=-1pt]{$u$} 
+to[out=90,in=270] (0,1.5)node[above,black,yshift=-3pt]{$u$};
 \draw[pole,crosspole] (0.5,0) to[out=90,in=270] (0.5,1.5);
 \draw[usual,crossline] (-0.25,0.75) to[out=90,in=270] (1,1.5);
 \end{tikzpicture}
@@ -4185,7 +4187,7 @@ instead of twists, which clarifies the nomenclature.
 We denote corresponding elements corresponding to 
 twists by $b_{u}$. We also say that a blob labeled $u$ has 
 \emph{type $u$}.
-Note that blobs are always reachable from the left via a straight line 
+Note that blobs are always reachable from the left by a straight line 
 coming from $-\infty$, and move 
 freely along strands in a vertical direction, but can not pass one another:
 \begin{gather}\label{eq:not-defined}
@@ -4353,14 +4355,14 @@ with multiplication given by concatenation of diagrams modulo
 blob circle evaluation, and the two-sided ideal 
 generated by the \emph{cyclotomic relations}
 \begin{gather}\label{eq:cyclotomic-blob}
-(b_{u}-\beta_{u,1})
+(b_{u}-\bvar_{u,1})
 \varpi_{1}
-(b_{u}-\beta_{u,2})
+(b_{u}-\bvar_{u,2})
 \varpi_{2}
 \dots
-(b_{u}-\beta_{u,\dvar_{u}-1})
+(b_{u}-\bvar_{u,\dvar_{u}-1})
 \varpi_{d_{u}-1}
-(b_{u}-\beta_{u,\dvar_{u}})
+(b_{u}-\bvar_{u,\dvar_{u}})
 =0,
 \end{gather}
 where $\varpi_{j}$ is any finite (potentially empty) 
@@ -5066,11 +5068,14 @@ That the claimed set is spanning is clear by circle evaluation and
 \eqref{eq:order-two}.
 \end{proof}
 
+Recall that $C_{n}$ denotes the $n$th Catalan 
+number, which is also the dimension of the 
+genus $g=0$ Temperley--Lieb algebra.
+
 \begin{definition}
-We call parameters 
-$\cpar=(\cvar_{\gamma})_{\gamma}$ such that the $\KK$-spanning set 
-in \fullref{lemma:tl-span-topological} is a $\KK$-basis
-\emph{admissible}.
+We call parameters $\cpar=(\cvar_{\gamma})_{\gamma}$ such that 
+$\dim_{\KK}\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)\geq C_{n}$
+\emph{weakly admissible}.
 \end{definition}
 
 With \fullref{remark:non-topological} in mind, the 
@@ -5094,13 +5099,9 @@ a set $\cpar^{G}$ and an algebra homomorphisms
 (explicitly given in the proof below)
 \begin{gather*}
 \iota^{G}\colon\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar^{G})
-\to\setstuff{TL}_{G+n}\big(-[2]_{\qvar}\big)
+\to\setstuff{TL}_{G+n}\big(-[2]_{\qvar}\big).
 \end{gather*}
-that is \emph{eventually injective}: for every 
-non-zero element 
-$x\in\setstuff{TL}_{g,n}^{\mathrm{top}}$ without a circle 
-there exists $G$ and $\cpar^{G}$ such that $\iota^{G}(x)\neq 0$.
-Moreover, the parameters $\cpar^{G}$ are admissible. 
+Moreover, the parameters $\cpar^{G}$ are weakly admissible. 
 \end{lemma}
 
 Note that the assumptions in \fullref{lemma:handlebody-tl-second} 
@@ -5232,15 +5233,10 @@ under the assumptions on $[k]_{\qvar}$
 to the point needed) to define 
 a representation of $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar^{G})$ 
 on $\mathrm{Sym}^{G}_{\qvar}(\KK^{2})\hcirc\KK^{2}\hcirc\dots\hcirc\KK^{2}$.
-This representation is eventually injective by quantum symmetric Howe duality.
-Precisely, we observe that the Kauffman skein relation \eqref{eq:kauffman} 
-to sort diagrams into a handlebody braid part and a Temperley--Lieb part
-similarly as in \eqref{eq:jm-basis}. The Temperley--Lieb part 
-acts linearly independently by classical Schur--Weyl duality. 
-The handlebody braid group parts acts eventually linear independently 
-by by embedding this part into the braid group using 
-\fullref{proposition:embedding} and the fact that symmetric powers 
-in the limit become the LKB representation by \cite[Sections 4 and 5]{JaKe-verma-lkb}.
+Using this representation one can check that 
+$\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar^{G})$ can not be trivial since, 
+for example, $\setstuff{TL}_{0,n}^{\mathrm{top}}(\cpar^{G})$ 
+acts faithfully by classical Schur--Weyl duality.
 \end{proof}
 
 \begin{remark}
@@ -5266,10 +5262,11 @@ endomorphism spaces are no longer trivial, so we can not use the
 argument in the proof of \fullref{lemma:handlebody-tl-second}.
 \end{remark}
 
-Note that we do not claim the admissible choices 
-from \fullref{lemma:handlebody-tl-second} 
-are the only admissible choices. The same will be true 
-{\eg} for Brauer/BMW algebras in \fullref{section:brauer}.
+We do not know any explicit condition to check 
+whether parameter choices are \emph{admissible}, meaning 
+that we do not know a 
+``generic'' basis of $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)$.
+We leave it to future work to find such a basis.
 
 \subsection{Topology of handlebody blob algebras}\label{subsection:handlebody-blob-topology}
 
@@ -5290,19 +5287,13 @@ handlebody Brauer and BMW algebras.
 
 \begin{definition}\label{definition:handlebody-blob-second}
 Retain the notation and conventions from \fullref{definition:handlebody-tl-second}.	
-We let the \emph{extended topological handlebody blob algebra} 
+We let the \emph{topological handlebody blob algebra} 
 (in $n$ strands and of genus $g$) 
 $\setstuff{Bl}_{g,n}^{\mathrm{top}}(\cpar)$
 be the subalgebra of 
 $\setstuff{TL}_{g,n}^{\mathrm{top}}(\cpar)$ 
 spanned by all elements containing only positive twists.
 \end{definition}
-
-\begin{remark}
-The nomenclature extended comes from the fact
-that the algebra $\setstuff{Bl}_{g,n}^{\mathrm{top}}(\cpar)$ 
-is infinite-dimensional for $g>1$.
-\end{remark}
 
 \begin{lemma}\label{lemma:same}
 We have $\setstuff{Bl}_{g,n}^{\mathrm{top}}(\cpar)
@@ -5399,7 +5390,7 @@ where we use the same notation for the
 blob versions of the twists as in 
 \fullref{subsection:handlebody-blob}.
 
-Note that we can introduce blobs on any possible strand via
+Note that we can introduce blobs on any possible strand by
 \begin{gather}\label{eq:blob-right}
 \jm_{u,i}
 =
@@ -5725,19 +5716,6 @@ to[out=270,in=180] (0.25,0.5) to[out=0,in=270] (0.5,0.75);
 which in turn prove the claimed formulas.
 \end{proof}
 
-\makeautorefname{lemma}{Lemmas}
-
-\begin{remark}
-We will treat the relation \eqref{eq:framingblobs} 
-with care in the Brauer respectively BMW setup 
-and it will force us to do 
-some work to get admissible parameters. However, in this section 
-we can use \fullref{lemma:same} and \ref{lemma:handlebody-tl-second} 
-and get a family of admissible parameters.
-\end{remark}
-
-\makeautorefname{lemma}{Lemma}
-
 \section{Handlebody Brauer and BMW algebras}\label{section:brauer}
 
 We will be brief in this section as it is very similar 
@@ -5770,7 +5748,7 @@ handlebody tangle diagrams of $2n$ points
 of genus $g$, and
 with multiplication given by concatenation of diagrams modulo 
 circle evaluation, and the \emph{skein 
-relation} \eqref{eq:skein} and \eqref{eq:framing-rel} 
+relation} \eqref{eq:skein} and \eqref{eq:framing-rel}:
 \begin{gather}\label{eq:skein}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
 \draw[usual,crossline] (0.5,0) to[out=90,in=270] (0,0.75);
@@ -5823,9 +5801,6 @@ relation} \eqref{eq:skein} and \eqref{eq:framing-rel}
 .
 \end{gather}
 \end{definition}
-
-Note that $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
-is infinite-dimensional because the twists span a free group.
 
 \begin{definition}
 We call the specialization $\qvar=\avar=1$ the \emph{Brauer 
@@ -5933,7 +5908,7 @@ these perfect matchings as topological objects.
 
 Forgetting isotopy, each perfect matching as above defines an element of 
 $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
-by lifting crossings
+by lifting crossings.
 Note however that we have an ambiguity coming from
 \begin{gather*}
 \left(
@@ -5966,7 +5941,7 @@ to[out=0,in=90] (2.5,0);
 .
 \end{gather*}
 In order to avoid this we call a \emph{positive lift} 
-a lift such that all through strands for a positive braid monoid, 
+a lift such that all through strands form a positive braid monoid, 
 using 
 \begin{gather}\label{eq:positive-braid}
 \begin{tikzpicture}[anchorbase,scale=0.7,tinynodes]
@@ -6043,17 +6018,22 @@ of perfect matchings of $2n$ points of genus $g$.
 Clear by \eqref{eq:skein} and \eqref{eq:framing-rel}, and isotopies.
 \end{proof}
 
-\begin{definition}
+The dimension bound in the next definition 
+comes from the classical Brauer/BMW algebra.
+
+\begin{definition}\label{definition:handlebody-bmw-second}
 We call parameters $(\cpar,\qvar,\avar)$ such that the $\KK$-spanning set 
 in \fullref{lemma:bmw-span} is a $\KK$-basis
-\emph{admissible}.
+\emph{admissible}. We call parameters \emph{weakly admissible} 
+if $\dim_{\KK}\setstuff{BMW}_{g,n}(\cvar,\qvar,\avar)\geq (2n-1)!!$.
 \end{definition}
 
-To state the following analog of \fullref{lemma:handlebody-tl-second} denote by $\setstuff{BMW}_{G}(\cvar,\qvar,\avar)
-=\setstuff{BMW}_{0,G}(\cvar,\qvar,\avar)$ 
-the classical BMW algebra in $g+n$ strands. 
+To state the following analog of \fullref{lemma:handlebody-tl-second} denote by $\setstuff{BMW}_{G+n}(\cvar,\qvar,\avar)
+=\setstuff{BMW}_{0,G+n}(\cvar,\qvar,\avar)$ 
+the classical BMW algebra in $G+n$ strands. 
 
 \begin{lemma}\label{lemma:handlebody-bmw-second}
+Let $\KK$ be a field.
 For any choice of $\qvar\in\KK$ and $G\geq g$ such that 
 $[k]_{\qvar}\neq 0$ 
 for all $1\ll k$ there exists 
@@ -6062,10 +6042,10 @@ an algebra homomorphisms
 (explicitly given in the proof below)
 \begin{gather*}
 \iota^{G}\colon\setstuff{BMW}_{g,n}(\cpar^{G},\qvar^{G},\avar^{G})
-\to\setstuff{BMW}_{G+n}(\tilde{\cvar},\tilde{\qvar},\tilde{\avar})
+\to\setstuff{BMW}_{G+n}(\tilde{\cvar},\tilde{\qvar},\tilde{\avar}).
 \end{gather*}
-that is eventually injective.
-Moreover, the parameters $(\cpar^{G},\qvar^{G},\avar^{G})$ are admissible.
+Moreover, the parameters $(\cpar^{G},\qvar^{G},\avar^{G})$ are 
+weakly admissible.
 \end{lemma}
 
 If $\qvar$ is not a root of unity, then there is 
@@ -6086,7 +6066,7 @@ The proof is then essentially the same as the one in
 \fullref{lemma:handlebody-tl-second}, using 
 Schur--Weyl--Brauer duality instead of 
 (a special case of) Schur--Weyl duality. Precisely, 
-we define $\iota^{G}$ using the very same picture as in \eqref{eq:flanking}, 
+we define $\iota^{G}$ using the very same pictures as in \eqref{eq:flanking}, 
 but the boxes represent 
 the pullbacks of the highest weight projectors 
 (splitting off the highest weight summands) in tensor space. 
@@ -6124,10 +6104,15 @@ See however \cite{IsMoOg-bmw-idempotents} or \cite{LeZh-brauer-invariant-theory}
 for some work on projectors in Brauer respectively BMW algebras.
 \end{remark}
 
+As before for the topological handlebody Temperley--Lieb algebra we 
+do not know any explicit way to construct admissible parameters.
+However, under the assumption that these exists we 
+conclude this section as follows.
+
 Note that our definition realizes $\setstuff{Br}_{g,n}(\cpar)$ 
 as a specialization of $\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$, which 
 is not equal to a definition using perfect matchings. So the following
-direct implication of \fullref{proposition:bmw-basis} is non-trivial:
+direct implication of the definitions:
 
 \begin{proposition}\label{proposition:brauer-good}
 For admissible parameters the handlebody 
@@ -6143,8 +6128,8 @@ cellular basis. Let us for brevity just stress the differences.
 First, we only consider positive lifts and we let 
 $\setstuff{B}_{g,\lambda}^{+}$ denote the handlebody braid monoid, {\ie}
 \fullref{definition:handlebody-braidgroup} 
-using only positive twists and $\beta_{i}$ 
-for the definition, {\ie} positive crossings \eqref{eq:positive-braid}.
+using only positive twists and positive crossings \eqref{eq:positive-braid} 
+for the definition.
 
 Note that there is a map 
 $\setstuff{B}_{g,\lambda}^{+}\to\setstuff{BMW}_{g,n}(\cpar,\qvar,\avar)$ 
@@ -6269,7 +6254,7 @@ for any admissible parameters.
 \begin{proof}
 The only claim which is not immediate by construction is 
 that \eqref{eq:bmw-basis} is a $\KK$-basis, which
-follows from \fullref{lemma:handlebody-bmw-second}.
+follows from \fullref{definition:handlebody-bmw-second}.
 \end{proof}
 
 Not surprisingly, the cell 
@@ -6518,14 +6503,14 @@ $\setstuff{Br}_{g,n}^{\dpar,\bpar}(\cpar)$ be
 the quotient of $\setstuff{Br}^{+}_{g,n}(\cpar)$
 by the two-sided ideal generated by the \emph{cyclotomic relations}
 \begin{gather}\label{eq:cyclotomic-brauer-blob}
-(b_{u}-\beta_{u,1})
+(b_{u}-\bvar_{u,1})
 \varpi_{1}
-(b_{u}-\beta_{u,2})
+(b_{u}-\bvar_{u,2})
 \varpi_{2}
 \dots
-(b_{u}-\beta_{u,\dvar_{u}-1})
+(b_{u}-\bvar_{u,\dvar_{u}-1})
 \varpi_{d_{u}-1}
-(b_{u}-\beta_{u,\dvar_{u}})
+(b_{u}-\bvar_{u,\dvar_{u}})
 =0,
 \end{gather}
 where $\varpi_{j}$ is any finite (potentially empty)
@@ -6643,7 +6628,7 @@ is contained in the free
 $\KK$-module spanned by all 
 clapped, blobed perfect matchings.
 The cyclotomic condition then gets rid of 
-having too many dots on strands.
+having too many blobs on strands.
 \end{proof}
 
 \begin{definition}\label{def:bmw-admissible}
@@ -6723,7 +6708,7 @@ of all possible blob placements on a cap respectively
 cup not affected by 
 the cyclotomic relation \eqref{eq:cyclotomic-brauer-blob}
 being free of rank $\bbvar_{1,\dpar}$. 
-Note now that closing diagrams implies that this 
+By closing diagrams implies that this 
 happens if and only if the $\bbvar_{1,\dpar}$-$\bbvar_{1,\dpar}$ pairing matrix
 \begin{gather*}
 P=
@@ -6834,7 +6819,7 @@ on a single strand is $\bbvar_{g,\dpar}$. Hence,
 the number of ways to put these on $n$ strands is 
 $(\bbvar_{g,\dpar})^{n}$. Since there are $(2n-1)!!$ corresponding 
 perfect matchings all having $n$ strands, 
-the dimension formula follows at once from \fullref{lemma:brauer-basis2}.
+the dimension formula follows from \fullref{lemma:brauer-basis2}.
 \end{proof}
 
 \begin{example}
@@ -6867,14 +6852,14 @@ $\setstuff{BMW}_{g,n}^{\dpar,\bpar}(\cpar,\qvar,\avar)$ be
 the quotient of $\setstuff{BMW}^{+}_{g,n}(\cpar,\qvar,\avar)$
 by the two-sided ideal generated by the \emph{cyclotomic relations}
 \begin{gather}\label{eq:cyclotomic-bmw-blob}
-(b_{u}-\beta_{u,1})
+(b_{u}-\bvar_{u,1})
 \varpi_{1}
-(b_{u}-\beta_{u,2})
+(b_{u}-\bvar_{u,2})
 \varpi_{2}
 \dots
-(b_{u}-\beta_{u,\dvar_{u}-1})
+(b_{u}-\bvar_{u,\dvar_{u}-1})
 \varpi_{d_{u}-1}
-(b_{u}-\beta_{u,\dvar_{u}})
+(b_{u}-\bvar_{u,\dvar_{u}})
 =0,
 \end{gather}
 where $\varpi_{j}$ is any finite (potentially empty)
@@ -6902,7 +6887,7 @@ For an admissible choice of parameters, the algebra
 $\setstuff{BMW}_{g,n}^{\dpar,\bpar}(\cpar,\qvar,\avar)$ 
 has a $\KK$-basis in bijection with clapped, blobed 
 perfect matchings of 
-on $2n$ points of genus  
+$2n$ points of genus  
 $g$ where each strand has at 
 most $\dvar_{u}$ blobs of the corresponding type.
 \end{lemma}
@@ -8067,15 +8052,6 @@ equation.
 {https://doi.org/10.4310/ATMP.2014.v18.n1.a1}
 {\path{doi:10.4310/ATMP.2014.v18.n1.a1}}.
 
-\bibitem[JK11]{JaKe-verma-lkb}
-C.~Jackson and T.~Kerler.
-\newblock The {L}awrence--{K}rammer--{B}igelow {R}epresentations of the {B}raid
-{G}roups via {Q}uantum {$SL_{2}$}.
-\newblock {\em Adv. Math.}, 228(3):1689--1717, 2011.
-\newblock \url{https://arxiv.org/abs/0912.2114}, \href
-{https://doi.org/10.1016/j.aim.2011.06.027}
-{\path{doi:10.1016/j.aim.2011.06.027}}.
-
 \bibitem[KaLi94]{KaLi-TL-recoupling}
 L.H.~Kauffman and S.L.~Lins.
 \newblock {\em Temperley--{L}ieb recoupling theory and invariants of
@@ -8228,6 +8204,13 @@ Groups and Homogeneous Spaces Mumbai 2004}, volume 19 of {\em Tata Inst.
 Fund. Res. Stud. Math.}, pages 423--473. Tata Inst. Fund. Res., Mumbai, 2007.
 \newblock \url{https://arxiv.org/abs/math/0401317}.
 
+\bibitem[QS19]{QS}
+H.~Queffelec and A.~Sartori.
+\newblock Mixed quantum skew Howe duality and link invariants of type A.
+\newblock {\em J. Pure Appl. Algebra}, 223, no. 7, 2733--2779, 2019.
+\newblock \url{https://arxiv.org/abs/1504.01225}, \href
+{https://doi.org/10.1016/j.jpaa.2018.09.014} {\path{doi:10.1016/j.jpaa.2018.09.014}}.
+
 \bibitem[RT19]{RoTu-homflypt-typea}
 D.E.V.~Rose and D.~Tubbenhauer.
 \newblock {HOMFLYPT} homology for links in handlebodies via type {$\mathsf{A}$}
@@ -8284,7 +8267,7 @@ Iwahori ring for the monoid of matrices over a finite field.
 L.~Sutton, D.~Tubbenhauer, P.~Wedrich, and J.~Zhu.
 \newblock {$\mathrm{SL}_{2}$} tilting modules in the mixed case.
 \newblock 2021.
-\newblock In preparation.
+\newblock \url{https://arxiv.org/abs/2105.07724}.
 
 \bibitem[tD94]{tDi-sym-bridges}
 T.~tom Dieck.
